@@ -1,0 +1,13 @@
+diff --git a/openai/src/api/opengpt/mod.rs b/openai/src/api/opengpt/mod.rs
+index 2a8c2a6..c167c05 100644
+--- a/openai/src/api/opengpt/mod.rs
++++ b/openai/src/api/opengpt/mod.rs
+@@ -480,7 +480,7 @@ impl OpenGPTBuilder {
+         );
+ 
+         let client = reqwest::ClientBuilder::new()
+-            .chrome_builder(browser::ChromeVersion::V105)
++            .chrome_builder(browser::ChromeVersion::V108)
+             .cookie_store(true)
+             .default_headers(req_headers);
+ 

@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java b/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java
+index 02d69fb..b161707 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java
+@@ -52,6 +52,8 @@ final class BindingSet {
+   static final ClassName BITMAP_FACTORY = ClassName.get("android.graphics", "BitmapFactory");
+   static final ClassName CONTEXT_COMPAT =
+       ClassName.get("android.support.v4.content", "ContextCompat");
++  static final ClassName ANIMATION_UTILS =
++          ClassName.get("android.view.animation", "AnimationUtils");
+ 
+   private final TypeName targetTypeName;
+   private final ClassName bindingClassName;

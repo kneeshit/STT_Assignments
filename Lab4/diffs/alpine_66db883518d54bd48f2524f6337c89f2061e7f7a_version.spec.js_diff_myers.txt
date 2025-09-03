@@ -1,0 +1,12 @@
+diff --git a/test/version.spec.js b/test/version.spec.js
+new file mode 100644
+index 00000000..68aaf55d
+--- /dev/null
++++ b/test/version.spec.js
+@@ -0,0 +1,6 @@
++import { version } from 'alpinejs'
++import pkg from '../package.json'
++
++test('Alpine.version matches package.json version field', () => {
++    expect(version).toEqual(String(pkg.version))
++})

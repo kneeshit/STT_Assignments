@@ -1,0 +1,26 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java
+index 95c0617..2607cda 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java
+@@ -1,5 +1,7 @@
+ package butterknife.compiler;
+ 
++import com.squareup.javapoet.ClassName;
++import com.squareup.javapoet.ParameterizedTypeName;
+ import com.squareup.javapoet.TypeName;
+ 
+ final class FieldCollectionViewBinding implements ViewBinding {
+@@ -28,6 +30,13 @@ final class FieldCollectionViewBinding implements ViewBinding {
+     return type;
+   }
+ 
++  public ClassName getRawType() {
++    if (type instanceof ParameterizedTypeName) {
++      return ((ParameterizedTypeName) type).rawType;
++    }
++    return (ClassName) type;
++  }
++
+   public Kind getKind() {
+     return kind;
+   }

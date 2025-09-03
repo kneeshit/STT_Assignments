@@ -1,0 +1,21 @@
+diff --git a/butterknife/src/main/java/butterknife/OnLongClick.java b/butterknife/src/main/java/butterknife/OnLongClick.java
+new file mode 100644
+index 0000000..77765bd
+--- /dev/null
++++ b/butterknife/src/main/java/butterknife/OnLongClick.java
+@@ -0,0 +1,15 @@
++package butterknife;
++
++import android.view.View;
++import butterknife.internal.ListenerClass;
++import java.lang.annotation.Retention;
++import java.lang.annotation.Target;
++
++import static java.lang.annotation.ElementType.METHOD;
++import static java.lang.annotation.RetentionPolicy.CLASS;
++
++@Retention(CLASS) @Target(METHOD)
++@ListenerClass(View.OnLongClickListener.class)
++public @interface OnLongClick {
++  int[] value();
++}

@@ -1,0 +1,11 @@
+diff --git a/openai/build.rs b/openai/build.rs
+new file mode 100644
+index 0000000..046ed5a
+--- /dev/null
++++ b/openai/build.rs
+@@ -0,0 +1,5 @@
++use static_files::resource_dir;
++
++fn main() -> std::io::Result<()> {
++    resource_dir("./templates").build()
++}

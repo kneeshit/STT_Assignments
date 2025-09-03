@@ -1,0 +1,22 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index b170274..884ce2c 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -146,6 +146,8 @@ public class Views {
+ 
+       for (Map.Entry<TypeElement, Set<InjectionPoint>> injection : injectionsByClass.entrySet()) {
+         TypeElement type = injection.getKey();
++        Set<InjectionPoint> injectionPoints = injection.getValue();
++
+         String targetType = type.getQualifiedName().toString();
+         String sourceType = resolveSourceType(type);
+         String packageName = processingEnv.getElementUtils().getPackageOf(type).toString();
+@@ -160,7 +162,7 @@ public class Views {
+               .append(SUFFIX)
+               .append(".inject(activity);\n\n");
+         }
+-        for (InjectionPoint injectionPoint : injection.getValue()) {
++        for (InjectionPoint injectionPoint : injectionPoints) {
+           injections.append(injectionPoint).append("\n");
+         }
+ 

@@ -1,0 +1,7 @@
+diff --git a/src/openai/mod.rs b/src/openai/mod.rs
+new file mode 100644
+index 0000000..0e4a05d
+--- /dev/null
++++ b/src/openai/mod.rs
+@@ -0,0 +1 @@
++pub mod auth;

@@ -1,0 +1,17 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/internal/Utils.java b/butterknife-compiler/src/test/java/butterknife/internal/Utils.java
+index 201f519..bbdef82 100644
+--- a/butterknife-compiler/src/test/java/butterknife/internal/Utils.java
++++ b/butterknife-compiler/src/test/java/butterknife/internal/Utils.java
+@@ -23,10 +23,12 @@ public final class Utils {
+     throw new RuntimeException("Stub!");
+   }
+ 
++  @SafeVarargs
+   public static <T> T[] arrayOf(T... views) {
+     throw new RuntimeException("Stub!");
+   }
+ 
++  @SafeVarargs
+   public static <T> List<T> listOf(T... views) {
+     throw new RuntimeException("Stub!");
+   }

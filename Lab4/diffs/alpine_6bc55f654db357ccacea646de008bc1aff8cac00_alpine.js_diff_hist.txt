@@ -1,0 +1,20 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index e54d2eba..bc88ce6f 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -557,14 +557,8 @@
+       } else if (el.tagName === 'SELECT') {
+         updateSelect(el, value);
+       } else {
+-        // Cursor position should be restored back to origin due to a safari bug
+-        const selectionStart = el.selectionStart;
+-        const selectionEnd = el.selectionEnd;
+-        const selectionDirection = el.selectionDirection;
++        if (el.value !== value) {
+           el.value = value;
+-
+-        if (el === document.activeElement && selectionStart !== null) {
+-          el.setSelectionRange(selectionStart, selectionEnd, selectionDirection);
+         }
+       }
+     } else if (attrName === 'class') {

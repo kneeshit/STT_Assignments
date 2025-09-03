@@ -1,0 +1,9 @@
+diff --git a/fficall/ffi/.gitignore b/fficall/ffi/.gitignore
+deleted file mode 100644
+index d385f05..0000000
+--- a/fficall/ffi/.gitignore
++++ /dev/null
+@@ -1,2 +0,0 @@
+-libfficall.a
+-libfficall.h
+\ No newline at end of file

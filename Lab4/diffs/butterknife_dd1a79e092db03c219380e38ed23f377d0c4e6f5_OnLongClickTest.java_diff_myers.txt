@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+index d20127e..09ab84f 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+@@ -72,7 +72,7 @@ public class OnLongClickTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

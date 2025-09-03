@@ -1,0 +1,11 @@
+diff --git a/docker/builder/Dockerfile b/docker/builder/Dockerfile
+index b112f31..ce224ea 100644
+--- a/docker/builder/Dockerfile
++++ b/docker/builder/Dockerfile
+@@ -14,5 +13,5 @@ LABEL org.opencontainers.image.source https://github.com/gngpp/opengpt
+ RUN if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then \
+         apt update -y && apt install -y gcc-aarch64-linux-gnu; \
+     elif [ "${TARGETPLATFORM}" = "linux/amd64" ]; then \
+-        apt update -y && apt install -t gcc-multilib; \
++        apt update -y && apt install -y gcc-multilib; \
+     fi

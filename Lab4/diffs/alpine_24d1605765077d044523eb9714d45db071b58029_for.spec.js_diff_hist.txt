@@ -1,0 +1,13 @@
+diff --git a/test/for.spec.js b/test/for.spec.js
+index b9d8f497..a7ac54b8 100644
+--- a/test/for.spec.js
++++ b/test/for.spec.js
+@@ -322,7 +322,7 @@ test('nested x-for', async () => {
+ 
+ test('x-for updates the right elements when new item are inserted at the beginning of the list', async () => {
+     document.body.innerHTML = `
+-        <div x-data="{ items: [{name: 'one', key: '1'}, {name: 'twp', key: '2'}] }">
++        <div x-data="{ items: [{name: 'one', key: '1'}, {name: 'two', key: '2'}] }">
+             <button x-on:click="items = [{name: 'zero', key: '0'}, {name: 'one', key: '1'}, {name: 'two', key: '2'}]"></button>
+ 
+             <template x-for="item in items" :key="item.key">

@@ -1,0 +1,11 @@
+diff --git a/src/store/account.rs b/src/store/account.rs
+index 8fcadf2..f13b6e0 100644
+--- a/src/store/account.rs
++++ b/src/store/account.rs
+@@ -1,5 +1,5 @@
+ use super::{Store, StoreId, StoreResult};
+-use crate::homedir::home_dir;
++use openai::homedir::home_dir;
+ use openai::{auth::model::AuthStrategy, model::AuthenticateToken};
+ use std::{collections::HashMap, ops::Not, path::PathBuf};
+ 

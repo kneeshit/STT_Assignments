@@ -1,0 +1,17 @@
+diff --git a/butterknife-runtime/src/androidTest/res/color/colors.xml b/butterknife-runtime/src/androidTest/res/color/colors.xml
+new file mode 100644
+index 0000000..2af4b13
+--- /dev/null
++++ b/butterknife-runtime/src/androidTest/res/color/colors.xml
+@@ -0,0 +1,11 @@
++<selector xmlns:android="http://schemas.android.com/apk/res/android">
++  <item
++      android:color="#ffff0000"
++      android:state_pressed="true"
++      />
++  <item
++      android:color="#ff0000ff"
++      android:state_focused="true"
++      />
++  <item android:color="#ff000000"/>
++</selector>

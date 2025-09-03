@@ -1,0 +1,94 @@
+diff --git a/openai/src/arkose/mod.rs b/openai/src/arkose/mod.rs
+index 6545667..38ad3ce 100644
+--- a/openai/src/arkose/mod.rs
++++ b/openai/src/arkose/mod.rs
+@@ -21,6 +21,7 @@ use tokio::sync::OnceCell;
+ use crate::arkose::crypto::encrypt;
+ use crate::context::Context;
+ use crate::debug;
++use crate::warn;
+ use crate::HEADER_UA;
+ 
+ use self::funcaptcha::solver::SubmitSolverBuilder;
+@@ -354,26 +355,25 @@ async fn submit_captcha(
+         .map_err(|error| anyhow::anyhow!(format!("Error creating session: {}", error)))?;
+ 
+     let funs = anyhow::Context::context(session.funcaptcha(), "Valid funcaptcha error")?;
+-    let max_cap = funs.len();
+-    let (tx, mut rx) = tokio::sync::mpsc::channel(max_cap);
+-
+-    match solver {
++    let mut rx = match solver {
+         Solver::Yescaptcha => {
++            let (tx, rx) = tokio::sync::mpsc::channel(funs.len());
+             for (i, fun) in funs.iter().enumerate() {
+-                let sender = tx.clone();
+                 let submit_task = SubmitSolverBuilder::default()
+                     .solved(solver)
+                     .client_key(key)
+                     .question(fun.instructions.clone())
+                     .image(fun.image.clone())
+                     .build()?;
++                let sender = tx.clone();
+                 tokio::spawn(async move {
+                     let res = funcaptcha::solver::submit_task(submit_task).await;
+                     if let Some(err) = sender.send((i, res)).await.err() {
+-                        println!("submit funcaptcha answer error: {err}")
++                        warn!("submit funcaptcha answer error: {err}")
+                     }
+                 });
+             }
++            rx
+         }
+         Solver::Capsolver => {
+             let mut classified_data = std::collections::HashMap::new();
+@@ -387,9 +386,9 @@ async fn submit_captcha(
+                     .push(item);
+             }
+ 
+-            for (i, data) in classified_data.into_iter().enumerate() {
+-                let sender = tx.clone();
++            let (tx, rx) = tokio::sync::mpsc::channel(classified_data.len());
+ 
++            for (i, data) in classified_data.into_iter().enumerate() {
+                 let images = data
+                     .1
+                     .into_iter()
+@@ -402,22 +400,23 @@ async fn submit_captcha(
+                     .question(data.0)
+                     .images(images)
+                     .build()?;
+-
++                let sender = tx.clone();
+                 tokio::spawn(async move {
+                     let res = funcaptcha::solver::submit_task(submit_task).await;
+                     if let Some(err) = sender.send((i, res)).await.err() {
+-                        println!("submit funcaptcha answer error: {err}")
++                        warn!("submit funcaptcha answer error: {err}")
+                     }
+                 });
+             }
++            rx
+         }
+-    }
++    };
+ 
+     // Wait for all tasks to complete
+-    let mut r = Vec::with_capacity(max_cap);
++    let mut r = Vec::new();
+     let mut need_soty = false;
+-    for _ in 0..max_cap {
+-        if let Some((i, res)) = rx.recv().await {
++
++    while let Some((i, res)) = rx.recv().await {
+         let answers = res?;
+         if answers.len() == 1 {
+             r.push((i, answers[0]));
+@@ -431,7 +430,6 @@ async fn submit_captcha(
+             );
+         }
+     }
+-    }
+ 
+     if need_soty {
+         r.sort_by_key(|&(i, _)| i);

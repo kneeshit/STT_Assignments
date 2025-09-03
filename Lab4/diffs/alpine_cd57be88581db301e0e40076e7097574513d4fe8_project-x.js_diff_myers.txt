@@ -1,0 +1,13 @@
+diff --git a/dist/project-x.js b/dist/project-x.js
+index f48c13fc..671e429c 100644
+--- a/dist/project-x.js
++++ b/dist/project-x.js
+@@ -1218,7 +1218,7 @@ function () {
+             }
+           });
+         }
+-      } else if (['disabled', 'readonly', 'required', 'checked'].includes(attrName)) {
++      } else if (['disabled', 'readonly', 'required', 'checked', 'hidden'].includes(attrName)) {
+         // Boolean attributes have to be explicitly added and removed, not just set.
+         if (!!value) {
+           el.setAttribute(attrName, '');

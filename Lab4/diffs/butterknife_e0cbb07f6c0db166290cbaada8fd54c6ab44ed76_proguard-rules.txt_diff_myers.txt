@@ -1,0 +1,10 @@
+diff --git a/butterknife/proguard-rules.txt b/butterknife/proguard-rules.txt
+index bf214ac..be8806c 100644
+--- a/butterknife/proguard-rules.txt
++++ b/butterknife/proguard-rules.txt
+@@ -3,4 +3,4 @@
+ 
+ # Prevent obfuscation of types which use ButterKnife annotations since the simple name
+ # is used to reflectively look up the generated ViewBinder.
+--keepclasseswithmembernames class * { @butterknife.* *; }
++-keepnames class * { @butterknife.* *; }

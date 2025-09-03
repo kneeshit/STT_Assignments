@@ -1,0 +1,27 @@
+diff --git a/src/directives/bind.js b/src/directives/bind.js
+index c73ec86f..edd95aca 100644
+--- a/src/directives/bind.js
++++ b/src/directives/bind.js
+@@ -69,16 +69,21 @@ export function handleAttributeBindingDirective(component, el, attrName, express
+             el.setAttribute('class', arrayUnique(originalClasses.concat(newClasses)).join(' '))
+         }
+     } else if (isBooleanAttr(attrName)) {
+-        // Boolean attributes have to be explicitly added and removed, not just set.
+         if (!!value) {
+             el.setAttribute(attrName, '')
+         } else {
++            // If a Boolean attribute has a falsy value, remove the attribute
+             el.removeAttribute(attrName)
+         }
++    } else {
++        // If an attribute's bound value is null, undefined or false, remove the attribute
++        if ([null, undefined, false].includes(value)) {
++            el.removeAttribute(attrName)
+         } else {
+             el.setAttribute(attrName, value)
+         }
+     }
++}
+ 
+ function updateSelect(el, value) {
+     const arrayWrappedValue = [].concat(value).map(value => { return value + '' })

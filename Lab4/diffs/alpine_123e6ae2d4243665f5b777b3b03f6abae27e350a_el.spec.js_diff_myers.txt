@@ -1,0 +1,27 @@
+diff --git a/test/el.spec.js b/test/el.spec.js
+index 68ddcc3d..923e94eb 100644
+--- a/test/el.spec.js
++++ b/test/el.spec.js
+@@ -20,3 +20,22 @@ test('$el', async () => {
+ 
+     await wait(() => { expect(document.querySelector('div').innerHTML).toEqual('foo') })
+ })
++
++test('$el doesnt return a proxy', async () => {
++    var isProxy
++    window.setIsProxy = function (el) {
++        isProxy = !! el.isProxy
++    }
++
++    document.body.innerHTML = `
++        <div x-data>
++            <button @click="setIsProxy($el)"></button>
++        </div>
++    `
++
++    Alpine.start()
++
++    document.querySelector('button').click()
++
++    expect(isProxy).toEqual(false)
++})

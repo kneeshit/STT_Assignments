@@ -1,0 +1,10 @@
+diff --git a/.gitignore b/.gitignore
+index c3a7eb5..54fef9c 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -24,3 +24,4 @@ thunder-tests
+ .env
+ ./arkose
+ opengpt
++./vendor
+\ No newline at end of file

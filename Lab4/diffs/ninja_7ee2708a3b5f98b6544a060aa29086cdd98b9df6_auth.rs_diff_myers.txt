@@ -1,0 +1,13 @@
+diff --git a/openai/src/auth.rs b/openai/src/auth.rs
+index aeb5265..ea492da 100644
+--- a/openai/src/auth.rs
++++ b/openai/src/auth.rs
+@@ -1157,7 +1157,7 @@ impl AuthClientBuilder {
+         }));
+         AuthClientBuilder {
+             builder: client_builder,
+-            strategy: AuthStrategy::PLATFROM,
++            strategy: AuthStrategy::IOS,
+         }
+     }
+ }

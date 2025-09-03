@@ -1,0 +1,23 @@
+diff --git a/src/utils.js b/src/utils.js
+index ecec59e7..6d3dcee1 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -11,6 +11,18 @@ export function domReady() {
+     })
+ }
+ 
++export function arrayUnique(array) {
++    var a = array.concat();
++    for(var i=0; i<a.length; ++i) {
++        for(var j=i+1; j<a.length; ++j) {
++            if(a[i] === a[j])
++                a.splice(j--, 1);
++        }
++    }
++
++    return a;
++}
++
+ export function isTesting() {
+     return navigator.userAgent, navigator.userAgent.includes("Node.js")
+         || navigator.userAgent.includes("jsdom")

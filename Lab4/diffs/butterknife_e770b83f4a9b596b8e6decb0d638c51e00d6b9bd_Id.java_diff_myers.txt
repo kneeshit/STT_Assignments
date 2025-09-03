@@ -1,0 +1,12 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/Id.java b/butterknife-compiler/src/main/java/butterknife/compiler/Id.java
+index ea07fa9..a258950 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/Id.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/Id.java
+@@ -32,6 +32,6 @@ final class Id {
+   }
+ 
+   @Override public String toString() {
+-    return String.valueOf(value);
++    throw new UnsupportedOperationException("Please use value or code explicitly");
+   }
+ }

@@ -1,0 +1,5 @@
+@@ -289,3 +289,4 @@ Configuration
+ -------------
+ 
+ .. autoclass:: Config
++   :members:

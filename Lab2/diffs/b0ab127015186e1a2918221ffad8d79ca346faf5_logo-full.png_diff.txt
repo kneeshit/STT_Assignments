@@ -1,0 +1,1 @@
+Binary files a/docs/_static/logo-full.png and b/docs/_static/logo-full.png differ

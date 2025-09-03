@@ -1,0 +1,35 @@
+diff --git a/index.html b/index.html
+index 8e62ef53..fd7b554c 100644
+--- a/index.html
++++ b/index.html
+@@ -16,6 +16,30 @@
+         <script src="/dist/alpine.js" defer></script>
+     </head>
+     <body>
++        <div x-data="{ open: false }">
++            <button @click="open = ! open">toggle</button>
++
++            <div x-data="{hey: 'there'}" x-text="hey"></div>
++
++            <template x-if="open">
++                <div x-data="{foo: 'bar'}">
++                    <span x-text="foo"></span>
++                    <button @click="foo = 'baz'"></button>
++                </div>
++            </template>
++
++            <hr>
++
++            <template x-if="open">
++                <span>
++                    <div x-data="{foo: 'bar'}">
++                        <span x-text="foo"></span>
++                        <button @click="foo = 'baz'"></button>
++                    </div>
++                </span>
++            </template>
++        </div>
++
+         <table>
+             <thead>
+                 <tr>

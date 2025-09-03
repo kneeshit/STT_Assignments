@@ -1,0 +1,19 @@
+diff --git a/website/static/app.css b/website/static/app.css
+index 9c0304d..76fd9ed 100644
+--- a/website/static/app.css
++++ b/website/static/app.css
+@@ -46,9 +46,13 @@ code {
+   font-size: 18px;
+   line-height: 25px;
+   font-weight: 400;
+-  margin-bottom: 60px;
++  margin-bottom: 40px;
+   text-shadow: 0px 0px 3px #fff;
+ }
++.side a {
++  color: #555;
++  padding: 5px;
++}
+ 
+ .main {
+     padding: 20px;

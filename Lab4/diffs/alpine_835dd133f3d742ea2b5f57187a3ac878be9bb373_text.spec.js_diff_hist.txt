@@ -1,0 +1,11 @@
+diff --git a/test/text.spec.js b/test/text.spec.js
+index 8b7d8cb7..13e1507b 100644
+--- a/test/text.spec.js
++++ b/test/text.spec.js
+@@ -1,5 +1,5 @@
+ import projectX from 'project-x'
+-import { wait } from 'dom-testing-library'
++import { wait } from '@testing-library/dom'
+ 
+ global.MutationObserver = class {
+     observe() {}

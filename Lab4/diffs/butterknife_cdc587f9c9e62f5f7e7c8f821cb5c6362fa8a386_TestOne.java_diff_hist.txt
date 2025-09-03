@@ -1,0 +1,16 @@
+diff --git a/butterknife/src/it/generic-superclass/src/main/java/bar/TestOne.java b/butterknife/src/it/generic-superclass/src/main/java/bar/TestOne.java
+new file mode 100644
+index 0000000..830be3a
+--- /dev/null
++++ b/butterknife/src/it/generic-superclass/src/main/java/bar/TestOne.java
+@@ -0,0 +1,10 @@
++package bar;
++
++import android.app.Activity;
++import android.view.View;
++import butterknife.InjectView;
++import foo.BaseThing;
++
++public class TestOne extends BaseThing<String> {
++  @InjectView(1) public View thing;
++}

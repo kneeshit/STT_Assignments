@@ -1,0 +1,14 @@
+diff --git a/openai/src/api/mod.rs b/openai/src/api/mod.rs
+index 9202b7f..4d5c2df 100644
+--- a/openai/src/api/mod.rs
++++ b/openai/src/api/mod.rs
+@@ -11,6 +11,9 @@ pub mod chatgpt;
+ pub mod models;
+ pub mod opengpt;
+ 
++pub const HEADER_UA: &str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36";
++pub const URL_CHATGPT_BASE: &str = "https://chat.openai.com/backend-api";
++
+ pub type ApiResult<T, E = ApiError> = anyhow::Result<T, E>;
+ 
+ pub enum RequestMethod {

@@ -1,0 +1,12 @@
+diff --git a/reqwest/tests/support/mod.rs b/reqwest/tests/support/mod.rs
+deleted file mode 100644
+index cef2170..0000000
+--- a/reqwest/tests/support/mod.rs
++++ /dev/null
+@@ -1,6 +0,0 @@
+-pub mod server;
+-
+-// TODO: remove once done converting to new support server?
+-#[allow(unused)]
+-pub static DEFAULT_USER_AGENT: &str =
+-    concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VERSION"));

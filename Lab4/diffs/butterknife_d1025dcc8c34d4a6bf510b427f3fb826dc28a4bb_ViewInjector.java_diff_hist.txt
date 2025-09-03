@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ViewInjector.java b/butterknife/src/main/java/butterknife/internal/ViewInjector.java
+index ff4f9c9..c8e5659 100644
+--- a/butterknife/src/main/java/butterknife/internal/ViewInjector.java
++++ b/butterknife/src/main/java/butterknife/internal/ViewInjector.java
+@@ -47,6 +47,10 @@ final class ViewInjector {
+     this.parentInjector = parentInjector;
+   }
+ 
++  boolean viewIdMapContains(int id) {
++    return viewIdMap.containsKey(id);
++  }
++
+   private ViewInjection getOrCreateViewInjection(int id) {
+     ViewInjection viewId = viewIdMap.get(id);
+     if (viewId == null) {

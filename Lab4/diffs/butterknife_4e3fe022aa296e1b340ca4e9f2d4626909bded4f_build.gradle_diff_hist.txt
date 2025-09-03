@@ -1,0 +1,17 @@
+diff --git a/build.gradle b/build.gradle
+index 015213e..345b006 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -6,9 +6,9 @@ buildscript {
+       'compileSdk': 27,
+ 
+       'supportLibrary': '27.0.2',
+-      'androidPlugin': '3.0.1',
+-      'androidTools': '26.0.1',
+-      'kotlin': '1.2.10',
++      'androidPlugin': '3.1.0-alpha09',
++      'androidTools': '26.1.0-alpha09',
++      'kotlin': '1.2.21',
+ 
+       'release': '8.8.1',
+   ]

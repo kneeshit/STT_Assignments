@@ -1,0 +1,28 @@
+diff --git a/butterknife-runtime/src/test/java/butterknife/TestGeneratingProcessor.java b/butterknife-runtime/src/test/java/butterknife/TestGeneratingProcessor.java
+index 372f15d..72a1352 100644
+--- a/butterknife-runtime/src/test/java/butterknife/TestGeneratingProcessor.java
++++ b/butterknife-runtime/src/test/java/butterknife/TestGeneratingProcessor.java
+@@ -46,20 +46,12 @@ public class TestGeneratingProcessor extends AbstractProcessor {
+   public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
+     if (!processed) {
+       processed = true;
+-      Writer writer = null;
+-      try {
+-        writer = processingEnv.getFiler().createSourceFile(generatedClassName).openWriter();
++      try (Writer writer = processingEnv.getFiler()
++          .createSourceFile(generatedClassName)
++          .openWriter()) {
+         writer.append(generatedSource);
+       } catch (IOException e) {
+         throw new RuntimeException(e);
+-      } finally {
+-        if (writer != null) {
+-          try {
+-            writer.close();
+-          } catch (IOException e) {
+-            throw new RuntimeException(e);
+-          }
+-        }
+       }
+     }
+     return false;

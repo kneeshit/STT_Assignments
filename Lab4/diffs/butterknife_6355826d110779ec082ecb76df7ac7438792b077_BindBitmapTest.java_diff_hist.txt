@@ -1,0 +1,17 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java b/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
+index 742d30e..a96f6f3 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
+@@ -30,8 +30,11 @@ public class BindBitmapTest {
+             "import butterknife.internal.ViewBinder;",
+             "import java.lang.Object;",
+             "import java.lang.Override;",
++            "import java.lang.SuppressWarnings;",
+             "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {",
+-            "  @Override public void bind(final Finder finder, final T target, Object source) {",
++            "  @Override",
++            "  @SuppressWarnings(\"ResourceType\")",
++            "  public void bind(final Finder finder, final T target, Object source) {",
+             "    Resources res = finder.getContext(source).getResources();",
+             "    target.one = BitmapFactory.decodeResource(res, 1);",
+             "  }",

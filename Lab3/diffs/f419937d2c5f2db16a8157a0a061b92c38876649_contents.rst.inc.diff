@@ -1,0 +1,37 @@
+@@ -17,25 +17,25 @@ web development.
+    deploying/index
+    becomingbig
+ 
+-Additional Notes
+-----------------
++API Reference
++-------------
+ 
+-Design notes, legal information and changelog are here for the interested:
++If you are looking for information on a specific function, class or
++method, this part of the documentation is for you:
+ 
+ .. toctree::
+    :maxdepth: 2
+ 
+-   design
+-   license
+-   changelog
++   api
+ 
+-API Reference
+--------------
++Additional Notes
++----------------
+ 
+-If you are looking for information on a specific function, class or
+-method, this part of the documentation is for you:
++Design notes, legal information and changelog are here for the interested:
+ 
+ .. toctree::
+    :maxdepth: 2
+ 
+-   api
++   design
++   license
++   changelog

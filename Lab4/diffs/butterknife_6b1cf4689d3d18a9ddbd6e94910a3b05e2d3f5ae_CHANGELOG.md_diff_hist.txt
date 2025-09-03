@@ -1,0 +1,17 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 6cf358f..bf57086 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,6 +1,12 @@
+ Change Log
+ ==========
+ 
++Version 2.0.0 *(2013-07-16)*
++----------------------------
++
++ * New: `@OnClick` annotation for binding click listeners to methods!
++
++
+ Version 1.4.0 *(2013-06-03)*
+ ----------------------------
+ 

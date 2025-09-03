@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>
+            .hidden { display: none; }
+        </style>
+    </head>
+    <body>
+        <div x-data="{ currentTab: 'foo' }">
+            <button x-bind:class="{ 'active': currentTab === 'foo' }" x-on:click="currentTab = 'foo'">Foo</button>
+            <button x-bind:class="{ 'active': currentTab === 'bar' }" x-on:click="currentTab = 'bar'">Bar</button>
+
+            <div class="hidden" x-bind:class="{ 'hidden': currentTab !== 'foo' }">Tab Foo</div>
+            <div class="hidden" x-bind:class="{ 'hidden': currentTab !== 'bar' }">Tab Bar</div>
+        </div>
+
+        <div x-data="{ name: 'bar' }">
+            <input type="text" x-on:input="name = $event.target.value">
+
+            <span x-text="name"></span>
+        </div>
+
+        <script src="/dist/minimal.js"></script>
+        <script>
+            window.minimal.start()
+        </script>
+    </body>
+</html>

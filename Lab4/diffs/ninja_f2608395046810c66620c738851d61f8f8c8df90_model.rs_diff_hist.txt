@@ -1,0 +1,12 @@
+diff --git a/openai/src/model.rs b/openai/src/model.rs
+index 660f45e..314aa44 100644
+--- a/openai/src/model.rs
++++ b/openai/src/model.rs
+@@ -166,6 +166,6 @@ struct HttpsApiOpenaiComAuth {
+ struct Organization {
+     id: String,
+     is_default: bool,
+-    prole: String,
++    role: String,
+     title: String,
+ }

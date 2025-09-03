@@ -1,0 +1,8 @@
+diff --git a/butterknife/src/main/AndroidManifest.xml b/butterknife/src/main/AndroidManifest.xml
+new file mode 100644
+index 0000000..b5e34f1
+--- /dev/null
++++ b/butterknife/src/main/AndroidManifest.xml
+@@ -0,0 +1,2 @@
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="butterknife"/>

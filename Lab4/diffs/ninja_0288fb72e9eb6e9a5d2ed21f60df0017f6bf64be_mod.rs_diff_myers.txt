@@ -1,0 +1,15 @@
+diff --git a/src/store/mod.rs b/src/store/mod.rs
+index cf7ce09..9188e5c 100644
+--- a/src/store/mod.rs
++++ b/src/store/mod.rs
+@@ -1,8 +1,8 @@
+-use serde::de::DeserializeOwned;
+-
+ pub mod account;
+ pub mod conf;
+ 
++use serde::de::DeserializeOwned;
++
+ pub type StoreResult<T, E = anyhow::Error> = anyhow::Result<T, E>;
+ 
+ pub trait StoreId {

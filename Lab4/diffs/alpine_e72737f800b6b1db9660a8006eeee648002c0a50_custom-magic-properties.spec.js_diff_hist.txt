@@ -1,0 +1,11 @@
+diff --git a/test/custom-magic-properties.spec.js b/test/custom-magic-properties.spec.js
+index 9edc552b..8d4a3caf 100644
+--- a/test/custom-magic-properties.spec.js
++++ b/test/custom-magic-properties.spec.js
+@@ -13,5 +13,5 @@ test('can register custom magic properties', async () => {
+ 
+     Alpine.start()
+ 
+-    expect(document.querySelector('span').innerText).toEqual('baz')
++    expect(document.querySelector('span').textContent).toEqual('baz')
+ })

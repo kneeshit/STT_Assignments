@@ -1,0 +1,12 @@
+diff --git a/openai/templates/static/manifest.json b/openai/templates/static/manifest.json
+index 05aca3b..c9bfa7c 100644
+--- a/openai/templates/static/manifest.json
++++ b/openai/templates/static/manifest.json
+@@ -1,6 +1,6 @@
+ {
+   "short_name": "ChatGPT",
+-  "name": "ChatGPT app powered by Pandora",
++  "name": "ChatGPT app powered by OpenGPT",
+   "icons": [
+     {
+       "src": "/apple-touch-icon.png",

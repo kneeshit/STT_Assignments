@@ -1,0 +1,19 @@
+diff --git a/doc/rest.http b/doc/rest.http
+index 78159fd..a52e156 100644
+--- a/doc/rest.http
++++ b/doc/rest.http
+@@ -13,12 +13,9 @@
+ /// oauth ///
+ ### you may need the MFA parameter to log in
+ POST http://{{host}}/auth/token
+-Content-Type: application/json
++Content-Type: application/x-www-form-urlencoded
+ 
+-{
+-    "email": "{{email}}",
+-    "password": "{{password}}"
+-}
++username={{email}}&password={{password}}
+ 
+ ### 
+ POST http://{{host}}/auth/refresh_token

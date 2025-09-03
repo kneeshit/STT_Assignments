@@ -1,0 +1,13 @@
+diff --git a/turbolinks-manual-test/navigated-away/index.html b/turbolinks-manual-test/navigated-away/index.html
+index 5f4d72e3..7cf740fc 100644
+--- a/turbolinks-manual-test/navigated-away/index.html
++++ b/turbolinks-manual-test/navigated-away/index.html
+@@ -1,7 +1,7 @@
+ <html>
+     <head>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha256-iM4Yzi/zLj/IshPWMC1IluRxTtRjMqjPGd97TZ9yYpU=" crossorigin="anonymous"></script>
+-        <script src="/dist/project-x.js" defer></script>
++        <script src="/dist/alpine.js" defer></script>
+     </head>
+     <body>
+         <h1>Second Page</h1>

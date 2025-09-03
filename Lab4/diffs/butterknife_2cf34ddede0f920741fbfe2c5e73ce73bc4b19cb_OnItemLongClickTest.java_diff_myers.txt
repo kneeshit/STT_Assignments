@@ -1,0 +1,14 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnItemLongClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnItemLongClickTest.java
+index 3c616a2..d732bde 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnItemLongClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnItemLongClickTest.java
+@@ -55,8 +55,7 @@ public class OnItemLongClickTest {
+         + "    }\n"
+         + "    @Override\n"
+         + "    public void unbind() {\n"
+-        + "      T target = this.target;\n"
+-        + "      if (target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
++        + "      if (this.target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
+         + "      ((AdapterView<?>) view1).setOnItemLongClickListener(null);\n"
+         + "      view1 = null;\n"
+         + "      this.target = null;\n"

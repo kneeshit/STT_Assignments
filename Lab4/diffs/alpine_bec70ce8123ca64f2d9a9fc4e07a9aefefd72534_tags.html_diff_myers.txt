@@ -1,0 +1,13 @@
+diff --git a/examples/tags.html b/examples/tags.html
+index cc608598..1814538f 100644
+--- a/examples/tags.html
++++ b/examples/tags.html
+@@ -79,7 +79,7 @@
+                   </span>
+                 </template>
+                 <input class="tags-input-text" placeholder="Add tag..."
+-                  @keydown.enter="if (newTag.trim() !== '') tags.push(newTag.trim()); newTag = ''"
++                  @keydown.enter.prevent="if (newTag.trim() !== '') tags.push(newTag.trim()); newTag = ''"
+                   x-model="newTag"
+                 >
+               </div>

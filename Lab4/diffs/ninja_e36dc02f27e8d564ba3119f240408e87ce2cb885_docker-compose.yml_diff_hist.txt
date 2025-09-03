@@ -1,0 +1,12 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index 00254af..b5c0445 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -8,7 +8,6 @@ services:
+     environment:
+       - TZ=Asia/Shanghai
+       - PROXIES=socks5://warp:10000
+-      - CONFIG=/serve.toml
+     command: run
+     ports:
+       - "8081:7999"

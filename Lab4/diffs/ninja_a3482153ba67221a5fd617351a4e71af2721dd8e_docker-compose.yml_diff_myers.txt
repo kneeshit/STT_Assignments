@@ -1,0 +1,13 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index b5c0445..2cee2d3 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -8,7 +8,7 @@ services:
+     environment:
+       - TZ=Asia/Shanghai
+       - PROXIES=socks5://warp:10000
+-    command: run
++    command: run --disable-direct
+     ports:
+       - "8081:7999"
+     depends_on:

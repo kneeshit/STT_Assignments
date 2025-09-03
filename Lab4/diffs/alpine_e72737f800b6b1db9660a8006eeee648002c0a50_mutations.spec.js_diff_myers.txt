@@ -1,0 +1,25 @@
+diff --git a/test/mutations.spec.js b/test/mutations.spec.js
+index 9fabc0ef..f3326b4e 100644
+--- a/test/mutations.spec.js
++++ b/test/mutations.spec.js
+@@ -48,11 +48,11 @@ test('mutationObserver doesn\'t reset data when reparenting nested components',
+ 
+     Alpine.start()
+ 
+-    expect(document.querySelector('button').innerText).toEqual(1)
++    expect(document.querySelector('button').textContent).toEqual('1')
+ 
+     document.querySelector('button').click()
+ 
+-    await wait(() => { expect(document.querySelector('button').innerText).toEqual(2) })
++    await wait(() => { expect(document.querySelector('button').textContent).toEqual('2') })
+ 
+     // Move the component and run the observer
+     document.getElementById('b').appendChild(document.querySelector('button'))
+@@ -66,5 +66,5 @@ test('mutationObserver doesn\'t reset data when reparenting nested components',
+         ])
+     })
+ 
+-    await wait(() => { expect(document.querySelector('button').innerText).toEqual(2) })
++    await wait(() => { expect(document.querySelector('button').textContent).toEqual('2') })
+ })

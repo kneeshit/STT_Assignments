@@ -1,0 +1,14 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/ResourceBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/ResourceBinding.java
+index 6b36f0e..42b63ac 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/ResourceBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/ResourceBinding.java
+@@ -6,7 +6,7 @@ interface ResourceBinding {
+   Id id();
+ 
+   /** True if the code for this binding requires a 'res' variable for {@code Resources} access. */
+-  boolean requiresResources();
++  boolean requiresResources(int sdk);
+ 
+-  CodeBlock render();
++  CodeBlock render(int sdk);
+ }

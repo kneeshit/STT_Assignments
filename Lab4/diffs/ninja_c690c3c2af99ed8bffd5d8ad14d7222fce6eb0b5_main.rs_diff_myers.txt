@@ -1,0 +1,26 @@
+diff --git a/src/main.rs b/src/main.rs
+index 0a4b1e5..e7fba14 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -12,8 +12,10 @@ pub mod ui;
+ pub mod util;
+ 
+ fn main() -> anyhow::Result<()> {
++
+     let opt = args::Opt::parse();
+     std::env::set_var("RUST_LOG", opt.level);
++    env_logger::init_from_env(env_logger::Env::default());
+     match opt.command {
+         Some(command) => match command {
+             SubCommands::Account => {
+@@ -56,10 +58,6 @@ async fn main_ui() -> anyhow::Result<()> {
+     )));
+     let app_ui = Arc::clone(&app);
+ 
+-    // Configure log
+-    tui_logger::init_logger(log::LevelFilter::Debug)?;
+-    tui_logger::set_default_level(log::LevelFilter::Debug);
+-
+     // Handle IO in a specifc thread
+     tokio::spawn(async move {
+         let mut handler = ui::io::handler::IoAsyncHandler::new(app);

@@ -1,0 +1,22 @@
+diff --git a/examples/log.rs b/examples/log.rs
+deleted file mode 100644
+index 01675b0..0000000
+--- a/examples/log.rs
++++ /dev/null
+@@ -1,16 +0,0 @@
+-use std::io::Write;
+-
+-fn main() {
+-    env_logger::builder()
+-        .format(|buf, record| {
+-            writeln!(
+-                buf,
+-                "{} {}: {}",
+-                record.level(),
+-                chrono::Local::now().format("%Y-%m-%d %H:%M:%S"),
+-                record.args()
+-            )
+-        })
+-        .init();
+-    openai::info!("Hello, {}! You are {} years old.", 1, 2);
+-}

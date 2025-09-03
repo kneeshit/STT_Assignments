@@ -1,0 +1,40 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+index 780a4c1..a7d6988 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+@@ -76,7 +76,7 @@ public class OnItemSelectedTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }
+@@ -147,7 +147,7 @@ public class OnItemSelectedTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }
+@@ -221,7 +221,7 @@ public class OnItemSelectedTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }
+@@ -323,7 +323,7 @@ public class OnItemSelectedTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

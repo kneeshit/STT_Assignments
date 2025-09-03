@@ -1,0 +1,40 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+index 2a67358..f150bd1 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+@@ -42,8 +42,6 @@ public class OnItemSelectedTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -87,8 +85,6 @@ public class OnItemSelectedTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -135,8 +131,6 @@ public class OnItemSelectedTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -199,8 +193,6 @@ public class OnItemSelectedTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

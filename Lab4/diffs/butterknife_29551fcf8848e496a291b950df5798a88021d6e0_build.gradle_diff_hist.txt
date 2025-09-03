@@ -1,0 +1,15 @@
+diff --git a/butterknife-integration-test/build.gradle b/butterknife-integration-test/build.gradle
+index d11d67f..c2c707d 100644
+--- a/butterknife-integration-test/build.gradle
++++ b/butterknife-integration-test/build.gradle
+@@ -28,8 +28,9 @@ android {
+   }
+ 
+   buildTypes {
+-    debug {
++    release {
+       minifyEnabled true
++      proguardFile getDefaultProguardFile('proguard-android.txt')
+     }
+   }
+ }

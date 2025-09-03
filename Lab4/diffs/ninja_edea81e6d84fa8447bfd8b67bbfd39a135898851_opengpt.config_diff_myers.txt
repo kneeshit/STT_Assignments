@@ -1,0 +1,13 @@
+diff --git a/openwrt/opengpt/files/opengpt.config b/openwrt/opengpt/files/opengpt.config
+index 7d4b966..ad01c89 100644
+--- a/openwrt/opengpt/files/opengpt.config
++++ b/openwrt/opengpt/files/opengpt.config
+@@ -5,6 +5,8 @@ config opengpt
+     option port '7999'
+     option workers '1'
+     option proxy ''
++    option timeout '600'
++    option connect_timeout '60'
+     option tcp_keepalive '5'
+     option tls_cert ''
+     option tls_key ''

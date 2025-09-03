@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+index 05b9a59..d51fb1b 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+@@ -262,7 +262,7 @@ final class BindingClass {
+ 
+     String fieldName = "target";
+     if (!bindings.isBoundToRoot()) {
+-      fieldName = "view" + bindings.getId();
++      fieldName = "view" + bindings.getId().value;
+       result.addField(VIEW, fieldName, PRIVATE);
+     }
+ 
+@@ -560,7 +560,7 @@ final class BindingClass {
+     String fieldName = "target";
+     String bindName = "target";
+     if (!bindings.isBoundToRoot()) {
+-      fieldName = "view" + bindings.getId();
++      fieldName = "view" + bindings.getId().value;
+       bindName = "view";
+ 
+       if (isGeneratingUnbinder()) {

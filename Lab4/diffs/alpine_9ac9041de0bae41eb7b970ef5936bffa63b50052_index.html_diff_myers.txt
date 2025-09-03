@@ -1,0 +1,13 @@
+diff --git a/index.html b/index.html
+index 23e8e8a6..ab8afccc 100644
+--- a/index.html
++++ b/index.html
+@@ -5,7 +5,7 @@
+             [x-cloak] { display: none; }
+         </style>
+ 
+-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.1.1/dist/alpine.min.js" defer></script>
++        <script src="/dist/alpine.umd.js" defer></script>
+     </head>
+     <body>
+         <table>

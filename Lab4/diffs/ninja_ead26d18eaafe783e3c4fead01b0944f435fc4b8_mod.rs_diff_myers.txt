@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index b406751..d57e65f 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -84,6 +84,8 @@ pub struct Launcher {
+     arkose_endpoint: Option<String>,
+     /// get arkose-token endpoint
+     arkose_token_endpoint: Option<String>,
++    /// yescaptcha client key
++    yescaptcha_client_key: Option<String>,
+     /// Enable url signature (signature secret key)
+     #[cfg(feature = "sign")]
+     sign_secret_key: Option<String>,

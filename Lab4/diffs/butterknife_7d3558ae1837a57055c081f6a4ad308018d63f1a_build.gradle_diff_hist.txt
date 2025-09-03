@@ -1,0 +1,16 @@
+diff --git a/butterknife-reflect/build.gradle b/butterknife-reflect/build.gradle
+index 917c9d4..ccf464e 100644
+--- a/butterknife-reflect/build.gradle
++++ b/butterknife-reflect/build.gradle
+@@ -9,6 +9,11 @@ android {
+     consumerProguardFiles 'proguard-rules.txt'
+   }
+ 
++  compileOptions {
++    sourceCompatibility JavaVersion.VERSION_1_8
++    targetCompatibility JavaVersion.VERSION_1_8
++  }
++
+   lintOptions {
+     textReport true
+     textOutput 'stdout'

@@ -1,0 +1,24 @@
+diff --git a/src/openai/mod.rs b/src/openai/mod.rs
+index 0e4a05d..88b195b 100644
+--- a/src/openai/mod.rs
++++ b/src/openai/mod.rs
+@@ -1 +1,19 @@
+ pub mod auth;
++
++use serde::{Deserialize, Serialize};
++
++#[derive(Serialize, Deserialize, Debug)]
++pub struct OpenAIUserInfo {
++    nickname: String,
++    name: String,
++    picture: String,
++    updated_at: String,
++    email: String,
++    email_verified: bool,
++    iss: String,
++    aud: String,
++    iat: i64,
++    exp: i64,
++    sub: String,
++    auth_time: i64,
++}

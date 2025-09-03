@@ -1,0 +1,24 @@
+diff --git a/butterknife-integration-test/src/main/java/com/example/butterknife/unbinder/C.java b/butterknife-integration-test/src/main/java/com/example/butterknife/unbinder/C.java
+new file mode 100644
+index 0000000..ee69cb0
+--- /dev/null
++++ b/butterknife-integration-test/src/main/java/com/example/butterknife/unbinder/C.java
+@@ -0,0 +1,18 @@
++package com.example.butterknife.unbinder;
++
++import android.support.annotation.ColorInt;
++import android.view.View;
++import butterknife.BindColor;
++import butterknife.BindView;
++import butterknife.ButterKnife;
++
++public class C extends B {
++
++  @BindColor(android.R.color.transparent) @ColorInt int transparentColor;
++  @BindView(android.R.id.button1) View button1;
++
++  public C(View view) {
++    super(view);
++    ButterKnife.bind(this, view);
++  }
++}

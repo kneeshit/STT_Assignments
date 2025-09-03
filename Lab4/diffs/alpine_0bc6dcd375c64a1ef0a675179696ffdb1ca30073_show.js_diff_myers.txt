@@ -1,0 +1,13 @@
+diff --git a/src/directives/show.js b/src/directives/show.js
+index ecc01406..df2ae3cb 100644
+--- a/src/directives/show.js
++++ b/src/directives/show.js
+@@ -43,7 +43,7 @@ export function handleShowDirective(component, el, value, modifiers, initialUpda
+     // we encounter is NOT a child of another x-show element we
+     // can execute the previous x-show stack (if one exists).
+     if (component.showDirectiveLastElement && ! component.showDirectiveLastElement.contains(el)) {
+-        component.executeAndClearRemainingShowDirectiveCallbacks()
++        component.executeAndClearRemainingShowDirectiveStack()
+     }
+ 
+     // We'll push the handler onto a stack to be handled later.

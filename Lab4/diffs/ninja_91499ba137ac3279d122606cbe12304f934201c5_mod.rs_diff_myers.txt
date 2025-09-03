@@ -1,0 +1,39 @@
+diff --git a/openai/src/serve/router/mod.rs b/openai/src/serve/router/mod.rs
+index 7cc1be7..c410c58 100644
+--- a/openai/src/serve/router/mod.rs
++++ b/openai/src/serve/router/mod.rs
+@@ -9,8 +9,9 @@ use super::{
+     Launcher,
+ };
+ 
+-pub(super) mod arkose;
+-pub(super) mod ui;
++mod arkose;
++pub(super) mod chat_to_api;
++mod ui;
+ 
+ include!(concat!(env!("OUT_DIR"), "/generated.rs"));
+ 
+@@ -18,12 +19,21 @@ static INIT: Once = Once::new();
+ static mut STATIC_FILES: Option<HashMap<&'static str, static_files::Resource>> = None;
+ 
+ pub(super) fn config(router: Router, args: &Launcher) -> Router {
+-    INIT.call_once(|| unsafe { STATIC_FILES = Some(generate()) });
++    init_static_files();
+     let router = ui::config(router, args);
+     let router = arkose::config(router, args);
+     router
+ }
+ 
++fn init_static_files() {
++    INIT.call_once(|| {
++        let generated_files = generate();
++        unsafe {
++            STATIC_FILES = Some(generated_files);
++        }
++    });
++}
++
+ async fn get_static_resource(path: Path<String>) -> Result<Response<Body>, ResponseError> {
+     let path = path.0;
+     let mut x = unsafe { STATIC_FILES.as_ref().unwrap().iter() };

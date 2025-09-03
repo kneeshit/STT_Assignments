@@ -1,0 +1,8 @@
+diff --git a/openai/ui/static/_next/static/chunks/pages/_error-97106a6822dc2ecb.js b/openai/ui/static/_next/static/chunks/pages/_error-97106a6822dc2ecb.js
+new file mode 100644
+index 0000000..f451762
+--- /dev/null
++++ b/openai/ui/static/_next/static/chunks/pages/_error-97106a6822dc2ecb.js
+@@ -0,0 +1 @@
++(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[4820],{45213:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/_error",function(){return u(46548)}])}},function(n){n.O(0,[9774,2888,179],function(){return n(n.s=45213)}),_N_E=n.O()}]);
+\ No newline at end of file

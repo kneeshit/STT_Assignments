@@ -1,0 +1,11 @@
+diff --git a/test/model.spec.js b/test/model.spec.js
+index b382e4da..7c3a797d 100644
+--- a/test/model.spec.js
++++ b/test/model.spec.js
+@@ -1,5 +1,5 @@
+ import projectX from 'project-x'
+-import { wait, fireEvent } from 'dom-testing-library'
++import { wait, fireEvent } from '@testing-library/dom'
+ 
+ global.MutationObserver = class {
+     observe() {}

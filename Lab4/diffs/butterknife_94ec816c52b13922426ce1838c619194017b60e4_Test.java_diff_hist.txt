@@ -1,0 +1,17 @@
+diff --git a/butterknife/src/it/field-visibility/src/main/java/test/Test.java b/butterknife/src/it/field-visibility/src/main/java/test/Test.java
+new file mode 100644
+index 0000000..7e58648
+--- /dev/null
++++ b/butterknife/src/it/field-visibility/src/main/java/test/Test.java
+@@ -0,0 +1,11 @@
++package test;
++
++import android.app.Activity;
++import android.view.View;
++import butterknife.InjectView;
++
++public class Test extends Activity {
++  @InjectView(1) public View thing1;
++  @InjectView(2) protected View thing2;
++  @InjectView(3) View thing3;
++}

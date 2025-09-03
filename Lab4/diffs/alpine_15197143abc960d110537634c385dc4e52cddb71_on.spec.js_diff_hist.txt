@@ -1,0 +1,13 @@
+diff --git a/test/on.spec.js b/test/on.spec.js
+index ecd22b63..d872beab 100644
+--- a/test/on.spec.js
++++ b/test/on.spec.js
+@@ -424,8 +424,6 @@ test('autocomplete event does not trigger keydown with modifier callback', async
+ 
+     const autocompleteEvent = new Event('keydown')
+ 
+-    console.log(autocompleteEvent)
+-
+     fireEvent.keyDown(document.querySelector('input'), { key: 'Enter' })
+ 
+     await wait(() => { expect(document.querySelector('span').innerText).toEqual(0) })

@@ -1,0 +1,14 @@
+diff --git a/openai/src/serve/template.rs b/openai/src/serve/template.rs
+index a571896..677b647 100644
+--- a/openai/src/serve/template.rs
++++ b/openai/src/serve/template.rs
+@@ -49,7 +49,8 @@ pub fn config(cfg: &mut web::ServiceConfig) {
+         ("chat.html", include_str!("../../templates/chat.html")),
+         ("detail.html", include_str!("../../templates/detail.html")),
+         ("share.html", include_str!("../../templates/share.html")),
+-    ]).unwrap();
++    ])
++    .unwrap();
+     cfg.app_data(web::Data::new(tera))
+         .app_data(web::Data::new(generate()))
+         .service(get_auth)

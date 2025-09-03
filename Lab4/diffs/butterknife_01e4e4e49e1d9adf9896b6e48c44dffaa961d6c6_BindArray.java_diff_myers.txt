@@ -1,0 +1,12 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindArray.java b/butterknife-annotations/src/main/java/butterknife/BindArray.java
+index 6f016b4..b590b69 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindArray.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindArray.java
+@@ -1,6 +1,6 @@
+ package butterknife;
+ 
+-import android.support.annotation.ArrayRes;
++import androidx.annotation.ArrayRes;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 

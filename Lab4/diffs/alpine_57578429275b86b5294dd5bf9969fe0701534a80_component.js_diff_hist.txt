@@ -1,0 +1,61 @@
+diff --git a/src/component.js b/src/component.js
+index 3ffb5cab..f6ba67f1 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -4,10 +4,18 @@ export default class Component {
+     constructor(el) {
+         this.el = el
+ 
++        // For $nextTick().
++        this.tickStack = []
++        this.collectingTickCallbacks = false
++
+         const rawData = saferEval(this.el.getAttribute('x-data'), {})
+ 
+         rawData.$refs =  this.getRefsProxy()
+ 
++        rawData.$nextTick =  (callback) => {
++            this.delayRunByATick(callback)
++        }
++
+         this.runXInit(this.el.getAttribute('x-init'), rawData)
+ 
+         this.data = this.wrapDataInObservable(rawData)
+@@ -17,6 +25,25 @@ export default class Component {
+         this.listenForNewElementsToInitialize()
+     }
+ 
++    delayRunByATick(callback) {
++        if (this.collectingTickCallbacks) {
++            this.tickStack.push(callback)
++        } else {
++            callback()
++        }
++    }
++
++    startTick() {
++        this.collectingTickCallbacks = true
++    }
++
++    clearAndEndTick() {
++        this.tickStack.forEach(callable => callable())
++        this.tickStack = []
++
++        this.collectingTickCallbacks = false
++    }
++
+     runXInit(initExpression, rawData) {
+         initExpression && saferEvalNoReturn(initExpression, rawData)
+     }
+@@ -183,8 +210,11 @@ export default class Component {
+             walkSkippingNestedComponents(rootEl, callback)
+ 
+             self.concernedData = []
++            self.clearAndEndTick()
+         }
+ 
++        this.startTick()
++
+         debounce(walkThenClearDependancyTracker, 5)(this.el, function (el) {
+             getXAttrs(el).forEach(({ type, value, expression }) => {
+                 if (! actionByDirectiveType[type]) return

@@ -1,0 +1,15 @@
+diff --git a/src/directives/for.js b/src/directives/for.js
+index 1402211f..703f66e3 100644
+--- a/src/directives/for.js
++++ b/src/directives/for.js
+@@ -65,8 +65,8 @@ function parseForExpression(expression) {
+     return res
+ }
+ 
+-function getIterationScopeVariables(iteratorNames, item, index, items, scopeVariables) {
+-    if (! scopeVariables) scopeVariables = {}
++function getIterationScopeVariables(iteratorNames, item, index, items, extraVars) {
++    let scopeVariables = extraVars ? {...extraVars} : {}
+     scopeVariables[iteratorNames.item] = item
+     if (iteratorNames.index) scopeVariables[iteratorNames.index] = index
+     if (iteratorNames.collection) scopeVariables[iteratorNames.collection] = items

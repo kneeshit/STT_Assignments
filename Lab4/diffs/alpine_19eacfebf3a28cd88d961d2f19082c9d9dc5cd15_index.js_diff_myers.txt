@@ -1,0 +1,17 @@
+diff --git a/src/index.js b/src/index.js
+index 6e09171e..eea0ceca 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -77,6 +77,12 @@ const Alpine = {
+         if (! el.__x) {
+             el.__x = new Component(el)
+         }
++    },
++
++    clone: function (component, newEl) {
++        if (! newEl.__x) {
++            newEl.__x = new Component(newEl, component.getUnobservedData())
++        }
+     }
+ }
+ 

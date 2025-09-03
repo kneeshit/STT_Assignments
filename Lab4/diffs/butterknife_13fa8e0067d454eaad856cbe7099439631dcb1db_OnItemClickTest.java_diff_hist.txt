@@ -1,0 +1,31 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnItemClickTest.java b/butterknife/src/test/java/butterknife/internal/OnItemClickTest.java
+index 39c788a..44709e2 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnItemClickTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnItemClickTest.java
+@@ -31,7 +31,7 @@ public class OnItemClickTest {
+             "    if (view == null) {",
+             "      throw new IllegalStateException(\"Required view with id '1' for method 'doStuff' was not found. If this view is optional add '@Optional' annotation.\");",
+             "    }",
+-            "    ((android.widget.AdapterView) view).setOnItemClickListener(",
++            "    ((android.widget.AdapterView<?>) view).setOnItemClickListener(",
+             "      new android.widget.AdapterView.OnItemClickListener() {",
+             "        @Override public void onItemClick(",
+             "            android.widget.AdapterView<?> p0, android.view.View p1, int p2, long p3) {",
+@@ -79,7 +79,7 @@ public class OnItemClickTest {
+             "    if (view == null) {",
+             "      throw new IllegalStateException(\"Required view with id '1' for method 'doStuff' was not found. If this view is optional add '@Optional' annotation.\");",
+             "    }",
+-            "    ((android.widget.AdapterView) view).setOnItemClickListener(",
++            "    ((android.widget.AdapterView<?>) view).setOnItemClickListener(",
+             "      new android.widget.AdapterView.OnItemClickListener() {",
+             "        @Override public void onItemClick(",
+             "            android.widget.AdapterView<?> p0, android.view.View p1, int p2, long p3) {",
+@@ -125,7 +125,7 @@ public class OnItemClickTest {
+             "    if (view == null) {",
+             "      throw new IllegalStateException(\"Required view with id '1' for method 'doStuff' was not found. If this view is optional add '@Optional' annotation.\");",
+             "    }",
+-            "    ((android.widget.AdapterView) view).setOnItemClickListener(",
++            "    ((android.widget.AdapterView<?>) view).setOnItemClickListener(",
+             "      new android.widget.AdapterView.OnItemClickListener() {",
+             "        @Override public void onItemClick(",
+             "            android.widget.AdapterView<?> p0, android.view.View p1, int p2, long p3) {",

@@ -1,0 +1,4 @@
+diff --git a/website/static/ide-idea1.png b/website/static/ide-idea1.png
+new file mode 100644
+index 0000000..2f61428
+Binary files /dev/null and b/website/static/ide-idea1.png differ

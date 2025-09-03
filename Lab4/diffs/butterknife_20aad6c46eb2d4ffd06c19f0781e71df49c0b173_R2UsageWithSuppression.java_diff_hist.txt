@@ -1,0 +1,20 @@
+diff --git a/butterknife-lint/src/test/java/sample/r2/R2UsageWithSuppression.java b/butterknife-lint/src/test/java/sample/r2/R2UsageWithSuppression.java
+new file mode 100644
+index 0000000..a808835
+--- /dev/null
++++ b/butterknife-lint/src/test/java/sample/r2/R2UsageWithSuppression.java
+@@ -0,0 +1,14 @@
++package sample.r2;
++
++public class R2UsageWithSuppression {
++
++  @SuppressWarnings("InvalidR2Usage")
++  int bool = sample.r2.R2.bool.res;
++
++  public void foo(int attr) {}
++
++  @SuppressWarnings("InvalidR2Usage")
++  public void bar() {
++    foo(R2.attr.res);
++  }
++}

@@ -1,0 +1,10 @@
+diff --git a/dist/mix-manifest.json b/dist/mix-manifest.json
+deleted file mode 100644
+index 25d7a285..00000000
+--- a/dist/mix-manifest.json
++++ /dev/null
+@@ -1,4 +0,0 @@
+-{
+-    "/alpine.min.js": "/alpine.min.js?id=6596bbe10c6e799d6058",
+-    "/alpine.js": "/alpine.js?id=7e232940b8cde263a3a7"
+-}

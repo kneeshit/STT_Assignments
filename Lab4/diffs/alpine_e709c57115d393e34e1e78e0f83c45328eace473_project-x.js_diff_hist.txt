@@ -1,0 +1,14 @@
+diff --git a/dist/project-x.js b/dist/project-x.js
+index ef6c5053..f32e0107 100644
+--- a/dist/project-x.js
++++ b/dist/project-x.js
+@@ -1090,7 +1090,8 @@ function () {
+           _this2.runListenerHandler(expression, e);
+         });
+       } else {
+-        el.addEventListener(event, function (e) {
++        var node = modifiers.includes('window') ? window : el;
++        node.addEventListener(event, function (e) {
+           if (modifiers.includes('prevent')) e.preventDefault();
+           if (modifiers.includes('stop')) e.stopPropagation();
+ 

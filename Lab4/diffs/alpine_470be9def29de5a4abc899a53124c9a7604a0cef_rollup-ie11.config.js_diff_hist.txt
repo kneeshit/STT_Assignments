@@ -1,0 +1,16 @@
+diff --git a/rollup-ie11.config.js b/rollup-ie11.config.js
+index 032e02c5..522d7c57 100644
+--- a/rollup-ie11.config.js
++++ b/rollup-ie11.config.js
+@@ -1,8 +1,8 @@
+ import babel from 'rollup-plugin-babel';
+ import filesize from 'rollup-plugin-filesize';
+-import { terser } from "rollup-plugin-terser";
+-import resolve from "rollup-plugin-node-resolve"
+-import commonjs from '@rollup/plugin-commonjs'
++import { terser } from 'rollup-plugin-terser';
++import resolve from 'rollup-plugin-node-resolve';
++import commonjs from '@rollup/plugin-commonjs';
+ import multi from '@rollup/plugin-multi-entry';
+ import replace from '@rollup/plugin-replace';
+ 

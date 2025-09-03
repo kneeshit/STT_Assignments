@@ -1,0 +1,12 @@
+diff --git a/openai/src/balancer.rs b/openai/src/balancer.rs
+index 3f877d8..0c3172f 100644
+--- a/openai/src/balancer.rs
++++ b/openai/src/balancer.rs
+@@ -26,7 +26,6 @@ impl<T: Clone> ClientLoadBalancer<T> {
+                 .impersonate(Impersonate::OkHttpAndroid13)
+                 .timeout(Duration::from_secs((args.timeout + 1) as u64))
+                 .connect_timeout(Duration::from_secs((args.connect_timeout + 1) as u64))
+-                .cookie_store(true)
+                 .proxy(proxy_url)
+                 .build();
+             auth_client

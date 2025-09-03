@@ -1,0 +1,25 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 31daf305..329554e2 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6557,9 +6557,18 @@
+     }, {
+       key: "executeAndClearNextTickStack",
+       value: function executeAndClearNextTickStack() {
+-        while (this.nextTickStack.length > 0) {
+-          this.nextTickStack.shift()();
++        var self = this;
++
++        var later = function later() {
++          this.nextTickTimeout = null;
++
++          while (self.nextTickStack.length > 0) {
++            self.nextTickStack.shift()();
+           }
++        };
++
++        clearTimeout(this.nextTickTimeout);
++        this.nextTickTimeout = setTimeout(later, 10);
+       }
+     }]);
+ 

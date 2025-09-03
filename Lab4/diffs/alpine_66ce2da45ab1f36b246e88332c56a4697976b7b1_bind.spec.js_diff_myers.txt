@@ -1,0 +1,14 @@
+diff --git a/test/bind.spec.js b/test/bind.spec.js
+index b0703d6d..938a0ad9 100644
+--- a/test/bind.spec.js
++++ b/test/bind.spec.js
+@@ -1,4 +1,8 @@
+-import projectX from 'projectX'
++import projectX from 'project-x'
++
++global.MutationObserver = class {
++    observe() {}
++}
+ 
+ test('attribute bindings are set on initialize', async () => {
+     document.body.innerHTML = `

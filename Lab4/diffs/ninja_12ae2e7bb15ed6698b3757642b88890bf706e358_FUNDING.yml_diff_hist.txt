@@ -1,0 +1,7 @@
+diff --git a/reqwest-impersonate/.github/FUNDING.yml b/reqwest-impersonate/.github/FUNDING.yml
+new file mode 100644
+index 0000000..a6b3376
+--- /dev/null
++++ b/reqwest-impersonate/.github/FUNDING.yml
+@@ -0,0 +1 @@
++github: [seanmonstar]

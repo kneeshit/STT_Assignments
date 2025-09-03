@@ -1,0 +1,34 @@
+diff --git a/butterknife-runtime/src/test/java/butterknife/TestStubs.java b/butterknife-runtime/src/test/java/butterknife/TestStubs.java
+index 8ff5853..df56295 100644
+--- a/butterknife-runtime/src/test/java/butterknife/TestStubs.java
++++ b/butterknife-runtime/src/test/java/butterknife/TestStubs.java
+@@ -4,10 +4,6 @@ import com.google.testing.compile.JavaFileObjects;
+ import javax.tools.JavaFileObject;
+ 
+ final class TestStubs {
+-  /**
+-   * The presence of this type (and {@code androidx.annotation.NonNull}, which should be on the
+-   * classpath already) trigger AndroidX emission.
+-   */
+   static final JavaFileObject ANDROIDX_CONTEXT_COMPAT =
+       JavaFileObjects.forSourceString("androidx.core.content.ContextCompat", ""
+           + "package androidx.core.content;\n"
+@@ -26,18 +22,4 @@ final class TestStubs {
+           + "    void onPageScrollStateChanged(int state);\n"
+           + "  }\n"
+           + "}\n");
+-
+-  static final JavaFileObject SUPPORT_VIEW_PAGER =
+-      JavaFileObjects.forSourceString("androidx.viewpager.widget.ViewPager", ""
+-          + "package android.support.v4.view;\n"
+-          + "\n"
+-          + "public interface ViewPager {\n"
+-          + "  void addOnPageChangeListener(OnPageChangeListener listener);\n"
+-          + "  void removeOnPageChangeListener(OnPageChangeListener listener);\n"
+-          + "  interface OnPageChangeListener {\n"
+-          + "    void onPageScrolled(int position, float positionOffset, int positionOffsetPixels);\n"
+-          + "    void onPageSelected(int position);\n"
+-          + "    void onPageScrollStateChanged(int state);\n"
+-          + "  }\n"
+-          + "}\n");
+ }

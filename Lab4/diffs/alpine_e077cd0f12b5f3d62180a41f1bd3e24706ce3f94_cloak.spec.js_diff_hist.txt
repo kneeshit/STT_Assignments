@@ -1,0 +1,16 @@
+diff --git a/test/cloak.spec.js b/test/cloak.spec.js
+index bb853432..3f9033ab 100644
+--- a/test/cloak.spec.js
++++ b/test/cloak.spec.js
+@@ -1,6 +1,10 @@
+-import projectX from 'projectX'
++import projectX from 'project-x'
+ import { wait } from 'dom-testing-library'
+ 
++global.MutationObserver = class {
++    observe() {}
++}
++
+ test('x-cloak is removed', async () => {
+     document.body.innerHTML = `
+         <div x-data="{ hidden: true }">

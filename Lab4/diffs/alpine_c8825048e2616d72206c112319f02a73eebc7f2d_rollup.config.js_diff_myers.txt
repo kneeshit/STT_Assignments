@@ -1,0 +1,24 @@
+diff --git a/rollup.config.js b/rollup.config.js
+index dfba9b25..4436aafc 100644
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,5 +1,6 @@
+ import babel from 'rollup-plugin-babel';
+ import filesize from 'rollup-plugin-filesize';
++import { terser } from "rollup-plugin-terser";
+ import resolve from "rollup-plugin-node-resolve"
+ import stripCode from 'rollup-plugin-strip-code';
+ import replace from '@rollup/plugin-replace';
+@@ -17,6 +18,12 @@ export default {
+         replace({ "process.env.NODE_ENV": "'production'" }),
+         resolve(),
+         filesize(),
++        terser({
++            mangle: false,
++            compress: {
++                drop_debugger: false,
++            }
++        }),
+         babel({
+             exclude: 'node_modules/**'
+         }),

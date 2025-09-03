@@ -1,0 +1,12 @@
+diff --git a/butterknife-gradle-plugin/build.gradle b/butterknife-gradle-plugin/build.gradle
+index aaff490..4b42d28 100644
+--- a/butterknife-gradle-plugin/build.gradle
++++ b/butterknife-gradle-plugin/build.gradle
+@@ -8,7 +8,6 @@ dependencies {
+   compileOnly gradleApi()
+ 
+   implementation deps.android.gradlePlugin
+-  implementation deps.javaparser
+   implementation deps.javapoet
+   implementation deps.kotlin.stdLibJdk8
+ 

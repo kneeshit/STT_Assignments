@@ -1,0 +1,11 @@
+diff --git a/gohttp/build.sh b/gohttp/build.sh
+index 968b625..10c6a1b 100755
+--- a/gohttp/build.sh
++++ b/gohttp/build.sh
+@@ -5,5 +5,5 @@ set -e
+ echo "Start building the  platform static library"
+ 
+ cd ffi
+-go build -ldflags "-s -w" -buildmode=c-archive -o libgohttp.a
++GOOS=$GOOS GOARCH=$GOARCH CGO_ENABLED=1 go build -ldflags "-s -w" -buildmode=c-archive -o libgohttp.a
+ cd -

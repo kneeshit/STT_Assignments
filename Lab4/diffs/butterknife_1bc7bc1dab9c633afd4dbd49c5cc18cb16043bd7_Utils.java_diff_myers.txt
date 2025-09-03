@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/Utils.java b/butterknife/src/main/java/butterknife/internal/Utils.java
+index cd158d5..21d987b 100644
+--- a/butterknife/src/main/java/butterknife/internal/Utils.java
++++ b/butterknife/src/main/java/butterknife/internal/Utils.java
+@@ -22,6 +22,8 @@ public final class Utils {
+       return true;
+     } catch (ClassNotFoundException ignored) {
+       return false;
++    } catch (VerifyError ignored) {
++      return false;
+     }
+   }
+ 

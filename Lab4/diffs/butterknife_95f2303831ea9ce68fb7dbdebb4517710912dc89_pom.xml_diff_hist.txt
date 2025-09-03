@@ -1,0 +1,13 @@
+diff --git a/pom.xml b/pom.xml
+index 17c0253..cb14c59 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -27,7 +27,7 @@
+   <properties>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ 
+-    <java.version>1.6</java.version>
++    <java.version>1.7</java.version>
+     <fest.version>2.0M10</fest.version>
+     <android.version>4.1.1.4</android.version>
+     <android.platform>16</android.platform>

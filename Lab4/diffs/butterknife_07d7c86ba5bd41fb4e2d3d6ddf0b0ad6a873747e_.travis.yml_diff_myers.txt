@@ -1,0 +1,19 @@
+diff --git a/.travis.yml b/.travis.yml
+index 9b1079e..c7b955b 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -46,7 +46,12 @@ notifications:
+ 
+ sudo: false
+ 
++before_cache:
++  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
++  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
++
+ cache:
+   directories:
+-    - $HOME/.gradle
+-
++    - $HOME/.gradle/caches/
++    - $HOME/.gradle/wrapper/
++    - $HOME/.android/build-cache

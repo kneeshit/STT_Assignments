@@ -1,0 +1,55 @@
+diff --git a/src/component.js b/src/component.js
+index 587e28c9..e0aa07b5 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -5,7 +5,7 @@ import { handleShowDirective } from './directives/show'
+ import { handleIfDirective } from './directives/if'
+ import { registerModelListener } from './directives/model'
+ import { registerListener } from './directives/on'
+-import ObservableMembrane from 'observable-membrane'
++import { unwrap, wrap } from './observable'
+ 
+ export default class Component {
+     constructor(el, seedDataForCloning = null) {
+@@ -76,16 +76,7 @@ export default class Component {
+     }
+ 
+     getUnobservedData() {
+-        let unwrappedData = this.membrane.unwrapProxy(this.$data)
+-        let copy = {}
+-
+-        Object.keys(unwrappedData).forEach(key => {
+-            if (['$el', '$refs', '$nextTick', '$watch'].includes(key)) return
+-
+-            copy[key] = unwrappedData[key]
+-        })
+-
+-        return copy
++        return unwrap(this.membrane, this.$data)
+     }
+ 
+     wrapDataInObservable(data) {
+@@ -95,8 +86,7 @@ export default class Component {
+             self.updateElements(self.$el)
+         }, 0)
+ 
+-        let membrane = new ObservableMembrane({
+-            valueMutated(target, key) {
++        return wrap(data, (target, key) => {
+             if (self.watchers[key]) {
+                 // If there's a watcher for this specific key, run it.
+                 self.watchers[key].forEach(callback => callback(target[key]))
+@@ -128,13 +118,7 @@ export default class Component {
+             if (self.pauseReactivity) return
+ 
+             updateDom()
+-            },
+         })
+-
+-        return {
+-            data: membrane.getProxy(data),
+-            membrane,
+-        }
+     }
+ 
+     walkAndSkipNestedComponents(el, callback, initializeComponentCallback = () => {}) {

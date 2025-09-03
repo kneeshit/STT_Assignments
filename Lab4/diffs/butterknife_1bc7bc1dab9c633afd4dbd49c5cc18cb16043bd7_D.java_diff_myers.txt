@@ -1,0 +1,23 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/unbinder/D.java b/butterknife-sample/src/main/java/com/example/butterknife/unbinder/D.java
+new file mode 100644
+index 0000000..5ab8b2c
+--- /dev/null
++++ b/butterknife-sample/src/main/java/com/example/butterknife/unbinder/D.java
+@@ -0,0 +1,17 @@
++package com.example.butterknife.unbinder;
++
++import android.support.annotation.ColorInt;
++import android.view.View;
++
++import butterknife.BindColor;
++import butterknife.ButterKnife;
++
++public class D extends C {
++
++  @BindColor(android.R.color.darker_gray) @ColorInt int grayColor;
++
++  public D(View view) {
++    super(view);
++    ButterKnife.bind(this, view);
++  }
++}

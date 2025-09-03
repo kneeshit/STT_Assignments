@@ -1,0 +1,17 @@
+diff --git a/src/env.rs b/src/env.rs
+index 0f83e67..7209c94 100644
+--- a/src/env.rs
++++ b/src/env.rs
+@@ -1,8 +1,12 @@
+ use crate::args::ServeArgs;
+ 
++#[cfg(target_family = "unix")]
+ pub(crate) const PID_PATH: &str = "/var/run/opengpt.pid";
++#[cfg(target_family = "unix")]
+ pub(crate) const DEFAULT_STDOUT_PATH: &str = "/var/run/opengpt.out";
++#[cfg(target_family = "unix")]
+ pub(crate) const DEFAULT_STDERR_PATH: &str = "/var/run/opengpt.err";
++#[cfg(target_family = "unix")]
+ pub(crate) const DEFAULT_WORK_DIR: &str = "/";
+ 
+ #[cfg(target_family = "unix")]

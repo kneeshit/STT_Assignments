@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnCheckedChanged.java b/butterknife/src/main/java/butterknife/OnCheckedChanged.java
+index e9ed8ec..198a5c8 100644
+--- a/butterknife/src/main/java/butterknife/OnCheckedChanged.java
++++ b/butterknife/src/main/java/butterknife/OnCheckedChanged.java
+@@ -15,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * each ID specified.
+  * <pre><code>
+  * {@literal @}OnCheckedChanged(R.id.example) void onChecked(boolean checked) {
+- *   Toast.makeText(this, checked ? "Checked!" : "Unchecked!", LENGTH_SHORT).show();
++ *   Toast.makeText(this, checked ? "Checked!" : "Unchecked!", Toast.LENGTH_SHORT).show();
+  * }
+  * </code></pre>
+  * Any number of parameters from

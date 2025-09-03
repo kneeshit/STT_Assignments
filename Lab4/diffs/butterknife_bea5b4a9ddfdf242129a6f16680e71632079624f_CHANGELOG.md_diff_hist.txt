@@ -1,0 +1,18 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index fec4599..6c60e74 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,6 +1,13 @@
+ Change Log
+ ==========
+ 
++Version 5.0.1 *(In Development)*
++--------------------------------
++
++ * New: Support `Dialog` as injection source.
++ * Fix: Unwrap `InvocationTargetException` causes for more helpful exceptions.
++
++
+ Version 5.0.0 *(2014-04-21)*
+ ----------------------------
+ 

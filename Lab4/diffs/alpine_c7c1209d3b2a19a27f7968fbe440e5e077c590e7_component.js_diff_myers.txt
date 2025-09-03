@@ -1,0 +1,70 @@
+diff --git a/src/component.js b/src/component.js
+index f9b3eac6..a4738a0e 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -9,6 +9,8 @@ export default class Component {
+         this.data = this.wrapDataInObservable(rawData)
+ 
+         this.initialize()
++
++        this.listenForNewElementsToInitialize()
+     }
+ 
+     wrapDataInObservable(data) {
+@@ -44,6 +46,11 @@ export default class Component {
+ 
+     initialize() {
+         walkSkippingNestedComponents(this.el, el => {
++            this.initializeElement(el)
++        })
++    }
++
++    initializeElement(el) {
+         getXAttrs(el).forEach(({ type, value, modifiers, expression }) => {
+             switch (type) {
+                 case 'on':
+@@ -92,8 +99,35 @@ export default class Component {
+                     break;
+             }
+         })
++    }
++
++    listenForNewElementsToInitialize() {
++        var targetNode = this.el
++
++        var observerOptions = {
++            childList: true,
++            attributes: false,
++            subtree: true,
++        }
++
++        var observer = new MutationObserver((mutations) => {
++            for (var i=0; i < mutations.length; i++){
++                if (mutations[i].addedNodes.length > 0) {
++                    mutations[i].addedNodes.forEach(node => {
++                        if (node.nodeType !== 1) return
++
++                        if (node.matches('[x-data]')) return
++
++                        if (getXAttrs(node).length > 0) {
++                            this.initializeElement(node)
++                        }
+                     })
+                 }
++              }
++        });
++
++        observer.observe(targetNode, observerOptions);
++    }
+ 
+     refresh() {
+         var self = this
+@@ -334,7 +368,7 @@ export default class Component {
+     getRefsProxy() {
+         var self = this
+ 
+-        // One of the goals of this project is to not hold elements in memory, but rather re-evaluate
++        // One of the goals of this  is to not hold elements in memory, but rather re-evaluate
+         // the DOM when the system needs something from it. This way, the framework is flexible and
+         // friendly to outside DOM changes from libraries like Vue/Livewire.
+         // For this reason, I'm using an "on-demand" proxy to fake a "$refs" object.

@@ -1,0 +1,20 @@
+diff --git a/reqwest-impersonate/examples/wasm_github_fetch/package.json b/reqwest-impersonate/examples/wasm_github_fetch/package.json
+new file mode 100644
+index 0000000..2a84b1f
+--- /dev/null
++++ b/reqwest-impersonate/examples/wasm_github_fetch/package.json
+@@ -0,0 +1,14 @@
++{
++    "scripts": {
++        "build": "webpack",
++        "serve": "webpack-dev-server"
++    },
++    "devDependencies": {
++        "@wasm-tool/wasm-pack-plugin": "1.0.1",
++        "text-encoding": "^0.7.0",
++        "html-webpack-plugin": "^3.2.0",
++        "webpack": "^4.29.4",
++        "webpack-cli": "^3.1.1",
++        "webpack-dev-server": "^3.1.0"
++    }
++}

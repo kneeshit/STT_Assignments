@@ -1,0 +1,24 @@
+diff --git a/src/utils.js b/src/utils.js
+index e5700899..da196e78 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -116,7 +116,18 @@ export function getXAttrs(el, component, type) {
+ 
+     if (type) return directives.filter(i => i.type === type)
+ 
+-    return directives;
++    return sortDirectives(directives)
++}
++
++function sortDirectives(directives) {
++    let directiveOrder = ['bind', 'model', 'show', 'catch-all']
++
++    return directives.sort((a, b) => {
++        let typeA = directiveOrder.indexOf(a.type) === -1 ? 'catch-all' : a.type
++        let typeB = directiveOrder.indexOf(b.type) === -1 ? 'catch-all' : b.type
++
++        return directiveOrder.indexOf(typeA) - directiveOrder.indexOf(typeB)
++    })
+ }
+ 
+ function parseHtmlAttribute({ name, value }) {

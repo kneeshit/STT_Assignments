@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/BindDrawable.java b/butterknife/src/main/java/butterknife/BindDrawable.java
+index 1aad791..2fa4874 100644
+--- a/butterknife/src/main/java/butterknife/BindDrawable.java
++++ b/butterknife/src/main/java/butterknife/BindDrawable.java
+@@ -9,7 +9,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ /**
+  * Bind a field to the specified drawable resource ID.
+  * <pre><code>
+- * {@literal @}ResourceDrawable(R.drawable.placeholder) Drawable placeholder;
++ * {@literal @}BindDrawable(R.drawable.placeholder) Drawable placeholder;
+  * </code></pre>
+  */
+ @Retention(CLASS) @Target(FIELD)

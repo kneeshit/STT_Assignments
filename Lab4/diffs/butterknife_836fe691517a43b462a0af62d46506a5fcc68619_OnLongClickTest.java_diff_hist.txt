@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+index 6ebe8df..2f3c174 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+@@ -40,8 +40,6 @@ public class OnLongClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

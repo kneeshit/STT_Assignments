@@ -1,0 +1,13 @@
+diff --git a/openwrt/luci-app-opengpt/luasrc/model/cbi/opengpt/client.lua b/openwrt/luci-app-opengpt/luasrc/model/cbi/opengpt/client.lua
+index 37ab43c..f966a72 100644
+--- a/openwrt/luci-app-opengpt/luasrc/model/cbi/opengpt/client.lua
++++ b/openwrt/luci-app-opengpt/luasrc/model/cbi/opengpt/client.lua
+@@ -42,7 +42,7 @@ o = s:option(Value, "arkose_har_file", translate("HAR file path"), translate("Ab
+ 
+ o = s:option(Value, "arkose_har_upload_key", translate("HAR Auth Key"), translate("HAR file upload authenticate key"))
+ 
+-o = s:option(Value, "arkose_solver", translate("Solver"), translate("About ArkoseLabs solver platform"))
++o = s:option(ListValue, "arkose_solver", translate("Solver"), translate("About ArkoseLabs solver platform"))
+ o:value("yescaptcha", "yescaptcha");
+ o:value("capsolver", "capsolver");
+ o.default = "yescaptcha"

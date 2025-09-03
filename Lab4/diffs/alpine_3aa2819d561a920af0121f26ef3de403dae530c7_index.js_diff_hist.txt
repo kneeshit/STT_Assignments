@@ -1,0 +1,30 @@
+diff --git a/src/index.js b/src/index.js
+index 5bea6474..df34e85d 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -13,7 +13,7 @@ const projectX = {
+         // It's easier and more performant to just support Turbolinks than listen
+         // to MutationOberserver mutations at the document level.
+         document.addEventListener("turbolinks:load", () => {
+-            this.discoverComponents()
++            this.discoverUndiscoveredComponents()
+         })
+ 
+         var targetNode = document.querySelector('body');
+@@ -48,6 +48,16 @@ const projectX = {
+         })
+     },
+ 
++    discoverUndiscoveredComponents: function () {
++        const rootEls = document.querySelectorAll('[x-data]');
++
++        Array.from(rootEls)
++            .filter(el => el.__x === undefined)
++            .forEach(rootEl => {
++                this.initializeElement(rootEl)
++            })
++    },
++
+     initializeElement: function (el) {
+         el.__x = new Component(el)
+     }

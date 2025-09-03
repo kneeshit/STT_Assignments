@@ -1,0 +1,13 @@
+diff --git a/doc/rest.http b/doc/rest.http
+index aa6aa0d..fe10fa5 100644
+--- a/doc/rest.http
++++ b/doc/rest.http
+@@ -37,7 +37,7 @@ Content-Type: application/json
+ 
+ {
+     "action":"create",
+-    "name":"opengpt"
++    "name":"ninja"
+ }
+ 
+ ### 

@@ -1,0 +1,18 @@
+diff --git a/src/directives/for.js b/src/directives/for.js
+index c8ba853f..8df13c39 100644
+--- a/src/directives/for.js
++++ b/src/directives/for.js
+@@ -1,9 +1,11 @@
+-import { transitionIn, transitionOut, getXAttrs } from '../utils'
++import { transitionIn, transitionOut, getXAttrs, saferEval } from '../utils'
+ 
+ export function handleForDirective(component, templateEl, expression, initialUpdate, extraVars) {
+     warnIfNotTemplateTag(templateEl)
+ 
+-    let iteratorNames = parseForExpression(expression)
++    let iteratorNames = typeof expression === 'function'
++        ? parseForExpression(component.evaluateReturnExpression(templateEl, expression))
++        : parseForExpression(expression)
+ 
+     let items = evaluateItemsAndReturnEmptyIfXIfIsPresentAndFalseOnElement(component, templateEl, iteratorNames, extraVars)
+ 

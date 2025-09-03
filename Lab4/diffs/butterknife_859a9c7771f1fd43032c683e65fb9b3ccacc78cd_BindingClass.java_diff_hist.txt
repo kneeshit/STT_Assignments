@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+index 5336fb9..499f2e5 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+@@ -149,7 +149,7 @@ final class BindingClass {
+       // Create unbinding class.
+       result.addType(createUnbinderClass());
+ 
+-      if (!isFinal) {
++      if (!isFinal || hasParentBinding()) {
+         // Now we need to provide child classes to access and override unbinder implementations.
+         createUnbinderCreateUnbinderMethod(result);
+       }
+@@ -182,7 +182,7 @@ final class BindingClass {
+     if (!hasParentBinding() || !parentBinding.hasUnbinder()) {
+       result.addMethod(createUnbindInterfaceMethod(result));
+     }
+-    if (!isFinal) {
++    if (!isFinal || hasParentBinding()) {
+       result.addMethod(createUnbindMethod(result, generic));
+     }
+ 

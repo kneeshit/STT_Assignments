@@ -1,0 +1,12 @@
+diff --git a/openai/Cargo.toml b/openai/Cargo.toml
+index c219ce8..315de17 100644
+--- a/openai/Cargo.toml
++++ b/openai/Cargo.toml
+@@ -19,6 +19,7 @@ sha2 = "0.10.6"
+ base64 = "0.21.2"
+ rand = "0.8.5"
+ jsonwebtokens = "1"
++async-trait = "0.1.68"
+ 
+ [lib]
+ name = "openai"

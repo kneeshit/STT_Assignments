@@ -1,0 +1,15 @@
+diff --git a/openwrt/luci-app-ninja/po/zh-cn/opengpt.po b/openwrt/luci-app-ninja/po/zh-cn/opengpt.po
+index 51bd67e..964d2b8 100644
+--- a/openwrt/luci-app-ninja/po/zh-cn/opengpt.po
++++ b/openwrt/luci-app-ninja/po/zh-cn/opengpt.po
+@@ -162,3 +162,9 @@ msgstr "HAR 认证Key"
+ 
+ msgid "HAR file upload authenticate key"
+ msgstr "HAR文件上传验证Key"
++
++msgid "PreAuth API"
++msgstr "PreAuth 接口"
++
++msgid "PreAuth Cookie API URL"
++msgstr "获取 PreAuth Cookie 的接口"
+\ No newline at end of file

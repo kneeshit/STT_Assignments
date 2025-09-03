@@ -1,0 +1,34 @@
+diff --git a/src/component.js b/src/component.js
+index c44919e3..27bc04e4 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -8,13 +8,19 @@ export default class Component {
+ 
+         rawData.$refs =  this.getRefsProxy()
+ 
++        this.runXInit(this.el.getAttribute('x-init'), rawData)
++
+         this.data = this.wrapDataInObservable(rawData)
+ 
+-        this.initialize()
++        this.initializeElements()
+ 
+         this.listenForNewElementsToInitialize()
+     }
+ 
++    runXInit(initExpression, rawData) {
++        initExpression && saferEvalNoReturn(initExpression, rawData)
++    }
++
+     wrapDataInObservable(data) {
+         this.concernedData = []
+ 
+@@ -48,7 +54,7 @@ export default class Component {
+         return new Proxy(data, proxyHandler())
+     }
+ 
+-    initialize() {
++    initializeElements() {
+         walkSkippingNestedComponents(this.el, el => {
+             this.initializeElement(el)
+         })

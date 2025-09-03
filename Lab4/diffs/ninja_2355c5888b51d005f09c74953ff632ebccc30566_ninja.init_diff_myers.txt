@@ -1,0 +1,13 @@
+diff --git a/openwrt/ninja/files/ninja.init b/openwrt/ninja/files/ninja.init
+index 4cb8c15..83c4574 100644
+--- a/openwrt/ninja/files/ninja.init
++++ b/openwrt/ninja/files/ninja.init
+@@ -186,7 +186,7 @@ start_service() {
+ 	fi
+ 
+ 	procd_open_instance
+-	procd_set_param command /bin/sh -c "$PROG serve run $args >>/var/log/ninja.log 2>&1"
++	procd_set_param command /bin/sh -c "$PROG run $args >>/var/log/ninja.log 2>&1"
+ 	procd_set_param stdout 0
+ 	procd_set_param stderr 0
+ 	procd_set_param pidfile /var/run/ninja.pid

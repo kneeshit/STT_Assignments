@@ -1,0 +1,18 @@
+diff --git a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+index 8074eff..3b211fd 100644
+--- a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
++++ b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+@@ -123,3 +123,12 @@ msgstr "关于ArkoseLabs破解的YesCaptcha平台客户端密钥"
+ 
+ msgid "Get arkose token endpoint"
+ msgstr "获取arkose token的端点"
++
++msgid "HAR file path"
++msgstr "HAR 文件路径"
++
++msgid "YesCaptcha Client Key"
++msgstr "YesCaptcha 客户端Key"
++
++msgid "Arkose token endpoint"
++msgstr "Arkose 令牌端点"
+\ No newline at end of file

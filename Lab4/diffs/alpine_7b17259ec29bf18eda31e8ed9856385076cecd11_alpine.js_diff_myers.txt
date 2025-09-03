@@ -1,0 +1,13 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index e2931305..c4698db7 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -1619,7 +1619,7 @@
+   }
+ 
+   const Alpine = {
+-    version: "2.3.3",
++    version: "2.3.4",
+     start: async function start() {
+       if (!isTesting()) {
+         await domReady();

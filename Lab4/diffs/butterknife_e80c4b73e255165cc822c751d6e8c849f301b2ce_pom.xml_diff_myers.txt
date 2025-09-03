@@ -1,0 +1,16 @@
+diff --git a/pom.xml b/pom.xml
+index 1e9e99a..d2e6c67 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -136,9 +136,9 @@
+     <pluginManagement>
+       <plugins>
+         <plugin>
+-          <groupId>com.jayway.maven.plugins.android.generation2</groupId>
++          <groupId>com.simpligility.maven.plugins</groupId>
+           <artifactId>android-maven-plugin</artifactId>
+-          <version>3.8.0</version>
++          <version>4.1.0</version>
+           <configuration>
+             <sdk>
+               <platform>${android.platform}</platform>

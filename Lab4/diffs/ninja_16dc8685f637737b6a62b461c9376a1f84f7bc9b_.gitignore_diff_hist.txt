@@ -1,0 +1,14 @@
+diff --git a/.gitignore b/.gitignore
+index 0712836..fdb5479 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -27,6 +27,7 @@ thunder-tests
+ ./ninja
+ uploads
+ ./vendor
+-chat.openai.com.har
++chat3.openai.com.har
++chat4.openai.com.har
+ platform.openai.com.har
+ login.chat.openai.com.har
+\ No newline at end of file

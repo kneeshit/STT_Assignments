@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/signal.rs b/openai/src/serve/signal.rs
+index f1acee6..442f3bd 100644
+--- a/openai/src/serve/signal.rs
++++ b/openai/src/serve/signal.rs
+@@ -2,8 +2,6 @@ use axum_server::Handle;
+ use std::time::Duration;
+ #[cfg(target_family = "unix")]
+ use tokio::signal::unix::{signal, SignalKind};
+-#[cfg(target_family = "windows")]
+-use tokio::signal::windows::{ctrl_break, ctrl_c, CtrlBreak, CtrlC};
+ use tokio::time::sleep;
+ 
+ use crate::info;

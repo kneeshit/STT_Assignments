@@ -1,0 +1,20 @@
+diff --git a/openai/src/serve/ui.rs b/openai/src/serve/ui.rs
+index 10af517..bbf1634 100644
+--- a/openai/src/serve/ui.rs
++++ b/openai/src/serve/ui.rs
+@@ -110,6 +110,7 @@ impl From<super::Launcher> for TemplateData {
+ 
+ // this function could be located in a different module
+ pub fn config(cfg: &mut web::ServiceConfig) {
++    if !unsafe { super::DISABLE_UI } {
+         let mut tera = tera::Tera::default();
+         tera.add_raw_templates(vec![
+             (TEMP_404, include_str!("../../ui/404.htm")),
+@@ -175,6 +176,7 @@ pub fn config(cfg: &mut web::ServiceConfig) {
+             // 404 endpoint
+             .default_service(web::route().to(get_error_404));
+     }
++}
+ 
+ async fn get_auth() -> Result<HttpResponse> {
+     let mut ctx = tera::Context::new();

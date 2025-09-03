@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/ButterKnife.java b/butterknife/src/main/java/butterknife/ButterKnife.java
+index 8f342cf..e935c9d 100644
+--- a/butterknife/src/main/java/butterknife/ButterKnife.java
++++ b/butterknife/src/main/java/butterknife/ButterKnife.java
+@@ -57,7 +57,7 @@ import java.util.Map;
+  * @see OnItemLongClick
+  * @see OnLongClick
+  */
+-public class ButterKnife {
++public final class ButterKnife {
+   private ButterKnife() {
+     // No instances.
+   }

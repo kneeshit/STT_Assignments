@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/chat_to_api/mod.rs b/openai/src/serve/router/chat_to_api/mod.rs
+index f6b3c68..5f74d86 100644
+--- a/openai/src/serve/router/chat_to_api/mod.rs
++++ b/openai/src/serve/router/chat_to_api/mod.rs
+@@ -75,7 +75,7 @@ pub(crate) async fn chat_to_api(
+     let resp = env
+         .load_client()
+         .post(format!("{URL_CHATGPT_API}/backend-api/conversation"))
+-        .headers(header_convert(headers, jar).await)
++        .headers(header_convert(headers, jar).await?)
+         .json(&req)
+         .send()
+         .await

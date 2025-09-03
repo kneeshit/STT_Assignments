@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/ui.rs b/openai/src/serve/router/ui.rs
+index 53c0cc9..3d67951 100644
+--- a/openai/src/serve/router/ui.rs
++++ b/openai/src/serve/router/ui.rs
+@@ -39,7 +39,7 @@ use crate::serve::turnstile;
+ use crate::serve::EMPTY;
+ use crate::{
+     auth::{model::AuthAccount, provide::AuthProvider},
+-    model::AuthenticateToken,
++    token::model::AuthenticateToken,
+     URL_CHATGPT_API,
+ };
+ 

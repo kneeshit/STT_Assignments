@@ -1,0 +1,7 @@
+diff --git a/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor b/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor
+index 46630cd..dda8ba8 100644
+--- a/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor
++++ b/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor
+@@ -1 +1 @@
+-butterknife.internal.InjectViewProcessor
++butterknife.internal.ButterKnifeProcessor

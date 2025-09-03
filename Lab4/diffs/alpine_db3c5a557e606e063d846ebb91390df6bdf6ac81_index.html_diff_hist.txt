@@ -1,0 +1,16 @@
+diff --git a/examples/index.html b/examples/index.html
+index ad8cd352..120f0064 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -14,10 +14,7 @@
+             .ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+         </style>
+ 
+-        <!-- Script for testing IE11 support: -->
+-        <script src="/dist/alpine-ie11.js" defer></script>
+-
+-        <!-- <script src="/dist/alpine.js" defer></script> -->
++        <script src="/dist/alpine.js" defer></script>
+     </head>
+     <body>
+         <table>

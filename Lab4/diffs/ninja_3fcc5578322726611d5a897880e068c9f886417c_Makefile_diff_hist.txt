@@ -1,0 +1,13 @@
+diff --git a/openwrt/luci-app-opengpt/Makefile b/openwrt/luci-app-opengpt/Makefile
+index f5843af..4906f59 100644
+--- a/openwrt/luci-app-opengpt/Makefile
++++ b/openwrt/luci-app-opengpt/Makefile
+@@ -3,7 +3,7 @@
+ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=luci-app-opengpt
+-PKG_VERSION:=1.0.0
++PKG_VERSION:=1.0.1
+ 
+ PKG_MAINTAINER:=gngpp <gngppz@gmail.com>
+ 

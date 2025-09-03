@@ -1,0 +1,12 @@
+diff --git a/.travis.yml b/.travis.yml
+index 8493a42..e864b2a 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -9,7 +9,6 @@ android:
+     - extra-android-m2repository
+ 
+ jdk:
+-  - oraclejdk7
+   - oraclejdk8
+ 
+ after_success:

@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnEditorAction.java b/butterknife/src/main/java/butterknife/OnEditorAction.java
+index 91f8ef3..a3e4a18 100644
+--- a/butterknife/src/main/java/butterknife/OnEditorAction.java
++++ b/butterknife/src/main/java/butterknife/OnEditorAction.java
+@@ -24,7 +24,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * @see Optional
+  */
+ @Retention(CLASS) @Target(METHOD)
+-@ListenerClass(OnEditorActionListener.class)
++@ListenerClass("android.widget.TextView.OnEditorActionListener")
+ public @interface OnEditorAction {
+   int[] value();
+ }

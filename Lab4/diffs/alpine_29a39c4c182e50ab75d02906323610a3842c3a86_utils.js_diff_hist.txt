@@ -1,0 +1,13 @@
+diff --git a/src/utils.js b/src/utils.js
+index e83d02f2..1cf45e9b 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -80,7 +80,7 @@ export function getXAttrs(el, type) {
+             const name = replaceAtAndColonWithStandardSyntax(attr.name)
+ 
+             const typeMatch = name.match(/x-(on|bind|data|text|html|model|if|show|cloak|transition|ref)/)
+-            const valueMatch = name.match(/:([a-zA-Z\-]+)/)
++            const valueMatch = name.match(/:([a-zA-Z\-:]+)/)
+             const modifiers = name.match(/\.[^.\]]+(?=[^\]]*$)/g) || []
+ 
+             return {

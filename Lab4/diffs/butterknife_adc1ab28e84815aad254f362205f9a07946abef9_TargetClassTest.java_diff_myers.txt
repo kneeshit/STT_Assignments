@@ -1,0 +1,23 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/TargetClassTest.java b/butterknife/src/test/java/butterknife/internal/TargetClassTest.java
+index 73d3974..0ec8ae7 100644
+--- a/butterknife/src/test/java/butterknife/internal/TargetClassTest.java
++++ b/butterknife/src/test/java/butterknife/internal/TargetClassTest.java
+@@ -24,18 +24,10 @@ public class TargetClassTest {
+       this.description = description;
+     }
+ 
+-    @Override public String getName() {
+-      throw new AssertionError();
+-    }
+-
+     @Override public String getDescription() {
+       return description;
+     }
+ 
+-    @Override public String getViewType() {
+-      throw new AssertionError();
+-    }
+-
+     @Override public boolean isRequired() {
+       throw new AssertionError();
+     }

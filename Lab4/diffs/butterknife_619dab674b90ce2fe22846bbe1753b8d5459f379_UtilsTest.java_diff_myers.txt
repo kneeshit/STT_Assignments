@@ -1,0 +1,24 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/UtilsTest.java b/butterknife/src/test/java/butterknife/internal/UtilsTest.java
+deleted file mode 100644
+index b22c652..0000000
+--- a/butterknife/src/test/java/butterknife/internal/UtilsTest.java
++++ /dev/null
+@@ -1,18 +0,0 @@
+-package butterknife.internal;
+-
+-import org.junit.Assert;
+-import org.junit.Test;
+-
+-import static com.google.common.truth.Truth.assertThat;
+-
+-public class UtilsTest {
+-
+-  @Test public void testCastParam() {
+-    try {
+-      Utils.castParam("abc", "Foo", 3, "foo()", 4, Integer.class);
+-      Assert.fail("Failed to cast exception");
+-    } catch (IllegalStateException ise) {
+-      assertThat(ise.getMessage()).contains("foo()");
+-    }
+-  }
+-}

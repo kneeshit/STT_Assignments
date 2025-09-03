@@ -1,0 +1,12 @@
+diff --git a/src/index.js b/src/index.js
+index 5aa88bfb..c730a2f6 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -6,6 +6,7 @@ const minimal = {
+         const rootEls = document.querySelectorAll('[x-data]');
+ 
+         rootEls.forEach(rootEl => {
++            // @todo - only set window.component in testing environments
+             window.component = new Component(rootEl)
+         })
+     }

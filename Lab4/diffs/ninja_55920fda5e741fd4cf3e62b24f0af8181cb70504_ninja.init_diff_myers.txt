@@ -1,0 +1,13 @@
+diff --git a/openwrt/ninja/files/ninja.init b/openwrt/ninja/files/ninja.init
+index 75b04c4..eb55bcb 100644
+--- a/openwrt/ninja/files/ninja.init
++++ b/openwrt/ninja/files/ninja.init
+@@ -71,7 +71,7 @@ start_service() {
+ 		args="$args --preauth-api $preauth_api"
+ 	fi
+ 
+-	if [ -n "$disable_direct" ]; then
++	if [ $disable_direct -ne 0 ]; then
+ 		args="$args --disable-direct"
+ 	fi
+ 

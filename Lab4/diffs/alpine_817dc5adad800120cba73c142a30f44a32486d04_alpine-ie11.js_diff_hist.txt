@@ -1,0 +1,17 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index e4ca1dd6..7b2dccac 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6403,11 +6403,7 @@
+             debounce(function () {
+               _newArrowCheck(this, _this3);
+ 
+-              self.updateElements(self.$el); // Walk through the $nextTick stack and clear it as we go.
+-
+-              while (self.nextTickStack.length > 0) {
+-                self.nextTickStack.shift()();
+-              }
++              self.updateElements(self.$el);
+             }.bind(this), 0)();
+           }
+         });

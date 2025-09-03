@@ -1,0 +1,30 @@
+diff --git a/butterknife/src/main/java/butterknife/OnItemLongClick.java b/butterknife/src/main/java/butterknife/OnItemLongClick.java
+index 4fa426f..81f0160 100644
+--- a/butterknife/src/main/java/butterknife/OnItemLongClick.java
++++ b/butterknife/src/main/java/butterknife/OnItemLongClick.java
+@@ -32,14 +32,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+     targetType = "android.widget.AdapterView<?>",
+     setter = "setOnItemLongClickListener",
+     type = "android.widget.AdapterView.OnItemLongClickListener",
+-    callbacks = OnItemLongClick.Callback.class
+-)
+-public @interface OnItemLongClick {
+-  int[] value();
+-  Callback callback() default Callback.ITEM_CLICK;
+-
+-  enum Callback {
+-    @ListenerMethod(
++    method = @ListenerMethod(
+         name = "onItemLongClick",
+         parameters = {
+             "android.widget.AdapterView<?>",
+@@ -50,6 +43,7 @@ public @interface OnItemLongClick {
+         returnType = "boolean",
+         defaultReturn = "false"
+     )
+-    ITEM_CLICK
+-  }
++)
++public @interface OnItemLongClick {
++  int[] value();
+ }

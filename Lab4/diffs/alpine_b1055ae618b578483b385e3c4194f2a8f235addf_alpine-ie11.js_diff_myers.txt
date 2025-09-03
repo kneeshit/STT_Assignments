@@ -1,0 +1,17 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index a3ba2057..592979ca 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6415,11 +6415,7 @@
+       value: function wrapDataInObservable(data) {
+         var self = this;
+         var updateDom = debounce(function () {
+-          self.updateElements(self.$el); // Walk through the $nextTick stack and clear it as we go.
+-
+-          while (self.nextTickStack.length > 0) {
+-            self.nextTickStack.shift()();
+-          }
++          self.updateElements(self.$el);
+         }, 0);
+         var membrane = new ReactiveMembrane({
+           valueMutated: function valueMutated(target, key) {

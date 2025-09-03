@@ -1,0 +1,36 @@
+diff --git a/test/model.spec.js b/test/model.spec.js
+index 7672e430..fc806303 100644
+--- a/test/model.spec.js
++++ b/test/model.spec.js
+@@ -695,3 +695,31 @@ test('x-model bind url input', async () => {
+         expect(document.querySelector('span').innerText).toEqual(newValue)
+     })
+ })
++
++test('x-model sets value before x-on directive expression is processed', async () => {
++    window.selectValueA
++    window.selectValueB
++
++    document.body.innerHTML = `
++        <div x-data="{ a: 'foo', b: 'foo' }">
++            <select x-model="a" @change="window.selectValueA = a">
++                <option>foo</option>
++                <option>bar</option>
++            </select>
++            <select @change="window.selectValueB = b" x-model="b">
++                <option>foo</option>
++                <option>bar</option>
++            </select>
++        </div>
++    `
++
++    Alpine.start()
++
++    fireEvent.change(document.querySelectorAll('select')[0], { target: { value: 'bar' } });
++    fireEvent.change(document.querySelectorAll('select')[1], { target: { value: 'bar' } });
++
++    await wait(() => {
++        expect(window.selectValueA).toEqual('bar')
++        expect(window.selectValueB).toEqual('bar')
++    })
++})

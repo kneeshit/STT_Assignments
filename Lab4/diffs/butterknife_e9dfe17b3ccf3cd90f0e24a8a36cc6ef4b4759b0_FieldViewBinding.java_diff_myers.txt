@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/FieldViewBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/FieldViewBinding.java
+index 8adeb1f..0abd697 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/FieldViewBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/FieldViewBinding.java
+@@ -4,7 +4,7 @@ import com.squareup.javapoet.ClassName;
+ import com.squareup.javapoet.ParameterizedTypeName;
+ import com.squareup.javapoet.TypeName;
+ 
+-final class FieldViewBinding implements ViewBinding {
++final class FieldViewBinding implements MemberViewBinding {
+   private final String name;
+   private final TypeName type;
+   private final boolean required;

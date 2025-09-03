@@ -1,0 +1,16 @@
+diff --git a/examples/index.html b/examples/index.html
+index 58aca1c8..0b474833 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -20,11 +20,6 @@
+         <script src="/dist/alpine.js" defer></script>
+     </head>
+     <body>
+-        <div x-data="{foo: {bar: {baz: 'bob'}}}" x-init="$watch('foo.bar.baz', value => console.log(value))">
+-            <span x-text="foo.bar.baz"></span>
+-            <button @click="foo.bar.baz = 'lob'">change</button>
+-        </div>
+-
+         <table>
+             <thead>
+                 <tr>

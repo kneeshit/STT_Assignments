@@ -1,0 +1,16 @@
+diff --git a/openai/src/api/platform/v1/api.rs b/openai/src/api/platform/v1/api.rs
+index 4680af9..76d0acc 100644
+--- a/openai/src/api/platform/v1/api.rs
++++ b/openai/src/api/platform/v1/api.rs
+@@ -5,9 +5,9 @@ use tokio::fs::File;
+ use tokio_util::codec::{BytesCodec, FramedRead};
+ 
+ #[cfg(feature = "stream")]
+-use futures::{stream::StreamExt, Stream};
++use crate::eventsource::{Event, EventSource, RequestBuilderExt};
+ #[cfg(feature = "stream")]
+-use reqwest_eventsource::{Event, EventSource, RequestBuilderExt};
++use futures::{stream::StreamExt, Stream};
+ #[cfg(feature = "stream")]
+ use serde::de::DeserializeOwned;
+ #[cfg(feature = "stream")]

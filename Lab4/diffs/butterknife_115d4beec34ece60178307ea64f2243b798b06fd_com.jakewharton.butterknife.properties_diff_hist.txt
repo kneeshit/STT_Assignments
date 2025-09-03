@@ -1,0 +1,7 @@
+diff --git a/butterknife-gradle-plugin/src/main/resources/META-INF/gradle-plugins/com.jakewharton.butterknife.properties b/butterknife-gradle-plugin/src/main/resources/META-INF/gradle-plugins/com.jakewharton.butterknife.properties
+new file mode 100644
+index 0000000..b5f8ecf
+--- /dev/null
++++ b/butterknife-gradle-plugin/src/main/resources/META-INF/gradle-plugins/com.jakewharton.butterknife.properties
+@@ -0,0 +1 @@
++implementation-class=butterknife.plugin.ButterKnifePlugin

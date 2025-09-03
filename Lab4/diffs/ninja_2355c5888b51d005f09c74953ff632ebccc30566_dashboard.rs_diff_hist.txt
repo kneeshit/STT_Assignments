@@ -1,0 +1,13 @@
+diff --git a/src/inter/dashboard.rs b/src/inter/dashboard.rs
+index 18618f1..52a2fc6 100644
+--- a/src/inter/dashboard.rs
++++ b/src/inter/dashboard.rs
+@@ -2,7 +2,7 @@ use crate::inter::get_platform_arkose_token;
+ use inquire::{MultiSelect, Select, Text};
+ use openai::{
+     auth::{model::ApiKeyAction, model::ApiKeyDataBuilder, AuthClient},
+-    model::AuthenticateToken,
++    token::model::AuthenticateToken,
+ };
+ 
+ use crate::store::{account::Account, Store};

@@ -1,0 +1,39 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 7e565410..d664a8bc 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6253,9 +6253,8 @@
+     var _this = this;
+ 
+     var initialUpdate = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+-    // Prepare el in case we need to use transition
+-    el.__x_transition = {}; // Resolve any previous pending transitions before starting a new one
+ 
++    // Resolve any previous pending transitions before starting a new one
+     if (el.__x_transition_remaining && el.__x_transition_last_value !== value) {
+       el.__x_transition_remaining();
+     }
+@@ -6284,10 +6283,7 @@
+       }
+ 
+       return;
+-    } // Asign current value to el to check later on for preventing transition overlaps
+-
+-
+-    el.__x_transition_last_value = value;
++    }
+ 
+     var handle = function handle(resolve) {
+       var _this2 = this;
+@@ -6359,10 +6355,9 @@
+ 
+     if (el.__x_transition_last_value !== value) {
+       component.showDirectiveStack.push(handle);
+-    }
+-
+       component.showDirectiveLastElement = el;
+     }
++  }
+ 
+   function handleIfDirective(component, el, expressionResult, initialUpdate, extraVars) {
+     var _this = this;

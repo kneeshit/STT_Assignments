@@ -1,0 +1,19 @@
+diff --git a/butterknife-gradle-plugin/src/test/java/butterknife/plugin/FixturesTest.kt b/butterknife-gradle-plugin/src/test/java/butterknife/plugin/FixturesTest.kt
+index 8a4966c..1161282 100644
+--- a/butterknife-gradle-plugin/src/test/java/butterknife/plugin/FixturesTest.kt
++++ b/butterknife-gradle-plugin/src/test/java/butterknife/plugin/FixturesTest.kt
+@@ -19,10 +19,13 @@ class FixturesTest(val fixtureRoot: File, val name: String) {
+         val androidHome = androidHome()
+         File(fixtureRoot, "local.properties").writeText("sdk.dir=$androidHome\n")
+ 
++        val butterKnifeVersion = System.getProperty("butterknife.version")!!
++
+         val runner = GradleRunner.create()
+                 .withProjectDir(fixtureRoot)
+                 .withPluginClasspath()
+-                .withArguments("clean", "assembleDebug", "assembleRelease", "--stacktrace")
++                .withArguments("clean", "assembleDebug", "assembleRelease", "--stacktrace",
++                        "-Pbutterknife.version=$butterKnifeVersion")
+ 
+         if (File(fixtureRoot, "ignored.txt").exists()) {
+             println("Skipping ignored test $name.")

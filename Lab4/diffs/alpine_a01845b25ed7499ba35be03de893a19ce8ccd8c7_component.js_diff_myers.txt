@@ -1,0 +1,13 @@
+diff --git a/src/component.js b/src/component.js
+index eef224d4..6d24d4e9 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -340,7 +340,7 @@ export default class Component {
+                 if (! (closestParentComponent && closestParentComponent.isSameNode(this.$el))) continue
+ 
+                 if (mutations[i].type === 'attributes' && mutations[i].attributeName === 'x-data') {
+-                    const rawData = saferEval(mutations[i].target.getAttribute('x-data'), {})
++                    const rawData = saferEval(mutations[i].target.getAttribute('x-data'), { $el: this.$el })
+ 
+                     Object.keys(rawData).forEach(key => {
+                         if (this.$data[key] !== rawData[key]) {

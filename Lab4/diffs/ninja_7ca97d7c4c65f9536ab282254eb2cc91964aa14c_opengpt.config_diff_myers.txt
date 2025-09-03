@@ -1,0 +1,14 @@
+diff --git a/openwrt/opengpt/files/opengpt.config b/openwrt/opengpt/files/opengpt.config
+index c5ee248..3e3c8c1 100644
+--- a/openwrt/opengpt/files/opengpt.config
++++ b/openwrt/opengpt/files/opengpt.config
+@@ -7,6 +7,9 @@ config opengpt
+     option proxies ''
+     option timeout '600'
+     option connect_timeout '60'
++    option arkose_token_endpoint ''
++    option arkose_yescaptcha_key ''
++    option arkose_har_path ''
+     option tcp_keepalive '5'
+     option tls_cert ''
+     option tls_key ''

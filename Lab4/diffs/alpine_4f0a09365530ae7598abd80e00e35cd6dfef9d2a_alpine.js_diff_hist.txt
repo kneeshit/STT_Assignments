@@ -1,0 +1,22 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index e8499954..15d075de 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -708,7 +708,7 @@
+           }
+         }
+ 
+-        if (isKeyEvent(event)) {
++        if (isKeyEvent(e)) {
+           if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
+             return;
+           }
+@@ -746,7 +746,7 @@
+   }
+ 
+   function isKeyEvent(event) {
+-    return ['keydown', 'keyup'].includes(event);
++    return event instanceof KeyboardEvent && ['keydown', 'keyup'].includes(event.type);
+   }
+ 
+   function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {

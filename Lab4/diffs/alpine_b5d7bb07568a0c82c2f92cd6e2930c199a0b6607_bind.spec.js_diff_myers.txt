@@ -1,0 +1,17 @@
+diff --git a/test/bind.spec.js b/test/bind.spec.js
+index 4756e0a3..830a1bc4 100644
+--- a/test/bind.spec.js
++++ b/test/bind.spec.js
+@@ -379,11 +379,7 @@ test('classes are removed before being added', async () => {
+ test('cursor position is preserved on selectable text input', async () => {
+     document.body.innerHTML = `
+         <div x-data="{ foo: 'bar' }">
+-            <input type="text" 
+-                   x-model="foo"
+-                   x-ref="textInput" 
+-                   @select="foo = 'baz'"
+-            >
++            <input type="text" x-model="foo" @select="foo = 'baz'">
+         </div>
+     `
+ 

@@ -1,0 +1,13 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index b1cb833f..c03efe51 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -7050,7 +7050,7 @@
+   }();
+ 
+   var Alpine = {
+-    version: "2.3.4",
++    version: "2.3.5",
+     start: function () {
+       var _start = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+         var _this = this;

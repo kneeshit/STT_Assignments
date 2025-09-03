@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java b/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java
+index 9bde9ff..9f29fab 100644
+--- a/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java
++++ b/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java
+@@ -16,8 +16,6 @@ import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
+ import static com.google.common.truth.Truth.assertThat;
+ import static java.util.Arrays.asList;
+ 
+-@TargetApi(ICE_CREAM_SANDWICH)
+-@SdkSuppress(minSdkVersion = ICE_CREAM_SANDWICH)
+ public class ButterKnifeTest {
+   private static final Property<View, Boolean> PROPERTY_ENABLED =
+       new Property<View, Boolean>(Boolean.class, "enabled") {

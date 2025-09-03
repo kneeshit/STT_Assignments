@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/favicon-32x32.png b/openai/ui/static/favicon-32x32.png
+new file mode 100644
+index 0000000..dc0386d
+Binary files /dev/null and b/openai/ui/static/favicon-32x32.png differ

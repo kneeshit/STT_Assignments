@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/fonts/katex/KaTeX_Caligraphic-Regular.woff2 b/openai/ui/static/fonts/katex/KaTeX_Caligraphic-Regular.woff2
+new file mode 100644
+index 0000000..75344a1
+Binary files /dev/null and b/openai/ui/static/fonts/katex/KaTeX_Caligraphic-Regular.woff2 differ

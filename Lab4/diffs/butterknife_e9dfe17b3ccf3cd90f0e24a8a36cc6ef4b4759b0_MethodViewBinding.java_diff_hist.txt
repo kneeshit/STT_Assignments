@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java
+index 33beb62..e4d1c4b 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java
+@@ -4,7 +4,7 @@ import java.util.ArrayList;
+ import java.util.Collections;
+ import java.util.List;
+ 
+-final class MethodViewBinding implements ViewBinding {
++final class MethodViewBinding implements MemberViewBinding {
+   private final String name;
+   private final List<Parameter> parameters;
+   private final boolean required;

@@ -1,0 +1,58 @@
+diff --git a/openai/ui/har/upload.html b/openai/ui/har/upload.html
+index 9c536f0..a64782b 100644
+--- a/openai/ui/har/upload.html
++++ b/openai/ui/har/upload.html
+@@ -57,6 +57,22 @@
+       font-size: 14px;
+       color: #888
+     }
++
++        select {
++            padding: 10px;
++            font-size: 16px;
++            border: 1px solid #ccc;
++            border-radius: 5px;
++        }
++
++        select:hover {
++            border-color: #555;
++        }
++
++        select:focus {
++            outline: none;
++            border-color: #007BFF;
++        }
+   </style>
+ </head>
+ 
+@@ -64,8 +80,18 @@
+   <div class="container">
+     <h2>Upload a .har file extension</h2>
+     <form id="uploadForm" method="POST" enctype="multipart/form-data">
+-      <div class="upload-btn-wrapper"><button class="btn">Select</button> <input type="file" name="file"
+-          id="harFileInput" accept=".har"></div>
++      <div class="upload-btn-wrapper">
++        <button class="btn">Select</button> 
++        <input type="file" name="file" id="harFileInput" accept=".har">
++      </div>
++      <div>
++        <label for="platformSelect">Type: </label>
++        <select id="platformSelect" class="btn">
++            <option value="chat">Chat</option>
++            <option value="platform">Platform</option>
++            <option value="auth0">Auth</option>
++        </select>
++      </div>
+       <p class="file-info">Only files in .har format are allowed to be uploaded.</p>
+     </form>
+   </div>
+@@ -87,6 +113,9 @@
+         }
+       }
+ 
++      var selectElement = document.getElementById("platformSelect");
++      headers['Type'] = selectElement.value;
++
+       var formData = new FormData();
+       formData.append('file', this.files[0]);
+ 

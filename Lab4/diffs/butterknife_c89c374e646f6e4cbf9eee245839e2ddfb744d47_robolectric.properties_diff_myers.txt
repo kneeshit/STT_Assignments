@@ -1,0 +1,8 @@
+diff --git a/butterknife/src/test/resources/robolectric.properties b/butterknife/src/test/resources/robolectric.properties
+deleted file mode 100644
+index 01684e1..0000000
+--- a/butterknife/src/test/resources/robolectric.properties
++++ /dev/null
+@@ -1,2 +0,0 @@
+-constants=butterknife.BuildConfig
+-sdk=23

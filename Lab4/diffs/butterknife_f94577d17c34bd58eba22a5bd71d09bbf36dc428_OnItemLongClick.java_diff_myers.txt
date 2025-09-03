@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnItemLongClick.java b/butterknife/src/main/java/butterknife/OnItemLongClick.java
+index 9cc29fa..f6ef8e6 100644
+--- a/butterknife/src/main/java/butterknife/OnItemLongClick.java
++++ b/butterknife/src/main/java/butterknife/OnItemLongClick.java
+@@ -15,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * ID specified.
+  * <pre><code>
+  * {@literal @}OnItemLongClick(R.id.example_list) boolean onItemLongClick(int position) {
+- *   Toast.makeText(this, "Long clicked position " + position + "!", LENGTH_SHORT).show();
++ *   Toast.makeText(this, "Long clicked position " + position + "!", Toast.LENGTH_SHORT).show();
+  *   return true;
+  * }
+  * </code></pre>

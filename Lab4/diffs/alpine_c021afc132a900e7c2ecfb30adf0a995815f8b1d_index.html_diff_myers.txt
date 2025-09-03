@@ -1,0 +1,16 @@
+diff --git a/link-target/index.html b/link-target/index.html
+index 8c9de8b0..900c90de 100644
+--- a/link-target/index.html
++++ b/link-target/index.html
+@@ -5,11 +5,6 @@
+         </style>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha256-iM4Yzi/zLj/IshPWMC1IluRxTtRjMqjPGd97TZ9yYpU=" crossorigin="anonymous"></script>
+         <script src="/dist/project-x.js" defer></script>
+-        <script>
+-            document.addEventListener('DOMContentLoaded', () => {
+-                window.projectX.start()
+-            })
+-        </script>
+     </head>
+     <body>
+         <div>hey</div>

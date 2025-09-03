@@ -1,0 +1,61 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/InjectViewProcessor.java b/butterknife/src/main/java/butterknife/internal/InjectViewProcessor.java
+index aa33703..93e7229 100644
+--- a/butterknife/src/main/java/butterknife/internal/InjectViewProcessor.java
++++ b/butterknife/src/main/java/butterknife/internal/InjectViewProcessor.java
+@@ -1,8 +1,5 @@
+ package butterknife.internal;
+ 
+-import butterknife.InjectView;
+-import butterknife.OnClick;
+-import butterknife.Optional;
+ import java.io.IOException;
+ import java.io.Writer;
+ import java.util.Collection;
+@@ -29,6 +27,10 @@ import javax.lang.model.util.Elements;
+ import javax.lang.model.util.Types;
+ import javax.tools.JavaFileObject;
+ 
++import butterknife.InjectView;
++import butterknife.OnClick;
++import butterknife.Optional;
++
+ import static javax.lang.model.element.ElementKind.CLASS;
+ import static javax.lang.model.element.Modifier.PRIVATE;
+ import static javax.lang.model.element.Modifier.STATIC;
+@@ -120,6 +122,13 @@ public class InjectViewProcessor extends AbstractProcessor {
+       return;
+     }
+ 
++    // Verify containing type.
++    if (enclosingElement.getKind() != CLASS) {
++      error(element, "@InjectView field annotations may only be specified in classes (%s).",
++          enclosingElement);
++      return;
++    }
++
+     // Verify field modifiers.
+     Set<Modifier> modifiers = element.getModifiers();
+     if (modifiers.contains(PRIVATE) || modifiers.contains(STATIC)) {
+@@ -128,13 +137,6 @@ public class InjectViewProcessor extends AbstractProcessor {
+       return;
+     }
+ 
+-    // Verify containing type.
+-    if (enclosingElement.getKind() != CLASS) {
+-      error(element, "@InjectView field annotations may only be specified in classes (%s).",
+-          enclosingElement);
+-      return;
+-    }
+-
+     // Verify containing class visibility is not private.
+     if (enclosingElement.getModifiers().contains(PRIVATE)) {
+       error(element, "@InjectView fields may not be on private classes (%s).", enclosingElement);
+@@ -224,7 +226,7 @@ public class InjectViewProcessor extends AbstractProcessor {
+     Set<Integer> seenIds = new LinkedHashSet<Integer>();
+     for (int id : ids) {
+       if (!seenIds.add(id)) {
+-        error(element, "@OnClick annotation for method %s contains duplicate ID %s.", element,
++        error(element, "@OnClick annotation for method %s contains duplicate ID %d.", element,
+             id);
+         return;
+       } else if (!targetClass.addMethod(id, name, type, required)) {

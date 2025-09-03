@@ -1,0 +1,154 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java
+index a3b60c6..7795dc9 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java
+@@ -20,20 +20,6 @@ public class OnItemClickTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -71,7 +57,7 @@ public class OnItemClickTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void onItemClickBindingWithParameters() {
+@@ -91,20 +77,6 @@ public class OnItemClickTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -142,7 +114,7 @@ public class OnItemClickTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void onItemClickBindingWithParameterSubset() {
+@@ -160,20 +132,6 @@ public class OnItemClickTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -212,7 +170,7 @@ public class OnItemClickTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void onItemClickBindingWithParameterSubsetAndGenerics() {
+@@ -230,20 +188,6 @@ public class OnItemClickTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -285,7 +229,7 @@ public class OnItemClickTest {
+         //   missing type arguments for generic class test.Test<T>
+         .compilesWithoutError()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void onClickRootViewBinding() {
+@@ -302,20 +246,6 @@ public class OnItemClickTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -347,7 +277,7 @@ public class OnItemClickTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void failsWithInvalidId() {

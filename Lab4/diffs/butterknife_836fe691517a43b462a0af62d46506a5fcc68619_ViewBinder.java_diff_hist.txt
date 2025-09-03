@@ -1,0 +1,10 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ViewBinder.java b/butterknife/src/main/java/butterknife/internal/ViewBinder.java
+index 7fd9bed..f023489 100644
+--- a/butterknife/src/main/java/butterknife/internal/ViewBinder.java
++++ b/butterknife/src/main/java/butterknife/internal/ViewBinder.java
+@@ -2,5 +2,4 @@ package butterknife.internal;
+ 
+ public interface ViewBinder<T> {
+   void bind(Finder finder, T target, Object source);
+-  void unbind(T target);
+ }

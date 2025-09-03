@@ -1,0 +1,54 @@
+diff --git a/src/component.js b/src/component.js
+index a4738a0e..9423c453 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -91,6 +91,11 @@ export default class Component {
+                     this.updateVisibility(el, output)
+                     break;
+ 
++                case 'if':
++                    var { output } = this.evaluateReturnExpression(expression)
++                    this.updatePresence(el, output)
++                    break;
++
+                 case 'cloak':
+                     el.removeAttribute('x-cloak')
+                     break;
+@@ -173,6 +178,14 @@ export default class Component {
+                         }
+                         break;
+ 
++                    case 'if':
++                        var { output, deps } = self.evaluateReturnExpression(expression)
++
++                        if (self.concernedData.filter(i => deps.includes(i)).length > 0) {
++                            self.updatePresence(el, output)
++                        }
++                        break;
++
+                     default:
+                         break;
+                 }
+@@ -307,6 +320,22 @@ export default class Component {
+         }
+     }
+ 
++    updatePresence(el, expressionResult) {
++        if (el.nodeName.toLowerCase() !== 'template') console.warn(`Alpine: [x-if] directive should only be added to <template> tags.`)
++
++        const elementHasAlreadyBeenAdded = el.nextElementSibling && el.nextElementSibling.__x_inserted_me === true
++
++        if (expressionResult && ! elementHasAlreadyBeenAdded) {
++            const clone = document.importNode(el.content, true);
++
++            el.parentElement.insertBefore(clone, el.nextElementSibling)
++
++            el.nextElementSibling.__x_inserted_me = true
++        } else if (! expressionResult && elementHasAlreadyBeenAdded) {
++            el.nextElementSibling.remove()
++        }
++    }
++
+     updateAttributeValue(el, attrName, value) {
+         if (attrName === 'value') {
+             if (el.type === 'radio') {

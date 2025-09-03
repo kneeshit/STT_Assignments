@@ -1,0 +1,16 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/Unbinder.java b/butterknife-compiler/src/test/java/butterknife/Unbinder.java
+deleted file mode 100644
+index b19ecba..0000000
+--- a/butterknife-compiler/src/test/java/butterknife/Unbinder.java
++++ /dev/null
+@@ -1,10 +0,0 @@
+-package butterknife;
+-
+-/** STUB! Required for test sources to compile. */
+-public interface Unbinder {
+-  void unbind();
+-
+-  Unbinder EMPTY = new Unbinder() {
+-    @Override public void unbind() { }
+-  };
+-}

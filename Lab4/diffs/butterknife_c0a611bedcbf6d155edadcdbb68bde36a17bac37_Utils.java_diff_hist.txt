@@ -1,0 +1,13 @@
+diff --git a/butterknife-runtime/src/main/java/butterknife/internal/Utils.java b/butterknife-runtime/src/main/java/butterknife/internal/Utils.java
+index 9032ad7..8f4f818 100644
+--- a/butterknife-runtime/src/main/java/butterknife/internal/Utils.java
++++ b/butterknife-runtime/src/main/java/butterknife/internal/Utils.java
+@@ -61,7 +61,7 @@ public final class Utils {
+     }
+     return end == length
+         ? views
+-        : Arrays.copyOfRange(views, 0, end);
++        : Arrays.copyOf(views, end);
+   }
+ 
+   @SafeVarargs

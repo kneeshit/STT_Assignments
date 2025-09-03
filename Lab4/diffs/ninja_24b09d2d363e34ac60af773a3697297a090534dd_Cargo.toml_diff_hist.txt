@@ -1,0 +1,13 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 348fef9..5960f76 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -3,7 +3,7 @@ name = "ninja"
+ version = "0.7.1"
+ edition = "2021"
+ description = "Reverse engineered ChatGPT proxy"
+-license = "MIT"
++license = "GPL-3.0"
+ homepage = "https://github.com/gngpp/ninja"
+ repository = "https://github.com/gngpp/ninja.git"
+ readme = "README.md"

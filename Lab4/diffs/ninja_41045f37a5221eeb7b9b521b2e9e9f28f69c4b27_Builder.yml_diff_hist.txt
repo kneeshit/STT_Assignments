@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/Builder.yml b/.github/workflows/Builder.yml
+index 305f331..b1ca9cb 100644
+--- a/.github/workflows/Builder.yml
++++ b/.github/workflows/Builder.yml
+@@ -32,5 +32,5 @@ jobs:
+       - name: build
+         run: |
+           cd docker/builder
+-            bash +x builder.sh
++            bash +x build.sh
+           cd -
+\ No newline at end of file

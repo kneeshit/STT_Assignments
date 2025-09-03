@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index f916376f..8d2a724f 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -1,6 +1,6 @@
+ name: Run Jest Tests
+ 
+-on: [push]
++on: [push, pull_request]
+ 
+ jobs:
+   build:

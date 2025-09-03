@@ -1,0 +1,11 @@
+diff --git a/reqwest/Cargo.toml b/reqwest/Cargo.toml
+index 7a70be5..d46ae7c 100644
+--- a/reqwest/Cargo.toml
++++ b/reqwest/Cargo.toml
+@@ -1,5 +1,5 @@
+ [package]
+-name = "reqwest-impersonate"
++name = "reqwest"
+ version = "0.11.13"                                                 # remember to update html_root_url
+ description = "A reqwest fork that impersonates the Chrome browser"
+ keywords = ["http", "request", "client"]

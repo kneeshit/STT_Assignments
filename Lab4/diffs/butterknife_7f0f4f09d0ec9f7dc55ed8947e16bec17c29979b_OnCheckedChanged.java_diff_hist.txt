@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnCheckedChanged.java b/butterknife/src/main/java/butterknife/OnCheckedChanged.java
+index ebf15c7..8017394 100644
+--- a/butterknife/src/main/java/butterknife/OnCheckedChanged.java
++++ b/butterknife/src/main/java/butterknife/OnCheckedChanged.java
+@@ -23,7 +23,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * onCheckedChanged} may be used on the method.
+  *
+  * @see OnCheckedChangeListener
+- * @see Optional
++ * @see Nullable
+  */
+ @Target(METHOD)
+ @Retention(CLASS)

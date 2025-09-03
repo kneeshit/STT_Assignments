@@ -1,0 +1,23 @@
+diff --git a/src/utils.js b/src/utils.js
+index c7082403..d63bb436 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -44,15 +44,13 @@ export function keyToModifier(key) {
+     }
+ }
+ 
+-export function walkSkippingNestedComponents(el, callback, isRoot = true) {
+-    if (el.hasAttribute('x-data') && ! isRoot) return
+-
+-    callback(el)
++export function walk(el, callback) {
++    if (callback(el) === false) return
+ 
+     let node = el.firstElementChild
+ 
+     while (node) {
+-        walkSkippingNestedComponents(node, callback, false)
++        walk(node, callback)
+ 
+         node = node.nextElementSibling
+     }

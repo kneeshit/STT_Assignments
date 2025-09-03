@@ -1,0 +1,12 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindColor.java b/butterknife-annotations/src/main/java/butterknife/BindColor.java
+index af289c3..2691cf5 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindColor.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindColor.java
+@@ -1,6 +1,6 @@
+ package butterknife;
+ 
+-import android.support.annotation.ColorRes;
++import androidx.annotation.ColorRes;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 

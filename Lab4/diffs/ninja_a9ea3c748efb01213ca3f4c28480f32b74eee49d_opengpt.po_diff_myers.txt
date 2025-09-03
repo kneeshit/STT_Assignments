@@ -1,0 +1,13 @@
+diff --git a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+index 1e7bb9d..caf1e04 100644
+--- a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
++++ b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+@@ -34,7 +34,7 @@ msgstr "监听端口"
+ msgid "Workers"
+ msgstr "工作线程"
+ 
+-msgid "Proxy"
++msgid "Proxies"
+ msgstr "代理"
+ 
+ msgid "TCP Keep-Alive (seconds)"

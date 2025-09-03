@@ -1,0 +1,22 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindFont.java b/butterknife-annotations/src/main/java/butterknife/BindFont.java
+index d2360c2..ff3420a 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindFont.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindFont.java
+@@ -1,13 +1,13 @@
+ package butterknife;
+ 
+ import android.graphics.Typeface;
+-import android.support.annotation.FontRes;
+-import android.support.annotation.IntDef;
+-import android.support.annotation.RestrictTo;
++import androidx.annotation.FontRes;
++import androidx.annotation.IntDef;
++import androidx.annotation.RestrictTo;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 
+-import static android.support.annotation.RestrictTo.Scope.LIBRARY;
++import static androidx.annotation.RestrictTo.Scope.LIBRARY;
+ import static java.lang.annotation.ElementType.FIELD;
+ import static java.lang.annotation.RetentionPolicy.RUNTIME;
+ 

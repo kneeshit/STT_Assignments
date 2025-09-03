@@ -1,0 +1,14 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+index f2d814b..f206e6c 100644
+--- a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
++++ b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+@@ -36,8 +36,7 @@ public class SimpleActivity extends Activity {
+   @BindView(R.id.list_of_things) ListView listOfThings;
+   @BindView(R.id.footer) TextView footer;
+ 
+-  @BindViews({ R.id.title, R.id.subtitle, R.id.hello })
+-  List<View> headerViews;
++  @BindViews({ R.id.title, R.id.subtitle, R.id.hello }) List<View> headerViews;
+ 
+   private SimpleAdapter adapter;
+ 

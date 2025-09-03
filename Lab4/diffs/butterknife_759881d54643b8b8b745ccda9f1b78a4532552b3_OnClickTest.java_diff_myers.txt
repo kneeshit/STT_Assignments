@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnClickTest.java b/butterknife/src/test/java/butterknife/internal/OnClickTest.java
+index c01b0cb..834f1df 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnClickTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnClickTest.java
+@@ -6,8 +6,8 @@ import javax.tools.JavaFileObject;
+ import org.junit.Test;
+ 
+ import static butterknife.internal.ProcessorTestUtilities.butterknifeProcessors;
++import static com.google.common.truth.Truth.ASSERT;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+-import static org.truth0.Truth.ASSERT;
+ 
+ public class OnClickTest {
+   @Test public void onClickInjection() {

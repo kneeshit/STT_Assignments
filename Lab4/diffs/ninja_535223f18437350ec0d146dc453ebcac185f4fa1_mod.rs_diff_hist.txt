@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index 140359d..1deb23a 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -249,7 +249,7 @@ impl Launcher {
+                 // unofficial backend api endpoint
+                 .route("/backend-api/*path", any(unofficial_proxy))
+                 // unofficial api to official api
+-                .route("/conv/v1/chat/completions", post(chat_to_api))
++                .route("/to/v1/chat/completions", post(chat_to_api))
+                 .route_layer(app_layer)
+                 // unofficial public api endpoint
+                 .route("/public-api/*path", any(unofficial_proxy))

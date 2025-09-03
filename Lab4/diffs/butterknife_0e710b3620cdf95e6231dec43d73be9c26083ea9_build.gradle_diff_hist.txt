@@ -1,0 +1,12 @@
+diff --git a/sample/library/build.gradle b/sample/library/build.gradle
+index 27111f3..1800174 100644
+--- a/sample/library/build.gradle
++++ b/sample/library/build.gradle
+@@ -15,7 +15,6 @@ apply plugin: 'com.jakewharton.butterknife'
+ 
+ android {
+   compileSdkVersion versions.compileSdk
+-  buildToolsVersion versions.buildTools
+ 
+   defaultConfig {
+     minSdkVersion versions.minSdk

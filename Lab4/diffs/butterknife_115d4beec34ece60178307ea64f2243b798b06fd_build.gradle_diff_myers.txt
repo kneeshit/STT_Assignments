@@ -1,0 +1,13 @@
+diff --git a/butterknife-sample-lib/build.gradle b/butterknife-sample-lib/build.gradle
+index ff3bd6e..235f335 100644
+--- a/butterknife-sample-lib/build.gradle
++++ b/butterknife-sample-lib/build.gradle
+@@ -10,7 +10,7 @@ buildscript {
+ 
+ apply plugin: 'com.android.library'
+ apply plugin: 'com.neenbedankt.android-apt'
+-apply plugin: 'butterknife'
++apply plugin: 'com.jakewharton.butterknife'
+ 
+ android {
+   compileSdkVersion rootProject.ext.compileSdkVersion

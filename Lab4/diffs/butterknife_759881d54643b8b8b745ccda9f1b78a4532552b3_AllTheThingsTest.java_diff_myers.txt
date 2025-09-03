@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java b/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java
+index 4ee7047..b167f0e 100644
+--- a/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java
++++ b/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java
+@@ -28,8 +28,8 @@ import java.util.List;
+ import org.junit.Test;
+ 
+ import static butterknife.internal.ProcessorTestUtilities.butterknifeProcessors;
++import static com.google.common.truth.Truth.ASSERT;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+-import static org.truth0.Truth.ASSERT;
+ 
+ @SuppressWarnings("UnusedDeclaration")
+ public class AllTheThingsTest {

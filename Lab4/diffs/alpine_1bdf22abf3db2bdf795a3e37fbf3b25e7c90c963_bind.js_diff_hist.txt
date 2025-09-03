@@ -1,0 +1,13 @@
+diff --git a/src/directives/bind.js b/src/directives/bind.js
+index 116c57a9..b3998743 100644
+--- a/src/directives/bind.js
++++ b/src/directives/bind.js
+@@ -74,7 +74,7 @@ export function handleAttributeBindingDirective(component, el, attrName, express
+     }
+ }
+ 
+-function setIfChanged(el, attrName, value, namespaced = false) {
++function setIfChanged(el, attrName, value) {
+     if (el.getAttribute(attrName) != value){
+         el.setAttribute(attrName, value)
+     }

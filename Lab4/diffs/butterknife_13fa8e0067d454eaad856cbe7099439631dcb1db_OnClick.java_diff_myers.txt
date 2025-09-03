@@ -1,0 +1,21 @@
+diff --git a/butterknife/src/main/java/butterknife/OnClick.java b/butterknife/src/main/java/butterknife/OnClick.java
+index 260fe7c..02d5841 100644
+--- a/butterknife/src/main/java/butterknife/OnClick.java
++++ b/butterknife/src/main/java/butterknife/OnClick.java
+@@ -22,7 +22,15 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * @see Optional
+  */
+ @Retention(CLASS) @Target(METHOD)
+-@ListenerClass("android.view.View.OnClickListener")
++@ListenerClass(
++    targetType = "android.view.View",
++    setter = "setOnClickListener",
++    type = "android.view.View.OnClickListener",
++    name = "onClick",
++    parameters = {
++        "android.view.View"
++    }
++)
+ public @interface OnClick {
+   int[] value();
+ }

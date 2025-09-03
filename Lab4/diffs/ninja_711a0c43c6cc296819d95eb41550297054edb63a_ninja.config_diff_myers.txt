@@ -1,0 +1,13 @@
+diff --git a/openwrt/ninja/files/ninja.config b/openwrt/ninja/files/ninja.config
+index 05115c8..99877ba 100644
+--- a/openwrt/ninja/files/ninja.config
++++ b/openwrt/ninja/files/ninja.config
+@@ -6,7 +6,7 @@ config ninja
+     option workers '1'
+     option proxies ''
+     option preauth_api ''
+-    option disable_direct '1'
++    option disable_direct '0'
+     option timeout '600'
+     option connect_timeout '60'
+     option arkose_token_endpoint ''

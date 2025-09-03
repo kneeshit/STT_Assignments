@@ -1,0 +1,13 @@
+diff --git a/openai/src/auth.rs b/openai/src/auth.rs
+index 63ff270..1f9b140 100644
+--- a/openai/src/auth.rs
++++ b/openai/src/auth.rs
+@@ -398,7 +398,7 @@ impl AuthClient {
+                     return OAuthError::InvalidClientRequest(err_msg);
+                 }
+ 
+-                OAuthError::ServerError
++                OAuthError::ServerError(err_msg)
+             }
+             _ => OAuthError::InvalidRequest("Invalid Request".to_owned()),
+         }

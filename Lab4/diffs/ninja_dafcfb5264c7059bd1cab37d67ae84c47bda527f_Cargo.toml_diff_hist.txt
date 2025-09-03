@@ -1,0 +1,12 @@
+diff --git a/openai/Cargo.toml b/openai/Cargo.toml
+index 4a9e797..64a1b81 100644
+--- a/openai/Cargo.toml
++++ b/openai/Cargo.toml
+@@ -47,6 +47,7 @@ h2 = { git = "https://github.com/gngpp/h2.git", branch = "imp"}
+ default = ["serve", "limit"]
+ serve = []
+ limit = []
++remote-token = []
+ 
+ [lib]
+ name = "openai"

@@ -1,0 +1,16 @@
+diff --git a/reqwest/.github/dependabot.yml b/reqwest/.github/dependabot.yml
+new file mode 100644
+index 0000000..07e7dad
+--- /dev/null
++++ b/reqwest/.github/dependabot.yml
+@@ -0,0 +1,10 @@
++version: 2
++
++# Only enable cargo, turn off npm from wasm example
++updates:
++  - package-ecosystem: "cargo"
++    directory: "/"
++    schedule:
++      interval: "daily"
++    # disable regular version updates, security updates are unaffected
++    open-pull-requests-limit: 0

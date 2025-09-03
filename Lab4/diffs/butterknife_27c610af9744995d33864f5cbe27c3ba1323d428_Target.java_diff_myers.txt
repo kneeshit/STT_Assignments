@@ -1,0 +1,27 @@
+diff --git a/butterknife/src/it/method-with-multiple-ids/src/main/java/test/Target.java b/butterknife/src/it/method-with-multiple-ids/src/main/java/test/Target.java
+new file mode 100644
+index 0000000..2f15c85
+--- /dev/null
++++ b/butterknife/src/it/method-with-multiple-ids/src/main/java/test/Target.java
+@@ -0,0 +1,21 @@
++package test;
++
++import android.app.Activity;
++import android.view.View;
++import butterknife.InjectView;
++import butterknife.OnClick;
++
++public class Target extends Activity {
++  @InjectView(1) public View viewOne;
++  @InjectView(2) public View viewTwo;
++
++  public int count;
++
++  @OnClick({1, 2}) void clickOne() {
++    count += 1;
++  }
++
++  @Override public View findViewById(int id) {
++    return new View(this);
++  }
++}

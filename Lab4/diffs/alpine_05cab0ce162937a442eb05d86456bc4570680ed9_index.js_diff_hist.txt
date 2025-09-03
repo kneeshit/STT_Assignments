@@ -1,0 +1,18 @@
+diff --git a/src/index.js b/src/index.js
+index 1c2c5f4e..f6f89edb 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -76,7 +76,13 @@ const Alpine = {
+ 
+     initializeComponent: function (el) {
+         if (! el.__x) {
++            try {
+                 el.__x = new Component(el)
++            } catch (err) {
++                window.setTimeout(() => {
++                    throw err;
++                }, 0);
++            }
+         }
+     },
+ 

@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index 341e713..f35f3f4 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -137,7 +137,7 @@ public class Views {
+   }
+ 
+   @SupportedAnnotationTypes("butterknife.InjectView")
+-  public static class AnnotationProcessor extends AbstractProcessor {
++  public static class InjectViewProcessor extends AbstractProcessor {
+     static final String SUFFIX = "$$ViewInjector";
+ 
+     @Override public SourceVersion getSupportedSourceVersion() {

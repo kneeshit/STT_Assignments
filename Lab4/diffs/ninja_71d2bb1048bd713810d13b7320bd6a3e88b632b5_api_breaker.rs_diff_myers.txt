@@ -1,0 +1,21 @@
+diff --git a/openai/src/arkose/funcaptcha/api_breaker.rs b/openai/src/arkose/funcaptcha/api_breaker.rs
+index 48dd7a6..0c8f7bf 100644
+--- a/openai/src/arkose/funcaptcha/api_breaker.rs
++++ b/openai/src/arkose/funcaptcha/api_breaker.rs
+@@ -160,11 +160,15 @@ pub(super) fn hanlde_answer(
+     api_breaker: &ApiBreaker,
+     mut answer: i32,
+ ) -> anyhow::Result<serde_json::Value> {
+-    if !v2 && (game_type == 3 || game_type == 4) {
++    if !v2 && game_type == 3 {
+         let loc = tile_to_loc(answer);
+         return Ok(json!(loc));
+     }
+ 
++    if !v2 && game_type == 4 {
++        return Ok(json!({"index": answer}));
++    }
++
+     if v2 && game_type == 3 {
+         let mut loc = tile_to_loc(answer);
+         for v in &api_breaker.value {

@@ -1,0 +1,20 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 63176293..bea23868 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -4917,12 +4917,12 @@
+       var args = arguments;
+ 
+       var later = function later() {
+-        context.debounce_timeout = null;
++        context.debounceTimeout = null;
+         func.apply(context, args);
+       };
+ 
+-      clearTimeout(context.debounce_timeout);
+-      context.debounce_timeout = setTimeout(later, wait);
++      clearTimeout(context.debounceTimeout);
++      context.debounceTimeout = setTimeout(later, wait);
+     };
+   }
+   function saferEval(expression, dataContext) {

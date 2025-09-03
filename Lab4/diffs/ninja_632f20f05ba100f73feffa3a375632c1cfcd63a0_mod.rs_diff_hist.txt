@@ -1,0 +1,27 @@
+diff --git a/openai/src/api/mod.rs b/openai/src/api/mod.rs
+index cb17a43..a1de0b8 100644
+--- a/openai/src/api/mod.rs
++++ b/openai/src/api/mod.rs
+@@ -5,7 +5,7 @@ use std::{
+ 
+ use futures_util::Stream;
+ 
+-use crate::debug;
++use crate::{debug, warn};
+ 
+ use self::models::resp::PostConversationResponse;
+ 
+@@ -114,12 +114,11 @@ impl Stream for PostConversationStreamResponse {
+                         }
+                         Err(e) => {
+                             debug!("Error in stream: {:?}", e);
+-                            return Poll::Ready(None);
+                         }
+                     }
+                 }
+                 Poll::Ready(Some(Err(e))) => {
+-                    debug!("Error in stream: {:?}", e);
++                    warn!("Error in stream: {:?}", e);
+                     return Poll::Ready(None);
+                 }
+                 Poll::Ready(None) => {

@@ -1,0 +1,23 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/RClass.java b/butterknife-annotations/src/main/java/butterknife/RClass.java
+deleted file mode 100644
+index 809255b..0000000
+--- a/butterknife-annotations/src/main/java/butterknife/RClass.java
++++ /dev/null
+@@ -1,17 +0,0 @@
+-package butterknife;
+-
+-import java.lang.annotation.Retention;
+-import java.lang.annotation.Target;
+-
+-import static java.lang.annotation.ElementType.TYPE;
+-import static java.lang.annotation.RetentionPolicy.SOURCE;
+-
+-/**
+- * Denote the R class to lookup symbols for generated code.
+- */
+-@Retention(SOURCE) @Target(TYPE)
+-public @interface RClass {
+-
+-  // The R class
+-  Class<?> value();
+-}

@@ -1,0 +1,18 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index d2319ac..67e95e3 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,6 +1,13 @@
+ Change Log
+ ==========
+ 
++Version 4.0.1 *(2013-11-25)*
++----------------------------
++
++ * Fix: Correct a problem preventing the annotation processor to access Android types when certain
++   `javac` configurations were used to build.
++
++
+ Version 4.0.0 *(2013-11-25)*
+ ----------------------------
+ 

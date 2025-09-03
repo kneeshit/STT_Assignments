@@ -1,0 +1,12 @@
+diff --git a/src/directives/for.js b/src/directives/for.js
+index 703f66e3..66169150 100644
+--- a/src/directives/for.js
++++ b/src/directives/for.js
+@@ -66,6 +66,7 @@ function parseForExpression(expression) {
+ }
+ 
+ function getIterationScopeVariables(iteratorNames, item, index, items, extraVars) {
++    // We must create a new object, so each iteration has a new scope
+     let scopeVariables = extraVars ? {...extraVars} : {}
+     scopeVariables[iteratorNames.item] = item
+     if (iteratorNames.index) scopeVariables[iteratorNames.index] = index

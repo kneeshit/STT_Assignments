@@ -1,0 +1,16 @@
+diff --git a/src/component.js b/src/component.js
+index ef04a410..2b4b6f6e 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -20,9 +20,11 @@ export default class Component {
+ 
+         // For IE11, add our magic properties to the original data for access.
+         // Since the polyfill proxy does not allow properties to be added after creation 
++        if (window.document.documentMode) {
+             unobservedData.$el = null 
+             unobservedData.$refs = null 
+             unobservedData.$nextTick = null 
++        }
+ 
+         // Construct a Proxy-based observable. This will be used to handle reactivity.
+         this.$data = this.wrapDataInObservable(unobservedData)

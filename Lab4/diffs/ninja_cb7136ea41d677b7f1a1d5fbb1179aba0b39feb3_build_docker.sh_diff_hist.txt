@@ -1,0 +1,19 @@
+diff --git a/build_docker.sh b/build_docker.sh
+new file mode 100644
+index 0000000..d0c4f5b
+--- /dev/null
++++ b/build_docker.sh
+@@ -0,0 +1,12 @@
++#!/bin/bash
++
++: ${tag=latest}
++
++cd docker
++docker buildx build --platform linux/amd64,linux/arm64 \
++    --tag ghcr.io/gngpp/opengpt:$tag \
++    --tag gngpp/opengpt:$tag \
++    --tag gngpp/opengpt:latest \
++    --tag ghcr.io/gngpp/opengpt:latest \
++    --build-arg VERSION=$tag --push .
++cd -
+\ No newline at end of file

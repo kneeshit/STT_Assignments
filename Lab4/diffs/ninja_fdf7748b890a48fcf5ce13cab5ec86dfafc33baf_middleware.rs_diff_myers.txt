@@ -1,0 +1,17 @@
+diff --git a/openai/src/serve/middleware.rs b/openai/src/serve/middleware.rs
+index 661d7eb..bf309cd 100644
+--- a/openai/src/serve/middleware.rs
++++ b/openai/src/serve/middleware.rs
+@@ -63,7 +63,11 @@ where
+                 svc.await.map(ServiceResponse::map_into_left_body)
+             });
+         };
+-        let authorization = request.headers().get(header::AUTHORIZATION);
++
++        let authorization = match request.headers().get(header::AUTHORIZATION) {
++            Some(v) => Some(v),
++            None => request.headers().get("X-Authorization"),
++        };
+ 
+         let bad_response = |msg: &str, request: ServiceRequest| -> Self::Future {
+             let (req, _pl) = request.into_parts();

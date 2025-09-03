@@ -1,0 +1,14 @@
+diff --git a/butterknife-compiler/build.gradle b/butterknife-compiler/build.gradle
+index 077bc65..0a49271 100644
+--- a/butterknife-compiler/build.gradle
++++ b/butterknife-compiler/build.gradle
+@@ -12,6 +12,9 @@ dependencies {
+   compileOnly deps.auto.service
+   compileOnly files(org.gradle.internal.jvm.Jvm.current().getToolsJar())
+ 
++  api deps.incap.runtime
++  compileOnly deps.incap.processor
++
+   testImplementation deps.junit
+   testImplementation deps.truth
+ }

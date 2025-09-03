@@ -1,0 +1,27 @@
+diff --git a/src/utils.js b/src/utils.js
+index 2730cae9..c7ffcd48 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -69,11 +69,10 @@ export function saferEvalNoReturn(expression, dataContext, additionalHelperVaria
+     )
+ }
+ 
+-export function isXAttr(attr) {
+-    const name = replaceAtAndColonWithStandardSyntax(attr.name)
+-
+ const xAttrRE = /^x-(on|bind|data|text|html|model|if|for|show|cloak|transition|ref)\b/
+ 
++export function isXAttr(attr) {
++    const name = replaceAtAndColonWithStandardSyntax(attr.name)
+     return xAttrRE.test(name)
+ }
+ 
+@@ -83,7 +82,7 @@ export function getXAttrs(el, type) {
+         .map(attr => {
+             const name = replaceAtAndColonWithStandardSyntax(attr.name)
+ 
+-            const typeMatch = name.match(/^x-(on|bind|data|text|html|model|if|for|show|cloak|transition|ref)\b/)
++            const typeMatch = name.match(xAttrRE)
+             const valueMatch = name.match(/:([a-zA-Z\-:]+)/)
+             const modifiers = name.match(/\.[^.\]]+(?=[^\]]*$)/g) || []
+ 

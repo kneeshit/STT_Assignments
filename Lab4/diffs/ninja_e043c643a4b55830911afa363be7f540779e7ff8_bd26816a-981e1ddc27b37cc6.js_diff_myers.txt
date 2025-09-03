@@ -1,0 +1,8 @@
+diff --git a/openai/templates/static/_next/static/chunks/bd26816a-981e1ddc27b37cc6.js b/openai/templates/static/_next/static/chunks/bd26816a-981e1ddc27b37cc6.js
+new file mode 100644
+index 0000000..a7802a9
+--- /dev/null
++++ b/openai/templates/static/_next/static/chunks/bd26816a-981e1ddc27b37cc6.js
+@@ -0,0 +1 @@
++"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[786],{54655:function(t,n,e){e.d(n,{Ny3:function(){return o}});var r=e(50913);function o(t){return(0,r.w_)({tag:"svg",attr:{viewBox:"0 0 24 24",strokeWidth:"2",stroke:"currentColor",fill:"none",strokeLinecap:"round",strokeLinejoin:"round"},child:[{tag:"desc",attr:{},child:[]},{tag:"path",attr:{stroke:"none",d:"M0 0h24v24H0z",fill:"none"}},{tag:"path",attr:{d:"M5 9h14m-14 6h14"}}]})(t)}}}]);
+\ No newline at end of file

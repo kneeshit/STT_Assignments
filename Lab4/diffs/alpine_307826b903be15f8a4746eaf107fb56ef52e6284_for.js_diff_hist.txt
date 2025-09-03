@@ -1,0 +1,13 @@
+diff --git a/src/directives/for.js b/src/directives/for.js
+index aed443c9..6ac380d2 100644
+--- a/src/directives/for.js
++++ b/src/directives/for.js
+@@ -109,7 +109,7 @@ function addElementInLoopAfterCurrentEl(templateEl, currentEl) {
+ }
+ 
+ function lookAheadForMatchingKeyedElementAndMoveItIfFound(nextEl, currentKey) {
+-    // We don't know if nextEl is avtually an element so we check that it's not a falsy value first
++    // We don't know if nextEl is actually an element so we check that it's not a falsy value first
+     if(!nextEl) return false
+ 
+     // If the the key's DO match, no need to look ahead.

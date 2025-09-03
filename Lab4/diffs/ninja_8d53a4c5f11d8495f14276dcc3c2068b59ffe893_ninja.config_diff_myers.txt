@@ -1,0 +1,13 @@
+diff --git a/openwrt/ninja/files/ninja.config b/openwrt/ninja/files/ninja.config
+index 8526c47..1f8b97c 100644
+--- a/openwrt/ninja/files/ninja.config
++++ b/openwrt/ninja/files/ninja.config
+@@ -5,6 +5,8 @@ config ninja
+     option port '7999'
+     option workers '1'
+     option proxies ''
++    option interface ''
++    option ipv6_subnet ''
+     option preauth_api ''
+     option disable_direct '0'
+     option timeout '600'

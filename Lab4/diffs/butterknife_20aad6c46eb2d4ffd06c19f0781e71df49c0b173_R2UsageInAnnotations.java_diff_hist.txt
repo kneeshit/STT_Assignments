@@ -1,0 +1,14 @@
+diff --git a/butterknife-lint/src/test/java/sample/r2/R2UsageInAnnotations.java b/butterknife-lint/src/test/java/sample/r2/R2UsageInAnnotations.java
+new file mode 100644
+index 0000000..9f63a67
+--- /dev/null
++++ b/butterknife-lint/src/test/java/sample/r2/R2UsageInAnnotations.java
+@@ -0,0 +1,8 @@
++package sample.r2;
++
++public class R2UsageInAnnotations {
++
++  @BindTest(sample.r2.R2.string.res) String test;
++
++  @BindTest(R2.id.res) public void foo() { }
++}

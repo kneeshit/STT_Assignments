@@ -1,0 +1,46 @@
+diff --git a/test/on.spec.js b/test/on.spec.js
+index 60b2f8f6..2f5ba790 100644
+--- a/test/on.spec.js
++++ b/test/on.spec.js
+@@ -120,7 +120,7 @@ test('.once modifier', async () => {
+         <div x-data="{ count: 0 }">
+             <button x-on:click.once="count = count+1"></button>
+ 
+-            <span x-bind:foo="count"
++            <span x-bind:foo="count"></span>
+         </div>
+     `
+ 
+@@ -139,6 +139,32 @@ test('.once modifier', async () => {
+     expect(document.querySelector('span').getAttribute('foo')).toEqual('1')
+ })
+ 
++test('.once modifier doest remove listener if false is returned', async () => {
++    document.body.innerHTML = `
++        <div x-data="{ count: 0 }">
++            <button x-on:click.once="return ++count === 2"></button>
++
++            <span x-bind:foo="count"></span>
++        </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('span').getAttribute('foo')).toEqual('0')
++
++    document.querySelector('button').click()
++
++    await wait(() => { expect(document.querySelector('span').getAttribute('foo')).toEqual('1') })
++
++    document.querySelector('button').click()
++
++    await wait(() => { expect(document.querySelector('span').getAttribute('foo')).toEqual('2') })
++
++    await timeout(25)
++
++    expect(document.querySelector('span').getAttribute('foo')).toEqual('2')
++})
++
+ test('keydown modifiers', async () => {
+     document.body.innerHTML = `
+         <div x-data="{ count: 0 }">

@@ -1,0 +1,12 @@
+diff --git a/openai/Cargo.toml b/openai/Cargo.toml
+index 4c72563..6a4834b 100644
+--- a/openai/Cargo.toml
++++ b/openai/Cargo.toml
+@@ -7,7 +7,6 @@ edition = "2021"
+ 
+ [dependencies]
+ log = "0.4.18"
+-env_logger = "0.10.0"
+ anyhow = "1.0.71"
+ thiserror = "1.0"
+ chrono = "0.4.22"

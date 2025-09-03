@@ -1,0 +1,23 @@
+diff --git a/butterknife/src/it/superclass/src/test/java/butterknife/ButterKnifeTestRunner.java b/butterknife/src/it/superclass/src/test/java/butterknife/ButterKnifeTestRunner.java
+deleted file mode 100644
+index 20e2f91..0000000
+--- a/butterknife/src/it/superclass/src/test/java/butterknife/ButterKnifeTestRunner.java
++++ /dev/null
+@@ -1,17 +0,0 @@
+-package butterknife;
+-
+-import java.lang.reflect.Method;
+-import org.junit.runners.model.InitializationError;
+-import org.robolectric.Robolectric;
+-import org.robolectric.RobolectricTestRunner;
+-import org.robolectric.shadows.ShadowApplication;
+-
+-public class ButterKnifeTestRunner extends RobolectricTestRunner {
+-  public ButterKnifeTestRunner(Class<?> testClass) throws InitializationError {
+-    super(testClass);
+-  }
+-
+-  @Override public void setupApplicationState(Method testMethod) {
+-    Robolectric.application = ShadowApplication.bind(createApplication(), null, null);
+-  }
+-}

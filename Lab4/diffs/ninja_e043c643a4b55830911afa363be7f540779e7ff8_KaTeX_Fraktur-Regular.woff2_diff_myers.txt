@@ -1,0 +1,4 @@
+diff --git a/openai/templates/static/fonts/katex/KaTeX_Fraktur-Regular.woff2 b/openai/templates/static/fonts/katex/KaTeX_Fraktur-Regular.woff2
+new file mode 100644
+index 0000000..735f694
+Binary files /dev/null and b/openai/templates/static/fonts/katex/KaTeX_Fraktur-Regular.woff2 differ

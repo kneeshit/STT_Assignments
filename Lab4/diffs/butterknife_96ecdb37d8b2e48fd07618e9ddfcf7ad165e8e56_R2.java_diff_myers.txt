@@ -1,0 +1,15 @@
+diff --git a/butterknife-gradle-plugin/src/test/resources/fixtures/R2.java b/butterknife-gradle-plugin/src/test/resources/fixtures/R2.java
+index d70a8a4..095214b 100644
+--- a/butterknife-gradle-plugin/src/test/resources/fixtures/R2.java
++++ b/butterknife-gradle-plugin/src/test/resources/fixtures/R2.java
+@@ -90,6 +90,9 @@ public final class R2 {
+ 
+   public static final class styleable {
+     @StyleableRes
+-    public static final int res = 0x7f040015;
++    public static final int resArray_child = 0;
++
++    @StyleableRes
++    public static final int resArray_child2 = 1;
+   }
+ }

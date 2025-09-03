@@ -1,0 +1,13 @@
+diff --git a/src/main.rs b/src/main.rs
+index 1a2a57b..15a63a5 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -129,7 +129,7 @@ async fn main() -> anyhow::Result<()> {
+     Ok(())
+ }
+ 
+-pub(crate) static ONCE_INIT: Once = Once::new();
++static ONCE_INIT: Once = Once::new();
+ 
+ fn initialize_log(s: &str) -> anyhow::Result<bool> {
+     let debug = s.parse::<bool>()?;

@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/fonts/soehne/soehne-mono-buch.woff2 b/openai/ui/static/fonts/soehne/soehne-mono-buch.woff2
+new file mode 100644
+index 0000000..68e14f3
+Binary files /dev/null and b/openai/ui/static/fonts/soehne/soehne-mono-buch.woff2 differ

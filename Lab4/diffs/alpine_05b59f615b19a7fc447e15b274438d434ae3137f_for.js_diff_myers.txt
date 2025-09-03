@@ -1,0 +1,22 @@
+diff --git a/src/directives/for.js b/src/directives/for.js
+index 6be2d0ac..86fc914b 100644
+--- a/src/directives/for.js
++++ b/src/directives/for.js
+@@ -92,12 +92,14 @@ function evaluateItemsAndReturnEmptyIfXIfIsPresentAndFalseOnElement(component, e
+         return []
+     }
+     
++    let items = component.evaluateReturnExpression(el, iteratorNames.items, extraVars)
++
+     // This adds support for the `i in n` syntax.
+-    if (isNumeric(iteratorNames.items)) {
+-        return Array.from(Array(parseInt(iteratorNames.items, 10)).keys(), i => i + 1)
++    if (isNumeric(items)) {
++        items = Array.from(Array(items).keys(), i => i + 1)
+     }
+ 
+-    return component.evaluateReturnExpression(el, iteratorNames.items, extraVars)
++    return items
+ }
+ 
+ function addElementInLoopAfterCurrentEl(templateEl, currentEl) {

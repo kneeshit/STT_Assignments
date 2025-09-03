@@ -1,0 +1,4 @@
+diff --git a/openai/templates/static/favicon-16x16.png b/openai/templates/static/favicon-16x16.png
+new file mode 100644
+index 0000000..079ced0
+Binary files /dev/null and b/openai/templates/static/favicon-16x16.png differ

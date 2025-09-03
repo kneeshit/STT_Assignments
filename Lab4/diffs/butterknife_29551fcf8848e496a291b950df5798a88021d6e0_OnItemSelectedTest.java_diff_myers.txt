@@ -1,0 +1,123 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+index 9e43ae6..a0c89a5 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+@@ -20,20 +20,6 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "\n"
+@@ -75,7 +61,7 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void nonDefaultMethod() {
+@@ -90,20 +76,6 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -144,7 +116,7 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void allMethods() {
+@@ -161,20 +133,6 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -216,7 +174,7 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ 
+   @Test public void multipleBindingPermutation() {
+@@ -233,20 +191,6 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -316,6 +260,6 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ }

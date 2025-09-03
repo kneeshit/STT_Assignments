@@ -1,0 +1,22 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindString.java b/butterknife-annotations/src/main/java/butterknife/BindString.java
+index ff82aa9..5dfebd5 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindString.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindString.java
+@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 
+ import static java.lang.annotation.ElementType.FIELD;
+-import static java.lang.annotation.RetentionPolicy.CLASS;
++import static java.lang.annotation.RetentionPolicy.RUNTIME;
+ 
+ /**
+  * Bind a field to the specified string resource ID.
+@@ -13,7 +13,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * {@literal @}BindString(R.string.username_error) String usernameErrorText;
+  * </code></pre>
+  */
+-@Retention(CLASS) @Target(FIELD)
++@Retention(RUNTIME) @Target(FIELD)
+ public @interface BindString {
+   /** String resource ID to which the field will be bound. */
+   @StringRes int value();

@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index f2a712e..d2226fa 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -53,7 +53,7 @@ public class Views {
+       Method inject = INJECTORS.get(targetClass);
+       if (inject == null) {
+         Class<?> injector = Class.forName(targetClass.getName() + AnnotationProcessor.SUFFIX);
+-        inject = injector.getMethod("inject", target.getClass(), sourceType);
++        inject = injector.getMethod("inject", targetClass, sourceType);
+         INJECTORS.put(targetClass, inject);
+       }
+       inject.invoke(null, target, source);

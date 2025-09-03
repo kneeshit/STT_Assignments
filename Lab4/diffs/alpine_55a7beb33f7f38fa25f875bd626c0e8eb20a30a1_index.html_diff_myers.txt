@@ -1,0 +1,17 @@
+diff --git a/index.html b/index.html
+index 42b4ffb3..4d14ba1c 100644
+--- a/index.html
++++ b/index.html
+@@ -8,6 +8,12 @@
+         <script src="/dist/alpine.js" defer></script>
+     </head>
+     <body>
++        <div x-data="{ foo: 'bar' }">
++            <span :class="foo"></span>
++
++            <button @click="foo = 'baz'">hey</button>
++        </div>
++
+         <table>
+             <thead>
+                 <tr>

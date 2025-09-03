@@ -1,0 +1,28 @@
+diff --git a/link-target/index.html b/link-target/index.html
+new file mode 100644
+index 00000000..73b63261
+--- /dev/null
++++ b/link-target/index.html
+@@ -0,0 +1,22 @@
++<html>
++    <head>
++        <style>
++            .hidden { display: none; }
++        </style>
++        <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha256-iM4Yzi/zLj/IshPWMC1IluRxTtRjMqjPGd97TZ9yYpU=" crossorigin="anonymous"></script>
++        <script src="/dist/minimal.js" defer></script>
++        <script>
++            document.addEventListener('DOMContentLoaded', () => {
++                window.minimal.start()
++            })
++        </script>
++    </head>
++    <body>
++        <div>hey</div>
++
++        <div x-data="{ lol: 'hey' }">
++            <input type="text" x-model="lol">
++            <span x-text="lol"></span>
++        </div>
++    </body>
++</html>

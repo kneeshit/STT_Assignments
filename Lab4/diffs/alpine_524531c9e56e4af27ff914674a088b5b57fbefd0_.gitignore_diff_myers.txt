@@ -1,0 +1,8 @@
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+index 00000000..e7e9d11d
+--- /dev/null
++++ b/.idea/.gitignore
+@@ -0,0 +1,2 @@
++# Default ignored files
++/workspace.xml

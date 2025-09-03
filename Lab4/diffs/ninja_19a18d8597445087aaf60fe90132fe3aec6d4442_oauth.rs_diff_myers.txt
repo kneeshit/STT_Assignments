@@ -1,0 +1,13 @@
+diff --git a/examples/oauth.rs b/examples/oauth.rs
+index 85e1203..775df86 100644
+--- a/examples/oauth.rs
++++ b/examples/oauth.rs
+@@ -15,7 +15,7 @@ async fn main() -> anyhow::Result<()> {
+         .build();
+     let token = auth
+         .do_access_token(
+-            OAuthAccountBuilder::default()
++            &OAuthAccountBuilder::default()
+                 .username(email)
+                 .password(password)
+                 .build()?,

@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index df8bb9b..71060f9 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -358,7 +358,7 @@ async fn unofficial_proxy(
+         .path_and_query()
+         .map(|v| v.as_str())
+         .unwrap_or(uri.path());
+-    let url = format!("{URL_CHATGPT_API}{path_and_query}");
++    let url = format!("{URL_PLATFORM_API}{path_and_query}");
+ 
+     handle_body(&url, &method, &mut headers, &mut body).await?;
+ 

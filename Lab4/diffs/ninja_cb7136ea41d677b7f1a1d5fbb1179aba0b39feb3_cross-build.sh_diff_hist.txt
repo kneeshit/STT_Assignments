@@ -1,0 +1,15 @@
+diff --git a/cross-build.sh b/cross-build.sh
+deleted file mode 100755
+index 0f5505a..0000000
+--- a/cross-build.sh
++++ /dev/null
+@@ -1,8 +0,0 @@
+-#!/bin/bash
+-
+-cargo update
+-
+-target_list=(x86_64-unknown-linux-musl aarch64-unknown-linux-musl)
+-for target in ${target_list[@]}; do
+-    cargo zigbuild --release --target $target
+-done
+\ No newline at end of file

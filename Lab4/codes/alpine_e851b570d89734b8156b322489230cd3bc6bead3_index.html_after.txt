@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style>
+            .hidden { display: none; }
+            [x-cloak] { display: none; }
+        </style>
+
+        <script src="https://cdn.jsdelivr.net/gh/calebporzio/project-x@v0.2.0/dist/project-x.min.js" defer></script>
+    </head>
+    <body>
+        <div x-data="{ foo: 'bar' }">
+            <div x-on:click="foo = 'baz'">
+                <button x-on:click.stop></button>
+            </div>
+
+            <span x-text="foo"></span>
+        </div>
+
+        <div x-data="{ count: 0 }">
+            <span x-text=""></span>
+        </div>
+
+        <div x-data="{ foo: 'bar' }">
+            <input x-model="foo"></input>
+
+            <button x-on:click="foo = 'baz'"></button>
+        </div>
+
+        <div x-data="{ open: false }">
+            <button x-on:click="open = true">Open Dropdown</button>
+
+            <ul
+                x-bind:class="{ 'hidden': ! open }"
+                x-on:click.away="open = false"
+                x-cloak
+            >
+                Dropdown Body
+            </ul>
+        </div>
+
+        <div>
+            <div id="goHere">
+                some nested thing
+            </div>
+        </div>
+        <div x-data="{ foo: ['bar', 'baz'] }">
+            <select x-model="foo" multiple>
+                <option disabled value="">Please select one</option>
+                <option>bar</option>
+                <option>baz</option>
+            </select>
+
+            <span x-text="foo"></span>
+        </div>
+        <div x-data="{ currentTab: 'foo' }">
+            <button x-bind:class="{ 'active': currentTab === 'foo' }" x-on:click="currentTab = 'foo'">Foo</button>
+            <button x-bind:class="{ 'active': currentTab === 'bar' }" x-on:click="currentTab = 'bar'">Bar</button>
+
+            <div x-bind:class="{ 'hidden': currentTab !== 'foo' }">Tab Foo</div>
+            <div class="hidden" x-bind:class="{ 'hidden': currentTab !== 'bar' }">Tab Bar</div>
+        </div>
+
+        <div x-data="{ foo: 'bar' }">
+            <input type="radio" x-model="foo" value="bar"></input>
+            <input type="radio" x-model="foo" value="baz"></input>
+
+            <span x-text="foo"></span>
+        </div>
+
+
+        <div x-data="{ name: 1 }">
+            <input type="text" x-model.number="name">
+
+            <span x-text="name"></span>
+        </div>
+        <div x-data="{ foo: [] }">
+            <input type="checkbox" x-model="foo" value="bar"></input>
+            <input type="checkbox" x-model="foo" value="baz"></input>
+
+            <span x-text="foo"></span>
+        </div>
+        <div x-data="{}">
+            <span class="" x-bind:class="['hey']"></span>
+        </div>
+
+        <script>
+            const thing = document.querySelector('#goHere')
+            const handler = (e) => {
+                thing.removeEventListener('click', handler)
+
+                const div = document.createElement('div')
+                div.setAttribute('x-data', '{hey: "there"}')
+                div.innerHTML = '<input type="text" x-model="hey"><h1 x-text="hey"></h1>'
+                e.target.appendChild(div)
+            }
+
+            var listener = thing.addEventListener('click', handler)
+        </script>
+    </body>
+</html>

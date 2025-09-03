@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index 394ac1a..44f4358 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -101,7 +101,7 @@ public class Views {
+     inject(target, source, Finder.VIEW);
+   }
+ 
+-  private static void inject(Object target, Object source, Finder finder) { 
++  static void inject(Object target, Object source, Finder finder) {
+     Class<?> targetClass = target.getClass();
+     try {
+       Method inject;

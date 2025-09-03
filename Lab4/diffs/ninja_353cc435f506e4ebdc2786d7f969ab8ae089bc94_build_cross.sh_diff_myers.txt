@@ -1,0 +1,13 @@
+diff --git a/build_cross.sh b/build_cross.sh
+index d6d45c0..b56e210 100755
+--- a/build_cross.sh
++++ b/build_cross.sh
+@@ -9,7 +9,7 @@ root=$(pwd)
+ cargo update
+ cargo install cargo-deb
+ 
+-target_list=(x86_64-unknown-linux-musl aarch64-unknown-linux-musl armv7-unknown-linux-musleabi armv7-unknown-linux-musleabihf armv5te-unknown-linux-musleabi arm-unknown-linux-musleabi arm-unknown-linux-musleabihf)
++target_list=(x86_64-unknown-linux-musl aarch64-unknown-linux-musl armv7-unknown-linux-musleabi armv7-unknown-linux-musleabihf armv5te-unknown-linux-musleabi arm-unknown-linux-musleabi arm-unknown-linux-musleabihf x86_64-pc-windows-msvc)
+ for target in ${target_list[@]}; do
+     docker pull ghcr.io/gngpp/opengpt-builder:$target
+     docker run --rm -t --privileged \

@@ -1,0 +1,10 @@
+diff --git a/render.yaml b/render.yaml
+index e2dbd06..6df647a 100644
+--- a/render.yaml
++++ b/render.yaml
+@@ -1,4 +1,4 @@
+ runtime: image
+ 
+ image:
+-  url: docker.io/gngpp/opengpt:latest
++  url: ghcr.io/gngpp/opengpt:latest

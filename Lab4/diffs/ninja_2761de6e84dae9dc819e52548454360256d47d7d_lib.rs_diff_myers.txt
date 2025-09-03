@@ -1,0 +1,18 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index cedd3a5..425ea33 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -1,12 +1,12 @@
+ #![recursion_limit = "256"]
+ pub mod arkose;
+ pub mod auth;
++pub mod chatgpt;
+ pub mod error;
+ #[cfg(feature = "stream")]
+ pub mod eventsource;
+ pub mod log;
+ pub mod model;
+-pub mod chatgpt;
+ pub mod platform;
+ pub mod unescape;
+ pub mod uuid;

@@ -1,0 +1,38 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java b/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java
+index 0de0854..0673786 100644
+--- a/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java
++++ b/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java
+@@ -242,14 +242,14 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+ 
+     // Verify that the type is a List or an array.
+     TypeMirror elementType = element.asType();
+-    TypeMirror erasedType = typeUtils.erasure(elementType);
++    String erasedType = doubleErasure(elementType);
+     TypeMirror viewType = null;
+     CollectionBinding.Kind kind = null;
+     if (elementType.getKind() == TypeKind.ARRAY) {
+       ArrayType arrayType = (ArrayType) elementType;
+       viewType = arrayType.getComponentType();
+       kind = CollectionBinding.Kind.ARRAY;
+-    } else if (LIST_TYPE.equals(erasedType.toString())) {
++    } else if (LIST_TYPE.equals(erasedType)) {
+       DeclaredType declaredType = (DeclaredType) elementType;
+       List<? extends TypeMirror> typeArguments = declaredType.getTypeArguments();
+       if (typeArguments.size() != 1) {
+@@ -304,6 +304,16 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+     erasedTargetNames.add(enclosingElement.toString());
+   }
+ 
++  /** Uses both {@link Types#erasure} and string manipulation to strip any generic types. */
++  private String doubleErasure(TypeMirror elementType) {
++    String name = typeUtils.erasure(elementType).toString();
++    int typeParamStart = name.indexOf('<');
++    if (typeParamStart != -1) {
++      name = name.substring(0, typeParamStart);
++    }
++    return name;
++  }
++
+   private void findAndParseListener(RoundEnvironment env,
+       Class<? extends Annotation> annotationClass, Map<TypeElement, ViewInjector> targetClassMap,
+       Set<String> erasedTargetNames) {

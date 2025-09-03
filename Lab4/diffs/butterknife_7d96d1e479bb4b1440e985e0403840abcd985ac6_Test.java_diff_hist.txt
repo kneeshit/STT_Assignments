@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/it/field-not-extending-view/src/main/java/test/Test.java b/butterknife/src/it/field-not-extending-view/src/main/java/test/Test.java
+new file mode 100644
+index 0000000..983f27d
+--- /dev/null
++++ b/butterknife/src/it/field-not-extending-view/src/main/java/test/Test.java
+@@ -0,0 +1,8 @@
++package test;
++
++import android.app.Activity;
++import butterknife.InjectView;
++
++public class Test extends Activity {
++  @InjectView(1) String thing;
++}

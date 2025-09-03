@@ -1,0 +1,14 @@
+diff --git a/rollup.config.js b/rollup.config.js
+index 4436aafc..14205241 100644
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,7 +1,7 @@
+ import babel from 'rollup-plugin-babel';
+ import filesize from 'rollup-plugin-filesize';
+-import { terser } from "rollup-plugin-terser";
+-import resolve from "rollup-plugin-node-resolve"
++import { terser } from 'rollup-plugin-terser';
++import resolve from 'rollup-plugin-node-resolve';
+ import stripCode from 'rollup-plugin-strip-code';
+ import replace from '@rollup/plugin-replace';
+ 

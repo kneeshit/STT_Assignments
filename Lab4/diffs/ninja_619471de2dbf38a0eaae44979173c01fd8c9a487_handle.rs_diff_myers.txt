@@ -1,0 +1,12 @@
+diff --git a/src/handle.rs b/src/handle.rs
+index a8aa18a..0255211 100644
+--- a/src/handle.rs
++++ b/src/handle.rs
+@@ -276,6 +276,7 @@ pub(super) fn generate_template(out: Option<PathBuf>) -> anyhow::Result<()> {
+         arkose_solver_key: None,
+         arkose_platform_har_file: None,
+         arkose_auth_har_file: None,
++        preauth_api: None,
+     };
+ 
+     let write = |out: PathBuf, args: ServeArgs| -> anyhow::Result<()> {

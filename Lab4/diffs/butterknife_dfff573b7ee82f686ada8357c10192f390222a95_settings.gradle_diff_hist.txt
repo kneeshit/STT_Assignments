@@ -1,0 +1,14 @@
+diff --git a/settings.gradle b/settings.gradle
+index cc28c27..cd8829a 100644
+--- a/settings.gradle
++++ b/settings.gradle
+@@ -5,7 +5,7 @@ include ':butterknife-gradle-plugin'
+ include ':butterknife-lint'
+ include ':butterknife-integration-test'
+ 
+-include ':sample:app'
+-include ':sample:library'
++//include ':sample:app'
++//include ':sample:library'
+ 
+ rootProject.name = 'butterknife-parent'

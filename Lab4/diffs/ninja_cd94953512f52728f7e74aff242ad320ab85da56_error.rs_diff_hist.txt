@@ -1,0 +1,13 @@
+diff --git a/openai/src/preauth/proxy/error.rs b/openai/src/preauth/proxy/error.rs
+index 7a232a9..de37d5a 100644
+--- a/openai/src/preauth/proxy/error.rs
++++ b/openai/src/preauth/proxy/error.rs
+@@ -8,8 +8,6 @@ pub enum Error {
+     Tls(#[from] RcgenError),
+     #[error("network error")]
+     HyperError(#[from] hyper::Error),
+-    #[error("TlsConnector error")]
+-    TlsConnectorError(#[from] hyper_tls::native_tls::Error),
+     #[error("IO error")]
+     IO(#[from] io::Error),
+     #[error("unable to decode response body")]

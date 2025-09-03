@@ -1,0 +1,16 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/OnPageChange.java b/butterknife-annotations/src/main/java/butterknife/OnPageChange.java
+index 3c792e6..b1501b5 100644
+--- a/butterknife-annotations/src/main/java/butterknife/OnPageChange.java
++++ b/butterknife-annotations/src/main/java/butterknife/OnPageChange.java
+@@ -31,9 +31,11 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ @Retention(CLASS)
+ @ListenerClass(
+     targetType = "android.support.v4.view.ViewPager",
++    targetTypeAndroidX = "androidx.viewpager.widget.ViewPager",
+     setter = "addOnPageChangeListener",
+     remover = "removeOnPageChangeListener",
+     type = "android.support.v4.view.ViewPager.OnPageChangeListener",
++    typeAndroidX = "androidx.viewpager.widget.ViewPager.OnPageChangeListener",
+     callbacks = OnPageChange.Callback.class
+ )
+ public @interface OnPageChange {

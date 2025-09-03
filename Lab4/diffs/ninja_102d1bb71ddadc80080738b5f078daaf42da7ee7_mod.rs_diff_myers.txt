@@ -1,0 +1,32 @@
+diff --git a/openai/src/auth/mod.rs b/openai/src/auth/mod.rs
+index ae2b979..714a89f 100644
+--- a/openai/src/auth/mod.rs
++++ b/openai/src/auth/mod.rs
+@@ -6,7 +6,7 @@ use std::collections::{HashMap, HashSet};
+ use std::sync::Arc;
+ use std::time::Duration;
+ 
+-use anyhow::{anyhow, bail};
++use anyhow::bail;
+ use regex::Regex;
+ use reqwest::cookie::{self, CookieStore, Jar};
+ use reqwest::header::{HeaderMap, HeaderValue};
+@@ -263,7 +263,6 @@ impl AuthClient {
+                 .map_err(AuthError::InvalidArkoseToken)?,
+         };
+ 
+-        if arkose_token.success() {
+         let mut header_value = HashSet::with_capacity(1);
+         header_value.insert(HeaderValue::from_str(&format!(
+             "arkoseToken={};",
+@@ -274,10 +273,6 @@ impl AuthClient {
+             .set_cookies(&mut header_value.iter(), &Url::parse(OPENAI_OAUTH_URL)?);
+         return Ok(());
+     }
+-        bail!(AuthError::InvalidArkoseToken(anyhow!(
+-            "Arkose token failed"
+-        )))
+-    }
+ }
+ 
+ #[async_trait::async_trait]

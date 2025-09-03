@@ -1,0 +1,7 @@
+diff --git a/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/format b/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/format
+deleted file mode 100644
+index 48082f7..0000000
+--- a/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/format
++++ /dev/null
+@@ -1 +0,0 @@
+-12

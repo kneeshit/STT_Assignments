@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/toapi/mod.rs b/openai/src/serve/router/toapi/mod.rs
+index 075f154..efdfa12 100644
+--- a/openai/src/serve/router/toapi/mod.rs
++++ b/openai/src/serve/router/toapi/mod.rs
+@@ -18,7 +18,7 @@ use crate::{
+         resp::{ConvoResponse, PostConvoResponse},
+     },
+     context,
+-    serve::{err::ResponseError, has_puid, header_convert},
++    serve::{error::ResponseError, has_puid, header_convert},
+ };
+ use crate::{chatgpt::model::Role, debug};
+ 

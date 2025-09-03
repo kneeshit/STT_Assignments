@@ -1,0 +1,19 @@
+diff --git a/src/directives/on.js b/src/directives/on.js
+index 159cfc70..5e68bbb7 100644
+--- a/src/directives/on.js
++++ b/src/directives/on.js
+@@ -38,12 +38,12 @@ export function registerListener(component, el, event, modifiers, expression, ex
+ 
+             if (returnValue === false) {
+                 e.preventDefault()
+-            }
+-
++            } else {
+                 if (modifiers.includes('once')) {
+                     listenerTarget.removeEventListener(event, handler)
+                 }
+             }
++        }
+ 
+         listenerTarget.addEventListener(event, handler)
+     }

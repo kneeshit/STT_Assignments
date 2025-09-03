@@ -1,0 +1,13 @@
+diff --git a/openai/src/auth/model.rs b/openai/src/auth/model.rs
+index 6204b3c..67d2951 100644
+--- a/openai/src/auth/model.rs
++++ b/openai/src/auth/model.rs
+@@ -16,7 +16,7 @@ pub enum AuthStrategy {
+ 
+ impl Default for AuthStrategy {
+     fn default() -> Self {
+-        AuthStrategy::Apple
++        AuthStrategy::Web
+     }
+ }
+ 

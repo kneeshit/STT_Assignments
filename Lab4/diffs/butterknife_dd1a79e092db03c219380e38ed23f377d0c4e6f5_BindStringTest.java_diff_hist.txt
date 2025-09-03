@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindStringTest.java b/butterknife-compiler/src/test/java/butterknife/BindStringTest.java
+index 597ef32..f2e5a7d 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindStringTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindStringTest.java
+@@ -44,7 +44,7 @@ public class BindStringTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }
+@@ -81,7 +81,7 @@ public class BindStringTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }

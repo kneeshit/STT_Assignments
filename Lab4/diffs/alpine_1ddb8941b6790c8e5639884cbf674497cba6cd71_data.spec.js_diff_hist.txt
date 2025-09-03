@@ -1,0 +1,25 @@
+diff --git a/test/data.spec.js b/test/data.spec.js
+index e3233cc4..5749fde7 100644
+--- a/test/data.spec.js
++++ b/test/data.spec.js
+@@ -14,7 +14,19 @@ test('data manipulated on component object is reactive', async () => {
+ 
+     Alpine.start()
+ 
+-    document.querySelector('div').__x.data.foo = 'baz'
++    document.querySelector('div').__x.$data.foo = 'baz'
+ 
+     await wait(() => { expect(document.querySelector('span').innerText).toEqual('baz') })
+ })
++
++test('x-data attribute value is optional', async () => {
++    document.body.innerHTML = `
++        <div x-data>
++            <span x-text="'foo'"></span>
++        </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('span').innerText).toEqual('foo')
++})

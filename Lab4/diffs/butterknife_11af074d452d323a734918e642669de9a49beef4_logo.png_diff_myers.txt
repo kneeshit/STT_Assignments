@@ -1,0 +1,4 @@
+diff --git a/website/static/logo.png b/website/static/logo.png
+new file mode 100644
+index 0000000..ff9aa71
+Binary files /dev/null and b/website/static/logo.png differ

@@ -1,0 +1,15 @@
+diff --git a/package.json b/package.json
+index 0c7b7416..58a10be5 100644
+--- a/package.json
++++ b/package.json
+@@ -2,6 +2,10 @@
+   "main": "dist/project-x.js",
+   "name": "project-x",
+   "version": "0.3.0",
++  "repository": {
++    "type": "git",
++    "url": "git://github.com/calebporzio/project-x.git"
++  },
+   "scripts": {
+     "test": "jest",
+     "test:debug": "node --inspect node_modules/.bin/jest --runInBand",

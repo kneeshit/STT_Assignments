@@ -1,0 +1,12 @@
+diff --git a/openai/src/serve/turnstile.rs b/openai/src/serve/turnstile.rs
+index b4f0e3c..e709a05 100644
+--- a/openai/src/serve/turnstile.rs
++++ b/openai/src/serve/turnstile.rs
+@@ -1,6 +1,6 @@
+ use crate::context;
+ 
+-use super::err::ResponseError;
++use super::error::ResponseError;
+ 
+ pub(super) async fn cf_turnstile_check(
+     addr: &std::net::IpAddr,

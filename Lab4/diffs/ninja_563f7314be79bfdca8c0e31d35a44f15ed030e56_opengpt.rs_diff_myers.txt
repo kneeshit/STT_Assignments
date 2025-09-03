@@ -1,0 +1,12 @@
+diff --git a/examples/opengpt.rs b/examples/opengpt.rs
+index e70d3bb..45e4caf 100644
+--- a/examples/opengpt.rs
++++ b/examples/opengpt.rs
+@@ -13,7 +13,6 @@ async fn main() -> anyhow::Result<()> {
+     let password = std::env::var("PASSWORD")?;
+     let auth = openai::auth::AuthClientBuilder::builder()
+         .user_agent(openai::HEADER_UA)
+-        .chrome_builder(reqwest::browser::ChromeVersion::V110)
+         .cookie_store(true)
+         .timeout(std::time::Duration::from_secs(20))
+         .build();

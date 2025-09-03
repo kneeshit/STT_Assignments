@@ -1,0 +1,14 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index e132706..e798ec5 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -35,6 +35,9 @@ nix = { version = "0.26.2", features = ["signal", "user", "ptrace"]}
+ 
+ [dev-dependencies]
+ futures-util = "0.3.27"
++reqwest = { git = "https://github.com/gngpp/reqwest.git", branch ="main", default-features = false, features = [
++    "chrome","json", "cookies", "stream", "multipart", "socks"
++] }
+ 
+ [patch.crates-io]
+ hyper = { git = "https://github.com/gngpp/hyper.git", branch = "v0.14.18-patched" }

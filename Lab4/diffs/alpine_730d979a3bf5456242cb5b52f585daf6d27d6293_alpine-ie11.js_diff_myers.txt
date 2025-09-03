@@ -1,0 +1,24 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 650fe742..01e1e6c5 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -5612,6 +5612,10 @@
+     el.innerText = output;
+   }
+ 
++  function handleHtmlDirective(component, el, expression, extraVars) {
++    el.innerHTML = component.evaluateReturnExpression(el, expression, extraVars);
++  }
++
+   function handleShowDirective(component, el, value, modifiers) {
+     var _this = this;
+ 
+@@ -6386,7 +6390,7 @@
+               break;
+ 
+             case 'html':
+-              el.innerHTML = this.evaluateReturnExpression(el, expression, extraVars);
++              handleHtmlDirective(this, el, expression, extraVars);
+               break;
+ 
+             case 'show':

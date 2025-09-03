@@ -1,0 +1,12 @@
+diff --git a/docker/builder/Dockerfile b/docker/builder/Dockerfile
+index f33e213..500b31f 100644
+--- a/docker/builder/Dockerfile
++++ b/docker/builder/Dockerfile
+@@ -11,6 +11,7 @@ LABEL org.opencontainers.image.authors "gngpp <gngppz@gmail.com>"
+ LABEL org.opencontainers.image.source https://github.com/gngpp/opengpt
+ 
+ RUN mkdir /root/.cargo/registry
++RUN mkdir /root/.cargo/git
+ RUN if [ "${TARGETPLATFORM}" = "linux/arm64" ]; then \
+         apt update -y && apt install -y gcc-aarch64-linux-gnu; \
+     elif [ "${TARGETPLATFORM}" = "linux/amd64" ]; then \

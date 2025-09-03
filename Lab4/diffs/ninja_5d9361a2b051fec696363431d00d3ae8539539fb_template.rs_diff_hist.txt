@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/template.rs b/openai/src/serve/template.rs
+index 201b915..15a4942 100644
+--- a/openai/src/serve/template.rs
++++ b/openai/src/serve/template.rs
+@@ -248,7 +248,7 @@ async fn post_login_token(req: HttpRequest) -> Result<HttpResponse> {
+                     .http_only(true)
+                     .finish(),
+             )
+-                .finish())
++            .finish());
+     }
+     redirect_login()
+ }

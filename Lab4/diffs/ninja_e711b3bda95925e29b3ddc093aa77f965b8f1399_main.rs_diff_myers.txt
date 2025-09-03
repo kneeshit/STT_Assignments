@@ -1,0 +1,21 @@
+diff --git a/src/main.rs b/src/main.rs
+index ab3e0c5..1b89522 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -1,15 +1,4 @@
+-#[cfg(all(
+-    any(target_arch = "x86_64", target_arch = "aarch64"),
+-    target_env = "musl"
+-))]
+-use tikv_jemallocator::Jemalloc;
+-
+-#[cfg(all(
+-    any(target_arch = "x86_64", target_arch = "aarch64"),
+-    target_env = "musl"
+-))]
+-#[global_allocator]
+-static GLOBAL: Jemalloc = Jemalloc;
++pub mod allocator;
+ 
+ use clap::Parser;
+ 

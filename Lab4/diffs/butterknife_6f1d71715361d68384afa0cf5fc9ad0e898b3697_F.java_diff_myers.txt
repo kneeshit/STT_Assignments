@@ -1,0 +1,13 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/unbinder/F.java b/butterknife-sample/src/main/java/com/example/butterknife/unbinder/F.java
+index 606f77f..5b1a2fa 100644
+--- a/butterknife-sample/src/main/java/com/example/butterknife/unbinder/F.java
++++ b/butterknife-sample/src/main/java/com/example/butterknife/unbinder/F.java
+@@ -6,7 +6,7 @@ import android.view.View;
+ import butterknife.BindColor;
+ import butterknife.ButterKnife;
+ 
+-public class F extends D {
++public final class F extends D {
+ 
+   @BindColor(android.R.color.background_light) @ColorInt int backgroundLightColor;
+ 

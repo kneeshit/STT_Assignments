@@ -1,0 +1,26 @@
+diff --git a/rollup-ie11.config.js b/rollup-ie11.config.js
+index d6a54a71..1133fee2 100644
+--- a/rollup-ie11.config.js
++++ b/rollup-ie11.config.js
+@@ -4,6 +4,7 @@ import resolve from 'rollup-plugin-node-resolve';
+ import commonjs from '@rollup/plugin-commonjs';
+ import multi from '@rollup/plugin-multi-entry';
+ import replace from '@rollup/plugin-replace';
++import pkg from './package.json';
+ 
+ export default {
+     input: ['src/polyfills.js', 'src/index.js'],
+@@ -15,8 +16,12 @@ export default {
+     plugins: [
+         multi(),
+         commonjs(),
++        replace({
+             // 'observable-membrane' uses process.env. We don't have that...
+-        replace({ "process.env.NODE_ENV": "'production'" }),
++            "process.env.NODE_ENV": "'production'",
++            // inject Alpine.js package version number
++            "process.env.PKG_VERSION": `"${pkg.version}"`
++        }),
+         resolve(),
+         filesize(),
+         babel({

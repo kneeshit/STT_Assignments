@@ -1,0 +1,14 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java b/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
+index 8b1f396..e94caae 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
+@@ -56,8 +56,7 @@ public class OnEditorActionTest {
+         + "    }\n"
+         + "    @Override\n"
+         + "    public void unbind() {\n"
+-        + "      T target = this.target;\n"
+-        + "      if (target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
++        + "      if (this.target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
+         + "      ((TextView) view1).setOnEditorActionListener(null);\n"
+         + "      view1 = null;\n"
+         + "      this.target = null;\n"

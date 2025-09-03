@@ -1,0 +1,18 @@
+diff --git a/butterknife/proguard-rules.txt b/butterknife/proguard-rules.txt
+new file mode 100644
+index 0000000..f76e67d
+--- /dev/null
++++ b/butterknife/proguard-rules.txt
+@@ -0,0 +1,11 @@
++-keep class butterknife.** { *; }
++-dontwarn butterknife.internal.**
++-keep class **$$ViewBinder { *; }
++
++-keepclasseswithmembernames class * {
++    @butterknife.* <fields>;
++}
++
++-keepclasseswithmembernames class * {
++    @butterknife.* <methods>;
++}
+\ No newline at end of file

@@ -1,0 +1,10 @@
+diff --git a/render.yaml b/render.yaml
+index 6df647a..8d478ed 100644
+--- a/render.yaml
++++ b/render.yaml
+@@ -1,4 +1,4 @@
+ runtime: image
+ 
+ image:
+-  url: ghcr.io/gngpp/opengpt:latest
++  url: ghcr.io/gngpp/ninja:latest

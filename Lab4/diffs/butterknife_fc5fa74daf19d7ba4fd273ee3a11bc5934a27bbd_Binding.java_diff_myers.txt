@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/Binding.java b/butterknife/src/main/java/butterknife/internal/Binding.java
+index fd40844..f3a389f 100644
+--- a/butterknife/src/main/java/butterknife/internal/Binding.java
++++ b/butterknife/src/main/java/butterknife/internal/Binding.java
+@@ -1,6 +1,9 @@
+ package butterknife.internal;
+ 
++/** A field or method view injection binding. */
+ interface Binding {
++  /** A description of the binding in human readable form (e.g., "field 'foo'"). */
+   String getDescription();
++  /** False if the {@link butterknife.Optional @Optional} annotation is present on the binding. */
+   boolean isRequired();
+ }

@@ -1,0 +1,12 @@
+diff --git a/reqwest/src/browser/chrome/ver/v108.rs b/reqwest/src/browser/chrome/ver/v108.rs
+index a5ba011..75bd36d 100644
+--- a/reqwest/src/browser/chrome/ver/v108.rs
++++ b/reqwest/src/browser/chrome/ver/v108.rs
+@@ -1,5 +1,6 @@
+ use boring::ssl::{
+-    CertCompressionAlgorithm, SslConnector, SslConnectorBuilder, SslMethod, SslVersion, SslVerifyMode,
++    CertCompressionAlgorithm, SslConnector, SslConnectorBuilder, SslMethod, SslVerifyMode,
++    SslVersion,
+ };
+ use http::{
+     header::{ACCEPT, ACCEPT_ENCODING, ACCEPT_LANGUAGE, UPGRADE_INSECURE_REQUESTS, USER_AGENT},

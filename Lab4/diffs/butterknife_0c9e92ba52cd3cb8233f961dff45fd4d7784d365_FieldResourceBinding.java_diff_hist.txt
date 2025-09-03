@@ -1,0 +1,12 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
+index 3633501..0002509 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
+@@ -25,6 +25,7 @@ final class FieldResourceBinding {
+     return method;
+   }
+ 
++  /** When true, requires delegating the method to our {@code Utils} class. */
+   public boolean isThemeable() {
+     return themeable;
+   }

@@ -1,0 +1,13 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index af0c457..5f06cd1 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -30,6 +30,8 @@ Version 9.0.0 *(2019-01-03)*
+ 
+  * New: Lint checks have been ported to UAST and now work on Kotlin code.
+  
++ * Helpers such as `apply` have been deprecated on `ButterKnife` and are now available on the `ViewCollections` class.
++
+  * Add support for Android Gradle plugin 3.3 and newer where `R` is no longer generated as Java source. This
+    has a side-effect of removing support for Android Gradle plugin 3.0.x (and older).
+  * Use Java 8 bytecode for all artifacts as announced in RC1 release notes.

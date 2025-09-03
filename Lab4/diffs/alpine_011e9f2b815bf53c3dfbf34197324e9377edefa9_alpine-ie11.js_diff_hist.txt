@@ -1,0 +1,15 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index b7dc7f18..b9fe9978 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -5767,7 +5767,9 @@
+         }
+ 
+         if (modifiers.includes('prevent')) e.preventDefault();
+-        if (modifiers.includes('stop')) e.stopPropagation();
++        if (modifiers.includes('stop')) e.stopPropagation(); // If the .self modifier isn't present, or if it is present and
++        // the target element matches the element we are registering the
++        // event on, run the handler
+ 
+         if (!modifiers.includes('self') || e.target === el) {
+           var returnValue = runListenerHandler(component, expression, e, extraVars);

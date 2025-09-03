@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnClickTest.java b/butterknife/src/test/java/butterknife/internal/OnClickTest.java
+index cde7c77..85c3cbb 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnClickTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnClickTest.java
+@@ -108,7 +108,7 @@ public class OnClickTest {
+             "    }",
+             "    view.setOnClickListener(new View.OnClickListener() {",
+             "      @Override public void onClick(View view) {",
+-            "        target.click1((android.view.View) view);",
++            "        target.click1(view);",
+             "      }",
+             "    });",
+             "    view = finder.findById(source, 2);",

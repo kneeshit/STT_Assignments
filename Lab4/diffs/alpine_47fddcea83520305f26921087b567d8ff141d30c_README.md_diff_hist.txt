@@ -1,0 +1,39 @@
+diff --git a/README.md b/README.md
+index e2c03dbf..4f54d1de 100644
+--- a/README.md
++++ b/README.md
+@@ -46,7 +46,7 @@ Add the following script to the end of your `<head>` section.
+ 
+ ## Learn
+ 
+-There are 6 directives available to you:
++There are 7 directives available to you:
+ 
+ | Directive
+ | --- |
+@@ -55,6 +55,7 @@ There are 6 directives available to you:
+ | `x-on` |
+ | `x-model` |
+ | `x-text` |
++| `x-ref` |
+ | `x-cloak` |
+ 
+ Here's how they each work:
+@@ -145,6 +146,17 @@ Adding `.stop` to an event listener will call `stopPropagation` on the triggered
+ 
+ ---
+ 
++### `x-ref`
++**Example:** `<div x-ref="foo"></div><button x-on:click="$refs.foo.innerText = 'bar'"></button>`
++
++**Structure:** `<div x-ref="[ref name]"></div><button x-on:click="$refs.[ref name].innerText = 'bar'"></button>`
++
++`x-ref` provides a convenient way to retrieve raw DOM elements out of your component. By setting an `x-ref` attribute on an element, you are making it available to all event handlers inside an object called `$refs`.
++
++This is a helpful alternative to setting ids and using `document.querySelector` all over the place.
++
++---
++
+ ### `x-cloak`
+ **Example:** `<div x-data="{}" x-cloak></div>`
+ 

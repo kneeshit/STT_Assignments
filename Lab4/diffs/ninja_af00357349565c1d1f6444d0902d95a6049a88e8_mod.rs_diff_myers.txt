@@ -1,0 +1,8 @@
+diff --git a/openai/src/chatgpt/models/mod.rs b/openai/src/chatgpt/models/mod.rs
+new file mode 100644
+index 0000000..02b5a3c
+--- /dev/null
++++ b/openai/src/chatgpt/models/mod.rs
+@@ -0,0 +1,2 @@
++pub mod req;
++pub mod resp;

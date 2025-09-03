@@ -1,0 +1,13 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index 1a72aec..6916fa9 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -49,6 +49,8 @@ pub enum AuthError {
+     FailedCallbackURL,
+     #[error("failed to get authorized url")]
+     FailedAuthorizedUrl,
++    #[error("Failed to get state")]
++    FailedState,
+     #[error("failed get csrf token")]
+     FailedCsrfToken,
+     #[error("invalid request login url (error {0:?}")]

@@ -1,0 +1,17 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index d5c218cb..d82b5191 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -1296,11 +1296,7 @@
+ 
+           if (self.pauseReactivity) return;
+           debounce(() => {
+-            self.updateElements(self.$el); // Walk through the $nextTick stack and clear it as we go.
+-
+-            while (self.nextTickStack.length > 0) {
+-              self.nextTickStack.shift()();
+-            }
++            self.updateElements(self.$el);
+           }, 0)();
+         }
+ 

@@ -1,0 +1,18 @@
+diff --git a/butterknife/src/main/java/butterknife/OnFocusChange.java b/butterknife/src/main/java/butterknife/OnFocusChange.java
+index 060b2c2..cc337d1 100644
+--- a/butterknife/src/main/java/butterknife/OnFocusChange.java
++++ b/butterknife/src/main/java/butterknife/OnFocusChange.java
+@@ -1,5 +1,6 @@
+ package butterknife;
+ 
++import android.view.View;
+ import butterknife.internal.ListenerClass;
+ import butterknife.internal.ListenerMethod;
+ import java.lang.annotation.Retention;
+@@ -39,5 +40,5 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ )
+ public @interface OnFocusChange {
+   /** View IDs to which the method will be bound. */
+-  int[] value();
++  int[] value() default { View.NO_ID };
+ }

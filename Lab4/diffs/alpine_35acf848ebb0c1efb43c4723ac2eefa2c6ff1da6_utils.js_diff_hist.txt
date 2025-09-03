@@ -1,0 +1,19 @@
+diff --git a/src/utils.js b/src/utils.js
+index f10eabed..0c3f70b1 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -110,12 +110,10 @@ export function getXAttrs(el, component, type) {
+         directives = directives.concat(Object.entries(spreadObject).map(([name, value]) => parseHtmlAttribute({ name, value })))
+     }
+     
+-    return directives.filter(i => {
+     // If no type is passed in for filtering, bypass filter
+-        if (! type) return true
++    if (!type) return directives;
+ 
+-        return i.type === type
+-    })
++    return directives.filter(i => i.type === type)
+ }
+ 
+ function parseHtmlAttribute({ name, value }) {

@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index db911ed..87dfa27 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -627,7 +627,7 @@ async fn initialize_puid(email: String, password: String, mfa: Option<String>) {
+         for _ in 0..3 {
+             match env.load_auth_client().do_access_token(&account).await {
+                 Ok(v) => match v {
+-                    AccessToken::Web(access_token) => {
++                    AccessToken::Session(access_token) => {
+                         let res = env
+                             .load_api_client()
+                             .get(format!("{URL_CHATGPT_API}/backend-api/models"))

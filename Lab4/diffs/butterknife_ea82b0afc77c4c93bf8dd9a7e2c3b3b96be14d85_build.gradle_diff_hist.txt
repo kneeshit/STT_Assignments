@@ -1,0 +1,17 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index 7f27c69..160e000 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -7,6 +7,12 @@ android {
+   defaultConfig {
+     minSdkVersion rootProject.ext.minSdkVersion
+   }
++
++  buildTypes {
++    release {
++      consumerProguardFiles 'proguard-rules.txt'
++    }
++  }
+ }
+ 
+ dependencies {

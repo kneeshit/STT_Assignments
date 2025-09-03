@@ -1,0 +1,11 @@
+diff --git a/src/polyfills.js b/src/polyfills.js
+index 0122a1c5..24b349d0 100644
+--- a/src/polyfills.js
++++ b/src/polyfills.js
+@@ -1,5 +1,4 @@
+-// In use in the legacy build for IE11
+-
++// For the IE11 build.
+ import "shim-selected-options"
+ import "proxy-polyfill/proxy.min.js"
+ import "element-closest/browser.js"

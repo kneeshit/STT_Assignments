@@ -1,0 +1,15 @@
+diff --git a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+index 3b211fd..ed26626 100644
+--- a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
++++ b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+@@ -132,3 +132,9 @@ msgstr "YesCaptcha 客户端Key"
+ 
+ msgid "Arkose token endpoint"
+ msgstr "Arkose 令牌端点"
++
++msgid "HAR Auth Key"
++msgstr "HAR 认证Key"
++
++msgid "HAR file upload authenticate key"
++msgstr "HAR文件上传验证Key"
+\ No newline at end of file

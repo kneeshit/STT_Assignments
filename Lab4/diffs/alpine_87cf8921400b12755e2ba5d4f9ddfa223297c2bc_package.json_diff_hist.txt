@@ -1,0 +1,13 @@
+diff --git a/package.json b/package.json
+index 77ff1a4c..395cd0df 100644
+--- a/package.json
++++ b/package.json
+@@ -1,7 +1,7 @@
+ {
+     "main": "dist/alpine.js",
+     "name": "alpinejs",
+-    "version": "2.3.2",
++    "version": "2.3.3",
+     "repository": {
+         "type": "git",
+         "url": "git://github.com/alpinejs/alpine.git"

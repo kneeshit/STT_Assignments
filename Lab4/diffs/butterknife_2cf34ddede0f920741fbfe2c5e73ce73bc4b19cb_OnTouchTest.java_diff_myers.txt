@@ -1,0 +1,14 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java b/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
+index b13a3c8..f2047c6 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
+@@ -55,8 +55,7 @@ public class OnTouchTest {
+         + "    }\n"
+         + "    @Override\n"
+         + "    public void unbind() {\n"
+-        + "      T target = this.target;\n"
+-        + "      if (target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
++        + "      if (this.target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
+         + "      view1.setOnTouchListener(null);\n"
+         + "      view1 = null;\n"
+         + "      this.target = null;\n"

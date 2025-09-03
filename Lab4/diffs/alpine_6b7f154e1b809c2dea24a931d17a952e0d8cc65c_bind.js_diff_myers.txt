@@ -1,0 +1,13 @@
+diff --git a/src/directives/bind.js b/src/directives/bind.js
+index a739d5c7..9f7baf3e 100644
+--- a/src/directives/bind.js
++++ b/src/directives/bind.js
+@@ -1,7 +1,7 @@
+ import { arrayUnique } from '../utils'
+ 
+ export function handleAttributeBindingDirective(component, el, attrName, expression, extraVars) {
+-    var value = component.evaluateReturnExpression(expression, extraVars)
++    var value = component.evaluateReturnExpression(el, expression, extraVars)
+ 
+     if (attrName === 'value') {
+         // If nested model key is undefined, set the default value to empty string.

@@ -1,0 +1,13 @@
+diff --git a/openai/templates/login.htm b/openai/templates/login.htm
+index 74a76f5..7795af8 100644
+--- a/openai/templates/login.htm
++++ b/openai/templates/login.htm
+@@ -366,6 +366,7 @@
+                     });
+             });
+     </script>
++    <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/service-worker.js',{scope:'/'}).then(function(reg){console.log('ServiceWorker registration successful with scope: ',reg.scope);},function(e){console.log('ServiceWorker registration failed: ',e);});});}</script>
+ </body>
+ 
+ </html>
+\ No newline at end of file

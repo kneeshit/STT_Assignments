@@ -1,0 +1,13 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index a70d85fa..0c4d249d 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -7688,7 +7688,7 @@
+   }();
+ 
+   var Alpine = {
+-    version: "2.6.0",
++    version: "2.7.0",
+     pauseMutationObserver: false,
+     magicProperties: {},
+     onComponentInitializeds: [],

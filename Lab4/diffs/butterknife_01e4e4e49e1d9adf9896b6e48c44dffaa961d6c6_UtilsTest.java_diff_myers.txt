@@ -1,0 +1,14 @@
+diff --git a/butterknife-runtime/src/androidTest/java/butterknife/internal/UtilsTest.java b/butterknife-runtime/src/androidTest/java/butterknife/internal/UtilsTest.java
+index f3227a2..2470e71 100644
+--- a/butterknife-runtime/src/androidTest/java/butterknife/internal/UtilsTest.java
++++ b/butterknife-runtime/src/androidTest/java/butterknife/internal/UtilsTest.java
+@@ -1,8 +1,8 @@
+ package butterknife.internal;
+ 
+ import android.content.Context;
+-import android.support.test.InstrumentationRegistry;
+ import android.view.View;
++import androidx.test.InstrumentationRegistry;
+ import org.junit.Test;
+ 
+ import static com.google.common.truth.Truth.assertThat;

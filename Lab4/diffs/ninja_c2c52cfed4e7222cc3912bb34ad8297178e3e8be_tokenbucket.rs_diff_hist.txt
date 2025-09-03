@@ -1,0 +1,17 @@
+diff --git a/openai/src/serve/tokenbucket.rs b/openai/src/serve/tokenbucket.rs
+index 03efe54..37774ed 100644
+--- a/openai/src/serve/tokenbucket.rs
++++ b/openai/src/serve/tokenbucket.rs
+@@ -26,6 +26,12 @@ pub enum Strategy {
+     Redis,
+ }
+ 
++impl Default for Strategy {
++    fn default() -> Self {
++        Self::Mem
++    }
++}
++
+ impl std::str::FromStr for Strategy {
+     type Err = anyhow::Error;
+ 

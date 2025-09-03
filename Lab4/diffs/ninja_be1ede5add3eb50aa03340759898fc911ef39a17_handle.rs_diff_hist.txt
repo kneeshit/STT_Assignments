@@ -1,0 +1,24 @@
+diff --git a/src/handle.rs b/src/handle.rs
+index 52104f2..5ec80e2 100644
+--- a/src/handle.rs
++++ b/src/handle.rs
+@@ -30,8 +30,9 @@ pub(super) fn serve(mut args: ServeArgs, relative_path: bool) -> anyhow::Result<
+     crate::utils::unix::sysctl_ipv6_no_local_bind(args.ipv6_subnet.is_some());
+ 
+     // disable_direct and proxies are mutually exclusive
+-    if args.disable_direct {
+-        if args.proxies.is_none() || args.proxies.clone().is_some_and(|x| x.is_empty()) {
++    if args.disable_direct
++        && (args.proxies.is_none() || args.proxies.clone().is_some_and(|x| x.is_empty()))
++    {
+         let mut cmd = args::cmd::Opt::command();
+         cmd.error(
+             clap::error::ErrorKind::ArgumentConflict,
+@@ -39,7 +40,6 @@ pub(super) fn serve(mut args: ServeArgs, relative_path: bool) -> anyhow::Result<
+         )
+         .exit();
+     }
+-    }
+ 
+     let arkose_solver = match args.arkose_solver_key.as_ref() {
+         Some(key) => Some(ArkoseSolver::new(args.arkose_solver.clone(), key.clone())),

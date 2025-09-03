@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 164f3a6..e8e21a4 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -35,4 +35,4 @@ jobs:
+       - uses: dtolnay/rust-toolchain@stable
+         with:
+           components: clippy
+-      - run: cargo clippy --all-features
++      - run: cargo clippy

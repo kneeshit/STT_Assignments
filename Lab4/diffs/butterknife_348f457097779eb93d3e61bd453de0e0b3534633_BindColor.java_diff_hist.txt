@@ -1,0 +1,18 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindColor.java b/butterknife-annotations/src/main/java/butterknife/BindColor.java
+index 33ffd38..002616e 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindColor.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindColor.java
+@@ -1,5 +1,6 @@
+ package butterknife;
+ 
++import android.support.annotation.ColorRes;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 
+@@ -17,5 +18,5 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ @Retention(CLASS) @Target(FIELD)
+ public @interface BindColor {
+   /** Color resource ID to which the field will be bound. */
+-  int value();
++  @ColorRes int value();
+ }

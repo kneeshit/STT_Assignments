@@ -1,0 +1,28 @@
+diff --git a/test/lifecycle.spec.js b/test/lifecycle.spec.js
+index 8f4b03fa..46059aa7 100644
+--- a/test/lifecycle.spec.js
++++ b/test/lifecycle.spec.js
+@@ -5,6 +5,23 @@ global.MutationObserver = class {
+     observe() {}
+ }
+ 
++test('x-init', async () => {
++    var spanValue
++    window.setSpanValue = (el) => {
++        spanValue = el.innerHTML
++    }
++
++    document.body.innerHTML = `
++        <div x-data="{ foo: 'bar' }" x-init="window.setSpanValue($refs.foo)">
++            <span x-text="foo" x-ref="foo">baz</span>
++        </div>
++    `
++
++    Alpine.start()
++
++    expect(spanValue).toEqual('baz')
++})
++
+ test('x-created', async () => {
+     var spanValue
+     window.setSpanValue = (el) => {

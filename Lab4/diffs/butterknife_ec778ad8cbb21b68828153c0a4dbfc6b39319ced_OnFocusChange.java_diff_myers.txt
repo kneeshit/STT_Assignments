@@ -1,0 +1,12 @@
+diff --git a/butterknife/src/main/java/butterknife/OnFocusChange.java b/butterknife/src/main/java/butterknife/OnFocusChange.java
+index f07dd25..15c6b6f 100644
+--- a/butterknife/src/main/java/butterknife/OnFocusChange.java
++++ b/butterknife/src/main/java/butterknife/OnFocusChange.java
+@@ -22,7 +22,6 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * boolean) onFocusChange} may be used on the method.
+  *
+  * @see OnFocusChangeListener
+- * @see Nullable
+  */
+ @Target(METHOD)
+ @Retention(CLASS)

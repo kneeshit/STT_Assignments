@@ -1,0 +1,24 @@
+diff --git a/fficall/build.sh b/fficall/build.sh
+new file mode 100755
+index 0000000..47a5da6
+--- /dev/null
++++ b/fficall/build.sh
+@@ -0,0 +1,18 @@
++#!/bin/sh
++
++set -e 
++NAME=libgohttp
++LIB_NAME=""
++
++echo "Start building the  platform static library"
++
++
++cd ffi
++go clean
++if [ "$GOOS" == "windows" ]; then
++    LIB_NAME=$NAME.lib
++else 
++    LIB_NAME=$NAME.a
++fi
++GOOS=$GOOS GOARCH=$GOARCH CGO_ENABLED=1 go build -ldflags "-s -w" -buildmode=c-archive -o $LIB_NAME
++cd -

@@ -1,0 +1,28 @@
+diff --git a/butterknife/src/main/java/butterknife/ButterKnife.java b/butterknife/src/main/java/butterknife/ButterKnife.java
+index 2b2822e..2c06df9 100644
+--- a/butterknife/src/main/java/butterknife/ButterKnife.java
++++ b/butterknife/src/main/java/butterknife/ButterKnife.java
+@@ -301,10 +301,8 @@ public final class ButterKnife {
+       if (injector != null) {
+         injector.reset(target);
+       }
+-    } catch (RuntimeException e) {
+-      throw e;
+     } catch (Exception e) {
+-      throw new RuntimeException("Unable to reset views for " + target, e);
++      throw new RuntimeException("Unable to reset views for " + targetClass.getName(), e);
+     }
+   }
+ 
+@@ -316,10 +314,8 @@ public final class ButterKnife {
+       if (injector != null) {
+         injector.inject(finder, target, source);
+       }
+-    } catch (RuntimeException e) {
+-      throw e;
+     } catch (Exception e) {
+-      throw new RuntimeException("Unable to inject views for " + target, e);
++      throw new RuntimeException("Unable to inject views for " + targetClass.getName(), e);
+     }
+   }
+ 

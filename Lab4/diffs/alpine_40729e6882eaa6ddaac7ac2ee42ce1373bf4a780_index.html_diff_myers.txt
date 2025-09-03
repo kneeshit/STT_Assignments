@@ -1,0 +1,27 @@
+diff --git a/examples/index.html b/examples/index.html
+index b17d6006..f20809be 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -47,6 +47,13 @@
+                 </tr>
+             </thead>
+             <tbody>
++                <tr>
++                    <td>Broken Component</td>
++                    <td>
++                        <div x-data="some.bad.expression()">I'm a broken component</div>
++                    </td>
++                </tr>
++
+                 <tr>
+                     <td>Simple x-if</td>
+                     <td>
+@@ -431,7 +438,7 @@
+                     <td>x-bind spread</td>
+                     <td>
+                         <div x-data="modal()">
+-                            I should be "hey": <span x-bind="bound"></span>
++                            I should be "hey": <span x-spread="bound"></span>
+                         </div>
+ 
+                         <script>

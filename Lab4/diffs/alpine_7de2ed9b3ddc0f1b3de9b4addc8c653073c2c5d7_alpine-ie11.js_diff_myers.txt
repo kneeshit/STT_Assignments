@@ -1,0 +1,25 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 2bf12d05..abb403d5 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6992,7 +6992,7 @@
+ 
+                 if (node.nodeType !== 1 || node.__x_inserted_me) return;
+ 
+-                if (node.matches('[x-data]') && !node.__x) {
++                if (node.matches('[x-data]')) {
+                   node.__x = new Component(node);
+                   return;
+                 }
+@@ -7175,9 +7175,8 @@
+       observer.observe(targetNode, observerOptions);
+     },
+     initializeComponent: function initializeComponent(el) {
+-      if (!el.__x) {
+-        el.__x = new Component(el);
+-      }
++      //if (! el.__x) {
++      el.__x = new Component(el); //}
+     },
+     clone: function clone(component, newEl) {
+       if (!newEl.__x) {

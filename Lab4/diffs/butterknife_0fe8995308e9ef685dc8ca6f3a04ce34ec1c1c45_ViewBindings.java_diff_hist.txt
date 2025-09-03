@@ -1,0 +1,15 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/ViewBindings.java b/butterknife-compiler/src/main/java/butterknife/compiler/ViewBindings.java
+index 6cd9bc4..3637242 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/ViewBindings.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/ViewBindings.java
+@@ -11,8 +11,8 @@ import java.util.Set;
+ 
+ final class ViewBindings {
+   private final Id id;
+-  private final LinkedHashMap<ListenerClass, Map<ListenerMethod, Set<MethodViewBinding>>>
+-      methodBindings = new LinkedHashMap<>();
++  private final Map<ListenerClass, Map<ListenerMethod, Set<MethodViewBinding>>> methodBindings =
++      new LinkedHashMap<>();
+   private FieldViewBinding fieldBinding;
+ 
+   ViewBindings(Id id) {

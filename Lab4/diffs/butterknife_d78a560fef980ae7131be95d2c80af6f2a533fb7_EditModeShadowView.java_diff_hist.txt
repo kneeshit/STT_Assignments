@@ -1,0 +1,24 @@
+diff --git a/butterknife/src/test/java/butterknife/shadow/EditModeShadowView.java b/butterknife/src/test/java/butterknife/shadow/EditModeShadowView.java
+new file mode 100644
+index 0000000..e4fd995
+--- /dev/null
++++ b/butterknife/src/test/java/butterknife/shadow/EditModeShadowView.java
+@@ -0,0 +1,18 @@
++package butterknife.shadow;
++
++import android.view.View;
++import org.robolectric.annotation.Implementation;
++import org.robolectric.annotation.Implements;
++import org.robolectric.shadows.ShadowView;
++
++/**
++ * Behaves just like standard Robolectric views, but always reports that it is in Edit Mode.
++ */
++@Implements(View.class)
++public class EditModeShadowView extends ShadowView {
++  @SuppressWarnings("UnusedDeclaration")
++  @Implementation
++  public boolean isInEditMode() {
++    return true;
++  }
++}

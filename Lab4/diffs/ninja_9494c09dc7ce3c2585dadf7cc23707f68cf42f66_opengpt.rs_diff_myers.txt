@@ -1,0 +1,13 @@
+diff --git a/examples/opengpt.rs b/examples/opengpt.rs
+index 42df537..b5df76d 100644
+--- a/examples/opengpt.rs
++++ b/examples/opengpt.rs
+@@ -11,7 +11,7 @@ use tokio::io::AsyncWriteExt;
+ async fn main() -> anyhow::Result<()> {
+     let email = std::env::var("EMAIL")?;
+     let password = std::env::var("PASSWORD")?;
+-    let mut auth = openai::auth::OAuthClientBuilder::builder()
++    let auth = openai::auth::OAuthClientBuilder::builder()
+         .user_agent(openai::HEADER_UA)
+         .chrome_builder(reqwest::browser::ChromeVersion::V108)
+         .cookie_store(true)

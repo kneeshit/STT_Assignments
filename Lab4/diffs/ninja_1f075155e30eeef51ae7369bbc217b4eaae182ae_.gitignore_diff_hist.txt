@@ -1,0 +1,12 @@
+diff --git a/.gitignore b/.gitignore
+index 136167c..fead6ee 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -13,6 +13,7 @@ Cargo.lock
+ # MSVC Windows builds of rustc generate these, which store debugging information
+ *.pdb
+ 
++.idea
+ 
+ # Added by cargo
+ 

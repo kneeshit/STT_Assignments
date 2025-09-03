@@ -1,0 +1,3 @@
+diff --git a/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/wc.db-journal b/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/wc.db-journal
+deleted file mode 100644
+index e69de29..0000000

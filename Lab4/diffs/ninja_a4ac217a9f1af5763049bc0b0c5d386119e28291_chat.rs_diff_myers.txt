@@ -1,0 +1,9 @@
+diff --git a/openai/src/chatgpt/chat.rs b/openai/src/chatgpt/chat.rs
+new file mode 100644
+index 0000000..8c906fc
+--- /dev/null
++++ b/openai/src/chatgpt/chat.rs
+@@ -0,0 +1,3 @@
++const _URL_CHAT_HOST_BASE: &str = "https://chat.openai.com";
++const _URL_PATH_HEAL_CHECK_PATH: &str = "/backend-api/accounts/check";
++const _HOST: &str = "chat.openai.com";

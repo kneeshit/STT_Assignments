@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java b/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
+index 4519f90..d9f5ad3 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
+@@ -69,7 +69,7 @@ public class OnFocusChangeTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

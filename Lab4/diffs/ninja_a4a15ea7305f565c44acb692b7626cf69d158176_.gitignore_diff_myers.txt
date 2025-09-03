@@ -1,0 +1,11 @@
+diff --git a/.gitignore b/.gitignore
+index 196e176..bb63285 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -17,3 +17,5 @@ Cargo.lock
+ # Added by cargo
+ 
+ /target
++
++.opengpt-access_tokens
+\ No newline at end of file

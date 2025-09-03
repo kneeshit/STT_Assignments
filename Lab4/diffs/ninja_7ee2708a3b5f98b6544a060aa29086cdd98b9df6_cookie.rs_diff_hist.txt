@@ -1,0 +1,10 @@
+diff --git a/examples/cookie.rs b/examples/cookie.rs
+new file mode 100644
+index 0000000..927bbae
+--- /dev/null
++++ b/examples/cookie.rs
+@@ -0,0 +1,4 @@
++fn main() {
++    let input1 =
++        "user-6gTTUwAREZFjkdh4EZGTaoDc:1689302419-ToQ3Lm9/HgiCaFA94nLYOU+JII60yvJ8YzBEeLKMr4o=";
++}

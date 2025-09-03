@@ -1,0 +1,16 @@
+diff --git a/sample/app/src/main/AndroidManifest.xml b/sample/app/src/main/AndroidManifest.xml
+index d8dc9f9..4549e5e 100644
+--- a/sample/app/src/main/AndroidManifest.xml
++++ b/sample/app/src/main/AndroidManifest.xml
+@@ -5,10 +5,9 @@
+ 
+   <application
+       android:allowBackup="false"
+-      android:fullBackupContent="false"
+       android:label="@string/app_name"
+       android:name=".SimpleApp"
+-      tools:ignore="MissingApplicationIcon,UnusedAttribute">
++      tools:ignore="GoogleAppIndexingWarning,MissingApplicationIcon">
+ 
+     <activity
+         android:label="@string/app_name"

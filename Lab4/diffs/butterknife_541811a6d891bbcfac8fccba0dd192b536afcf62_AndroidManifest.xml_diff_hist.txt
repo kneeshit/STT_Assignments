@@ -1,0 +1,18 @@
+diff --git a/butterknife-sample/AndroidManifest.xml b/butterknife-sample/AndroidManifest.xml
+index 1ab80ba..ebc0c10 100644
+--- a/butterknife-sample/AndroidManifest.xml
++++ b/butterknife-sample/AndroidManifest.xml
+@@ -5,10 +5,11 @@
+     android:versionName="1.0"
+     package="com.example.butterknife">
+ 
+-  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="16"/>
++  <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="17"/>
+ 
+   <application
+-      android:label="@string/app_name">
++      android:label="@string/app_name"
++      android:name=".SimpleApp">
+ 
+     <activity
+         android:label="@string/app_name"

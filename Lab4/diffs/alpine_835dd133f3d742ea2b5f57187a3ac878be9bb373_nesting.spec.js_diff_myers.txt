@@ -1,0 +1,11 @@
+diff --git a/test/nesting.spec.js b/test/nesting.spec.js
+index 6316a2a2..c7dad75a 100644
+--- a/test/nesting.spec.js
++++ b/test/nesting.spec.js
+@@ -1,5 +1,5 @@
+ import projectX from 'project-x'
+-import { wait } from 'dom-testing-library'
++import { wait } from '@testing-library/dom'
+ const timeout = ms => new Promise(resolve => setTimeout(resolve, ms))
+ 
+ global.MutationObserver = class {

@@ -1,0 +1,86 @@
+diff --git a/openai/src/auth/model.rs b/openai/src/auth/model.rs
+index f3f7522..2addd3f 100644
+--- a/openai/src/auth/model.rs
++++ b/openai/src/auth/model.rs
+@@ -92,11 +92,7 @@ pub struct DashUser {
+     pub name: String,
+     pub picture: String,
+     pub created: i64,
+-    pub groups: Vec<Value>,
+     pub session: DashUserSession,
+-    pub orgs: DashUserOrgs,
+-    pub intercom_hash: String,
+-    pub amr: Vec<Value>,
+ }
+ 
+ #[derive(Deserialize, Serialize)]
+@@ -109,12 +105,6 @@ pub struct DashUserSession {
+     pub publishable: bool,
+ }
+ 
+-#[derive(Deserialize)]
+-pub struct DashUserOrgs {
+-    pub object: String,
+-    pub data: Vec<DashUserOrgsData>,
+-}
+-
+ #[derive(Deserialize)]
+ pub struct DashUserOrgsData {
+     pub object: String,
+@@ -129,24 +119,23 @@ pub struct DashUserOrgsData {
+     pub groups: Vec<Value>,
+ }
+ 
+-#[derive(Deserialize)]
++#[derive(Deserialize, Serialize)]
+ pub struct ApiKey {
+     pub result: String,
+     pub key: Option<Key>,
+ }
+ 
+-#[derive(Deserialize)]
++#[derive(Deserialize, Serialize)]
+ pub struct ApiKeyList {
+     pub object: String,
+     pub data: Vec<Key>,
+ }
+ 
+-#[derive(Deserialize)]
++#[derive(Deserialize, Serialize)]
+ pub struct Key {
+-    #[serde(rename = "sensitive_id")]
+     pub sensitive_id: String,
+     pub object: String,
+-    pub name: String,
++    pub name: Option<String>,
+     pub created: i64,
+     #[serde(rename = "last_use")]
+     pub last_use: Value,
+@@ -194,3 +183,27 @@ impl Serialize for AccessToken {
+         }
+     }
+ }
++
++#[derive(Serialize, Deserialize)]
++pub struct Billing {
++    pub total_granted: f64,
++    pub total_used: f64,
++    pub total_available: f64,
++    pub total_paid_available: f64,
++    pub grants: Grants,
++}
++
++#[derive(Serialize, Deserialize)]
++pub struct Grants {
++    pub data: Vec<Daum>,
++}
++
++#[derive(Serialize, Deserialize)]
++pub struct Daum {
++    pub object: String,
++    pub id: String,
++    pub grant_amount: f64,
++    pub used_amount: f64,
++    pub effective_at: f64,
++    pub expires_at: f64,
++}

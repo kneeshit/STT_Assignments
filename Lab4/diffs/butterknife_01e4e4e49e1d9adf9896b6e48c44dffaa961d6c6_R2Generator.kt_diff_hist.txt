@@ -1,0 +1,36 @@
+diff --git a/butterknife-gradle-plugin/src/main/java/butterknife/plugin/R2Generator.kt b/butterknife-gradle-plugin/src/main/java/butterknife/plugin/R2Generator.kt
+index cd9d88d..96e723d 100644
+--- a/butterknife-gradle-plugin/src/main/java/butterknife/plugin/R2Generator.kt
++++ b/butterknife-gradle-plugin/src/main/java/butterknife/plugin/R2Generator.kt
+@@ -15,9 +15,6 @@ open class R2Generator : DefaultTask() {
+   @get:InputFiles
+   var rFile: FileCollection? = null
+ 
+-  @get:Input
+-  var useAndroidX: Boolean? = null
+-
+   @get:Input
+   var packageName: String? = null
+ 
+@@ -27,7 +24,7 @@ open class R2Generator : DefaultTask() {
+   @Suppress("unused") // Invoked by Gradle.
+   @TaskAction
+   fun brewJava() {
+-    brewJava(rFile!!.singleFile, outputDir!!, packageName!!, className!!, !useAndroidX!!)
++    brewJava(rFile!!.singleFile, outputDir!!, packageName!!, className!!)
+   }
+ }
+ 
+@@ -35,10 +32,9 @@ fun brewJava(
+   rFile: File,
+   outputDir: File,
+   packageName: String,
+-  className: String,
+-  useLegacyTypes: Boolean
++  className: String
+ ) {
+-  FinalRClassBuilder(packageName, className, useLegacyTypes)
++  FinalRClassBuilder(packageName, className)
+       .also { ResourceSymbolListReader(it).readSymbolTable(rFile) }
+       .build()
+       .writeTo(outputDir)

@@ -1,0 +1,47 @@
+diff --git a/src/directives/show.js b/src/directives/show.js
+index df2ae3cb..1996d8c7 100644
+--- a/src/directives/show.js
++++ b/src/directives/show.js
+@@ -2,30 +2,29 @@ import { transitionIn, transitionOut } from '../utils'
+ 
+ export function handleShowDirective(component, el, value, modifiers, initialUpdate = false) {
+     const handle = (resolve) => {
+-        const hide = () => {
++        if (! value) {
++            if ( el.style.display !== 'none' ) {
++                transitionOut(el, () => {
+                     resolve(() => {
+                         el.style.display = 'none'
+                     })
+-        }
+-
+-        const show = () => {
++                }, initialUpdate)
++            } else {
+                 resolve(() => {})
+-            // Perform showing immediately.
++            }
++        } else {
++            if ( el.style.display !== '' ) {
++                transitionIn(el, () => {
+                     if (el.style.length === 1) {
+                         el.removeAttribute('style')
+                     } else {
+                         el.style.removeProperty('display')
+                     }
++                }, initialUpdate)
+             }
+ 
+-        if (! value) {
+-            if ( el.style.display !== 'none' ) {
+-                transitionOut(el, hide, initialUpdate)
+-            }
+-        } else {
+-            if ( el.style.display !== '' ) {
+-                transitionIn(el, show, initialUpdate)
+-            }
++            // Resolve immediately, only hold up parent `x-show`s for hidin.
++            resolve(() => {})
+         }
+     }
+ 

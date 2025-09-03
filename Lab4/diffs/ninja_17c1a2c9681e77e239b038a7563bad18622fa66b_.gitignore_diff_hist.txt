@@ -1,0 +1,20 @@
+diff --git a/.gitignore b/.gitignore
+index 87aeb78..522cd5c 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -19,12 +19,12 @@ Cargo.lock
+ 
+ /target
+ 
+-.opengpt-access_tokens
++.ninja-access_tokens
+ .vscode
+ thunder-tests
+ .env
+ ./arkose
+-./opengpt
++./ninja
+ uploads
+ ./vendor
+ chat.openai.com.har
+\ No newline at end of file

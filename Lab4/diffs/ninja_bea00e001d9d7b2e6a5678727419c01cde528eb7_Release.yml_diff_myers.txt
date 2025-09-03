@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/Release.yml b/.github/workflows/Release.yml
+index c73087a..a799377 100644
+--- a/.github/workflows/Release.yml
++++ b/.github/workflows/Release.yml
+@@ -144,6 +144,7 @@ jobs:
+       - name: Build Package
+         run: |
+           set -e
++          rm -rf ./openwrt && svn co https://github.com/gngpp/ninja/trunk/openwrt
+           echo "src-link ninja $GITHUB_WORKSPACE/openwrt" > openwrt-sdk/feeds.conf
+           echo 'CONFIG_PACKAGE_ninja=y
+           CONFIG_PACKAGE_luci-app-ninja=y

@@ -1,0 +1,13 @@
+diff --git a/src/args.rs b/src/args.rs
+index 3f9274c..77882bd 100644
+--- a/src/args.rs
++++ b/src/args.rs
+@@ -178,6 +178,8 @@ pub(super) enum SubCommands {
+     /// Start the http server
+     #[clap(subcommand)]
+     Serve(ServeSubcommand),
++    /// Terminal interaction
++    Terminal,
+     /// Configuration Settings
+     Config {
+         /// Working directory, refresh_token will be stored in there if specified

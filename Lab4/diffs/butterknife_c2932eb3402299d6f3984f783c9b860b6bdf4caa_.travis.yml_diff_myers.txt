@@ -1,0 +1,15 @@
+diff --git a/.travis.yml b/.travis.yml
+index eccde94..8493a42 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -2,7 +2,9 @@ language: android
+ 
+ android:
+   components:
+-    - build-tools-23.0.1
++    - tools
++    - platform-tools
++    - build-tools-23.0.3
+     - android-23
+     - extra-android-m2repository
+ 

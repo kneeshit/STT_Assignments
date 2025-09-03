@@ -1,0 +1,12 @@
+diff --git a/examples/index.html b/examples/index.html
+index e0580abb..b17d6006 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -36,6 +36,7 @@
+         </style>
+ 
+         <script src="/dist/alpine.js" defer></script>
++        <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> -->
+     </head>
+     <body>
+         <table>

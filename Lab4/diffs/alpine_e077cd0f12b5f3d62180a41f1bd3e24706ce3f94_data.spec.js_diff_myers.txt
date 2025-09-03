@@ -1,0 +1,26 @@
+diff --git a/test/data.spec.js b/test/data.spec.js
+new file mode 100644
+index 00000000..606736e2
+--- /dev/null
++++ b/test/data.spec.js
+@@ -0,0 +1,20 @@
++import projectX from 'project-x'
++import { fireEvent, wait } from 'dom-testing-library'
++
++global.MutationObserver = class {
++    observe() {}
++}
++
++test('data manipulated on component object is reactive', async () => {
++    document.body.innerHTML = `
++        <div x-data="{ foo: 'bar' }">
++            <span x-text="foo"></span>
++        </div>
++    `
++
++    projectX.start()
++
++    document.querySelector('div').__x.data.foo = 'baz'
++
++    await wait(() => { expect(document.querySelector('span').innerText).toEqual('baz') })
++})

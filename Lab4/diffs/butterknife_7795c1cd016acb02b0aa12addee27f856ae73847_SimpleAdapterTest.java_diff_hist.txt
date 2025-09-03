@@ -1,0 +1,23 @@
+diff --git a/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java b/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java
+index 162c3f3..ee7b9f6 100644
+--- a/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java
++++ b/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java
+@@ -2,6 +2,7 @@ package com.example.butterknife;
+ 
+ import android.view.LayoutInflater;
+ import android.view.View;
++import butterknife.Views;
+ import org.junit.Test;
+ import org.junit.runner.RunWith;
+ import org.robolectric.RobolectricTestRunner;
+@@ -20,5 +21,10 @@ public class SimpleAdapterTest {
+     assertThat(holder.word).hasId(R.id.word);
+     assertThat(holder.length).hasId(R.id.length);
+     assertThat(holder.position).hasId(R.id.position);
++
++    Views.reset(holder);
++    assertThat(holder.word).isNull();
++    assertThat(holder.length).isNull();
++    assertThat(holder.position).isNull();
+   }
+ }

@@ -1,0 +1,17 @@
+diff --git a/test/bind.spec.js b/test/bind.spec.js
+index c6fb9fec..4cb9a92a 100644
+--- a/test/bind.spec.js
++++ b/test/bind.spec.js
+@@ -449,10 +449,10 @@ test('can bind an object of directives', async () => {
+         return {
+             show: false,
+             trigger: {
+-                '@click'() { this.show = ! this.show }
++                '@click': function () { this.show = ! this.show }
+             },
+             dialogue: {
+-                'x-show'() { return this.show }
++                ['x-show']() { return this.show }
+             },
+         }
+     }

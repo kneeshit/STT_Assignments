@@ -1,0 +1,13 @@
+diff --git a/src/component.js b/src/component.js
+index e0aa07b5..73daa4e7 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -275,7 +275,7 @@ export default class Component {
+                     break;
+ 
+                 case 'for':
+-                    handleForDirective(this, el, expression, initialUpdate)
++                    handleForDirective(this, el, expression, initialUpdate, extraVars)
+                     break;
+ 
+                 case 'cloak':

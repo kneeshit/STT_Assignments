@@ -1,0 +1,15 @@
+diff --git a/test/data.spec.js b/test/data.spec.js
+index 61d342f2..059cd368 100644
+--- a/test/data.spec.js
++++ b/test/data.spec.js
+@@ -52,10 +52,6 @@ test('functions in x-data are reactive', async () => {
+     document.body.innerHTML = `
+         <div x-data="{ foo: 'bar', getFoo() {return this.foo}}">
+             <span x-text="getFoo()"></span>
+-<<<<<<< HEAD
+-
+-=======
+->>>>>>> master
+             <button x-on:click="foo = 'baz'"></button>
+         </div>
+     `

@@ -1,0 +1,30 @@
+diff --git a/examples/funcaptcha.rs b/examples/funcaptcha.rs
+index cb436e1..6934da9 100644
+--- a/examples/funcaptcha.rs
++++ b/examples/funcaptcha.rs
+@@ -16,15 +16,19 @@ async fn main() -> anyhow::Result<()> {
+     if !arkose_token.valid() {
+         match start_challenge(token).await {
+             Ok(session) => {
+-                if let Some(funcaptcha) = session.funcaptcha() {
+-                    let index = funcaptcha::yescaptcha::submit_task(
++                if let Some(funs) = session.funcaptcha() {
++                    let mut answer_list = vec![];
++                    for fun in funs {
++                        let answer = funcaptcha::yescaptcha::submit_task(
+                             &key,
+-                        &funcaptcha.image,
+-                        &funcaptcha.instructions,
++                            &fun.image,
++                            &fun.instructions,
+                         )
+                         .await?;
+-                    println!("index:{index}");
+-                    session.submit_answer(index).await?;
++                        answer_list.push(answer);
++                    }
++                    println!("answer: {answer_list:?}");
++                    session.submit_answer(answer_list).await?;
+                 }
+             }
+             Err(error) => {

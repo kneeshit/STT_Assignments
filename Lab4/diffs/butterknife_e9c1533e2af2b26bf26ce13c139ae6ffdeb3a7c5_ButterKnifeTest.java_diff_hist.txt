@@ -1,0 +1,21 @@
+diff --git a/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java b/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java
+index 2c496e9..af055c6 100644
+--- a/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java
++++ b/butterknife/src/androidTest/java/butterknife/ButterKnifeTest.java
+@@ -215,13 +215,15 @@ public class ButterKnifeTest {
+     assertThat(view3.isEnabled()).isFalse();
+   }
+ 
+-  @Test public void zeroBindingsBindDoesNotThrowException() {
++  @Test public void zeroBindingsBindDoesNotThrowExceptionAndCaches() {
+     class Example {
+     }
+ 
+     Example example = new Example();
+     View view = new View(context);
++    assertThat(ButterKnife.BINDINGS).isEmpty();
+     assertThat(ButterKnife.bind(example, view)).isSameAs(Unbinder.EMPTY);
++    assertThat(ButterKnife.BINDINGS).containsEntry(Example.class, null);
+   }
+ 
+   @Test public void bindingKnownPackagesIsNoOp() {

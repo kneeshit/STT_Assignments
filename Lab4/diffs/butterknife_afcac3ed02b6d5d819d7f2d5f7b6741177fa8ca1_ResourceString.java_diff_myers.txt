@@ -1,0 +1,25 @@
+diff --git a/butterknife/src/main/java/butterknife/ResourceString.java b/butterknife/src/main/java/butterknife/ResourceString.java
+new file mode 100644
+index 0000000..c16ffe8
+--- /dev/null
++++ b/butterknife/src/main/java/butterknife/ResourceString.java
+@@ -0,0 +1,19 @@
++package butterknife;
++
++import java.lang.annotation.Retention;
++import java.lang.annotation.Target;
++
++import static java.lang.annotation.ElementType.FIELD;
++import static java.lang.annotation.RetentionPolicy.CLASS;
++
++/**
++ * Bind a field to the specified string resource ID.
++ * <pre><code>
++ * {@literal @}ResourceString(R.string.username_error) String usernameErrorText;
++ * </code></pre>
++ */
++@Retention(CLASS) @Target(FIELD)
++public @interface ResourceString {
++  /** String resource ID to which the field will be bound. */
++  int value();
++}

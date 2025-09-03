@@ -1,0 +1,11 @@
+diff --git a/fficall/ffi/.gitignore b/fficall/ffi/.gitignore
+index 7513208..78ec782 100644
+--- a/fficall/ffi/.gitignore
++++ b/fficall/ffi/.gitignore
+@@ -1,2 +1,2 @@
+-libtlscall.a
+-libtlscall.h
+\ No newline at end of file
++fficall.a
++fiicall.h
+\ No newline at end of file

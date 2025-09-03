@@ -1,0 +1,15 @@
+diff --git a/src/component.js b/src/component.js
+index 24decac1..f50cd6af 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -178,7 +178,9 @@ export default class Component {
+                 this.runListenerHandler(expression, e)
+             })
+         } else {
+-            el.addEventListener(event, e => {
++            const node = modifiers.includes('window') ? window : el
++
++            node.addEventListener(event, e => {
+                 if (modifiers.includes('prevent')) e.preventDefault()
+                 if (modifiers.includes('stop')) e.stopPropagation()
+ 

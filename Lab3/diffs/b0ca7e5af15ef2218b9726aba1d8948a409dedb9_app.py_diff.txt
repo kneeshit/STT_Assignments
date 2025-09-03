@@ -1,0 +1,31 @@
+@@ -496,6 +496,7 @@ class Flask(_PackageBoundObject):
+         """
+         options.setdefault('url_prefix', module.url_prefix)
+         options.setdefault('subdomain', module.subdomain)
++        self.view_functions.update(module.view_functions)
+         state = _ModuleSetupState(self, **options)
+         for func in module._register_events:
+             func(state)
+@@ -629,6 +630,22 @@ class Flask(_PackageBoundObject):
+             return f
+         return decorator
+ 
++
++    def endpoint(self, endpoint):
++        """A decorator to register a function as an endpoint.
++        Example::
++
++            @app.endpoint('example.endpoint')
++            def example():
++                return "example"
++
++        :param endpoint: the name of the endpoint
++        """
++        def decorator(f):
++            self.view_functions[endpoint] = f
++            return f
++        return decorator
++
+     def errorhandler(self, code):
+         """A decorator that is used to register a function give a given
+         error code.  Example::

@@ -1,0 +1,34 @@
+diff --git a/build_cross.sh b/build_cross.sh
+index a0954a8..e18f052 100755
+--- a/build_cross.sh
++++ b/build_cross.sh
+@@ -4,6 +4,7 @@ set -e
+ 
+ root=$(pwd)
+ : ${tag=latest}
++: ${rmi=false}
+ [ ! -d uploads ] && mkdir uploads
+ 
+ cargo update
+@@ -13,6 +14,10 @@ pull_docker_image() {
+     docker pull ghcr.io/gngpp/opengpt-builder:$1
+ }
+ 
++rmi_docker_image() {
++    docker rmi ghcr.io/gngpp/opengpt-builder:$1
++}
++
+ build_target() {
+     docker run --rm -t \
+         -v $(pwd):/home/rust/src \
+@@ -60,6 +65,10 @@ for target in "${target_list[@]}"; do
+     else
+         build_target "$target"
+     fi
++
++    if [ "$rmi" = "true" ]; then
++        rmi_docker_image "$target"
++    fi
+ done
+ 
+ generate_directory_tree() {

@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java b/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java
+index 5fd7d58..9bec591 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java
+@@ -44,7 +44,7 @@ public class BindDimenTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }
+@@ -84,7 +84,7 @@ public class BindDimenTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }

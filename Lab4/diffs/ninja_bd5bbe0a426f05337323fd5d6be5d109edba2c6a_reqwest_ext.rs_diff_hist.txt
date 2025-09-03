@@ -1,0 +1,21 @@
+diff --git a/openai/src/eventsource/reqwest_ext.rs b/openai/src/eventsource/reqwest_ext.rs
+new file mode 100644
+index 0000000..d671233
+--- /dev/null
++++ b/openai/src/eventsource/reqwest_ext.rs
+@@ -0,0 +1,15 @@
++use super::error::CannotCloneRequestError;
++use super::event_source::EventSource;
++use reqwest::RequestBuilder;
++
++/// Provides an easy interface to build an [`EventSource`] from a [`RequestBuilder`]
++pub trait RequestBuilderExt {
++    /// Create a new [`EventSource`] from a [`RequestBuilder`]
++    fn eventsource(self) -> Result<EventSource, CannotCloneRequestError>;
++}
++
++impl RequestBuilderExt for RequestBuilder {
++    fn eventsource(self) -> Result<EventSource, CannotCloneRequestError> {
++        EventSource::new(self)
++    }
++}

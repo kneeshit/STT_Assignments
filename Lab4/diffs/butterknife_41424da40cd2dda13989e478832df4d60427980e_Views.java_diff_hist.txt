@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index 9e6943a..c4c0a39 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -171,7 +171,7 @@ public class Views {
+         // Verify field properties.
+         Set<Modifier> modifiers = element.getModifiers();
+         if (modifiers.contains(PRIVATE) || modifiers.contains(STATIC)) {
+-          error(element, "@InjectView fields must not be private, or static (%s.%s).",
++          error(element, "@InjectView fields must not be private or static (%s.%s).",
+               enclosingElement.getQualifiedName(), element);
+           continue;
+         }

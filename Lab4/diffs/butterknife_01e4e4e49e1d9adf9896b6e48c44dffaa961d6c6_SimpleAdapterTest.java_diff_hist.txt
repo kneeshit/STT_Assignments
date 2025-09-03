@@ -1,0 +1,14 @@
+diff --git a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleAdapterTest.java b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleAdapterTest.java
+index a086835..382a22d 100644
+--- a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleAdapterTest.java
++++ b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleAdapterTest.java
+@@ -1,8 +1,8 @@
+ package com.example.butterknife.library;
+ 
+ import android.content.Context;
+-import android.support.test.InstrumentationRegistry;
+ import android.view.View;
++import androidx.test.InstrumentationRegistry;
+ import com.example.butterknife.R;
+ import org.junit.Test;
+ 

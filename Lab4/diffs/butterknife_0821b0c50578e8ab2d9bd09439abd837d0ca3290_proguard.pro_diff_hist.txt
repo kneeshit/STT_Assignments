@@ -1,0 +1,8 @@
+diff --git a/butterknife-integration-test/proguard.pro b/butterknife-integration-test/proguard.pro
+new file mode 100644
+index 0000000..fa55b5c
+--- /dev/null
++++ b/butterknife-integration-test/proguard.pro
+@@ -0,0 +1,2 @@
++-dontoptimize
++-dontobfuscate

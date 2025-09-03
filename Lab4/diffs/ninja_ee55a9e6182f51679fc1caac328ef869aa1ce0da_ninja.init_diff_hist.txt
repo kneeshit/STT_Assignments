@@ -1,0 +1,13 @@
+diff --git a/openwrt/ninja/files/ninja.init b/openwrt/ninja/files/ninja.init
+index 267ed4a..d273cbe 100644
+--- a/openwrt/ninja/files/ninja.init
++++ b/openwrt/ninja/files/ninja.init
+@@ -19,6 +19,8 @@ get_config() {
+ 	config_get tls_cert $1 tls_cert ''
+ 	config_get tls_key $1 tls_key ''
+ 	config_get arkose_chat_har_file $1 arkose_chat_har_file ''
++	config_get arkose_auth_har_file $1 arkose_auth_har_file ''
++	config_get arkose_platform_har_file $1 arkose_platform_har_file ''
+ 	config_get arkose_har_upload_key $1 arkose_har_upload_key ''
+ 	config_get arkose_solver_key $1 arkose_solver_key ''
+ 	config_get arkose_solver $1 arkose_solver ''

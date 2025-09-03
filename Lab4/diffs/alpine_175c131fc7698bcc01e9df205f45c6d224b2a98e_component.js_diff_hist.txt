@@ -1,0 +1,24 @@
+diff --git a/src/component.js b/src/component.js
+index 44b50efa..aa9b2fe1 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -134,7 +134,7 @@ export default class Component {
+                             }
+ 
+                             return comparisonData[part]
+-                        }, self.getUnobservedData())
++                        }, self.unobservedData)
+                     })
+             } else {
+                 // Let's walk through the watchers with "dot-notation" (foo.bar) and see
+@@ -155,8 +155,9 @@ export default class Component {
+                                 // Run the watchers.
+                                 self.watchers[fullDotNotationKey].forEach(callback => callback(target[key]))
+                             }
++
+                             return comparisonData[part]
+-                        }, self.getUnobservedData())
++                        }, self.unobservedData)
+                     })
+             }
+ 

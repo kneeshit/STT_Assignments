@@ -1,0 +1,12 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index ab2cafd..e2ab1d4 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -144,7 +144,6 @@ impl Launcher {
+         // serve
+         let serve = HttpServer::new(move || {
+             let app = App::new()
+-                .wrap(actix_web::middleware::Compress::default())
+                 .wrap(Logger::default())
+                 // official dashboard api endpoint
+                 .service(

@@ -1,0 +1,13 @@
+diff --git a/src/component.js b/src/component.js
+index ca4872b6..382e84a4 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -322,7 +322,7 @@ export default class Component {
+ 
+                 if (mutations[i].addedNodes.length > 0) {
+                     mutations[i].addedNodes.forEach(node => {
+-                        if (node.nodeType !== 1) return
++                        if (node.nodeType !== 1 || node.__x_inserted_me) return
+ 
+                         if (node.matches('[x-data]')) {
+                             node.__x = new Component(node)

@@ -1,0 +1,16 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index d6bece8..76c7426 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -11,6 +11,11 @@ android {
+     testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+   }
+ 
++  compileOptions {
++    sourceCompatibility JavaVersion.VERSION_1_8
++    targetCompatibility JavaVersion.VERSION_1_8
++  }
++
+   lintOptions {
+     textReport true
+     textOutput 'stdout'

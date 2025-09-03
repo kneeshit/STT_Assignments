@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index f0d45309..d6bb0f14 100644
+--- a/README.md
++++ b/README.md
+@@ -12,7 +12,7 @@ Think of it like [Tailwind](https://tailwindcss.com/) for JavaScript.
+ 
+ **From CDN:** Add the following script to the end of your `<head>` section.
+ ```html
+-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.3.0/dist/alpine.js" defer></script>
++<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.3.1/dist/alpine.js" defer></script>
+ ```
+ 
+ That's it. It will initialize itself.

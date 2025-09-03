@@ -1,0 +1,12 @@
+diff --git a/butterknife-runtime/src/main/java/butterknife/Unbinder.java b/butterknife-runtime/src/main/java/butterknife/Unbinder.java
+index 663fc86..0b47753 100644
+--- a/butterknife-runtime/src/main/java/butterknife/Unbinder.java
++++ b/butterknife-runtime/src/main/java/butterknife/Unbinder.java
+@@ -1,6 +1,6 @@
+ package butterknife;
+ 
+-import android.support.annotation.UiThread;
++import androidx.annotation.UiThread;
+ 
+ /** An unbinder contract that will unbind views when called. */
+ public interface Unbinder {

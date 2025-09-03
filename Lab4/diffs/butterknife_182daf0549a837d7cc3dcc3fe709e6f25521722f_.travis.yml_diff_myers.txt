@@ -1,0 +1,13 @@
+diff --git a/.travis.yml b/.travis.yml
+index 87e4e8f..009df7d 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -4,7 +4,7 @@ android:
+   components:
+     - tools
+     - platform-tools
+-    - build-tools-24.0.1
++    - build-tools-24.0.2
+     - android-24
+     - extra-android-m2repository
+     - sys-img-armeabi-v7a-android-18

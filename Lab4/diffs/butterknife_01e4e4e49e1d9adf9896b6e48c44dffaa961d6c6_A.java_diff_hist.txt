@@ -1,0 +1,12 @@
+diff --git a/sample/app/src/main/java/com/example/butterknife/unbinder/A.java b/sample/app/src/main/java/com/example/butterknife/unbinder/A.java
+index 79feb9e..d0d7615 100644
+--- a/sample/app/src/main/java/com/example/butterknife/unbinder/A.java
++++ b/sample/app/src/main/java/com/example/butterknife/unbinder/A.java
+@@ -1,6 +1,6 @@
+ package com.example.butterknife.unbinder;
+ 
+-import android.support.annotation.ColorInt;
++import androidx.annotation.ColorInt;
+ import android.view.View;
+ 
+ import butterknife.BindColor;

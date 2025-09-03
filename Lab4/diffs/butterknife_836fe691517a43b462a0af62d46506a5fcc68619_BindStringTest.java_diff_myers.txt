@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindStringTest.java b/butterknife-compiler/src/test/java/butterknife/BindStringTest.java
+index c9041f2..1de7dc9 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindStringTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindStringTest.java
+@@ -33,8 +33,6 @@ public class BindStringTest {
+             "    Resources res = finder.getContext(source).getResources();",
+             "    target.one = res.getString(1);",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

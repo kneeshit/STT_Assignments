@@ -1,0 +1,14 @@
+diff --git a/src/utils.js b/src/utils.js
+index 8635624e..7effc82d 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -12,7 +12,8 @@ export function domReady() {
+ }
+ 
+ export function isTesting() {
+-    return process.env.JEST_WORKER_ID !== undefined;
++    return navigator.userAgent, navigator.userAgent.includes("Node.js")
++        || navigator.userAgent.includes("jsdom")
+ }
+ 
+ export function walk(el, callback) {

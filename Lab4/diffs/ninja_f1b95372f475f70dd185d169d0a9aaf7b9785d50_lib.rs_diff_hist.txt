@@ -1,0 +1,19 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index 0fdfdaf..786a0e6 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -39,3 +40,14 @@ pub fn format_time(timestamp: i64) -> anyhow::Result<String> {
+         .format(&time::format_description::well_known::Rfc3339)?;
+     Ok(time)
+ }
++
++pub fn generate_random_string(len: usize) -> String {
++    use rand::distributions::Alphanumeric;
++    use rand::{thread_rng, Rng};
++    const CHARSET: &[u8] = b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
++    let rng = thread_rng();
++    rng.sample_iter(&Alphanumeric)
++        .take(len)
++        .map(|x| CHARSET[x as usize % CHARSET.len()] as char)
++        .collect()
++}

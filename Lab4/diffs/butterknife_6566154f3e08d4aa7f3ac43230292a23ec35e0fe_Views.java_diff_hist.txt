@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index 9971afb..390252d 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -143,6 +143,10 @@ public class Views {
+   }
+ 
+   public static class UnableToInjectException extends RuntimeException {
++    UnableToInjectException(String message) {
++      super(message);
++    }
++    
+     UnableToInjectException(String message, Throwable cause) {
+       super(message, cause);
+     }

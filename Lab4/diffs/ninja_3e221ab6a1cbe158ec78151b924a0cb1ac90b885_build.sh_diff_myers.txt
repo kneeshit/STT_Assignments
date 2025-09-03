@@ -1,0 +1,12 @@
+diff --git a/docker/builder/build.sh b/docker/builder/build.sh
+index 03a2fec..7110e54 100755
+--- a/docker/builder/build.sh
++++ b/docker/builder/build.sh
+@@ -17,4 +17,7 @@ for key in "${!map[@]}"; do
+     --tag gngpp/ninja-builder:"$key" \
+     --tag ghcr.io/gngpp/ninja-builder:"$key" \
+     --build-arg BASE_IMAGE="${map[$key]}" . --push
++  echo "Build complete for $key"
++  docker rmi ghcr.io/gngpp/ninja-builder:"$key"
++  docker rmi ghcr.io/gngpp/ninja-builder:"${map[$key]}"
+ done

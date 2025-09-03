@@ -1,0 +1,14 @@
+diff --git a/examples/funcaptcha.rs b/examples/funcaptcha.rs
+index a1dc8be..e0d348b 100644
+--- a/examples/funcaptcha.rs
++++ b/examples/funcaptcha.rs
+@@ -26,7 +26,8 @@ async fn main() -> anyhow::Result<()> {
+     // start time
+     let now = Instant::now();
+ 
+-    let arkose_token = ArkoseToken::new_from_har("/Users/gngpp/VSCode/ninja/login.chat.openai.com.har").await?;
++    let arkose_token =
++        ArkoseToken::new_from_har("/Users/gngpp/VSCode/ninja/login.chat.openai.com.har").await?;
+ 
+     parse(arkose_token, solver, key).await?;
+ 

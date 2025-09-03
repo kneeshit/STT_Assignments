@@ -1,0 +1,48 @@
+diff --git a/openai/src/eventsource/event_source.rs b/openai/src/eventsource/event_source.rs
+index a8b1a74..a04450c 100644
+--- a/openai/src/eventsource/event_source.rs
++++ b/openai/src/eventsource/event_source.rs
+@@ -99,12 +99,9 @@ impl EventSource {
+     }
+ }
+ 
+-fn check_response(response: &Response) -> Result<(), Error> {
+-    match response.status() {
+-        StatusCode::OK => {}
+-        status => {
+-            return Err(Error::InvalidStatusCode(status));
+-        }
++fn check_response(response: Response) -> Result<Response, Error> {
++    if response.status() != StatusCode::OK {
++        return Err(Error::InvalidStatusCode(response));
+     }
+     let content_type = response
+         .headers()
+@@ -121,7 +118,7 @@ fn check_response(response: &Response) -> Result<(), Error> {
+     ) {
+         return Err(Error::InvalidContentType(content_type.clone()));
+     }
+-    Ok(())
++    Ok(response)
+ }
+ 
+ impl<'a> EventSourceProjection<'a> {
+@@ -210,13 +207,17 @@ impl Stream for EventSource {
+             match response_future.poll(cx) {
+                 Poll::Ready(Ok(res)) => {
+                     this.clear_fetch();
+-                    if let Err(err) = check_response(&res) {
++                    match check_response(res) {
++                        Err(err) => {
+                             *this.is_closed = true;
+                             return Poll::Ready(Some(Err(err)));
+                         }
++                        Ok(res) => {
+                             this.handle_response(res);
+                             return Poll::Ready(Some(Ok(Event::Open)));
+                         }
++                    }
++                }
+                 Poll::Ready(Err(err)) => {
+                     let err = Error::Transport(err);
+                     this.handle_error(&err);

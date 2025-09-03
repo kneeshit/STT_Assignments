@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/it/superclass/src/main/java/bar/TestTwo.java b/butterknife/src/it/superclass/src/main/java/bar/TestTwo.java
+deleted file mode 100644
+index 740c9ea..0000000
+--- a/butterknife/src/it/superclass/src/main/java/bar/TestTwo.java
++++ /dev/null
+@@ -1,9 +0,0 @@
+-package bar;
+-
+-import android.app.Activity;
+-import android.view.View;
+-import butterknife.InjectView;
+-import foo.BaseThing;
+-
+-public class TestTwo extends BaseThing {
+-}

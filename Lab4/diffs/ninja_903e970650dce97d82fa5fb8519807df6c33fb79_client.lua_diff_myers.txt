@@ -1,0 +1,13 @@
+diff --git a/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua b/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua
+index e78f1b1..ef4cf54 100644
+--- a/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua
++++ b/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua
+@@ -43,6 +43,8 @@ o.default = "60"
+ o = s:option(Value, "tcp_keepalive", translate("TCP Keep-Alive"), translate("Default 60 seconds"))
+ o.default = "60"
+ 
++o = s:option(Value, "preauth_api", translate("PreAuth API"), translate("PreAuth Cookie API URL"))
++
+ o = s:option(Value, "arkose_chat_har_file", translate("ChatGPT HAR file path"), translate("About the browser HAR file path requested by ChatGPT ArkoseLabs"))
+ 
+ o = s:option(Value, "arkose_auth_har_file", translate("Auth HAR file path"), translate("About the browser HAR file path requested by Auth ArkoseLabs"))

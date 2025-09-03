@@ -1,0 +1,22 @@
+diff --git a/butterknife-sample/src/test/java/com/example/butterknife/unbinder/UnbinderTest.java b/butterknife-sample/src/test/java/com/example/butterknife/unbinder/UnbinderTest.java
+index 345e733..9cc6536 100644
+--- a/butterknife-sample/src/test/java/com/example/butterknife/unbinder/UnbinderTest.java
++++ b/butterknife-sample/src/test/java/com/example/butterknife/unbinder/UnbinderTest.java
+@@ -3,15 +3,13 @@ package com.example.butterknife.unbinder;
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.FrameLayout;
+-
++import butterknife.ButterKnife;
++import butterknife.Unbinder;
+ import org.junit.Test;
+ import org.junit.runner.RunWith;
+ import org.robolectric.RobolectricGradleTestRunner;
+ import org.robolectric.RuntimeEnvironment;
+ 
+-import butterknife.ButterKnife;
+-import butterknife.Unbinder;
+-
+ import static com.google.common.truth.Truth.assertThat;
+ 
+ @RunWith(RobolectricGradleTestRunner.class)

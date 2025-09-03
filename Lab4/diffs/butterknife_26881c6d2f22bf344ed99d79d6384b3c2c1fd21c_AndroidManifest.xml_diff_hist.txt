@@ -1,0 +1,7 @@
+diff --git a/sample/library/src/main/AndroidManifest.xml b/sample/library/src/main/AndroidManifest.xml
+new file mode 100644
+index 0000000..d788df0
+--- /dev/null
++++ b/sample/library/src/main/AndroidManifest.xml
+@@ -0,0 +1 @@
++<manifest package="com.example.butterknife.library"/>

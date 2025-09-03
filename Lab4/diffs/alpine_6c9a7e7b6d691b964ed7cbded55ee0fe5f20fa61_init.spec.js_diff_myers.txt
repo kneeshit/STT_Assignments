@@ -1,0 +1,24 @@
+diff --git a/test/init.spec.js b/test/init.spec.js
+new file mode 100644
+index 00000000..b0118de5
+--- /dev/null
++++ b/test/init.spec.js
+@@ -0,0 +1,18 @@
++import Alpine from 'alpinejs'
++import { wait } from '@testing-library/dom'
++
++global.MutationObserver = class {
++    observe() {}
++}
++
++test('x-init', async () => {
++    document.body.innerHTML = `
++        <div x-data="{ foo: 'bar' }" x-init="foo = 'baz'">
++            <span x-text="foo"></span>
++        </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('span').innerText).toEqual('baz')
++})

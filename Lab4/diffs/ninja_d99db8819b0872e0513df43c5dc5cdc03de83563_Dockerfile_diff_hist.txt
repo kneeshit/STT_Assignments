@@ -1,0 +1,13 @@
+diff --git a/docker/Dockerfile b/docker/Dockerfile
+index 8c199e0..0e95d8c 100644
+--- a/docker/Dockerfile
++++ b/docker/Dockerfile
+@@ -24,6 +24,8 @@ FROM alpine:latest
+ 
+ LABEL org.opencontainers.image.authors "gngpp <gngppz@gmail.com>"
+ LABEL org.opencontainers.image.source https://github.com/gngpp/opengpt
++LABEL name opengpt
++LABEL url https://github.com/gngpp/opengpt
+ 
+ ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=C
+ 

@@ -1,0 +1,15 @@
+diff --git a/.buildscript/settings.xml b/.buildscript/settings.xml
+deleted file mode 100644
+index 91f444b..0000000
+--- a/.buildscript/settings.xml
++++ /dev/null
+@@ -1,9 +0,0 @@
+-<settings>
+-  <servers>
+-    <server>
+-      <id>sonatype-nexus-snapshots</id>
+-      <username>${env.CI_DEPLOY_USERNAME}</username>
+-      <password>${env.CI_DEPLOY_PASSWORD}</password>
+-    </server>
+-  </servers>
+-</settings>

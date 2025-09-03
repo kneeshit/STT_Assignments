@@ -1,0 +1,16 @@
+diff --git a/src/inter/dash.rs b/src/inter/dash.rs
+index 39ac424..a55c676 100644
+--- a/src/inter/dash.rs
++++ b/src/inter/dash.rs
+@@ -14,9 +14,8 @@ pub(super) async fn dashboard_prompt() -> anyhow::Result<()> {
+                     .with_help_message("You need to log in to your account to continue")
+                     .prompt();
+ 
+-                match ans {
+-                    Ok(true) => login_store_prompt(AuthStrategy::Platform).await,
+-                    _ => {}
++                if let Ok(true) = ans {
++                    login_store_prompt(AuthStrategy::Platform).await
+                 }
+             } else {
+                 for account in account_list {

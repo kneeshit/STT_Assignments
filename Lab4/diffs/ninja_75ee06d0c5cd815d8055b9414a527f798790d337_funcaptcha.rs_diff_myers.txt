@@ -1,0 +1,12 @@
+diff --git a/examples/funcaptcha.rs b/examples/funcaptcha.rs
+index fab19e4..c6578f0 100644
+--- a/examples/funcaptcha.rs
++++ b/examples/funcaptcha.rs
+@@ -159,5 +159,7 @@ async fn parse(
+             }
+         }
+     }
++
++    tokio::time::sleep(tokio::time::Duration::from_secs(5)).await;
+     Ok(())
+ }

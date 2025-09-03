@@ -1,0 +1,14 @@
+diff --git a/openai/src/auth/mod.rs b/openai/src/auth/mod.rs
+index 349a5ef..eed36f2 100644
+--- a/openai/src/auth/mod.rs
++++ b/openai/src/auth/mod.rs
+@@ -23,7 +23,8 @@ use sha2::{Digest, Sha256};
+ 
+ pub mod model;
+ 
+-use crate::{debug, AuthError, AuthResult, URL_CHATGPT_API};
++use crate::error::AuthError;
++use crate::{debug, AuthResult, URL_CHATGPT_API};
+ 
+ const CLIENT_ID: &str = "pdlLIX2Y72MIl2rhLhTE9VV9bN905kBh";
+ const OPENAI_OAUTH_URL: &str = "https://auth0.openai.com";

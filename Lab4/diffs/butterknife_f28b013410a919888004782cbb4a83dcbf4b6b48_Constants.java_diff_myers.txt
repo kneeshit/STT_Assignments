@@ -1,0 +1,14 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/internal/Constants.java b/butterknife-annotations/src/main/java/butterknife/internal/Constants.java
+new file mode 100644
+index 0000000..bde58d1
+--- /dev/null
++++ b/butterknife-annotations/src/main/java/butterknife/internal/Constants.java
+@@ -0,0 +1,8 @@
++package butterknife.internal;
++
++public class Constants {
++
++  private Constants() { }
++
++  public static final int NO_RES_ID = -1;
++}

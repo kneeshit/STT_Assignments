@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/test/java/butterknife/OnPageChangeTest.java b/butterknife/src/test/java/butterknife/OnPageChangeTest.java
+index 0b0cd55..a7c7590 100644
+--- a/butterknife/src/test/java/butterknife/OnPageChangeTest.java
++++ b/butterknife/src/test/java/butterknife/OnPageChangeTest.java
+@@ -12,9 +12,8 @@ public class OnPageChangeTest {
+   @Test public void pageChange() {
+     JavaFileObject source = JavaFileObjects.forSourceString("test.Test", ""
+         + "package test;\n"
+-        + "import android.app.Activity;\n"
+         + "import butterknife.OnPageChange;\n"
+-        + "public class Test extends Activity {\n"
++        + "public class Test {\n"
+         + "  @OnPageChange(1) void doStuff() {}\n"
+         + "}"
+     );

@@ -1,0 +1,16 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ViewInjection.java b/butterknife/src/main/java/butterknife/internal/ViewInjection.java
+index 6a50f94..4f31ca2 100644
+--- a/butterknife/src/main/java/butterknife/internal/ViewInjection.java
++++ b/butterknife/src/main/java/butterknife/internal/ViewInjection.java
+@@ -31,6 +31,11 @@ final class ViewInjection {
+     return listenerBindings;
+   }
+ 
++  public boolean hasListenerBinding(ListenerClass listener, ListenerMethod method) {
++    Map<ListenerMethod, Set<ListenerBinding>> methods = listenerBindings.get(listener);
++    return methods != null && methods.containsKey(method);
++  }
++
+   public void addListenerBinding(ListenerClass listener, ListenerMethod method,
+       ListenerBinding binding) {
+     Map<ListenerMethod, Set<ListenerBinding>> methods = listenerBindings.get(listener);

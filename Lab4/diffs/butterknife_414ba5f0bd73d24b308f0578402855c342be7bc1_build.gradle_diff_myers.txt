@@ -1,0 +1,12 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index b491135..a44ff48 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -17,6 +17,7 @@ android {
+ 
+ dependencies {
+   compile project(':butterknife-annotations')
++  compile deps.supportAnnotations
+   provided deps.supportv4
+ 
+   testCompile deps.junit

@@ -1,0 +1,15 @@
+diff --git a/src/component.js b/src/component.js
+index 45bf7b5e..c0f64afe 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -48,6 +48,10 @@ export default class Component {
+                         this.updateTextValue(el, output)
+                         break;
+ 
++                    case 'cloak':
++                        el.removeAttribute('x-cloak')
++                        break;
++
+                     default:
+                         break;
+                 }

@@ -1,0 +1,22 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index d21a9818..ff448e46 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -5760,7 +5760,7 @@
+           }
+         }
+ 
+-        if (isKeyEvent(event)) {
++        if (isKeyEvent(e)) {
+           if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
+             return;
+           }
+@@ -5802,7 +5802,7 @@
+   }
+ 
+   function isKeyEvent(event) {
+-    return ['keydown', 'keyup'].includes(event);
++    return event instanceof KeyboardEvent && ['keydown', 'keyup'].includes(event.type);
+   }
+ 
+   function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {

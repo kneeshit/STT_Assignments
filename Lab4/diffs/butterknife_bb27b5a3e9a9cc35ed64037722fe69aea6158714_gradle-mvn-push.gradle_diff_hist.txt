@@ -1,0 +1,142 @@
+diff --git a/gradle/gradle-mvn-push.gradle b/gradle/gradle-mvn-push.gradle
+index ea3f6bb..2707439 100644
+--- a/gradle/gradle-mvn-push.gradle
++++ b/gradle/gradle-mvn-push.gradle
+@@ -42,23 +42,11 @@ def getRepositoryPassword() {
+   return hasProperty('SONATYPE_NEXUS_PASSWORD') ? SONATYPE_NEXUS_PASSWORD : ""
+ }
+ 
+-afterEvaluate { project ->
+-  uploadArchives {
+-    repositories {
+-      mavenDeployer {
+-        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+-
++def configurePom(pom) {
+   pom.groupId = GROUP
+   pom.artifactId = POM_ARTIFACT_ID
+   pom.version = VERSION_NAME
+ 
+-        repository(url: getReleaseRepositoryUrl()) {
+-          authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+-        }
+-        snapshotRepository(url: getSnapshotRepositoryUrl()) {
+-          authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+-        }
+-
+   pom.project {
+     name POM_NAME
+     packaging POM_PACKAGING
+@@ -87,6 +75,34 @@ afterEvaluate { project ->
+     }
+   }
+ }
++
++afterEvaluate { project ->
++  uploadArchives {
++    repositories {
++      mavenDeployer {
++        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
++
++        repository(url: getReleaseRepositoryUrl()) {
++          authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
++        }
++        snapshotRepository(url: getSnapshotRepositoryUrl()) {
++          authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
++        }
++
++        configurePom(pom)
++      }
++    }
++  }
++
++  tasks.create("installLocally", Upload) {
++    configuration = configurations.archives
++
++    repositories {
++      mavenDeployer {
++        repository(url: "file://${rootProject.buildDir}/localMaven")
++
++        configurePom(pom)
++      }
+     }
+   }
+ 
+@@ -101,37 +117,7 @@ afterEvaluate { project ->
+       repositories.mavenInstaller {
+         configuration = configurations.archives
+ 
+-        pom.groupId = GROUP
+-        pom.artifactId = POM_ARTIFACT_ID
+-        pom.version = VERSION_NAME
+-
+-        pom.project {
+-          name POM_NAME
+-          packaging POM_PACKAGING
+-          description POM_DESCRIPTION
+-          url POM_URL
+-
+-          scm {
+-            url POM_SCM_URL
+-            connection POM_SCM_CONNECTION
+-            developerConnection POM_SCM_DEV_CONNECTION
+-          }
+-
+-          licenses {
+-            license {
+-              name POM_LICENCE_NAME
+-              url POM_LICENCE_URL
+-              distribution POM_LICENCE_DIST
+-            }
+-          }
+-
+-          developers {
+-            developer {
+-              id POM_DEVELOPER_ID
+-              name POM_DEVELOPER_NAME
+-            }
+-          }
+-        }
++        configurePom(pom)
+       }
+     }
+ 
+@@ -152,37 +138,7 @@ afterEvaluate { project ->
+   } else {
+     install {
+       repositories.mavenInstaller {
+-        pom.groupId = GROUP
+-        pom.artifactId = POM_ARTIFACT_ID
+-        pom.version = VERSION_NAME
+-
+-        pom.project {
+-          name POM_NAME
+-          packaging POM_PACKAGING
+-          description POM_DESCRIPTION
+-          url POM_URL
+-
+-          scm {
+-            url POM_SCM_URL
+-            connection POM_SCM_CONNECTION
+-            developerConnection POM_SCM_DEV_CONNECTION
+-          }
+-
+-          licenses {
+-            license {
+-              name POM_LICENCE_NAME
+-              url POM_LICENCE_URL
+-              distribution POM_LICENCE_DIST
+-            }
+-          }
+-
+-          developers {
+-            developer {
+-              id POM_DEVELOPER_ID
+-              name POM_DEVELOPER_NAME
+-            }
+-          }
+-        }
++        configurePom(pom)
+       }
+     }
+ 

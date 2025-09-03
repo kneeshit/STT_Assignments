@@ -1,0 +1,14 @@
+diff --git a/butterknife-runtime/src/androidTest/java/butterknife/functional/BindFloatTest.java b/butterknife-runtime/src/androidTest/java/butterknife/functional/BindFloatTest.java
+index a835f84..fad7ceb 100644
+--- a/butterknife-runtime/src/androidTest/java/butterknife/functional/BindFloatTest.java
++++ b/butterknife-runtime/src/androidTest/java/butterknife/functional/BindFloatTest.java
+@@ -1,8 +1,8 @@
+ package butterknife.functional;
+ 
+ import android.content.Context;
+-import android.support.test.InstrumentationRegistry;
+ import android.util.TypedValue;
++import androidx.test.InstrumentationRegistry;
+ import butterknife.BindFloat;
+ import butterknife.Unbinder;
+ import butterknife.runtime.test.R;

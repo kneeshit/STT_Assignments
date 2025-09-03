@@ -1,0 +1,33 @@
+diff --git a/src/args.rs b/src/args.rs
+index 978e290..4b89f6d 100644
+--- a/src/args.rs
++++ b/src/args.rs
+@@ -20,6 +20,15 @@ pub(super) struct Opt {
+     pub(super) level: String,
+ }
+ 
++#[derive(Subcommand)]
++pub(super) enum SubCommands {
++    /// Start the http server
++    #[clap(subcommand)]
++    Serve(ServeSubcommand),
++    /// Terminal interaction
++    Terminal,
++}
++
+ #[derive(Subcommand)]
+ pub(super) enum ServeSubcommand {
+     /// Run the HTTP server
+@@ -175,12 +184,3 @@ pub(super) struct ServeArgs {
+     #[clap(short = 'D', long, env = "OPENGPT_DISABLE_WEBUI")]
+     pub(super) disable_webui: bool,
+ }
+-
+-#[derive(Subcommand)]
+-pub(super) enum SubCommands {
+-    /// Start the http server
+-    #[clap(subcommand)]
+-    Serve(ServeSubcommand),
+-    /// Terminal interaction
+-    Terminal,
+-}

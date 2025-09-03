@@ -1,0 +1,12 @@
+diff --git a/src/inter/context.rs b/src/inter/context.rs
+index 38288a2..ed53b4d 100644
+--- a/src/inter/context.rs
++++ b/src/inter/context.rs
+@@ -41,7 +41,6 @@ impl Context {
+         let proxies = conf.proxy.map(|p| vec![p]).unwrap_or(vec![]);
+ 
+         let args = openai::context::ContextArgs::builder()
+-            .arkose_endpoint(conf.arkose_token_endpoint)
+             .arkose_chat4_har_file(arkose_chat_har_file)
+             .arkose_auth_har_file(arkose_auth_har_file)
+             .arkose_platform_har_file(arkose_platform_har_file)

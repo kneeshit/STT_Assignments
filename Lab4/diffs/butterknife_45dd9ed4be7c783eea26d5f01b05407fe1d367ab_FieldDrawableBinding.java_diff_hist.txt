@@ -1,0 +1,31 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/internal/FieldDrawableBinding.java b/butterknife-compiler/src/main/java/butterknife/internal/FieldDrawableBinding.java
+new file mode 100644
+index 0000000..a19565e
+--- /dev/null
++++ b/butterknife-compiler/src/main/java/butterknife/internal/FieldDrawableBinding.java
+@@ -0,0 +1,25 @@
++package butterknife.internal;
++
++final class FieldDrawableBinding {
++  private final int id;
++  private final String name;
++  private final int tintAttributeId;
++
++  FieldDrawableBinding(int id, String name, int tintAttributeId) {
++    this.id = id;
++    this.name = name;
++    this.tintAttributeId = tintAttributeId;
++  }
++
++  public int getId() {
++    return id;
++  }
++
++  public String getName() {
++    return name;
++  }
++
++  public int getTintAttributeId() {
++    return tintAttributeId;
++  }
++}

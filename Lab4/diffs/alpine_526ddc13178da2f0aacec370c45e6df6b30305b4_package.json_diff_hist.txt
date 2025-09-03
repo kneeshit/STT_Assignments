@@ -1,0 +1,13 @@
+diff --git a/package.json b/package.json
+index 58a10be5..0b064977 100644
+--- a/package.json
++++ b/package.json
+@@ -1,7 +1,7 @@
+ {
+   "main": "dist/project-x.js",
+   "name": "project-x",
+-  "version": "0.3.0",
++  "version": "0.4.0",
+   "repository": {
+     "type": "git",
+     "url": "git://github.com/calebporzio/project-x.git"

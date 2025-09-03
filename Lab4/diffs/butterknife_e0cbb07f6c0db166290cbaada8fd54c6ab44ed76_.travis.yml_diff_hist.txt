@@ -1,0 +1,24 @@
+diff --git a/.travis.yml b/.travis.yml
+index e864b2a..ba73a42 100644
+--- a/.travis.yml
++++ b/.travis.yml
+@@ -7,10 +7,19 @@ android:
+     - build-tools-23.0.3
+     - android-23
+     - extra-android-m2repository
++    - sys-img-armeabi-v7a-android-18
+ 
+ jdk:
+   - oraclejdk8
+ 
++
++before_script:
++  # Create and start an emulator for instrumentation tests.
++  - echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
++  - emulator -avd test -no-audio -no-window &
++  - android-wait-for-emulator
++  - adb shell input keyevent 82
++
+ after_success:
+   - .buildscript/deploy_snapshot.sh
+ 

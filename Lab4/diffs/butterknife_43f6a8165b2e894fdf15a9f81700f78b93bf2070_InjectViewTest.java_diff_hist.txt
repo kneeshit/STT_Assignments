@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/InjectViewTest.java b/butterknife/src/test/java/butterknife/internal/InjectViewTest.java
+index 4003400..e00df28 100644
+--- a/butterknife/src/test/java/butterknife/internal/InjectViewTest.java
++++ b/butterknife/src/test/java/butterknife/internal/InjectViewTest.java
+@@ -107,7 +107,7 @@ public class InjectViewTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'thing1' and method 'doStuff'\");",
+             "    target.thing1 = view;",
+             "    view.setOnClickListener(",
+-            "      new butterknife.internal.DebouncedOnClickListener() {",
++            "      new butterknife.internal.DebouncingOnClickListener() {",
+             "        @Override public void doClick(",
+             "          android.view.View p0",
+             "        ) {",

@@ -1,0 +1,31 @@
+diff --git a/test/on.spec.js b/test/on.spec.js
+index 59b9da9c..4a2070a2 100644
+--- a/test/on.spec.js
++++ b/test/on.spec.js
+@@ -63,6 +63,26 @@ test('.stop modifier', async () => {
+     })
+ })
+ 
++test('.self modifier', async () => {
++    document.body.innerHTML = `
++        <div x-data="{ foo: 'bar' }">
++            <button x-on:click.self="foo = 'baz'">
++                <span></span>
++            </button>
++        </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('div').__x.$data.foo).toEqual('bar')
++
++    document.querySelector('span').click()
++
++    await wait(() => {
++        expect(document.querySelector('div').__x.$data.foo).toEqual('bar')
++    })
++})
++
+ test('.prevent modifier', async () => {
+     document.body.innerHTML = `
+         <div x-data="{}">

@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnTouchTest.java b/butterknife/src/test/java/butterknife/internal/OnTouchTest.java
+index 0cf5cb0..7665d5b 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnTouchTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnTouchTest.java
+@@ -6,8 +6,8 @@ import javax.tools.JavaFileObject;
+ import org.junit.Test;
+ 
+ import static butterknife.internal.ProcessorTestUtilities.butterknifeProcessors;
++import static com.google.common.truth.Truth.ASSERT;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+-import static org.truth0.Truth.ASSERT;
+ 
+ public class OnTouchTest {
+   @Test public void touch() {

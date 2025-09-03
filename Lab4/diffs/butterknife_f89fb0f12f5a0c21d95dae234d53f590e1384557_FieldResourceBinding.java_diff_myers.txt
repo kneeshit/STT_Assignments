@@ -1,0 +1,28 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
+index c50ca2a..7311983 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
+@@ -4,11 +4,13 @@ final class FieldResourceBinding {
+   private final int id;
+   private final String name;
+   private final String method;
++  private final boolean themeable;
+ 
+-  FieldResourceBinding(int id, String name, String method) {
++  FieldResourceBinding(int id, String name, String method, boolean themeable) {
+     this.id = id;
+     this.name = name;
+     this.method = method;
++    this.themeable = themeable;
+   }
+ 
+   public int getId() {
+@@ -22,4 +24,8 @@ final class FieldResourceBinding {
+   public String getMethod() {
+     return method;
+   }
++
++  public boolean isThemeable() {
++    return themeable;
++  }
+ }

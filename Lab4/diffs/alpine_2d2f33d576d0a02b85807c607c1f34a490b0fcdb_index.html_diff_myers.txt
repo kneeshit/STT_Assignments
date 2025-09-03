@@ -1,0 +1,22 @@
+diff --git a/examples/index.html b/examples/index.html
+index 3718abeb..759f723e 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -304,6 +304,17 @@
+                     </td>
+                 </tr>
+ 
++                <tr>
++                    <td>x-for over a range using <code>i in 10</code> syntax</td>
++                    <td>
++                        <div x-data>
++                            <template x-for="i in 10" :key="i">
++                                <span x-text="i"></span>
++                            </template>
++                        </div>
++                    </td>
++                </tr>
++
+                 <tr>
+                     <td>Transitions</td>
+                     <td>

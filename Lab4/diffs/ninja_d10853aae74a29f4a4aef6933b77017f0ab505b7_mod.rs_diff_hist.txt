@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/toapi/mod.rs b/openai/src/serve/router/toapi/mod.rs
+index ff6d88b..78ce629 100644
+--- a/openai/src/serve/router/toapi/mod.rs
++++ b/openai/src/serve/router/toapi/mod.rs
+@@ -37,7 +37,7 @@ pub(crate) async fn chat_to_api(
+     jar: CookieJar,
+     body: Json<req::Req>,
+ ) -> Result<impl IntoResponse, ResponseError> {
+-    let mut messages = vec![];
++    let mut messages = Vec::with_capacity(body.messages.len());
+     for body_msg in body.messages.iter() {
+         let role = if body_msg.role.eq(&Role::System) {
+             Role::Critic

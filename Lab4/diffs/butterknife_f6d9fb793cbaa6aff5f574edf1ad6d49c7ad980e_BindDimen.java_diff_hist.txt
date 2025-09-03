@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/main/java/butterknife/BindDimen.java b/butterknife/src/main/java/butterknife/BindDimen.java
+index 3f91413..60682b2 100644
+--- a/butterknife/src/main/java/butterknife/BindDimen.java
++++ b/butterknife/src/main/java/butterknife/BindDimen.java
+@@ -10,8 +10,8 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * Bind a field to the specified dimension resource ID. Type can be {@code int} for pixel size or
+  * {@code float} for exact amount.
+  * <pre><code>
+- * {@literal @}ResourceDimen(R.dimen.horizontal_gap) int gapPx;
+- * {@literal @}ResourceDimen(R.dimen.horizontal_gap) float gap;
++ * {@literal @}BindDimen(R.dimen.horizontal_gap) int gapPx;
++ * {@literal @}BindDimen(R.dimen.horizontal_gap) float gap;
+  * </code></pre>
+  */
+ @Retention(CLASS) @Target(FIELD)

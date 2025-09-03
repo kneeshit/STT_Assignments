@@ -1,0 +1,14 @@
+diff --git a/README.md b/README.md
+index 9f8128e..f464e43 100644
+--- a/README.md
++++ b/README.md
+@@ -16,6 +16,9 @@ git clone https://github.com/gngpp/opengpt.git && cd opengpt
+ ```
+ 
+ ### Http Server
++
++- Support unofficial/official forward proxy forwarding
++
+ ```shell
+ $ opengpt --help
+ Start the http server

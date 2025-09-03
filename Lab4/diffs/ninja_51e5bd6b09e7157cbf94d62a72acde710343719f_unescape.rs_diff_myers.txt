@@ -1,0 +1,31 @@
+diff --git a/openai/src/unescape.rs b/openai/src/unescape.rs
+index 25d2574..973b622 100644
+--- a/openai/src/unescape.rs
++++ b/openai/src/unescape.rs
+@@ -8,7 +8,7 @@ macro_rules! try_option {
+             Some(s) => s,
+             None => return None,
+         }
+-    }
++    };
+ }
+ 
+ // Takes in a string with backslash escapes written out with literal backslash characters and
+@@ -35,7 +35,7 @@ pub fn unescape(s: &str) -> Option<String> {
+             Some('u') => s.push(try_option!(unescape_unicode(&mut queue))),
+             Some('x') => s.push(try_option!(unescape_byte(&mut queue))),
+             Some(c) if c.is_digit(8) => s.push(try_option!(unescape_octal(c, &mut queue))),
+-            _ => return None
++            _ => return None,
+         };
+     }
+ 
+@@ -71,7 +71,7 @@ fn unescape_octal(c: char, queue: &mut VecDeque<char>) -> Option<char> {
+             let _ = queue.pop_front();
+             Some(ch)
+         }
+-        None => unescape_octal_no_leading(c, queue)
++        None => unescape_octal_no_leading(c, queue),
+     }
+ }
+ 

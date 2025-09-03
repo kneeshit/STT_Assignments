@@ -1,0 +1,12 @@
+diff --git a/website/index.html b/website/index.html
+index cebd876..b35af94 100644
+--- a/website/index.html
++++ b/website/index.html
+@@ -157,6 +157,7 @@ public void pickDoor(DoorView door) {
+   }
+ 
+   @Override void onDestroyView() {
++    super.onDestroyView();
+     Views.reset(this);
+   }
+ }</pre>

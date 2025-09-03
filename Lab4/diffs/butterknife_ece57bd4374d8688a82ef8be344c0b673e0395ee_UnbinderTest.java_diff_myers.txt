@@ -1,0 +1,20 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java b/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java
+index 8c7c3bb..b8834cd 100644
+--- a/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java
+@@ -1,14 +1,12 @@
+ package butterknife;
+ 
++import butterknife.compiler.ButterKnifeProcessor;
+ import com.google.common.base.Joiner;
+ import com.google.testing.compile.JavaFileObjects;
+-
+ import org.junit.Test;
+ 
+ import javax.tools.JavaFileObject;
+ 
+-import butterknife.compiler.ButterKnifeProcessor;
+-
+ import static com.google.common.truth.Truth.assertAbout;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+ import static com.google.testing.compile.JavaSourcesSubjectFactory.javaSources;

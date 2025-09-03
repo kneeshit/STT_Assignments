@@ -1,0 +1,15 @@
+diff --git a/openai/src/serve/err.rs b/openai/src/serve/err.rs
+index 2e6a8f4..a8b1d34 100644
+--- a/openai/src/serve/err.rs
++++ b/openai/src/serve/err.rs
+@@ -12,6 +12,10 @@ pub struct ResponseError {
+ }
+ 
+ impl ResponseError {
++    pub fn new(msg: String, code: StatusCode) -> Self {
++        Self { msg, code }
++    }
++
+     pub fn msg(&self) -> &str {
+         &self.msg
+     }

@@ -1,0 +1,4 @@
+runtime: image
+
+image:
+  url: ghcr.io/gngpp/ninja:latest

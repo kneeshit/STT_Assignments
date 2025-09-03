@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/har.rs b/openai/src/serve/router/har.rs
+index 030168b..8af8035 100644
+--- a/openai/src/serve/router/har.rs
++++ b/openai/src/serve/router/har.rs
+@@ -1,7 +1,7 @@
+ use std::str::FromStr;
+ 
+ use crate::context::{self, ContextArgs};
+-use crate::serve::err::ResponseError;
++use crate::serve::error::ResponseError;
+ use crate::{arkose, debug};
+ use anyhow::anyhow;
+ use axum::extract::Multipart;

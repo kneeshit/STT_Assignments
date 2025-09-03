@@ -1,0 +1,14 @@
+diff --git a/openai/src/platform/v1/resources/model.rs b/openai/src/platform/v1/resources/model.rs
+new file mode 100644
+index 0000000..03cb6f7
+--- /dev/null
++++ b/openai/src/platform/v1/resources/model.rs
+@@ -0,0 +1,8 @@
++use serde::{Deserialize, Serialize};
++
++#[derive(Serialize, Deserialize, Debug, Clone)]
++pub struct Model {
++    id: String,
++    object: String,
++    owned_by: String,
++}

@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index ab38277..39095ea 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -434,7 +434,7 @@ fn response_convert(resp: Result<reqwest::Response, reqwest::Error>) -> HttpResp
+                             .expect("get cookie expires exception"),
+                         )
+                         .same_site(cookie::SameSite::Lax)
+-                        .secure(true)
++                        .secure(false)
+                         .http_only(false)
+                         .finish();
+                     builder.cookie(cookie);

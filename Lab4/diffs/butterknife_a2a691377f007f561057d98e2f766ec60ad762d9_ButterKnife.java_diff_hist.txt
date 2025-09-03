@@ -1,0 +1,15 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/ButterKnife.java b/butterknife-compiler/src/test/java/butterknife/ButterKnife.java
+index 6055aab..81d5466 100644
+--- a/butterknife-compiler/src/test/java/butterknife/ButterKnife.java
++++ b/butterknife-compiler/src/test/java/butterknife/ButterKnife.java
+@@ -4,10 +4,6 @@ import android.view.View;
+ 
+ /** STUB! Required for test sources to compile. */
+ public class ButterKnife {
+-  public interface ViewUnbinder<T> {
+-    Unbinder unbind();
+-  }
+-
+   public static Unbinder bind(Object target, View view) {
+     return Unbinder.EMPTY;
+   }

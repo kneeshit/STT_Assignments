@@ -1,0 +1,14 @@
+diff --git a/README.md b/README.md
+index 3c3b3454..9f4f0616 100644
+--- a/README.md
++++ b/README.md
+@@ -15,6 +15,9 @@ Add the following script to the end of your `<head>` section.
+ ```
+ 
+ ## Use
++
++> These examples use the `.hidden` class from Tailwind. If you aren't using tailwind, just add `.hidden { display: none; }` to your stylesheet.
++
+ *Dropdown/Modal*
+ ```html
+ <div x-data="{ open: false }">

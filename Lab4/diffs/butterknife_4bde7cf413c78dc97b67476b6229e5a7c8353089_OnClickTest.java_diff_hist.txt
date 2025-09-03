@@ -1,0 +1,76 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnClickTest.java b/butterknife/src/test/java/butterknife/internal/OnClickTest.java
+index e12576e..064cbc5 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnClickTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnClickTest.java
+@@ -301,8 +301,7 @@ public class OnClickTest {
+   }
+ 
+   @Test public void failsIfHasReturnType() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import android.app.Activity;",
+         "import butterknife.OnClick;",
+@@ -320,9 +319,8 @@ public class OnClickTest {
+         .in(source).onLine(7);
+   }
+ 
+-  @Test public void failsIfPrivate() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++  @Test public void failsIfPrivateMethod() {
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import android.app.Activity;",
+         "import butterknife.OnClick;",
+@@ -340,8 +338,7 @@ public class OnClickTest {
+   }
+ 
+   @Test public void failsIfStatic() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import android.app.Activity;",
+         "import butterknife.OnClick;",
+@@ -359,8 +356,7 @@ public class OnClickTest {
+   }
+ 
+   @Test public void failsIfParameterNotView() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import android.app.Activity;",
+         "import butterknife.OnClick;",
+@@ -388,8 +384,7 @@ public class OnClickTest {
+   }
+ 
+   @Test public void failsIfMoreThanOneParameter() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import android.app.Activity;",
+         "import android.view.View;",
+@@ -409,8 +404,7 @@ public class OnClickTest {
+   }
+ 
+   @Test public void failsIfInInterface() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import butterknife.OnClick;",
+         "public interface Test {",
+@@ -427,8 +421,7 @@ public class OnClickTest {
+   }
+ 
+   @Test public void failsIfHasDuplicateIds() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import android.app.Activity;",
+         "import butterknife.OnClick;",

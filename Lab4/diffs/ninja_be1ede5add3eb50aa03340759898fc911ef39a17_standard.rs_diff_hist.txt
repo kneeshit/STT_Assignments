@@ -1,0 +1,12 @@
+diff --git a/src/inter/standard.rs b/src/inter/standard.rs
+index da6e51a..697b137 100644
+--- a/src/inter/standard.rs
++++ b/src/inter/standard.rs
+@@ -53,6 +53,7 @@ impl Display for Authorize {
+ }
+ 
+ #[derive(Debug, Copy, Clone)]
++#[allow(clippy::enum_variant_names)]
+ pub enum OAuth {
+     AccessToken,
+     RefreshToken,

@@ -1,0 +1,75 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/BindingClass.java b/butterknife/src/main/java/butterknife/internal/BindingClass.java
+index f8377ad..0f39ff4 100644
+--- a/butterknife/src/main/java/butterknife/internal/BindingClass.java
++++ b/butterknife/src/main/java/butterknife/internal/BindingClass.java
+@@ -18,6 +18,7 @@ final class BindingClass {
+   private final Map<Integer, ViewBindings> viewIdMap = new LinkedHashMap<Integer, ViewBindings>();
+   private final Map<FieldCollectionViewBinding, int[]> collectionBindings =
+       new LinkedHashMap<FieldCollectionViewBinding, int[]>();
++  private final List<FieldBitmapBinding> bitmapBindings = new ArrayList<FieldBitmapBinding>();
+   private final List<FieldResourceBinding> resourceBindings = new ArrayList<FieldResourceBinding>();
+   private final String classPackage;
+   private final String className;
+@@ -30,6 +31,10 @@ final class BindingClass {
+     this.targetClass = targetClass;
+   }
+ 
++  void addBitmap(FieldBitmapBinding binding) {
++    bitmapBindings.add(binding);
++  }
++
+   void addField(int id, FieldViewBinding binding) {
+     getOrCreateViewBindings(id).addFieldBinding(binding);
+   }
+@@ -79,8 +84,11 @@ final class BindingClass {
+     builder.append("// Generated code from Butter Knife. Do not modify!\n");
+     builder.append("package ").append(classPackage).append(";\n\n");
+ 
+-    if (!resourceBindings.isEmpty()) {
++    if (requiresResources()) {
+       builder.append("import android.content.res.Resources;\n");
++      if (!bitmapBindings.isEmpty()) {
++        builder.append("import android.graphics.BitmapFactory;\n");
++      }
+     }
+     if (!viewIdMap.isEmpty() || !collectionBindings.isEmpty()) {
+       builder.append("import android.view.View;\n");
+@@ -133,9 +141,20 @@ final class BindingClass {
+       }
+     }
+ 
+-    if (!resourceBindings.isEmpty()) {
++    if (requiresResources()) {
+       builder.append("    Resources res = finder.getContext(source).getResources();\n");
+ 
++      if (!bitmapBindings.isEmpty()) {
++        for (FieldBitmapBinding binding : bitmapBindings) {
++          builder.append("    target.")
++              .append(binding.getName())
++              .append(" = BitmapFactory.decodeResource(res, ")
++              .append(binding.getId())
++              .append(");\n");
++        }
++      }
++
++      if (!resourceBindings.isEmpty()) {
+         for (FieldResourceBinding binding : resourceBindings) {
+           builder.append("    target.")
+               .append(binding.getName())
+@@ -146,6 +165,7 @@ final class BindingClass {
+               .append(");\n");
+         }
+       }
++    }
+ 
+     builder.append("  }\n");
+   }
+@@ -439,4 +459,8 @@ final class BindingClass {
+         break;
+     }
+   }
++
++  private boolean requiresResources() {
++    return !bitmapBindings.isEmpty() || !resourceBindings.isEmpty();
++  }
+ }

@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnItemClick.java b/butterknife/src/main/java/butterknife/OnItemClick.java
+index bb98594..9cc6879 100644
+--- a/butterknife/src/main/java/butterknife/OnItemClick.java
++++ b/butterknife/src/main/java/butterknife/OnItemClick.java
+@@ -22,7 +22,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * @see Optional
+  */
+ @Retention(CLASS) @Target(METHOD)
+-@ListenerClass(OnItemClickListener.class)
++@ListenerClass("android.widget.AdapterView.OnItemClickListener")
+ public @interface OnItemClick {
+   int[] value();
+ }

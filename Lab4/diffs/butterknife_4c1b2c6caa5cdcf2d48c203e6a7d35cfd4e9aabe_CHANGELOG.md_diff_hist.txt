@@ -1,0 +1,17 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 78e46b1..a3689a5 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,6 +1,12 @@
+ Change Log
+ ==========
+ 
++Version 3.0.1 *(2013-11-12)*
++----------------------------
++
++ * Fix: Do not emit redundant casts to `View`.
++
++
+ Version 3.0.0 *(2013-09-10)*
+ ----------------------------
+ 

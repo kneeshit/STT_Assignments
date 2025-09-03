@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/fonts/soehne/soehne-mono-halbfett.woff2 b/openai/ui/static/fonts/soehne/soehne-mono-halbfett.woff2
+deleted file mode 100644
+index e14cbdc..0000000
+Binary files a/openai/ui/static/fonts/soehne/soehne-mono-halbfett.woff2 and /dev/null differ

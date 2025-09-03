@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/arkose.rs b/openai/src/serve/router/arkose.rs
+index fe0e62b..ffeb489 100644
+--- a/openai/src/serve/router/arkose.rs
++++ b/openai/src/serve/router/arkose.rs
+@@ -50,7 +50,7 @@ async fn proxy(
+         .eq("/fc/gt2/public_key/35536E1E-65B4-4D96-9D97-6ADB7EFF8147")
+     {
+         if let Ok(arkose_token) = ArkoseToken::new_from_context().await {
+-            if arkose_token.valid() {
++            if arkose_token.success() {
+                 let target = serde_json::json!({
+                     "token": arkose_token,
+                     "challenge_url":"",

@@ -1,0 +1,21 @@
+diff --git a/butterknife-gradle-plugin/src/test/fixtures/suffix_parsed_properly/src/main/res/layout/activity_layout.xml b/butterknife-gradle-plugin/src/test/fixtures/suffix_parsed_properly/src/main/res/layout/activity_layout.xml
+new file mode 100644
+index 0000000..2a409b8
+--- /dev/null
++++ b/butterknife-gradle-plugin/src/test/fixtures/suffix_parsed_properly/src/main/res/layout/activity_layout.xml
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++  xmlns:tools="http://schemas.android.com/tools"
++  android:layout_width="match_parent"
++  android:layout_height="match_parent"
++  android:orientation="vertical"
++  android:padding="8dp"
++  tools:ignore="SelectableText">
++  <TextView
++    android:id="@+id/title"
++    android:layout_width="match_parent"
++    android:layout_height="wrap_content"
++    android:gravity="center"
++    android:textSize="50sp"/>
++</LinearLayout>

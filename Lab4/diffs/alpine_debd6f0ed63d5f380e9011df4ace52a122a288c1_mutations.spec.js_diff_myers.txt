@@ -1,0 +1,18 @@
+diff --git a/test/mutations.spec.js b/test/mutations.spec.js
+index 842898e5..c3f5c9f0 100644
+--- a/test/mutations.spec.js
++++ b/test/mutations.spec.js
+@@ -15,11 +15,11 @@ test('catch disconnected nodes that were used as targets for any mutations', asy
+ 
+     Alpine.start()
+ 
+-    runObservers[0]([
++    runObservers.forEach(cb => cb([
+         {
+             target: document.createElement('div'),
+             type: 'childList',
+             addedNodes: [ document.createElement('div') ],
+         }
+-    ])
++    ]))
+ })

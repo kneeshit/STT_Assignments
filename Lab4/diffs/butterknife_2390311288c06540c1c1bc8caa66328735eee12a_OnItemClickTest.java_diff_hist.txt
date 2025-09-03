@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/test/java/butterknife/OnItemClickTest.java b/butterknife/src/test/java/butterknife/OnItemClickTest.java
+index ae179be..31ba53d 100644
+--- a/butterknife/src/test/java/butterknife/OnItemClickTest.java
++++ b/butterknife/src/test/java/butterknife/OnItemClickTest.java
+@@ -275,6 +275,10 @@ public class OnItemClickTest {
+         + "  private Test target;\n"
+         + "  private View viewSource;\n"
+         + "  @UiThread\n"
++        + "  public Test_ViewBinding(Test target) {\n"
++        + "    this(target, target);\n"
++        + "  }\n"
++        + "  @UiThread\n"
+         + "  public Test_ViewBinding(final Test target, View source) {\n"
+         + "    this.target = target;\n"
+         + "    viewSource = source;\n"

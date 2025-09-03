@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index 9f4f0616..e2c03dbf 100644
+--- a/README.md
++++ b/README.md
+@@ -11,7 +11,7 @@ Think of it like [Tailwind](https://tailwindcss.com/) for JavaScript.
+ ## Install
+ Add the following script to the end of your `<head>` section.
+ ```html
+-<script src="https://cdn.jsdelivr.net/gh/calebporzio/project-x@v0.1.0/dist/project-x.min.js" defer></script>
++<script src="https://cdn.jsdelivr.net/gh/calebporzio/project-x@v0.2.0/dist/project-x.min.js" defer></script>
+ ```
+ 
+ ## Use

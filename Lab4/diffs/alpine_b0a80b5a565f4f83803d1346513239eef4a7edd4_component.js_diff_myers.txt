@@ -1,0 +1,13 @@
+diff --git a/src/component.js b/src/component.js
+index 594ef4bd..4124d2af 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -76,7 +76,7 @@ export default class Component {
+                 const setWasSuccessful = Reflect.set(obj, property, value)
+ 
+                 // Don't react to data changes for cases like the `x-created` hook.
+-                if (self.pauseReactivity) return
++                if (self.pauseReactivity) return setWasSuccessful
+ 
+                 debounce(() => {
+                     self.updateElements(self.$el)

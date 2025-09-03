@@ -1,0 +1,22 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/OnEditorAction.java b/butterknife-annotations/src/main/java/butterknife/OnEditorAction.java
+index 2975cc0..ebaa57c 100644
+--- a/butterknife-annotations/src/main/java/butterknife/OnEditorAction.java
++++ b/butterknife-annotations/src/main/java/butterknife/OnEditorAction.java
+@@ -23,6 +23,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
+  * Any number of parameters from
+  * {@link OnEditorActionListener#onEditorAction(android.widget.TextView, int, android.view.KeyEvent)
+  * onEditorAction} may be used on the method.
++ * <p>
++ * If the return type of the method is {@code void}, true will be returned from the listener.
+  *
+  * @see OnEditorActionListener
+  */
+@@ -40,7 +42,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
+             "android.view.KeyEvent"
+         },
+         returnType = "boolean",
+-        defaultReturn = "false"
++        defaultReturn = "true"
+     )
+ )
+ public @interface OnEditorAction {

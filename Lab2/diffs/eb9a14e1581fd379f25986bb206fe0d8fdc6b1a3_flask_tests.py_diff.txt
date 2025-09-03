@@ -1,0 +1,31 @@
+@@ -1008,14 +1008,8 @@ class BasicFunctionalityTestCase(unittest.TestCase):
+ 
+ class InstanceTestCase(unittest.TestCase):
+ 
+-    def test_uninstalled_module_paths(self):
++    def test_explicit_instance_paths(self):
+         here = os.path.abspath(os.path.dirname(__file__))
+-        app = flask.Flask(__name__)
+-        self.assertEqual(app.instance_path, os.path.join(here, 'instance'))
+-
+-        app = flask.Flask(__name__, instance_path=here)
+-        self.assertEqual(app.instance_path, here)
+-
+         try:
+             flask.Flask(__name__, instance_path='instance')
+         except ValueError, e:
+@@ -1023,6 +1017,14 @@ class InstanceTestCase(unittest.TestCase):
+         else:
+             self.fail('Expected value error')
+ 
++        app = flask.Flask(__name__, instance_path=here)
++        self.assertEqual(app.instance_path, here)
++
++    def test_uninstalled_module_paths(self):
++        here = os.path.abspath(os.path.dirname(__file__))
++        app = flask.Flask(__name__)
++        self.assertEqual(app.instance_path, os.path.join(here, 'instance'))
++
+     def test_uninstalled_package_paths(self):
+         from blueprintapp import app
+         here = os.path.abspath(os.path.dirname(__file__))

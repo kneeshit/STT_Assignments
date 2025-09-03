@@ -1,0 +1,12 @@
+diff --git a/openai/Cargo.toml b/openai/Cargo.toml
+index 2440176..8c3d33b 100644
+--- a/openai/Cargo.toml
++++ b/openai/Cargo.toml
+@@ -1,6 +1,6 @@
+ [package]
+ name = "openai"
+-version = "0.7.2"
++version = "0.7.3"
+ edition = "2021"
+ 
+ # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

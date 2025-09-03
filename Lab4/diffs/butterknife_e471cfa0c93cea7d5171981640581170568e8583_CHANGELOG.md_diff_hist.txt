@@ -1,0 +1,17 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index a4afbf8..68a69f5 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,6 +1,12 @@
+ Change Log
+ ==========
+ 
++Version 5.1.1 *(2014-06-19)*
++----------------------------
++
++ * Fix: Correct rare `ClassCastException` when unwinding an `InvocationTargetException`.
++
++
+ Version 5.1.0 *(2014-05-20)*
+ ----------------------------
+ 

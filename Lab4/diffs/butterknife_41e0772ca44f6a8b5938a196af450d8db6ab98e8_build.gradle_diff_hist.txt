@@ -1,0 +1,12 @@
+diff --git a/butterknife-integration-test/build.gradle b/butterknife-integration-test/build.gradle
+index f06fe67..cab09e3 100644
+--- a/butterknife-integration-test/build.gradle
++++ b/butterknife-integration-test/build.gradle
+@@ -21,6 +21,7 @@ android {
+     textOutput "stdout"
+     checkAllWarnings true
+     warningsAsErrors true
++    disable 'UnknownNullness'
+     showAll true
+     explainIssues true
+     // We run a full lint analysis as build part in CI, so skip vital checks for assemble tasks.

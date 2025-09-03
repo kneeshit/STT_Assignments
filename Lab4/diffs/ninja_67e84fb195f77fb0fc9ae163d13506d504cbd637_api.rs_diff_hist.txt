@@ -1,0 +1,9 @@
+diff --git a/src/inter/api.rs b/src/inter/api.rs
+new file mode 100644
+index 0000000..5eccb27
+--- /dev/null
++++ b/src/inter/api.rs
+@@ -0,0 +1,3 @@
++pub(crate) async fn handle_prompt() -> anyhow::Result<()> {
++    todo!()
++}

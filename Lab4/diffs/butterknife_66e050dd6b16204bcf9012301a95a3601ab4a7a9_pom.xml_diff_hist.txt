@@ -1,0 +1,12 @@
+diff --git a/pom.xml b/pom.xml
+index cb14c59..fface8f 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -21,6 +21,7 @@
+ 
+   <modules>
+     <module>butterknife</module>
++    <module>butterknife-compiler</module>
+     <module>butterknife-sample</module>
+   </modules>
+ 

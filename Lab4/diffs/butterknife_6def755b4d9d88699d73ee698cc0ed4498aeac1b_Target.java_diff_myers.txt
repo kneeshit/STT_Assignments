@@ -1,0 +1,25 @@
+diff --git a/butterknife/src/it/one-find-per-id/src/main/java/test/Target.java b/butterknife/src/it/one-find-per-id/src/main/java/test/Target.java
+deleted file mode 100644
+index 3bf414a..0000000
+--- a/butterknife/src/it/one-find-per-id/src/main/java/test/Target.java
++++ /dev/null
+@@ -1,19 +0,0 @@
+-package test;
+-
+-import android.app.Activity;
+-import android.view.View;
+-import butterknife.InjectView;
+-
+-public class Target extends Activity {
+-  @InjectView(1) View thing1;
+-  @InjectView(1) View thing2;
+-  @InjectView(1) View thing3;
+-
+-  int called = 0;
+-
+-  @Override public View findViewById(int id) {
+-    called += 1;
+-
+-    return new View(this);
+-  }
+-}

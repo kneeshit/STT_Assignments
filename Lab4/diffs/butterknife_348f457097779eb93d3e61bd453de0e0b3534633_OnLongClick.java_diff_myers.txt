@@ -1,0 +1,18 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/OnLongClick.java b/butterknife-annotations/src/main/java/butterknife/OnLongClick.java
+index 2ebc6c4..9cc1c9f 100644
+--- a/butterknife-annotations/src/main/java/butterknife/OnLongClick.java
++++ b/butterknife-annotations/src/main/java/butterknife/OnLongClick.java
+@@ -1,5 +1,6 @@
+ package butterknife;
+ 
++import android.support.annotation.IdRes;
+ import android.view.View;
+ import butterknife.internal.ListenerClass;
+ import butterknife.internal.ListenerMethod;
+@@ -40,5 +41,5 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ )
+ public @interface OnLongClick {
+   /** View IDs to which the method will be bound. */
+-  int[] value() default { View.NO_ID };
++  @IdRes int[] value() default { View.NO_ID };
+ }

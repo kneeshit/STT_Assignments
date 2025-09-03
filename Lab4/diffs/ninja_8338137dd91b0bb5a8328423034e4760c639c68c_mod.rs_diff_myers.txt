@@ -1,0 +1,12 @@
+diff --git a/openai/src/api/models/mod.rs b/openai/src/api/models/mod.rs
+index 04c5f10..98d911e 100644
+--- a/openai/src/api/models/mod.rs
++++ b/openai/src/api/models/mod.rs
+@@ -55,6 +55,7 @@ impl TryFrom<&str> for GPT4Model {
+     }
+ }
+ 
++/// curl 'https://tcr9i.chat.openai.com/fc/gt2/public_key/35536E1E-65B4-4D96-9D97-6ADB7EFF8147' --data-raw 'public_key=35536E1E-65B4-4D96-9D97-6ADB7EFF8147'
+ #[derive(Clone)]
+ pub struct ArkoseToken;
+ 

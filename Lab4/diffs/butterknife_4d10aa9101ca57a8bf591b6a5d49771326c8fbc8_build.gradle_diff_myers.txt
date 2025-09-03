@@ -1,0 +1,12 @@
+diff --git a/butterknife-gradle-plugin/build.gradle b/butterknife-gradle-plugin/build.gradle
+index 785287e..a94d2fb 100644
+--- a/butterknife-gradle-plugin/build.gradle
++++ b/butterknife-gradle-plugin/build.gradle
+@@ -24,6 +24,7 @@ dependencies {
+   testImplementation deps.junit
+   testImplementation deps.truth
+   testImplementation deps.support.annotations
++  testImplementation deps.androidx.annotations
+   testImplementation deps.compiletesting
+ }
+ 

@@ -1,0 +1,65 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index f0f775f..2b65f87 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -101,19 +101,22 @@ public class Views {
+     inject(target, source, Finder.VIEW);
+   }
+ 
+-  private static void inject(Object target, Object source, Finder finder) {
+-    if (target == null)
+-      throw new UnableToInjectException("target of injection cannot be null");
++  /** No-op method */
++  private static final Method NO_OP = null;
+   
+-    Class<?> targetClass = target.getClass();
++  private static void inject(Object target, Object source, Finder finder) { 
+     try {
+-      Method inject = INJECTORS.get(targetClass);
+-      if (inject == null) {
++      Method inject;
++      Class<?> targetClass = target.getClass();
++      if (!INJECTORS.containsKey(targetClass)) {
+         Class<?> injector = Class.forName(targetClass.getName() + InjectViewProcessor.SUFFIX);
+         inject = injector.getMethod("inject", Finder.class, targetClass, Object.class);
+         INJECTORS.put(targetClass, inject);
++      } else {
++        inject = INJECTORS.get(targetClass);
+       }
+-      inject.invoke(null, finder, target, source);
++      // Allows for no-ops when there's nothing to inject
++      if (inject != null) inject.invoke(null, finder, target, source);
+     } catch (ClassNotFoundException e) {
+       // Allows inject to be called on targets without injected Views
+       INJECTORS.put(targetClass, NO_OP); 
+@@ -124,19 +127,6 @@ public class Views {
+     }
+   }
+ 
+-  /** No-op method for use for Classes that don't have any {@link View}s to inject. */
+-  public static void noOp(Object finder, Object target, Object source) { }
+-  
+-  /** No-op method reference */
+-  private static final Method NO_OP;
+-  static {
+-    try {
+-      NO_OP = Views.class.getMethod("noOp", Object.class, Object.class, Object.class);
+-    } catch (NoSuchMethodException e) {
+-      // Fall through, this should be unreachable but Java complains                
+-    }
+-  }
+-
+   /** Simpler version of {@link View#findViewById(int)} which infers the target type. */
+   @SuppressWarnings({ "unchecked", "UnusedDeclaration" }) // Checked by runtime cast, helper method.
+   public static <T extends View> T findById(View view, int id) {
+@@ -150,10 +140,6 @@ public class Views {
+   }
+ 
+   public static class UnableToInjectException extends RuntimeException {
+-    UnableToInjectException(String message) {
+-      super(message);
+-    }
+-    
+     UnableToInjectException(String message, Throwable cause) {
+       super(message, cause);
+     }

@@ -1,0 +1,15 @@
+diff --git a/openai/src/oauth.rs b/openai/src/oauth.rs
+index 37570d5..e42023b 100644
+--- a/openai/src/oauth.rs
++++ b/openai/src/oauth.rs
+@@ -471,9 +469,7 @@ impl OpenAIOAuth {
+             self.id_token = Some(result.id_token);
+             return Ok(token);
+         }
+-        anyhow::bail!(Error::from(
+-            resp.json::<OAuthError>().await?
+-        ))
++        anyhow::bail!(Error::from(resp.json::<OAuthError>().await?))
+     }
+ 
+     pub async fn do_revoke_token(&mut self) -> OAuthResult<()> {

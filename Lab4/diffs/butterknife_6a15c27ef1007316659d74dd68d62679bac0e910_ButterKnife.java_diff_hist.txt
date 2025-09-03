@@ -1,0 +1,17 @@
+diff --git a/butterknife/src/main/java/butterknife/ButterKnife.java b/butterknife/src/main/java/butterknife/ButterKnife.java
+index 0d9dc77..ec5aee8 100644
+--- a/butterknife/src/main/java/butterknife/ButterKnife.java
++++ b/butterknife/src/main/java/butterknife/ButterKnife.java
+@@ -49,8 +49,12 @@ import java.util.Map;
+  * </code></pre>
+  *
+  * @see InjectView
++ * @see OnCheckedChanged
+  * @see OnClick
++ * @see OnEditorAction
++ * @see OnFocusChanged
+  * @see OnItemClick
++ * @see OnItemLongClick
+  * @see OnLongClick
+  */
+ public class ButterKnife {

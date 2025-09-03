@@ -1,0 +1,19 @@
+diff --git a/openai/src/serve/preauth/proxy/error.rs b/openai/src/serve/preauth/proxy/error.rs
+new file mode 100644
+index 0000000..fc6ae22
+--- /dev/null
++++ b/openai/src/serve/preauth/proxy/error.rs
+@@ -0,0 +1,13 @@
++use rcgen::RcgenError;
++use std::io;
++use thiserror::Error;
++
++#[derive(Debug, Error)]
++pub enum Error {
++    #[error("invalid CA")]
++    Tls(#[from] RcgenError),
++    #[error("network error")]
++    HyperError(#[from] hyper::Error),
++    #[error("IO error")]
++    IO(#[from] io::Error),
++}

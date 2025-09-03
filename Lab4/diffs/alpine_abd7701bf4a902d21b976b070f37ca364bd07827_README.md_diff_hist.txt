@@ -1,0 +1,32 @@
+diff --git a/README.md b/README.md
+index 4c3b6ff9..8dd05c7d 100644
+--- a/README.md
++++ b/README.md
+@@ -4,6 +4,18 @@
+ `<script src="https://cdn.jsdelivr.net/gh/minimaljs/minimal/dist/minimal.min.js"></script>`
+ 
+ ### Use
++*Dropdown*
++```
++<div x-data="{ hide: true }">
++    <button x-on:click="$data.hide = false">...</button>
++
++    <ul class="hidden" x-bind:class="{ 'hidden': $data.hide }" :click="$data.hide = true">
++        ...
++    </ul>
++</div>
++```
++
++*Modal*
+ ```
+ <div x-data="{ show: true }">
+     <button x-on:click="$data.show = ! $data.show">toggle</button>
+@@ -12,6 +24,8 @@
+ </div>
+ ```
+ 
++*Tabs*
++
+ You can bind expressions to any attribute using `x-bind`, and you can run expressions on any event using `x-on`.
+ 
+ The data is "reactive", when some data updates, only the expressions conscerned with it will.

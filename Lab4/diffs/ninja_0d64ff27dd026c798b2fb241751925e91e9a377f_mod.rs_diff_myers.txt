@@ -1,0 +1,20 @@
+diff --git a/openai/src/serve/router/mod.rs b/openai/src/serve/router/mod.rs
+index c410c58..38ebd72 100644
+--- a/openai/src/serve/router/mod.rs
++++ b/openai/src/serve/router/mod.rs
+@@ -11,6 +11,7 @@ use super::{
+ 
+ mod arkose;
+ pub(super) mod chat_to_api;
++mod har;
+ mod ui;
+ 
+ include!(concat!(env!("OUT_DIR"), "/generated.rs"));
+@@ -22,6 +23,7 @@ pub(super) fn config(router: Router, args: &Launcher) -> Router {
+     init_static_files();
+     let router = ui::config(router, args);
+     let router = arkose::config(router, args);
++    let router = har::config(router, args);
+     router
+ }
+ 

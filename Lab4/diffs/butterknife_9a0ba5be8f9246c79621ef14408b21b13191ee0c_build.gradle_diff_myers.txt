@@ -1,0 +1,16 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index ac3837b..d48fa97 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -9,6 +9,11 @@ android {
+ 
+     consumerProguardFiles 'proguard-rules.txt'
+   }
++
++  lintOptions {
++    textReport true
++    textOutput 'stdout'
++  }
+ }
+ 
+ dependencies {

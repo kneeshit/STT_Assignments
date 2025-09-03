@@ -1,0 +1,92 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
+index dea0219..3d0af9f 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/FieldResourceBinding.java
+@@ -1,41 +1,60 @@
+ package butterknife.compiler;
+ 
++import com.squareup.javapoet.ClassName;
++import com.squareup.javapoet.CodeBlock;
++
+ final class FieldResourceBinding {
+-  private final Id id;
+-  private final String name;
+-  private final String method;
+-  private final boolean requiresUtils;
+-  private final boolean themeable;
++  enum Type {
++    BITMAP(BindingClass.BITMAP_FACTORY, "decodeResource", true),
++    BOOL("getBoolean"),
++    COLOR(BindingClass.CONTEXT_COMPAT, "getColor", false),
++    COLOR_STATE_LIST(BindingClass.CONTEXT_COMPAT, "getColorStateList", false),
++    DIMEN_AS_INT("getDimensionPixelSize"),
++    DIMEN_AS_FLOAT("getDimension"),
++    FLOAT(BindingClass.UTILS, "getFloat", false),
++    INT("getInteger"),
++    INT_ARRAY("getIntArray"),
++    STRING("getString"),
++    STRING_ARRAY("getStringArray"),
++    TEXT_ARRAY("getTextArray"),
++    TYPED_ARRAY("obtainTypedArray");
+ 
+-  FieldResourceBinding(Id id, String name, String method, boolean requiresUtils,
+-      boolean themeable) {
+-    if (themeable && !requiresUtils) {
+-      throw new IllegalArgumentException("Being themeable must require utils.");
+-    }
+-    this.id = id;
+-    this.name = name;
+-    this.method = method;
+-    this.requiresUtils = requiresUtils;
+-    this.themeable = themeable;
+-  }
++    final ClassName typeName;
++    final String methodName;
++    final boolean requiresResource;
+ 
+-  public Id getId() {
+-    return id;
++    Type(String methodName) {
++      this.typeName = null;
++      this.methodName = methodName;
++      this.requiresResource = true;
+     }
+ 
+-  public String getName() {
+-    return name;
++    Type(ClassName typeName, String methodName, boolean requiresResource) {
++      this.typeName = typeName;
++      this.methodName = methodName;
++      this.requiresResource = requiresResource;
+     }
+-
+-  public String getMethod() {
+-    return method;
+   }
+ 
+-  public boolean requiresUtils() {
+-    return requiresUtils;
++  final Id id;
++  final String name;
++  final Type type;
++
++  FieldResourceBinding(Id id, String name, Type type) {
++    this.id = id;
++    this.name = name;
++    this.type = type;
+   }
+ 
+-  public boolean isThemeable() {
+-    return themeable;
++  CodeBlock render() {
++    if (type.typeName == null) {
++      return CodeBlock.of("target.$L = res.$L($L)", name, type.methodName, id.code);
++    }
++    if (type.requiresResource) {
++      return CodeBlock.of("target.$L = $T.$L(res, $L)", name, type.typeName, type.methodName,
++          id.code);
++    }
++    return CodeBlock.of("target.$L = $T.$L(context, $L)", name, type.typeName, type.methodName,
++        id.code);
+   }
+ }

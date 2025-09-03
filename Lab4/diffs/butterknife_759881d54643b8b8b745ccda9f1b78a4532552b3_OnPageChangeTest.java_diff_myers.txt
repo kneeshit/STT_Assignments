@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnPageChangeTest.java b/butterknife/src/test/java/butterknife/internal/OnPageChangeTest.java
+index 270f121..6a89048 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnPageChangeTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnPageChangeTest.java
+@@ -6,8 +6,8 @@ import javax.tools.JavaFileObject;
+ import org.junit.Test;
+ 
+ import static butterknife.internal.ProcessorTestUtilities.butterknifeProcessors;
++import static com.google.common.truth.Truth.ASSERT;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+-import static org.truth0.Truth.ASSERT;
+ 
+ public class OnPageChangeTest {
+   @Test public void pageChange() {

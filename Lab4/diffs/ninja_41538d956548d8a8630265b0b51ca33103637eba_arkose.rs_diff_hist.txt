@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/arkose.rs b/openai/src/serve/router/arkose.rs
+index 4e1b273..fb27a6f 100644
+--- a/openai/src/serve/router/arkose.rs
++++ b/openai/src/serve/router/arkose.rs
+@@ -76,7 +76,7 @@ async fn proxy(
+                     .status(StatusCode::OK)
+                     .header(header::CONTENT_TYPE, "text/plain; charset=utf-8")
+                     .body(Body::from(body.to_string()))
+-                    .map_err(|err| ResponseError::InternalServerError(err))?);
++                    .map_err(ResponseError::InternalServerError)?);
+             }
+         }
+         headers.remove(header::COOKIE);

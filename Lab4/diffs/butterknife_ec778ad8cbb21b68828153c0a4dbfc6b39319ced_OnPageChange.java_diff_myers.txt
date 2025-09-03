@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnPageChange.java b/butterknife/src/main/java/butterknife/OnPageChange.java
+index f8b3c1b..f0ec386 100644
+--- a/butterknife/src/main/java/butterknife/OnPageChange.java
++++ b/butterknife/src/main/java/butterknife/OnPageChange.java
+@@ -25,8 +25,6 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  *   Toast.makeText(this, "State changed: " + state + "!", LENGTH_SHORT).show();
+  * }
+  * </code></pre>
+- *
+- * @see Nullable
+  */
+ @Target(METHOD)
+ @Retention(CLASS)

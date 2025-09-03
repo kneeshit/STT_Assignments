@@ -1,0 +1,19 @@
+diff --git a/docker/builder/Dockerfile b/docker/builder/Dockerfile
+index 9f6807d..b112f31 100644
+--- a/docker/builder/Dockerfile
++++ b/docker/builder/Dockerfile
+@@ -1,10 +1,13 @@
+ # 定义参数
+ ARG BASE_IMAGE
+-ARG TARGETPLATFORM
+ 
+ FROM $BASE_IMAGE
++
++ARG TARGETPLATFORM
++
+ WORKDIR /home/rust/src
+ 
++
+ LABEL org.opencontainers.image.authors "gngpp <gngppz@gmail.com>"
+ LABEL org.opencontainers.image.source https://github.com/gngpp/opengpt
+ 

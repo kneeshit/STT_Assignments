@@ -1,0 +1,12 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index c90dc1c..498de02 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -161,7 +161,6 @@ impl Launcher {
+                 .service(post_refresh_token)
+                 .service(post_revoke_token)
+                 .service(get_arkose_token)
+-                // static files endpoint
+                 // templates data
+                 .app_data(template_data.clone())
+                 // templates page endpoint

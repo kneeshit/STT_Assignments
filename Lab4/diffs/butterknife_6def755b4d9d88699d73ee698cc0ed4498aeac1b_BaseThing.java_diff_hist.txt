@@ -1,0 +1,22 @@
+diff --git a/butterknife/src/it/superclass/src/main/java/foo/BaseThing.java b/butterknife/src/it/superclass/src/main/java/foo/BaseThing.java
+deleted file mode 100644
+index 7d840f8..0000000
+--- a/butterknife/src/it/superclass/src/main/java/foo/BaseThing.java
++++ /dev/null
+@@ -1,16 +0,0 @@
+-package foo;
+-
+-import android.app.Activity;
+-import android.view.View;
+-import butterknife.InjectView;
+-
+-public class BaseThing extends Activity {
+-  @InjectView(1) public View baseThing;
+-
+-  @Override public View findViewById(int id) {
+-    if (id == 1) {
+-      return new View(this);
+-    }
+-    return super.findViewById(id);
+-  }
+-}

@@ -1,0 +1,15 @@
+diff --git a/src/main.rs b/src/main.rs
+index 7a3e527..c146ae5 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -30,8 +30,8 @@ async fn main() -> anyhow::Result<()> {
+                 args::ServeSubcommand::Restart => todo!(),
+                 args::ServeSubcommand::Status => todo!(),
+                 args::ServeSubcommand::Start => todo!(),
+-                args::ServeSubcommand::GT { output_file } => {
+-                    handle::generate_template(output_file).await?;
++                args::ServeSubcommand::GT { cover, out } => {
++                    handle::generate_template(cover, out).await?;
+                 }
+             },
+         },

@@ -1,0 +1,29 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ViewInjector.java b/butterknife/src/main/java/butterknife/internal/ViewInjector.java
+index 9d15d6f..1f526bb 100644
+--- a/butterknife/src/main/java/butterknife/internal/ViewInjector.java
++++ b/butterknife/src/main/java/butterknife/internal/ViewInjector.java
+@@ -1,5 +1,6 @@
+ package butterknife.internal;
+ 
++import android.view.View;
+ import java.lang.reflect.Field;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+@@ -153,6 +154,9 @@ final class ViewInjector {
+       builder.append("finder.findOptionalView(source, ")
+           .append(injection.getId())
+           .append(");\n");
++    } else {
++      if (injection.getId() == View.NO_ID) {
++        builder.append("target;\n");
+       } else {
+         builder.append("finder.findRequiredView(source, ")
+             .append(injection.getId())
+@@ -160,6 +164,7 @@ final class ViewInjector {
+         emitHumanDescription(builder, requiredBindings);
+         builder.append("\");\n");
+       }
++    }
+ 
+     emitViewBindings(builder, injection);
+     emitListenerBindings(builder, injection);

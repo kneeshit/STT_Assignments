@@ -1,0 +1,13 @@
+diff --git a/README_zh-TW.md b/README_zh-TW.md
+index 04a29e06..7be224d3 100644
+--- a/README_zh-TW.md
++++ b/README_zh-TW.md
+@@ -202,7 +202,7 @@ import 'alpinejs'
+ ---
+ 
+ ### `x-show`
+-**翻譯:** `<div x-show="open"></div>`
++**範例:** `<div x-show="open"></div>`
+ 
+ **結構:** `<div x-show="[expression]"></div>`
+ 

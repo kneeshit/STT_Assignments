@@ -1,0 +1,22 @@
+diff --git a/examples/opengpt.rs b/examples/opengpt.rs
+index 2bc94de..95d09b2 100644
+--- a/examples/opengpt.rs
++++ b/examples/opengpt.rs
+@@ -2,7 +2,7 @@ use std::time;
+ 
+ use futures_util::StreamExt;
+ use openai::{
+-    auth::OAuthAccountBuilder,
++    auth::{AuthAccountBuilder, AuthHandle},
+     opengpt::models::req::{self, PostConvoRequest},
+ };
+ use tokio::io::AsyncWriteExt;
+@@ -19,7 +19,7 @@ async fn main() -> anyhow::Result<()> {
+         .build();
+     let token = auth
+         .do_access_token(
+-            &OAuthAccountBuilder::default()
++            &AuthAccountBuilder::default()
+                 .username(email)
+                 .password(password)
+                 .build()?,

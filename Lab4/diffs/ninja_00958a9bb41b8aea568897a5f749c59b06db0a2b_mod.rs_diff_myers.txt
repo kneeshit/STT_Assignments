@@ -1,0 +1,12 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index 5a9954d..8bfc408 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -114,6 +114,7 @@ impl Launcher {
+             client_builder = client_builder.proxy(proxy)
+         }
+ 
++        // api client
+         let api_client = client_builder
+             .user_agent(HEADER_UA)
+             .chrome_builder(ChromeVersion::V110)

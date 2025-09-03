@@ -1,0 +1,17 @@
+diff --git a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindAnimTest.java b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindAnimTest.java
+index 2a05e5f..fdfc9c2 100644
+--- a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindAnimTest.java
++++ b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindAnimTest.java
+@@ -7,11 +7,10 @@ import butterknife.ButterKnife;
+ import butterknife.Unbinder;
+ import org.junit.Test;
+ 
+-import static com.example.butterknife.functional.ViewTestUtils.treeWithIds;
+ import static org.junit.Assert.assertNotNull;
+ 
+ public final class BindAnimTest {
+-  private final View tree = treeWithIds(1);
++  private final View tree = ViewTree.create(1);
+ 
+   static class Target {
+     @BindAnim(android.R.anim.fade_in) Animation actual;

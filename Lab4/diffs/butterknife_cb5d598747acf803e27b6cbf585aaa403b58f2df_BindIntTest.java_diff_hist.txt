@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindIntTest.java b/butterknife-compiler/src/test/java/butterknife/BindIntTest.java
+index e163be5..885ad7a 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindIntTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindIntTest.java
+@@ -36,7 +36,7 @@ public class BindIntTest {
+         + "    return Unbinder.EMPTY;\n"
+         + "  }\n"
+         + "  @SuppressWarnings(\"ResourceType\")\n"
+-        + "  protected static void bindToTarget(final Test target, Resources res) {\n"
++        + "  protected static void bindToTarget(Test target, Resources res) {\n"
+         + "    target.one = res.getInteger(1);\n"
+         + "  }\n"
+         + "}"

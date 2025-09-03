@@ -1,0 +1,13 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index de9b6ba0..2bf12d05 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6992,7 +6992,7 @@
+ 
+                 if (node.nodeType !== 1 || node.__x_inserted_me) return;
+ 
+-                if (node.matches('[x-data]')) {
++                if (node.matches('[x-data]') && !node.__x) {
+                   node.__x = new Component(node);
+                   return;
+                 }

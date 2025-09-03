@@ -1,0 +1,20 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/internal/BindIntTest.java b/butterknife-compiler/src/test/java/butterknife/internal/BindIntTest.java
+index a8e4f57..ec9f41f 100644
+--- a/butterknife-compiler/src/test/java/butterknife/internal/BindIntTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/internal/BindIntTest.java
+@@ -23,10 +23,11 @@ public class BindIntTest {
+         Joiner.on('\n').join(
+             "package test;",
+             "import android.content.res.Resources;",
+-            "import butterknife.ButterKnife.Finder;",
+-            "import butterknife.ButterKnife.ViewBinder;",
+-            "public class Test$$ViewBinder<T extends test.Test> implements ViewBinder<T> {",
+-            "  @Override public void bind(final Finder finder, final T target, Object source) {",
++            "import butterknife.ButterKnife;",
++            "import java.lang.Object;",
++            "import java.lang.Override;",
++            "public class Test$$ViewBinder<T extends Test> implements ButterKnife.ViewBinder<T> {",
++            "  @Override public void bind(final ButterKnife.Finder finder, final T target, Object source) {",
+             "    Resources res = finder.getContext(source).getResources();",
+             "    target.one = res.getInteger(1);",
+             "  }",

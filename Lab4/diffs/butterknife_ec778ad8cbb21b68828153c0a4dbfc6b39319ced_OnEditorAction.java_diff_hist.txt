@@ -1,0 +1,12 @@
+diff --git a/butterknife/src/main/java/butterknife/OnEditorAction.java b/butterknife/src/main/java/butterknife/OnEditorAction.java
+index 1ef89c1..4d67232 100644
+--- a/butterknife/src/main/java/butterknife/OnEditorAction.java
++++ b/butterknife/src/main/java/butterknife/OnEditorAction.java
+@@ -24,7 +24,6 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * onEditorAction} may be used on the method.
+  *
+  * @see OnEditorActionListener
+- * @see Nullable
+  */
+ @Target(METHOD)
+ @Retention(CLASS)

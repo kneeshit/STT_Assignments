@@ -1,0 +1,15 @@
+diff --git a/website/static/app.css b/website/static/app.css
+index 700c0e2..9c0304d 100644
+--- a/website/static/app.css
++++ b/website/static/app.css
+@@ -11,6 +11,10 @@ body {
+   margin-bottom: 20px;
+ }
+ 
++li {
++  margin-bottom: 10px;
++}
++
+ code, pre {
+   color: #444;
+   background: none;

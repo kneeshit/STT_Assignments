@@ -1,0 +1,21 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index e8499954..a266c9ff 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -716,6 +716,8 @@
+ 
+         if (modifiers.includes('prevent')) e.preventDefault();
+         if (modifiers.includes('stop')) e.stopPropagation();
++
++        if (!modifiers.includes('self') || e.target === el) {
+           const returnValue = runListenerHandler(component, expression, e, extraVars);
+ 
+           if (returnValue === false) {
+@@ -725,6 +727,7 @@
+               listenerTarget.removeEventListener(event, handler);
+             }
+           }
++        }
+       };
+ 
+       if (modifiers.includes('debounce')) {

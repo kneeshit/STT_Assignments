@@ -1,0 +1,16 @@
+diff --git a/butterknife-integration-test/build.gradle b/butterknife-integration-test/build.gradle
+index a86726d..e604af1 100644
+--- a/butterknife-integration-test/build.gradle
++++ b/butterknife-integration-test/build.gradle
+@@ -43,11 +43,9 @@ android {
+ 
+     reflect {
+       dimension 'runtime'
+-      applicationIdSuffix '.reflect'
+     }
+     codegen {
+       dimension 'runtime'
+-      applicationIdSuffix '.codegen'
+     }
+   }
+ 

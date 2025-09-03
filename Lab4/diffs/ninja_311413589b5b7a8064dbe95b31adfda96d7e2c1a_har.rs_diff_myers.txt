@@ -1,0 +1,17 @@
+diff --git a/openai/src/context/har.rs b/openai/src/context/har.rs
+index 3b5e6ad..ddd43be 100644
+--- a/openai/src/context/har.rs
++++ b/openai/src/context/har.rs
+@@ -71,9 +71,9 @@ impl HarProvider {
+             dir_path: self.dir_path.clone(),
+             file_path: None,
+         };
+-        self.pool.choose(&mut rand::thread_rng()).map(|file_name| {
+-            har_path.file_path = Some(self.dir_path.join(file_name))
+-        });
++        self.pool
++            .choose(&mut rand::thread_rng())
++            .map(|file_name| har_path.file_path = Some(self.dir_path.join(file_name)));
+         har_path
+     }
+ }

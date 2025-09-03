@@ -1,0 +1,14 @@
+diff --git a/src/inter/authorize/auth.rs b/src/inter/authorize/auth.rs
+index f600465..bd649c7 100644
+--- a/src/inter/authorize/auth.rs
++++ b/src/inter/authorize/auth.rs
+@@ -237,7 +237,8 @@ async fn state() -> anyhow::Result<()> {
+             .into_iter()
+             .map(|(k, v)| State {
+                 _type: k.to_owned(),
+-                expires: openai::format_time(v.expires()).expect("Failed to format time"),
++                expires: openai::format_time_to_rfc3399(v.expires())
++                    .expect("Failed to format time"),
+             })
+             .collect::<Vec<State>>();
+         list.push(AccountState {

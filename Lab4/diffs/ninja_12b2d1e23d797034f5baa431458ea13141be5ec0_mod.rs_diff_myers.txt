@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index 8be5f54..9ea3272 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -27,7 +27,7 @@ use crate::auth::OAuthClient;
+ use crate::serve::tokenbucket::TokenBucketContext;
+ use crate::{auth, info};
+ 
+-use super::api::{HEADER_UA, URL_CHATGPT_API, URL_PLATFORM_API};
++use crate::{HEADER_UA, URL_CHATGPT_API, URL_PLATFORM_API};
+ const EMPTY: &str = "";
+ static INIT: Once = Once::new();
+ static mut CLIENT: Option<Client> = None;

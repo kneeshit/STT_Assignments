@@ -1,0 +1,17 @@
+diff --git a/butterknife-integration-test/src/main/java/com/example/butterknife/SimpleApp.java b/butterknife-integration-test/src/main/java/com/example/butterknife/SimpleApp.java
+new file mode 100644
+index 0000000..d3fa278
+--- /dev/null
++++ b/butterknife-integration-test/src/main/java/com/example/butterknife/SimpleApp.java
+@@ -0,0 +1,11 @@
++package com.example.butterknife;
++
++import android.app.Application;
++import butterknife.ButterKnife;
++
++public class SimpleApp extends Application {
++  @Override public void onCreate() {
++    super.onCreate();
++    ButterKnife.setDebug(BuildConfig.DEBUG);
++  }
++}

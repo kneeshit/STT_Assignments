@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.kageiit.lintrules'
+
+android {
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
+
+  defaultConfig {
+    minSdkVersion rootProject.ext.minSdkVersion
+
+    consumerProguardFiles 'proguard-rules.txt'
+
+    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+  }
+
+  lintOptions {
+    textReport true
+    textOutput 'stdout'
+  }
+}
+
+dependencies {
+  compile project(':butterknife-annotations')
+  compile deps.supportAnnotations
+  compile deps.supportCompat
+
+  lintRules project(':butterknife-lint')
+
+  androidTestCompile deps.junit
+  androidTestCompile deps.truth
+  androidTestCompile deps.supportTestRunner
+
+  testCompile deps.junit
+  testCompile deps.truth
+  testCompile deps.compiletesting
+  testCompile files(org.gradle.internal.jvm.Jvm.current().getRuntimeJar())
+  testCompile files(org.gradle.internal.jvm.Jvm.current().getToolsJar())
+  testCompile project(':butterknife-compiler')
+}
+
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

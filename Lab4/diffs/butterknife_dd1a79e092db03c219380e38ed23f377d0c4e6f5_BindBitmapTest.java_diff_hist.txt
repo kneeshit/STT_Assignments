@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java b/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
+index 16b27c2..5edf538 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
+@@ -46,7 +46,7 @@ public class BindBitmapTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }

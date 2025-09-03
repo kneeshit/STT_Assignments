@@ -1,0 +1,12 @@
+diff --git a/openai/templates/static/service-worker.js b/openai/templates/static/service-worker.js
+index f5db940..fbe8ed7 100644
+--- a/openai/templates/static/service-worker.js
++++ b/openai/templates/static/service-worker.js
+@@ -1,6 +1,6 @@
+ self.addEventListener('install', event => {
+     event.waitUntil(
+-        caches.open('pandora-cloud-cache').then(function (cache) {
++        caches.open('opengpt-cloud-cache').then(function (cache) {
+             return cache.addAll([
+                 '/apple-touch-icon.png',
+                 '/favicon-16x16.png',

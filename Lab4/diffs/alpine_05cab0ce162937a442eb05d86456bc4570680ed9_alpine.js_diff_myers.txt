@@ -1,0 +1,18 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index e54d2eba..6ba5f66e 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -1692,7 +1692,13 @@
+     },
+     initializeComponent: function initializeComponent(el) {
+       if (!el.__x) {
++        try {
+           el.__x = new Component(el);
++        } catch (err) {
++          window.setTimeout(() => {
++            throw err;
++          }, 0);
++        }
+       }
+     },
+     clone: function clone(component, newEl) {

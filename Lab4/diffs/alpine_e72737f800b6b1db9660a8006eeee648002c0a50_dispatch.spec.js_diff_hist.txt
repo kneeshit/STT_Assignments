@@ -1,0 +1,16 @@
+diff --git a/test/dispatch.spec.js b/test/dispatch.spec.js
+index e24a9dc9..e36374f7 100644
+--- a/test/dispatch.spec.js
++++ b/test/dispatch.spec.js
+@@ -16,9 +16,9 @@ test('$dispatch', async () => {
+ 
+     Alpine.start()
+ 
+-    expect(document.querySelector('span').innerText).toEqual('bar')
++    expect(document.querySelector('span').textContent).toEqual('bar')
+ 
+     document.querySelector('button').click()
+ 
+-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('baz') })
++    await wait(() => { expect(document.querySelector('span').textContent).toEqual('baz') })
+ })

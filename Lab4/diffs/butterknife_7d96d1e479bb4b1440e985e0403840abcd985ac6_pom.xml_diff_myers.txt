@@ -1,0 +1,17 @@
+diff --git a/pom.xml b/pom.xml
+index a5721f5..b147d6e 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -132,6 +132,12 @@
+             </sdk>
+           </configuration>
+         </plugin>
++
++        <plugin>
++          <groupId>org.apache.maven.plugins</groupId>
++          <artifactId>maven-invoker-plugin</artifactId>
++          <version>1.7</version>
++        </plugin>
+       </plugins>
+     </pluginManagement>
+   </build>

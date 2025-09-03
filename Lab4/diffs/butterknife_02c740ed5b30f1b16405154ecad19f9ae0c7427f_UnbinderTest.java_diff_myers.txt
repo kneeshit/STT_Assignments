@@ -1,0 +1,264 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java b/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java
+index ae23fce..e32a98c 100644
+--- a/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/UnbinderTest.java
+@@ -30,8 +30,7 @@ public class UnbinderTest {
+                 "}"
+             ));
+ 
+-    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -186,8 +185,7 @@ public class UnbinderTest {
+                 "}"
+             ));
+ 
+-    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -263,8 +261,7 @@ public class UnbinderTest {
+                 "}"
+             ));
+ 
+-    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -304,8 +301,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/TestOne$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/TestOne$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -375,8 +371,7 @@ public class UnbinderTest {
+                 "}"
+             ));
+ 
+-    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -416,8 +411,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/TestOne$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/TestOne$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -495,8 +489,7 @@ public class UnbinderTest {
+                 "}"
+             ));
+ 
+-    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
+             + "package test;\n"
+             + "import android.view.View;\n"
+             + "import butterknife.Unbinder;\n"
+@@ -542,8 +535,7 @@ public class UnbinderTest {
+             + "  }\n"
+             + "}");
+ 
+-    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/one/TestOne$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/one/TestOne$$ViewBinder", ""
+             + "package test.one;\n"
+             + "import android.view.View;\n"
+             + "import butterknife.Unbinder;\n"
+@@ -610,8 +602,7 @@ public class UnbinderTest {
+                 "}"
+             ));
+ 
+-    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource1 = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -657,8 +648,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/TestTwo$$ViewBinder",
+-        ""
++    JavaFileObject expectedSource2 = JavaFileObjects.forSourceString("test/TestTwo$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+@@ -706,8 +696,7 @@ public class UnbinderTest {
+   }
+ 
+   @Test public void fullIntegration() {
+-    JavaFileObject sourceA = JavaFileObjects.forSourceString("test.A",
+-        ""
++    JavaFileObject sourceA = JavaFileObjects.forSourceString("test.A", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -720,8 +709,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject sourceB = JavaFileObjects.forSourceString("test.B",
+-        ""
++    JavaFileObject sourceB = JavaFileObjects.forSourceString("test.B", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -735,8 +723,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject sourceC = JavaFileObjects.forSourceString("test.C",
+-        ""
++    JavaFileObject sourceC = JavaFileObjects.forSourceString("test.C", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -752,8 +739,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject sourceD = JavaFileObjects.forSourceString("test.D",
+-        ""
++    JavaFileObject sourceD = JavaFileObjects.forSourceString("test.D", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -767,8 +753,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject sourceE = JavaFileObjects.forSourceString("test.E",
+-        ""
++    JavaFileObject sourceE = JavaFileObjects.forSourceString("test.E", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -782,8 +767,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject sourceF = JavaFileObjects.forSourceString("test.F",
+-        ""
++    JavaFileObject sourceF = JavaFileObjects.forSourceString("test.F", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -797,8 +781,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject sourceG = JavaFileObjects.forSourceString("test.G",
+-        ""
++    JavaFileObject sourceG = JavaFileObjects.forSourceString("test.G", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -817,8 +800,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject sourceH = JavaFileObjects.forSourceString("test.H",
+-        ""
++    JavaFileObject sourceH = JavaFileObjects.forSourceString("test.H", ""
+         + "package test;\n"
+         + "import android.support.annotation.ColorInt;\n"
+         + "import android.view.View;\n"
+@@ -834,8 +816,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceA = JavaFileObjects.forSourceString("test/A$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceA = JavaFileObjects.forSourceString("test/A$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"
+@@ -858,8 +839,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceB = JavaFileObjects.forSourceString("test/B$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceB = JavaFileObjects.forSourceString("test/B$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"
+@@ -882,8 +862,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceC = JavaFileObjects.forSourceString("test/C$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceC = JavaFileObjects.forSourceString("test/C$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"
+@@ -930,8 +909,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceD = JavaFileObjects.forSourceString("test/D$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceD = JavaFileObjects.forSourceString("test/D$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"
+@@ -954,8 +932,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceE = JavaFileObjects.forSourceString("test/E$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceE = JavaFileObjects.forSourceString("test/E$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"
+@@ -978,8 +955,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceF = JavaFileObjects.forSourceString("test/F$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceF = JavaFileObjects.forSourceString("test/F$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"
+@@ -1002,8 +978,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceG = JavaFileObjects.forSourceString("test/G$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceG = JavaFileObjects.forSourceString("test/G$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"
+@@ -1055,8 +1030,7 @@ public class UnbinderTest {
+         + "  }\n"
+         + "}\n");
+ 
+-    JavaFileObject expectedSourceH = JavaFileObjects.forSourceString("test/H$$ViewBinder",
+-        ""
++    JavaFileObject expectedSourceH = JavaFileObjects.forSourceString("test/H$$ViewBinder", ""
+         + "package test;\n"
+         + "import android.content.Context;\n"
+         + "import android.content.res.Resources;\n"

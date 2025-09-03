@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnTouchTest.java b/butterknife/src/test/java/butterknife/internal/OnTouchTest.java
+index 662f055..1ac2fba 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnTouchTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnTouchTest.java
+@@ -28,7 +28,7 @@ public class OnTouchTest {
+             "import butterknife.ButterKnife.Finder;",
+             "import butterknife.ButterKnife.Injector;",
+             "public class Test$$ViewInjector<T extends test.Test> implements Injector<T> {",
+-            "  @Override public void inject(Finder finder, final T target, Object source) {",
++            "  @Override public void inject(final Finder finder, final T target, Object source) {",
+             "    View view;",
+             "    view = finder.findRequiredView(source, 1, \"method 'doStuff'\");",
+             "    view.setOnTouchListener(new android.view.View.OnTouchListener() {",

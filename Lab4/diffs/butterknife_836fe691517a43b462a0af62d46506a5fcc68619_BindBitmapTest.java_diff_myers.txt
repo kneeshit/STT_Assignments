@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java b/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
+index ab1ea7d..742d30e 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindBitmapTest.java
+@@ -35,8 +35,6 @@ public class BindBitmapTest {
+             "    Resources res = finder.getContext(source).getResources();",
+             "    target.one = BitmapFactory.decodeResource(res, 1);",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

@@ -1,0 +1,58 @@
+diff --git a/README.ru.md b/README.ru.md
+index 0ea06a48..eb3fdf46 100644
+--- a/README.ru.md
++++ b/README.ru.md
+@@ -109,6 +109,7 @@ Alpine.js можно использовать и для более серьез
+ | [`x-if`](#x-if) | При невыполнении переданного условия полностью удаляет элемент из DOM. Должна использоваться в теге `<template>`. |
+ | [`x-for`](#x-for) | Создает новые DOM узлы для каждого элемента в массиве. Должна использоваться в теге `<template>`. |
+ | [`x-transition`](#x-transition) | Директивы для добавления классов различным стадиям перехода (transition) элемента |
++| [`x-spread`](#x-spread) | Позволяет привязать объект директивы Alpine к элементу для более удобного повторного использования |
+ | [`x-cloak`](#x-cloak) | Удаляется при инициализации Alpine. Полезна для скрытия DOM до инициализации. |
+ 
+ И 6 волшебных свойств (magic properties):
+@@ -523,6 +524,45 @@ Alpine предлагает 6 разных transition-директив для д
+ 
+ ---
+ 
++### `x-spread`
++**Example:**
++```html
++<div x-data="dropdown">
++    <button x-spread="trigger">Open Dropdown</button>
++
++    <span x-spread="dialogue">Dropdown Contents</span>
++</div>
++
++<script>
++    function dropdown() {
++        return {
++            open: false,
++            trigger: {
++                ['@click']() {
++                    this.open = true
++                },
++            },
++            dialogue: {
++                ['x-show']() {
++                    return this.open
++                },
++                ['@click.away']() {
++                    this.open = false
++                },
++            }
++        }
++    }
++</script>
++```
++
++`x-spread` позволяет извлекать элементы привязок в объекты многоразового использования.
++
++Ключами объекта являются директивы (любые, включая модификаторы), а значения — колбэками, которые будет оценивать Alpine.
++
++> Примечание: Единственная аномалия с x-spread — при использование с `x-for`. В это случае вы должны вернуть строку нормального выражения из колбэка. Например: `['x-for']() { return 'item in items' }`.
++
++---
++
+ ### `x-cloak`
+ **Пример:** `<div x-data="{}" x-cloak></div>`
+ 

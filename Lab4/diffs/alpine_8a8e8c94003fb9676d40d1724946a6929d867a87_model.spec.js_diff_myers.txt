@@ -1,0 +1,13 @@
+diff --git a/test/model.spec.js b/test/model.spec.js
+index a055afea..53c63b83 100644
+--- a/test/model.spec.js
++++ b/test/model.spec.js
+@@ -443,7 +443,7 @@ test('x-model bind datetime-local input', async () => {
+ })
+ 
+ // <input type="email"> 
+-test('x-model bind datetime-local input', async () => {
++test('x-model bind email input', async () => {
+     document.body.innerHTML = `
+     <div x-data="{ key: 'alphine@example.com' }">
+       <input type="email" x-model="key" />

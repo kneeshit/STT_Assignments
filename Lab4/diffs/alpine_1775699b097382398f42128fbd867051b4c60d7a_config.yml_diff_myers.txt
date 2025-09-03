@@ -1,0 +1,17 @@
+diff --git a/.github/ISSUE_TEMPLATE/config.yml b/.github/ISSUE_TEMPLATE/config.yml
+new file mode 100644
+index 00000000..3e189bf9
+--- /dev/null
++++ b/.github/ISSUE_TEMPLATE/config.yml
+@@ -0,0 +1,11 @@
++blank_issues_enabled: false
++contact_links:
++  - name: Bug Report
++    url: https://github.com/alpinejs/alpine/issues/new
++    about: Submit a GitHub issue
++  - name: Feature Request
++    url: https://github.com/alpinejs/alpine/discussions/new
++    about: Request a feature to be added to the platform
++  - name: Ask a Question
++    url: https://github.com/alpinejs/alpine/discussions/new
++    about: Ask questions and discuss with other community members

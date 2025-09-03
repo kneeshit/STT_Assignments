@@ -1,0 +1,18 @@
+# Ignore embedded/cloned repositories in Labs
+Lab4/alpine/
+Lab4/butterknife/
+Lab4/ninja/
+Lab4/lab4_venv/
+Lab2/flask/
+Lab2/lab2_env/
+Lab3/venv/
+Lab1/__pycache__/
+Lab3/__pycache__/
+Lab4/__pycache__/
+# Ignore Python cache and environment folders
+env/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+SampleReport.pdf

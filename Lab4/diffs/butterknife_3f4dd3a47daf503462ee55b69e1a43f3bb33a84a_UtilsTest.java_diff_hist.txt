@@ -1,0 +1,31 @@
+diff --git a/butterknife-runtime/src/test/java/butterknife/UtilsTest.java b/butterknife-runtime/src/test/java/butterknife/UtilsTest.java
+index ef00e11..67386b7 100644
+--- a/butterknife-runtime/src/test/java/butterknife/UtilsTest.java
++++ b/butterknife-runtime/src/test/java/butterknife/UtilsTest.java
+@@ -17,9 +17,10 @@ public final class UtilsTest {
+     assertThat(listFilteringNull("One", "Two", null)).containsExactly("One", "Two");
+     assertThat(listFilteringNull("One", null, "Two")).containsExactly("One", "Two");
+     assertThat(listFilteringNull(null, "One", "Two")).containsExactly("One", "Two");
++    assertThat(listFilteringNull("One", "Two", "Three")).containsExactly("One", "Two", "Three");
+   }
+ 
+-  @Test public void arrayOfFiltersNull() {
++  @Test public void arrayFilteringNullRemovesNulls() {
+     assertThat(arrayFilteringNull(null, null, null)).isEmpty();
+     assertThat(arrayFilteringNull("One", null, null)).asList().containsExactly("One");
+     assertThat(arrayFilteringNull(null, "One", null)).asList().containsExactly("One");
+@@ -29,6 +30,14 @@ public final class UtilsTest {
+     assertThat(arrayFilteringNull(null, "One", "Two")).asList().containsExactly("One", "Two");
+   }
+ 
++  @Test public void arrayFilteringNullReturnsOriginalWhenNoNulls() {
++    String[] input = { "One", "Two", "Three" };
++    String[] actual = arrayFilteringNull(input);
++    assertThat(actual).isSameAs(input);
++    // Even though we got the same reference back check to ensure its contents weren't mutated.
++    assertThat(actual).asList().containsExactly("One", "Two", "Three");
++  }
++
+   @Test public void testCastParam() {
+     try {
+       Utils.castParam("abc", "Foo", 3, "foo()", 4, Integer.class);

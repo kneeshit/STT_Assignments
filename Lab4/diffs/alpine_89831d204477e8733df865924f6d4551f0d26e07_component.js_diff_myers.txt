@@ -1,0 +1,35 @@
+diff --git a/src/component.js b/src/component.js
+index 0a847d35..c44919e3 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -90,6 +90,11 @@ export default class Component {
+                     this.updateTextValue(el, output)
+                     break;
+ 
++                case 'html':
++                    var { output } = this.evaluateReturnExpression(expression)
++                    this.updateHtmlValue(el, output)
++                    break;
++
+                 case 'show':
+                     var { output } = this.evaluateReturnExpression(expression)
+                     this.updateVisibility(el, output, true)
+@@ -158,6 +163,7 @@ export default class Component {
+             'model': ({el, output}) => { self.updateAttributeValue(el, 'value', output) },
+             'bind': ({el, attrName, output}) => { self.updateAttributeValue(el, attrName, output) },
+             'text': ({el, output}) => { self.updateTextValue(el, output) },
++            'html': ({el, output}) => { self.updateHtmlValue(el, output) },
+             'show': ({el, output}) => { self.updateVisibility(el, output) },
+             'if': ({el, output}) => { self.updatePresence(el, output) },
+         }
+@@ -301,6 +307,10 @@ export default class Component {
+         el.innerText = value
+     }
+ 
++    updateHtmlValue(el, value) {
++        el.innerHTML = value
++    }
++
+     updateVisibility(el, value, initialUpdate = false) {
+         if (! value) {
+             transitionOut(el, () => {

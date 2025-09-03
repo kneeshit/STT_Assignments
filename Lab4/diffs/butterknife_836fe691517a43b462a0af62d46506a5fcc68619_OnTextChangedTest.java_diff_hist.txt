@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java b/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java
+index 7cb484e..1a73759 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java
+@@ -46,8 +46,6 @@ public class OnTextChangedTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/har.rs b/openai/src/serve/router/har.rs
+index d501a12..825a766 100644
+--- a/openai/src/serve/router/har.rs
++++ b/openai/src/serve/router/har.rs
+@@ -74,7 +74,7 @@ async fn upload_form(
+             );
+         }
+ 
+-        match ctx.arkose_har_file_path() {
++        match ctx.arkose_har_file() {
+             Some(path) => {
+                 if tokio::fs::write(path, data).await.is_err() {
+                     return error_html("File write error");

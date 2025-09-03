@@ -1,0 +1,13 @@
+diff --git a/examples/auth.rs b/examples/auth.rs
+index c65c201..e474907 100644
+--- a/examples/auth.rs
++++ b/examples/auth.rs
+@@ -20,7 +20,7 @@ async fn main() -> anyhow::Result<()> {
+             &AuthAccountBuilder::default()
+                 .username(email)
+                 .password(password)
+-                .option(AuthStrategy::Apple)
++                .option(AuthStrategy::Platform)
+                 .build()?,
+         )
+         .await?;

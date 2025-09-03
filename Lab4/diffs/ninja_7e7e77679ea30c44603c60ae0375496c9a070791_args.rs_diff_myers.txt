@@ -1,0 +1,16 @@
+diff --git a/src/args.rs b/src/args.rs
+index 4273edc..53a5396 100644
+--- a/src/args.rs
++++ b/src/args.rs
+@@ -250,9 +250,9 @@ pub struct ServeArgs {
+ 
+     /// Preauth MITM server CA certificate file path
+     #[clap(long, default_value = "ca/cert.crt")]
+-    pub(super) preauth_cert: String,
++    pub(super) preauth_cert: Option<String>,
+ 
+     /// Preauth MITM server CA private key file path
+     #[clap(long, default_value = "ca/key.pem")]
+-    pub(super) preauth_key: String,
++    pub(super) preauth_key: Option<String>,
+ }

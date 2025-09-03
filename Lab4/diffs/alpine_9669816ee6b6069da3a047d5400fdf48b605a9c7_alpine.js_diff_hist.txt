@@ -1,0 +1,19 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index b3026901..9926175b 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -1627,7 +1627,14 @@
+ 
+   if (!isTesting()) {
+     window.Alpine = Alpine;
++
++    if (window.deferLoadingAlpine) {
++      window.deferLoadingAlpine(() => {
+         window.Alpine.start();
++      });
++    } else {
++      window.Alpine.start();
++    }
+   }
+ 
+   return Alpine;

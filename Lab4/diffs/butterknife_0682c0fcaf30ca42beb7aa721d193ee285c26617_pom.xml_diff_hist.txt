@@ -1,0 +1,16 @@
+diff --git a/pom.xml b/pom.xml
+index b64eea7..b09a5ac 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -55,11 +55,6 @@
+     </license>
+   </licenses>
+ 
+-  <organization>
+-    <name>Square, Inc.</name>
+-    <url>http://squareup.com</url>
+-  </organization>
+-
+   <dependencyManagement>
+     <dependencies>
+       <dependency>

@@ -1,0 +1,13 @@
+diff --git a/openai/src/error.rs b/openai/src/error.rs
+index 2955f99..4b17a01 100644
+--- a/openai/src/error.rs
++++ b/openai/src/error.rs
+@@ -44,6 +44,8 @@ pub enum AuthError {
+     InvalidAccessToken,
+     #[error("invalid refresh token")]
+     InvalidRefreshToken,
++    #[error("invalid location path")]
++    InvalidLocationPath,
+     #[error("token expired")]
+     TokenExpired,
+     #[error("MFA failed")]

@@ -1,0 +1,9 @@
+diff --git a/.github/FUNDING.yml b/.github/FUNDING.yml
+index 5ab7ec3d..8320e54d 100644
+--- a/.github/FUNDING.yml
++++ b/.github/FUNDING.yml
+@@ -1,3 +1,3 @@
+ # These are supported funding model platforms
+ 
+-github: [calebporzio, user2]
++github: [calebporzio]

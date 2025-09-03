@@ -1,0 +1,12 @@
+diff --git a/src/handle.rs b/src/handle.rs
+index a975e18..c156ed6 100644
+--- a/src/handle.rs
++++ b/src/handle.rs
+@@ -257,6 +257,7 @@ pub(super) fn generate_template(out: Option<PathBuf>) -> anyhow::Result<()> {
+         tb_expired: 86400,
+         cookie_store: true,
+         pool_idle_timeout: 90,
++        level: "info".to_owned(),
+         ..args::ServeArgs::default()
+     };
+ 

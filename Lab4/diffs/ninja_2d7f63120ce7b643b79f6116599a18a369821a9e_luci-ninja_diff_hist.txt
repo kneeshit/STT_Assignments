@@ -1,0 +1,17 @@
+diff --git a/openwrt/luci-app-ninja/root/etc/uci-defaults/luci-ninja b/openwrt/luci-app-ninja/root/etc/uci-defaults/luci-ninja
+new file mode 100755
+index 0000000..457b7ad
+--- /dev/null
++++ b/openwrt/luci-app-ninja/root/etc/uci-defaults/luci-ninja
+@@ -0,0 +1,11 @@
++#!/bin/sh
++
++uci -q batch <<-EOF >/dev/null
++	delete ucitrack.@ninja[-1]
++	add ucitrack ninja
++	set ucitrack.@ninja[-1].init=ninja
++	commit ucitrack
++EOF
++
++rm -rf /tmp/luci-*
++exit 0

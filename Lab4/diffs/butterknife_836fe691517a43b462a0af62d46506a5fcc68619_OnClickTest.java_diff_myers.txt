@@ -1,0 +1,68 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnClickTest.java
+index 7d5669a..fcc7796 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnClickTest.java
+@@ -38,8 +38,6 @@ public class OnClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -89,7 +87,6 @@ public class OnClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+             "}"));
+ 
+     assertAbout(javaSource()).that(source)
+@@ -131,9 +128,6 @@ public class OnClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.view = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -225,8 +219,6 @@ public class OnClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -279,8 +271,6 @@ public class OnClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -322,8 +312,6 @@ public class OnClickTest {
+             "      });",
+             "    }",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -367,9 +355,6 @@ public class OnClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.view = null;",
+-            "  }",
+             "}"
+         ));
+ 

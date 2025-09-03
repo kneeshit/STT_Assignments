@@ -1,0 +1,17 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindBoolTest.java b/butterknife-compiler/src/test/java/butterknife/BindBoolTest.java
+index 54a76ca..fd9028f 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindBoolTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindBoolTest.java
+@@ -28,8 +28,11 @@ public class BindBoolTest {
+             "import butterknife.internal.ViewBinder;",
+             "import java.lang.Object;",
+             "import java.lang.Override;",
++            "import java.lang.SuppressWarnings;",
+             "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {",
+-            "  @Override public void bind(final Finder finder, final T target, Object source) {",
++            "  @Override",
++            "  @SuppressWarnings(\"ResourceType\")",
++            "  public void bind(final Finder finder, final T target, Object source) {",
+             "    Resources res = finder.getContext(source).getResources();",
+             "    target.one = res.getBoolean(1);",
+             "  }",

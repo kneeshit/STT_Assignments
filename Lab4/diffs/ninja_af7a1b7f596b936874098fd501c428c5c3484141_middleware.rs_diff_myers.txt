@@ -1,0 +1,50 @@
+diff --git a/openai/src/serve/middleware.rs b/openai/src/serve/middleware.rs
+index 4ac7d25..0c01006 100644
+--- a/openai/src/serve/middleware.rs
++++ b/openai/src/serve/middleware.rs
+@@ -91,14 +91,14 @@ use crate::token;
+ #[cfg(feature = "sign")]
+ use super::sign::Sign;
+ #[cfg(feature = "limit")]
+-use super::tokenbucket::TokenBucket;
++use super::tokenbucket::{TokenBucket, TokenBucketContext};
+ 
+ #[cfg(feature = "limit")]
+-pub struct TokenBucketRateLimiter(Rc<TokenBucket>);
++pub struct TokenBucketRateLimiter(Rc<TokenBucketContext>);
+ 
+ #[cfg(feature = "limit")]
+ impl TokenBucketRateLimiter {
+-    pub fn new(tb: TokenBucket) -> Self {
++    pub fn new(tb: TokenBucketContext) -> Self {
+         Self(Rc::new(tb))
+     }
+ }
+@@ -127,7 +127,7 @@ where
+ #[cfg(feature = "limit")]
+ pub struct TokenBacketMiddleware<S> {
+     service: Rc<S>,
+-    tb: Rc<TokenBucket>,
++    tb: Rc<TokenBucketContext>,
+ }
+ 
+ impl<S, B> Service<ServiceRequest> for TokenBacketMiddleware<S>
+@@ -165,6 +165,8 @@ where
+                 let tb = self.tb.clone();
+                 Box::pin(async move {
+                     match tb.acquire(addr).await {
++                        Ok(condition) => {
++                            match condition {
+                                 true => {
+                                     // forwarded responses map to "left" body
+                                     svc.call(request)
+@@ -173,6 +175,9 @@ where
+                                 }
+                                 false => bad_response("Too Many Requests", request).await,
+                             }
++                        }
++                        Err(err) => bad_response(&err.to_string(), request).await,
++                    }
+                 })
+             }
+             Err(err) => bad_response(&err.to_string(), request),

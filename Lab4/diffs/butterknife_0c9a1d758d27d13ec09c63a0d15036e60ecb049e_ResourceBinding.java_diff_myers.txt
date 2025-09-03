@@ -1,0 +1,18 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/ResourceBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/ResourceBinding.java
+new file mode 100644
+index 0000000..6b36f0e
+--- /dev/null
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/ResourceBinding.java
+@@ -0,0 +1,12 @@
++package butterknife.compiler;
++
++import com.squareup.javapoet.CodeBlock;
++
++interface ResourceBinding {
++  Id id();
++
++  /** True if the code for this binding requires a 'res' variable for {@code Resources} access. */
++  boolean requiresResources();
++
++  CodeBlock render();
++}

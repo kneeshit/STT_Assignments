@@ -1,0 +1,10 @@
+diff --git a/render.yaml b/render.yaml
+new file mode 100644
+index 0000000..e2dbd06
+--- /dev/null
++++ b/render.yaml
+@@ -0,0 +1,4 @@
++runtime: image
++
++image:
++  url: docker.io/gngpp/opengpt:latest

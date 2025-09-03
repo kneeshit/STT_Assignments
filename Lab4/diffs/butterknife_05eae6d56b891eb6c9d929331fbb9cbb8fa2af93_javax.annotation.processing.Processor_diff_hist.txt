@@ -1,0 +1,7 @@
+diff --git a/butterknife-compiler/src/main/resources/META-INF/services/javax.annotation.processing.Processor b/butterknife-compiler/src/main/resources/META-INF/services/javax.annotation.processing.Processor
+deleted file mode 100644
+index dda8ba8..0000000
+--- a/butterknife-compiler/src/main/resources/META-INF/services/javax.annotation.processing.Processor
++++ /dev/null
+@@ -1 +0,0 @@
+-butterknife.internal.ButterKnifeProcessor

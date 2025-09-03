@@ -1,0 +1,13 @@
+diff --git a/website/index.html b/website/index.html
+index 8b595ea..0d07a22 100644
+--- a/website/index.html
++++ b/website/index.html
+@@ -103,7 +103,7 @@ List&lt;EditText> nameViews;</pre>
+             <pre class="prettyprint">ButterKnife.apply(nameViews, DISABLE);
+ ButterKnife.apply(nameViews, ENABLED, false);</pre>
+             <p><code>Action</code> and <code>Setter</code> interfaces allow specifying simple behavior.</p>
+-            <pre class="prettyprint">static final Butterknife.Action&lt;View> DISABLE = new Butterknife.Action&lt;View>() {
++            <pre class="prettyprint">static final ButterKnife.Action&lt;View> DISABLE = new ButterKnife.Action&lt;View>() {
+   @Override public void apply(View view, int index) {
+     view.setEnabled(false);
+   }

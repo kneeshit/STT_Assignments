@@ -1,0 +1,24 @@
+diff --git a/pom.xml b/pom.xml
+index 2b5411a..d871b01 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -32,6 +32,7 @@
+     <android.version>4.1.1.4</android.version>
+     <android.platform>16</android.platform>
+     <junit.version>4.10</junit.version>
++    <robolectric.version>2.0-alpha-2</robolectric.version>
+   </properties>
+ 
+   <scm>
+@@ -75,6 +76,11 @@
+         <artifactId>fest-assert-core</artifactId>
+         <version>${fest.version}</version>
+       </dependency>
++      <dependency>
++        <groupId>org.robolectric</groupId>
++        <artifactId>robolectric</artifactId>
++        <version>${robolectric.version}</version>
++      </dependency>
+     </dependencies>
+   </dependencyManagement>
+ 

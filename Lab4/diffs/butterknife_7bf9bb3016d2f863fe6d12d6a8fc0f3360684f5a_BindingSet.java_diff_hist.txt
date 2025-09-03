@@ -1,0 +1,16 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java b/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java
+index b161707..e7ea9a9 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/BindingSet.java
+@@ -464,8 +464,9 @@ final class BindingSet {
+               int listenerPosition = parameter.getListenerPosition();
+ 
+               if (parameter.requiresCast(listenerParameters[listenerPosition])) {
+-                builder.add("$T.<$T>castParam(p$L, $S, $L, $S, $L)", UTILS, parameter.getType(),
+-                    listenerPosition, method.name(), listenerPosition, methodBinding.getName(), i);
++                builder.add("$T.castParam(p$L, $S, $L, $S, $L, $T.class)",
++                    UTILS, listenerPosition, method.name(), listenerPosition,
++                    methodBinding.getName(), i, parameter.getType());
+               } else {
+                 builder.add("p$L", listenerPosition);
+               }

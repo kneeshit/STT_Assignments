@@ -1,0 +1,15 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index 4a303fb..b491135 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -19,9 +19,8 @@ dependencies {
+   compile project(':butterknife-annotations')
+   provided deps.supportv4
+ 
+-  testCompile deps.festandroid
+-  testCompile deps.festassert
+   testCompile deps.junit
++  testCompile deps.truth
+   testCompile deps.robolectric
+ }
+ 

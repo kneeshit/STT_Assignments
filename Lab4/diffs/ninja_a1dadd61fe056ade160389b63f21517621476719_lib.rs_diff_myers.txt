@@ -1,0 +1,13 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index 06d44c3..53a52bc 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -1,6 +1,8 @@
+ pub mod api;
+ pub mod log;
+ pub mod oauth;
++pub mod unescape;
++
+ #[cfg(feature = "serve")]
+ pub mod serve;
+ pub mod token;

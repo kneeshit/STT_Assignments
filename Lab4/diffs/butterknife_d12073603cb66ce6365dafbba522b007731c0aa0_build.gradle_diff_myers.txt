@@ -1,0 +1,14 @@
+diff --git a/build.gradle b/build.gradle
+index aa532e0..1eba852 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -70,8 +70,8 @@ subprojects { project ->
+ 
+   repositories {
+     mavenCentral()
+-    jcenter()
+     google()
++    jcenter()
+   }
+ 
+   if (!project.name.equals('butterknife-gradle-plugin')) {

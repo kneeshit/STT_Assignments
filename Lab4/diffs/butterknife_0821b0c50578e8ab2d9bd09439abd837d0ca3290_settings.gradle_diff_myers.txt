@@ -1,0 +1,12 @@
+diff --git a/settings.gradle b/settings.gradle
+index 8ae8f94..9ecaae1 100644
+--- a/settings.gradle
++++ b/settings.gradle
+@@ -4,6 +4,7 @@ include ':butterknife-compiler'
+ include ':butterknife-gradle-plugin'
+ include ':butterknife-integration-test'
+ include ':butterknife-lint'
++include ':butterknife-reflect'
+ include ':butterknife-runtime'
+ 
+ //include ':sample:app'

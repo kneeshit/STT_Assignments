@@ -1,0 +1,16 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/ButterKnife.java b/butterknife-compiler/src/test/java/butterknife/ButterKnife.java
+deleted file mode 100644
+index 81d5466..0000000
+--- a/butterknife-compiler/src/test/java/butterknife/ButterKnife.java
++++ /dev/null
+@@ -1,10 +0,0 @@
+-package butterknife;
+-
+-import android.view.View;
+-
+-/** STUB! Required for test sources to compile. */
+-public class ButterKnife {
+-  public static Unbinder bind(Object target, View view) {
+-    return Unbinder.EMPTY;
+-  }
+-}

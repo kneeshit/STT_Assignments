@@ -1,0 +1,74 @@
+diff --git a/test/model.spec.js b/test/model.spec.js
+index 910f9bae..6052ee83 100644
+--- a/test/model.spec.js
++++ b/test/model.spec.js
+@@ -375,3 +375,69 @@ test('x-model bind color input', async () => {
+     })
+ 
+ })
++
++// <input type="button"> 
++test('x-model bind button input', async () => {
++    document.body.innerHTML = `
++    <div x-data="{ key: 'foo' }">
++        <input type="button" x-model="key">
++        <span x-text="key"></span>
++    </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('input').value).toEqual('foo')
++    expect(document.querySelector('span').innerText).toEqual('foo')
++
++    fireEvent.input(document.querySelector('input'), { target: { value: 'bar' } });
++
++    await wait(() => {
++        expect(document.querySelector('input').value).toEqual('bar')
++        expect(document.querySelector('span').innerText).toEqual('bar')
++    })
++})
++
++// <input type="date"> 
++test('x-model bind date input', async () => {
++    document.body.innerHTML = `
++    <div x-data="{ key: '2020-07-10' }">
++      <input type="date" x-model="key" />
++      <span x-text="foo"></span>
++    </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('input').value).toEqual('foo')
++    expect(document.querySelector('span').innerText).toEqual('foo')
++
++    fireEvent.input(document.querySelector('input'), { target: { value: '2021-01-01' } });
++
++    await wait(() => {
++        expect(document.querySelector('input').value).toEqual('2021-01-01')
++        expect(document.querySelector('span').innerText).toEqual('2021-01-01')
++    })
++})
++
++// <input type="datetime-local"> 
++test('x-model bind datetime-local input', async () => {
++    document.body.innerHTML = `
++    <div x-data="{ key: '2020-01-01T20:00' }">
++      <input type="date" x-model="key" />
++      <span x-text="foo"></span>
++    </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('input').value).toEqual('2020-01-01T20:00')
++    expect(document.querySelector('span').innerText).toEqual('2020-01-01T20:00')
++
++    fireEvent.input(document.querySelector('input'), { target: { value: '2021-02-02T20:00' } });
++
++    await wait(() => {
++        expect(document.querySelector('input').value).toEqual('2021-02-02T20:00')
++        expect(document.querySelector('span').innerText).toEqual('2021-02-02T20:00')
++    })
++})

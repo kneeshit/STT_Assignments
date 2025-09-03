@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindColorTest.java b/butterknife-compiler/src/test/java/butterknife/BindColorTest.java
+index 0631e4c..9e893b7 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindColorTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindColorTest.java
+@@ -37,8 +37,6 @@ public class BindColorTest {
+             "    Resources.Theme theme = context.getTheme();",
+             "    target.one = Utils.getColor(res, theme, 1);",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -77,8 +75,6 @@ public class BindColorTest {
+             "    Resources.Theme theme = context.getTheme();",
+             "    target.one = Utils.getColorStateList(res, theme, 1);",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

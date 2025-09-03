@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+index d6a71c5..dc7aaa5 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+@@ -703,7 +703,7 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+ 
+     BindingSet.Builder builder = getOrCreateBindingBuilder(builderMap, enclosingElement);
+     FieldDrawableBinding binding = new FieldDrawableBinding(getId(id), name, getId(tint));
+-    builder.addDrawable(binding);
++    builder.addResource(binding);
+ 
+     erasedTargetNames.add(enclosingElement);
+   }

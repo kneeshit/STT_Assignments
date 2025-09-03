@@ -1,0 +1,21 @@
+diff --git a/butterknife-reflect/src/main/java/butterknife/EmptyTextWatcher.java b/butterknife-reflect/src/main/java/butterknife/EmptyTextWatcher.java
+new file mode 100644
+index 0000000..3b578de
+--- /dev/null
++++ b/butterknife-reflect/src/main/java/butterknife/EmptyTextWatcher.java
+@@ -0,0 +1,15 @@
++package butterknife;
++
++import android.text.Editable;
++import android.text.TextWatcher;
++
++class EmptyTextWatcher implements TextWatcher {
++  @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {
++  }
++
++  @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
++  }
++
++  @Override public void afterTextChanged(Editable s) {
++  }
++}

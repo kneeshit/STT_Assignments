@@ -1,0 +1,7 @@
+diff --git a/src/conf/mod.rs b/src/conf/mod.rs
+new file mode 100644
+index 0000000..b0edc6c
+--- /dev/null
++++ b/src/conf/mod.rs
+@@ -0,0 +1 @@
++pub mod account;

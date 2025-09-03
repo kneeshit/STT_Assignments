@@ -1,0 +1,10 @@
+diff --git a/.gitignore b/.gitignore
+index 522cd5c..6067c2f 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -28,3 +28,4 @@ thunder-tests
+ uploads
+ ./vendor
+ chat.openai.com.har
++platform.openai.com.har
+\ No newline at end of file

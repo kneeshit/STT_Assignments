@@ -1,0 +1,8 @@
+diff --git a/openai/ui/static/arkose/v2/35536E1E-65B4-4D96-9D97-6ADB7EFF8147/settings b/openai/ui/static/arkose/v2/35536E1E-65B4-4D96-9D97-6ADB7EFF8147/settings
+new file mode 100644
+index 0000000..4acc8f3
+--- /dev/null
++++ b/openai/ui/static/arkose/v2/35536E1E-65B4-4D96-9D97-6ADB7EFF8147/settings
+@@ -0,0 +1 @@
++{"default":{"settings":{"observability":{"enabled":true,"samplePercentage":0}}}}
+\ No newline at end of file

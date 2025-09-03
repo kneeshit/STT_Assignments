@@ -1,0 +1,12 @@
+diff --git a/butterknife-compiler/build.gradle b/butterknife-compiler/build.gradle
+index eb44e45..d189bdd 100644
+--- a/butterknife-compiler/build.gradle
++++ b/butterknife-compiler/build.gradle
+@@ -4,6 +4,7 @@ apply plugin: 'checkstyle'
+ dependencies {
+   compile project(':butterknife-annotations')
+   compile deps.autoservice
++  compile deps.autocommon
+   compile deps.javapoet
+ 
+   testCompile deps.junit

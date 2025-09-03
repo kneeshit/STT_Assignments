@@ -1,0 +1,13 @@
+diff --git a/src/args_handle.rs b/src/args_handle.rs
+index 8789150..65729d5 100644
+--- a/src/args_handle.rs
++++ b/src/args_handle.rs
+@@ -156,7 +156,7 @@ pub(super) fn serve_log() -> anyhow::Result<()> {
+         path::Path,
+     };
+ 
+-    let path = Path::new(env::DEFAULT_STDERR_PATH); // 请用你的日志文件路径替换
++    let path = Path::new(env::DEFAULT_STDOUT_PATH); // 请用你的日志文件路径替换
+     let file = File::open(&path)?;
+     let reader = io::BufReader::new(file);
+ 

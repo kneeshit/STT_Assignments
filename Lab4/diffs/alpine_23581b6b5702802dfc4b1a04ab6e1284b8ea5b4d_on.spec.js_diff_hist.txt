@@ -1,0 +1,17 @@
+diff --git a/test/on.spec.js b/test/on.spec.js
+index 24fb88e0..954fa15f 100644
+--- a/test/on.spec.js
++++ b/test/on.spec.js
+@@ -82,6 +82,12 @@ test('.self modifier', async () => {
+     await wait(() => {
+         expect(document.querySelector('span').innerText).toEqual('bar')
+     })
++
++    document.querySelector('div').click()
++
++    await wait(() => {
++        expect(document.querySelector('span').innerText).toEqual('baz')
++    })
+ })
+ 
+ test('.prevent modifier', async () => {

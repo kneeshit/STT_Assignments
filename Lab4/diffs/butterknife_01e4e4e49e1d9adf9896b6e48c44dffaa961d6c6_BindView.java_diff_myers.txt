@@ -1,0 +1,12 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindView.java b/butterknife-annotations/src/main/java/butterknife/BindView.java
+index 85da51c..13c56da 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindView.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindView.java
+@@ -1,6 +1,6 @@
+ package butterknife;
+ 
+-import android.support.annotation.IdRes;
++import androidx.annotation.IdRes;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 

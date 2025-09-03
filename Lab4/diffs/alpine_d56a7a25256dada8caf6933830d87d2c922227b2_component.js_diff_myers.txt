@@ -1,0 +1,13 @@
+diff --git a/src/component.js b/src/component.js
+index 6a8d57f6..5b543f8a 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -95,7 +95,7 @@ export default class Component {
+                     while (self.nextTickStack.length > 0) {
+                         self.nextTickStack.shift()()
+                     }
+-                }, 0)()
++                }, 0, self)()
+             },
+         })
+ 

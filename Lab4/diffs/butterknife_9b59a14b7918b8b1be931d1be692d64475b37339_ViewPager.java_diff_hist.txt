@@ -1,0 +1,22 @@
+diff --git a/butterknife-runtime/src/test/java/android/support/v4/view/ViewPager.java b/butterknife-runtime/src/test/java/android/support/v4/view/ViewPager.java
+new file mode 100644
+index 0000000..f5be6a2
+--- /dev/null
++++ b/butterknife-runtime/src/test/java/android/support/v4/view/ViewPager.java
+@@ -0,0 +1,16 @@
++package android.support.v4.view;
++
++/** STUB! Required for test sources to compile. */
++public interface ViewPager {
++  void addOnPageChangeListener(OnPageChangeListener listener);
++
++  void removeOnPageChangeListener(OnPageChangeListener listener);
++
++  interface OnPageChangeListener {
++    void onPageScrolled(int position, float positionOffset, int positionOffsetPixels);
++
++    void onPageSelected(int position);
++
++    void onPageScrollStateChanged(int state);
++  }
++}

@@ -1,0 +1,30 @@
+diff --git a/README.md b/README.md
+index f501f751..bb391f81 100644
+--- a/README.md
++++ b/README.md
+@@ -88,6 +88,7 @@ There are 7 directives available to you:
+ | [`x-model`](#x-model) |
+ | [`x-text`](#x-text) |
+ | [`x-ref`](#x-ref) |
++| [`x-if`](#x-if) |
+ | [`x-cloak`](#x-cloak) |
+ 
+ Here's how they each work:
+@@ -250,6 +251,17 @@ This is a helpful alternative to setting ids and using `document.querySelector`
+ 
+ ---
+ 
++### `x-if`
++**Example:** `<template x-if="true"><div>Some Element</div></template>`
++
++**Structure:** `<template x-if="[expression]"><div>Some Element</div></template>`
++
++For cases where `x-show` isn't sufficient (`x-show` sets an element to `display: none` if it's false), `x-if` can be used to  actually remove an element completely from the DOM.
++
++It's important that `x-if` is used on a `<template></template>` tag because Alpine doesn't use a virtual DOM. This implementation allows Alpine to stay rugged and use the real DOM to work it's magic.
++
++---
++
+ ### `x-cloak`
+ **Example:** `<div x-data="{}" x-cloak></div>`
+ 

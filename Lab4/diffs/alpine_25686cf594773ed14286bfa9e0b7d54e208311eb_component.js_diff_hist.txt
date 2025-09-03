@@ -1,0 +1,13 @@
+diff --git a/src/component.js b/src/component.js
+index 73daa4e7..bc0d3105 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -271,7 +271,7 @@ export default class Component {
+ 
+                     var output = this.evaluateReturnExpression(el, expression, extraVars)
+ 
+-                    handleIfDirective(el, output, initialUpdate)
++                    handleIfDirective(this, el, output, initialUpdate)
+                     break;
+ 
+                 case 'for':

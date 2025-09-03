@@ -1,0 +1,15 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java
+index 8da58ac..b68f6dc 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/FieldCollectionViewBinding.java
+@@ -10,8 +10,8 @@ import static butterknife.compiler.BindingSet.requiresCast;
+ 
+ final class FieldCollectionViewBinding {
+   enum Kind {
+-    ARRAY("arrayOf"),
+-    LIST("listOf");
++    ARRAY("arrayFilteringNull"),
++    LIST("listFilteringNull");
+ 
+     final String factoryName;
+ 

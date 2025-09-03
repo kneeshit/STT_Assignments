@@ -1,0 +1,23 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindBool.java b/butterknife-annotations/src/main/java/butterknife/BindBool.java
+index 89112ac..5c0abd3 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindBool.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindBool.java
+@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 
+ import static java.lang.annotation.ElementType.FIELD;
+-import static java.lang.annotation.RetentionPolicy.CLASS;
++import static java.lang.annotation.RetentionPolicy.RUNTIME;
+ 
+ /**
+  * Bind a field to the specified boolean resource ID.
+@@ -13,7 +13,8 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * {@literal @}BindBool(R.bool.is_tablet) boolean isTablet;
+  * </code></pre>
+  */
+-@Retention(CLASS) @Target(FIELD)
++@Target(FIELD)
++@Retention(RUNTIME)
+ public @interface BindBool {
+   /** Boolean resource ID to which the field will be bound. */
+   @BoolRes int value();

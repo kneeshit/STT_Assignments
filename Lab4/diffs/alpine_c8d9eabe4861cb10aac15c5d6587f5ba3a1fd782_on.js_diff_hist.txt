@@ -1,0 +1,23 @@
+diff --git a/src/directives/on.js b/src/directives/on.js
+index bcb18504..5713806c 100644
+--- a/src/directives/on.js
++++ b/src/directives/on.js
+@@ -43,6 +43,10 @@ export function registerListener(component, el, event, modifiers, expression, ex
+             if (modifiers.includes('prevent')) e.preventDefault()
+             if (modifiers.includes('stop')) e.stopPropagation()
+ 
++            // If the .self modifier isn't present, or if it is present and
++            // the target element matches the element we are registering the
++            // event on, run the handler
++            if (! modifiers.includes('self') || e.target === el) {
+                 const returnValue = runListenerHandler(component, expression, e, extraVars)
+ 
+                 if (returnValue === false) {
+@@ -53,6 +57,7 @@ export function registerListener(component, el, event, modifiers, expression, ex
+                     }
+                 }
+             }
++        }
+ 
+         if (modifiers.includes('debounce')) {
+             let nextModifier = modifiers[modifiers.indexOf('debounce')+1] || 'invalid-wait'

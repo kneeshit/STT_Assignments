@@ -1,0 +1,12 @@
+diff --git a/butterknife-sample/src/main/res/values/strings.xml b/butterknife-sample/src/main/res/values/strings.xml
+new file mode 100644
+index 0000000..b73bb34
+--- /dev/null
++++ b/butterknife-sample/src/main/res/values/strings.xml
+@@ -0,0 +1,5 @@
++<?xml version="1.0" encoding="utf-8"?>
++
++<resources>
++  <string name="app_name">Butter Knife</string>
++</resources>
+\ No newline at end of file

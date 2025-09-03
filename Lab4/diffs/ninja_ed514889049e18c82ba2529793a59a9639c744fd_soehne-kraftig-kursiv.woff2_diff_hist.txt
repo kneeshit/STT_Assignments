@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/fonts/soehne/soehne-kraftig-kursiv.woff2 b/openai/ui/static/fonts/soehne/soehne-kraftig-kursiv.woff2
+deleted file mode 100644
+index 669ab69..0000000
+Binary files a/openai/ui/static/fonts/soehne/soehne-kraftig-kursiv.woff2 and /dev/null differ

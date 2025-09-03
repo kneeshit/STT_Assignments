@@ -1,0 +1,19 @@
+diff --git a/reqwest-impersonate/examples/wasm_github_fetch/index.js b/reqwest-impersonate/examples/wasm_github_fetch/index.js
+new file mode 100644
+index 0000000..27493dd
+--- /dev/null
++++ b/reqwest-impersonate/examples/wasm_github_fetch/index.js
+@@ -0,0 +1,12 @@
++const rust = import('./pkg');
++
++rust
++    .then(m => {
++        return m.run().then((data) => {
++            console.log(data);
++
++            console.log("The latest commit to the wasm-bindgen %s branch is:", data.name);
++            console.log("%s, authored by %s <%s>", data.commit.sha, data.commit.commit.author.name, data.commit.commit.author.email);
++        })
++    })
++    .catch(console.error);
+\ No newline at end of file

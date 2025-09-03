@@ -1,0 +1,24 @@
+diff --git a/src/directives/show.js b/src/directives/show.js
+index 9c00ad37..c5d6aa0c 100644
+--- a/src/directives/show.js
++++ b/src/directives/show.js
+@@ -2,8 +2,8 @@ import { transitionIn, transitionOut } from '../utils'
+ 
+ export function handleShowDirective(component, el, value, modifiers, initialUpdate = false) {
+     // Resolve any previous pending transitions before starting a new one
+-    if (el.__x_remaning_transitions) {
+-        el.__x_remaning_transitions()
++    if (el.__x_remaining_transitions) {
++        el.__x_remaining_transitions()
+     }
+ 
+     const hide = () => {
+@@ -32,7 +32,7 @@ export function handleShowDirective(component, el, value, modifiers, initialUpda
+             if ( el.style.display !== 'none' ) {
+                 transitionOut(el, () => {
+                     // If previous transitions still there, don't use resolve
+-                    if (el.__x_remaning_transitions) {
++                    if (el.__x_remaining_transitions) {
+                         hide()
+                     } else {
+                         resolve(() => {

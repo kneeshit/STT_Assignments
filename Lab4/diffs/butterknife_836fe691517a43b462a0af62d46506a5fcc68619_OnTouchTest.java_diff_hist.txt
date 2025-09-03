@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java b/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
+index 2065086..a95044f 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
+@@ -39,8 +39,6 @@ public class OnTouchTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

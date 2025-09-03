@@ -1,0 +1,15 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 79705cf7..3121a68a 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6323,6 +6323,10 @@
+ 
+     var extraVars = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {};
+ 
++    if (modifiers.includes('camel')) {
++      event = camelCase(event);
++    }
++
+     if (modifiers.includes('away')) {
+       var _handler = function handler(e) {
+         _newArrowCheck(this, _this);

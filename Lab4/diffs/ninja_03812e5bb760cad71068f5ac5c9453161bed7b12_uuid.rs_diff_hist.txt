@@ -1,0 +1,10 @@
+diff --git a/examples/uuid.rs b/examples/uuid.rs
+deleted file mode 100644
+index 62511f8..0000000
+--- a/examples/uuid.rs
++++ /dev/null
+@@ -1,4 +0,0 @@
+-fn main() {
+-    let uuid = openai::uuid::uuid();
+-    println!("{}", uuid)
+-}

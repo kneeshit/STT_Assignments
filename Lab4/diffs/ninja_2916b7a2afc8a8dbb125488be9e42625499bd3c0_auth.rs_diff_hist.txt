@@ -1,0 +1,12 @@
+diff --git a/examples/auth.rs b/examples/auth.rs
+index 87d548a..88df7f6 100644
+--- a/examples/auth.rs
++++ b/examples/auth.rs
+@@ -17,7 +17,6 @@ async fn main() -> anyhow::Result<()> {
+             &AuthAccountBuilder::default()
+                 .username(email)
+                 .password(password)
+-                .option(openai::auth::AuthStrategy::Web)
+                 .build()?,
+         )
+         .await?;

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <style>
+            .hidden { display: none; }
+        </style>
+    </head>
+    <body>
+        <div x-data="{ name: 'bar' }">
+            <input type="text" x-on:input="name = $event.target.value">
+
+            <span x-text="name"></span>
+        </div>
+
+        <script src="/dist/minimal.js"></script>
+        <script>
+            window.minimal.start()
+        </script>
+    </body>
+</html>

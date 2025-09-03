@@ -1,0 +1,13 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index 76c7426..68a41be 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -34,7 +34,7 @@ dependencies {
+ 
+   androidTestImplementation deps.junit
+   androidTestImplementation deps.truth
+-  androidTestImplementation deps.support.test.runner
++  androidTestImplementation deps.androidx.test.runner
+   androidTestAnnotationProcessor project(':butterknife-compiler')
+ }
+ 

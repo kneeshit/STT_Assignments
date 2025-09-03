@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+            .hidden { display: none; }
+        </style>
+    </head>
+    <body>
+        <div id="outer">
+            outer
+            <div x-data="{ isOpen: true }">
+                <button x-on:click="$data.isOpen = true"></button>
+
+                <ul x-bind:value="$data.isOpen" x-on:click.away="$data.isOpen = false">
+                    <li>...</li>
+                </ul>
+            </div>
+        </div>
+
+        <div x-data='{ isOpen: false, name: ""}'>
+            <button x-on:click="isOpen = ! isOpen">toggle</button>
+
+            <div x-bind:class="{ 'hidden' : ! isOpen }" x-on:click.away="isOpen = false">
+                <p>hey, I'm a dropdown<p>
+            </div>
+        </div>
+
+        <script src="/dist/minimal.js"></script>
+        <script>
+            window.minimal.start('hey')
+        </script>
+    </body>
+</html>

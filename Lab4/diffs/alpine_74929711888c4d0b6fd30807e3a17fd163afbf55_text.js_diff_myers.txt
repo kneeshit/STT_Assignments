@@ -1,0 +1,12 @@
+diff --git a/src/directives/text.js b/src/directives/text.js
+index 27df0881..17ab384f 100644
+--- a/src/directives/text.js
++++ b/src/directives/text.js
+@@ -1,6 +1,6 @@
+ export function handleTextDirective(el, output, expression) {
+     // If nested model key is undefined, set the default value to empty string.
+-    if (output === undefined && expression.match(/\./).length) {
++    if (output === undefined && expression.match(/\./)) {
+         output = ''
+     }
+ 

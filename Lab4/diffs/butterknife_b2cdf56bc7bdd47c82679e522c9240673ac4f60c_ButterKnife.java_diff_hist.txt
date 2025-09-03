@@ -1,0 +1,41 @@
+diff --git a/butterknife/src/main/java/butterknife/ButterKnife.java b/butterknife/src/main/java/butterknife/ButterKnife.java
+index 7814be9..0343909 100644
+--- a/butterknife/src/main/java/butterknife/ButterKnife.java
++++ b/butterknife/src/main/java/butterknife/ButterKnife.java
+@@ -368,6 +368,11 @@ public final class ButterKnife {
+     }
+   }
+ 
++  /** Apply {@code action} to {@code view}. */
++  public static <T extends View> void apply(T view, Action<? super T> action) {
++    action.apply(view, 0);
++  }
++
+   /** Set the {@code value} using the specified {@code setter} across the {@code list} of views. */
+   public static <T extends View, V> void apply(List<T> list, Setter<? super T, V> setter, V value) {
+     for (int i = 0, count = list.size(); i < count; i++) {
+@@ -375,6 +380,11 @@ public final class ButterKnife {
+     }
+   }
+ 
++  /** Set {@code value} on {@code view} using {@code setter}. */
++  public static <T extends View, V> void apply(T view, Setter<? super T, V> setter, V value) {
++    setter.set(view, value, 0);
++  }
++
+   /**
+    * Apply the specified {@code value} across the {@code list} of views using the {@code property}.
+    */
+@@ -387,6 +397,12 @@ public final class ButterKnife {
+     }
+   }
+ 
++  /** Apply {@code value} to {@code view} using {@code property}. */
++  @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
++  public static <T extends View, V> void apply(T view, Property<? super T, V> setter, V value) {
++    setter.set(view, value);
++  }
++
+   /** Simpler version of {@link View#findViewById(int)} which infers the target type. */
+   @SuppressWarnings({ "unchecked", "UnusedDeclaration" }) // Checked by runtime cast. Public API.
+   public static <T extends View> T findById(View view, int id) {

@@ -1,0 +1,17 @@
+diff --git a/openwrt/luci-app-ninja/po/zh-cn/opengpt.po b/openwrt/luci-app-ninja/po/zh-cn/opengpt.po
+index e2007c7..9c81323 100644
+--- a/openwrt/luci-app-ninja/po/zh-cn/opengpt.po
++++ b/openwrt/luci-app-ninja/po/zh-cn/opengpt.po
+@@ -37,6 +37,12 @@ msgstr "工作线程"
+ msgid "Proxies"
+ msgstr "代理"
+ 
++msgid "Turn off direct connection"
++msgstr "关闭直连"
++
++msgid "Turn off direct connection using proxy"
++msgstr "关闭直连使用代理"
++
+ msgid "TCP Keep-Alive (seconds)"
+ msgstr "TCP保活机制 (秒)"
+ 

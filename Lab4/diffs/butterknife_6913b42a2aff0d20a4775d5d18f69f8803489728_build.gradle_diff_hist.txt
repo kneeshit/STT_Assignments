@@ -1,0 +1,20 @@
+diff --git a/build.gradle b/build.gradle
+index a14015d..668cc0a 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -3,6 +3,7 @@ subprojects { project ->
+   version = VERSION_NAME
+ 
+   repositories {
++    mavenCentral()
+     maven {
+       url "https://plugins.gradle.org/m2/"
+     }
+@@ -30,6 +31,7 @@ subprojects { project ->
+ 
+   buildscript {
+     repositories {
++      mavenCentral()
+       maven {
+         url "https://plugins.gradle.org/m2/"
+       }

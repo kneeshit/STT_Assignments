@@ -1,0 +1,15 @@
+diff --git a/butterknife-integration-test/src/main/proguard.pro b/butterknife-integration-test/src/main/proguard.pro
+index 2893c55..c305430 100644
+--- a/butterknife-integration-test/src/main/proguard.pro
++++ b/butterknife-integration-test/src/main/proguard.pro
+@@ -3,6 +3,10 @@
+ 
+ # STUFF USED BY TESTS:
+ 
++-keep class butterknife.internal.Utils {
++  <methods>;
++}
++
+ -keep class butterknife.Unbinder {
+   void unbind();
+ }

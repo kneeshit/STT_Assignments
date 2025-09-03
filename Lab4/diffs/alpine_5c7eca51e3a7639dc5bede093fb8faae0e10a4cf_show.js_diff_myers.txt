@@ -1,0 +1,16 @@
+diff --git a/src/directives/show.js b/src/directives/show.js
+index 40ff51f9..58b9784d 100644
+--- a/src/directives/show.js
++++ b/src/directives/show.js
+@@ -24,9 +24,11 @@ export function handleShowDirective(component, el, value, modifiers, initialUpda
+ 
+     const handle = (resolve) => {
+         if (value) {
++            if(el.style.display === 'none' || el.__x_transition) {
+                 transitionIn(el, () => {
+                     show()
+                 }, component)
++            }
+             resolve(() => {})
+         } else {
+             if (el.style.display !== 'none') {

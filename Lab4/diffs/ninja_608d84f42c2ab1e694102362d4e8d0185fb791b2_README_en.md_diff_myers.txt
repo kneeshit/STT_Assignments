@@ -1,0 +1,30 @@
+diff --git a/README_en.md b/README_en.md
+index 71bf759..d7870fc 100644
+--- a/README_en.md
++++ b/README_en.md
+@@ -122,7 +122,7 @@ Options:
+ 
+ ### Compile
+ 
+-> Ubuntu machine for example:
++- Linux compile, Ubuntu machine for example:
+ 
+ ```shell
+ 
+@@ -136,6 +136,16 @@ git clone https://github.com/gngpp/opengpt.git && cd opengpt
+ ./corss-build.sh
+ ```
+ 
++- OpenWrt compile
++
++```shell
++cd package
++svn co https://github.com/gngpp/opengpt/trunk/openwrt
++cd -
++make menuconfig # choose LUCI->Applications->luci-app-opengpt  
++make V=s
++```
++
+ ### Preview
+ 
+ ![img0](./doc/img/img0.png)

@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/InjectViewsTest.java b/butterknife/src/test/java/butterknife/internal/InjectViewsTest.java
+index de0f902..e66ca85 100644
+--- a/butterknife/src/test/java/butterknife/internal/InjectViewsTest.java
++++ b/butterknife/src/test/java/butterknife/internal/InjectViewsTest.java
+@@ -6,8 +6,8 @@ import javax.tools.JavaFileObject;
+ import org.junit.Test;
+ 
+ import static butterknife.internal.ProcessorTestUtilities.butterknifeProcessors;
++import static com.google.common.truth.Truth.ASSERT;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+-import static org.truth0.Truth.ASSERT;
+ 
+ public class InjectViewsTest {
+   @Test public void injectingArray() {

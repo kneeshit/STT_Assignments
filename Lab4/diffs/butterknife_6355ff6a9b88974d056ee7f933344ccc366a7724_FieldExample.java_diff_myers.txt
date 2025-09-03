@@ -1,0 +1,28 @@
+diff --git a/butterknife/src/it/optional/src/main/java/butterknife/FieldExample.java b/butterknife/src/it/optional/src/main/java/butterknife/FieldExample.java
+new file mode 100644
+index 0000000..957e361
+--- /dev/null
++++ b/butterknife/src/it/optional/src/main/java/butterknife/FieldExample.java
+@@ -0,0 +1,22 @@
++package butterknife;
++
++import android.app.Activity;
++import android.os.Bundle;
++import android.view.View;
++import butterknife.InjectView;
++import butterknife.Optional;
++import butterknife.Views;
++
++public class FieldExample extends Activity {
++  static boolean HAS_ONE = true;
++
++  @InjectView(1) View thing1;
++  @Optional @InjectView(2) View thing2;
++
++  @Override public View findViewById(int id) {
++    if (HAS_ONE && id == 1) {
++      return new View(this);
++    }
++    return null;
++  }
++}

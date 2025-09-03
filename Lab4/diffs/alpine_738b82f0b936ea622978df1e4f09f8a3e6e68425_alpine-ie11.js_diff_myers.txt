@@ -1,0 +1,36 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index d21a9818..979c5255 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -5547,11 +5547,17 @@
+         el.value = value;
+       }
+     } else if (attrName === 'class') {
+-      if (Array.isArray(value)) {
+       var originalClasses = el.__x_original_classes || [];
++
++      if (Array.isArray(value)) {
+         el.setAttribute('class', arrayUnique(originalClasses.concat(value)).join(' '));
+       } else if (_typeof(value) === 'object') {
+-        Object.keys(value).forEach(function (classNames) {
++        var keysSortedByBoolean = Object.keys(value).sort(function (a, b) {
++          _newArrowCheck(this, _this);
++
++          return value[a] - value[b];
++        }.bind(this));
++        keysSortedByBoolean.forEach(function (classNames) {
+           var _this2 = this;
+ 
+           _newArrowCheck(this, _this);
+@@ -5571,10 +5577,8 @@
+           }
+         }.bind(this));
+       } else {
+-        var _originalClasses = el.__x_original_classes || [];
+-
+         var newClasses = value.split(' ');
+-        el.setAttribute('class', arrayUnique(_originalClasses.concat(newClasses)).join(' '));
++        el.setAttribute('class', arrayUnique(originalClasses.concat(newClasses)).join(' '));
+       }
+     } else if (isBooleanAttr(attrName)) {
+       // Boolean attributes have to be explicitly added and removed, not just set.

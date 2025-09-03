@@ -1,0 +1,23 @@
+diff --git a/openai/src/serve/router/toapi/req.rs b/openai/src/serve/router/toapi/req.rs
+new file mode 100644
+index 0000000..e13ad96
+--- /dev/null
++++ b/openai/src/serve/router/toapi/req.rs
+@@ -0,0 +1,17 @@
++use serde::Deserialize;
++
++use crate::chatgpt::model::Role;
++
++#[derive(Deserialize)]
++pub struct Req {
++    pub model: String,
++    pub messages: Vec<Message>,
++    #[serde(default)]
++    pub stream: bool,
++}
++
++#[derive(Deserialize)]
++pub struct Message {
++    pub role: Role,
++    pub content: String,
++}

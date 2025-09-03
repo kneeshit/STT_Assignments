@@ -1,0 +1,20 @@
+diff --git a/butterknife-sample/src/androidTest/java/com/example/butterknife/SimpleActivityTest.java b/butterknife-sample/src/androidTest/java/com/example/butterknife/SimpleActivityTest.java
+new file mode 100644
+index 0000000..5deb2a5
+--- /dev/null
++++ b/butterknife-sample/src/androidTest/java/com/example/butterknife/SimpleActivityTest.java
+@@ -0,0 +1,14 @@
++package com.example.butterknife;
++
++import android.test.ActivityInstrumentationTestCase2;
++
++public final class SimpleActivityTest extends ActivityInstrumentationTestCase2<SimpleActivity> {
++  public SimpleActivityTest() {
++    super(SimpleActivity.class);
++  }
++
++  public void testActivityStarts() {
++    getActivity(); // Trigger activity creation.
++    getInstrumentation().waitForIdleSync(); // Wait for it to complete startup.
++  }
++}

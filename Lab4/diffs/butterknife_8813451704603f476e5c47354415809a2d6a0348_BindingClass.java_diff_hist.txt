@@ -1,0 +1,40 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+index f8c7662..7a5624a 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+@@ -406,7 +406,7 @@ final class BindingClass {
+   }
+ 
+   private void generateBindViewBody(MethodSpec.Builder result) {
+-    if (hasResourceBindings()) {
++    if (hasUnqualifiedResourceBindings()) {
+       // Aapt can change IDs out from underneath us, just suppress since all will work at runtime.
+       result.addAnnotation(AnnotationSpec.builder(SuppressWarnings.class)
+           .addMember("value", "$S", "ResourceType")
+@@ -758,6 +758,26 @@ final class BindingClass {
+     return !(bitmapBindings.isEmpty() && drawableBindings.isEmpty() && resourceBindings.isEmpty());
+   }
+ 
++  /** True when this type's bindings use raw integer values instead of {@code R} references. */
++  private boolean hasUnqualifiedResourceBindings() {
++    for (FieldBitmapBinding binding : bitmapBindings) {
++      if (!binding.getId().qualifed) {
++        return true;
++      }
++    }
++    for (FieldDrawableBinding binding : drawableBindings) {
++      if (!binding.getId().qualifed) {
++        return true;
++      }
++    }
++    for (FieldResourceBinding binding : resourceBindings) {
++      if (!binding.getId().qualifed) {
++        return true;
++      }
++    }
++    return false;
++  }
++
+   /** True when this type's resource bindings require Android's {@code Theme}. */
+   private boolean hasResourceBindingsNeedingTheme() {
+     if (!drawableBindings.isEmpty()) {

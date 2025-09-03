@@ -1,0 +1,18 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindDimen.java b/butterknife-annotations/src/main/java/butterknife/BindDimen.java
+index 60682b2..172871f 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindDimen.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindDimen.java
+@@ -1,5 +1,6 @@
+ package butterknife;
+ 
++import android.support.annotation.DimenRes;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 
+@@ -17,5 +18,5 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ @Retention(CLASS) @Target(FIELD)
+ public @interface BindDimen {
+   /** Dimension resource ID to which the field will be bound. */
+-  int value();
++  @DimenRes int value();
+ }

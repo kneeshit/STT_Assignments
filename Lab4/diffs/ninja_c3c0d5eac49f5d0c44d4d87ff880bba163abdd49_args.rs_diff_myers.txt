@@ -1,0 +1,50 @@
+diff --git a/src/args.rs b/src/args.rs
+index af01f98..3c75ad0 100644
+--- a/src/args.rs
++++ b/src/args.rs
+@@ -53,8 +53,9 @@ pub(super) enum ServeSubcommand {
+ #[derive(Args, Debug, Default, Serialize, Deserialize)]
+ pub(super) struct ServeArgs {
+     /// Configuration file path (toml format file)
+-    #[clap(short = 'C', long, value_parser = util::parse_config)]
++    #[clap(short = 'C', long, value_parser = util::parse_file_path)]
+     pub(super) config: Option<PathBuf>,
++
+     /// Server Listen host
+     #[clap(short = 'H', long, env = "OPENGPT_HOST", default_value = "0.0.0.0", value_parser = util::parse_host)]
+     pub(super) host: Option<std::net::IpAddr>,
+@@ -67,9 +71,11 @@ pub(super) struct ServeArgs {
+     /// Enforces a limit on the concurrent number of requests the underlying
+     #[clap(long, default_value = "65535")]
+     pub(super) concurrent_limit: usize,
++
+     /// Server proxies pool, Example: protocol://user:pass@ip:port
+-    #[clap(long, value_parser = util::parse_proxies_url)]
++    #[clap(long, env = "OPENGPT_PROXIES", value_parser = util::parse_proxies_url)]
+     pub(super) proxies: Option<std::vec::Vec<String>>,
++
+     /// Client timeout (seconds)
+     #[clap(long, default_value = "600")]
+     pub(super) timeout: usize,
+@@ -97,12 +111,19 @@ pub(super) struct ServeArgs {
+     /// Arkose endpoint, Example: https://client-api.arkoselabs.com
+     #[clap(long, value_parser = util::parse_url)]
+     pub(super) arkose_endpoint: Option<String>,
+-    /// Get arkose-token endpoint
++
++    /// Get arkose token endpoint
+     #[clap(short = 'A', long, value_parser = util::parse_url)]
+     pub(super) arkose_token_endpoint: Option<String>,
++
++    /// About the browser HAR file path requested by ArkoseLabs
++    #[clap(short, long, value_parser = util::parse_file_path)]
++    pub(super) arkose_har_path: Option<PathBuf>,
++
++    /// About the YesCaptcha platform client key solved by ArkoseLabs
+     #[clap(short = 'Y', long)]
+-    /// yescaptcha client key
+     pub(super) arkose_yescaptcha_key: Option<String>,
++
+     /// Enable url signature (signature secret key)
+     #[clap(short = 'S', long)]
+     #[cfg(feature = "sign")]

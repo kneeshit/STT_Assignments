@@ -1,0 +1,47 @@
+diff --git a/src/directives/show.js b/src/directives/show.js
+index 70b89b59..571944e8 100644
+--- a/src/directives/show.js
++++ b/src/directives/show.js
+@@ -28,31 +28,21 @@ export function handleShowDirective(component, el, value, modifiers, initialUpda
+     }
+ 
+     const handle = (resolve) => {
+-        if (! value) {
+-            if ( el.style.display !== 'none' ) {
+-                transitionOut(el, () => {
+-                    // If there is a remaning transition
+-                    // and value is changed, don't use resolve
+-                    if ( el.__x_transition_remaining ) {
+-                        hide()
+-                    } else {
+-                        resolve(() => {
+-                            hide()
+-                        })
+-                    }
+-                }, component)
+-            } else {
+-                resolve(() => {})
+-            }
+-        } else {
+-            if ( el.style.display !== '' ) {
++        if(value) {
+             transitionIn(el,() => {
+                 show()
+             }, component)
+-            }
+-
+-            // Resolve immediately, only hold up parent `x-show`s for hiding.
+             resolve(() => {})
++        } else {
++            if ( el.style.display !== 'none' ) {
++                transitionOut(el, () => {
++                    resolve(() => {
++                        hide()
++                    })
++                },component)
++            } else {
++                resolve(() => {})
++            }
+         }
+ 
+         // Asign current value to el to check later on for preventing transition overlaps

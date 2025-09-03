@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/test/java/butterknife/OnFocusChangeTest.java b/butterknife/src/test/java/butterknife/OnFocusChangeTest.java
+index b503b8e..d8216f1 100644
+--- a/butterknife/src/test/java/butterknife/OnFocusChangeTest.java
++++ b/butterknife/src/test/java/butterknife/OnFocusChangeTest.java
+@@ -12,9 +12,8 @@ public class OnFocusChangeTest {
+   @Test public void focusChange() {
+     JavaFileObject source = JavaFileObjects.forSourceString("test.Test", ""
+         + "package test;\n"
+-        + "import android.app.Activity;\n"
+         + "import butterknife.OnFocusChange;\n"
+-        + "public class Test extends Activity {\n"
++        + "public class Test {\n"
+         + "  @OnFocusChange(1) void doStuff() {}\n"
+         + "}"
+     );

@@ -1,0 +1,12 @@
+diff --git a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleActivityTest.java b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleActivityTest.java
+index 3e2d8fa..d7da301 100644
+--- a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleActivityTest.java
++++ b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/library/SimpleActivityTest.java
+@@ -1,6 +1,6 @@
+ package com.example.butterknife.library;
+ 
+-import android.support.test.rule.ActivityTestRule;
++import androidx.test.rule.ActivityTestRule;
+ import butterknife.ButterKnife;
+ import butterknife.Unbinder;
+ import com.example.butterknife.R;

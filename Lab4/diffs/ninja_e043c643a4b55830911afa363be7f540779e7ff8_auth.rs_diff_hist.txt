@@ -1,0 +1,25 @@
+diff --git a/openai/src/auth.rs b/openai/src/auth.rs
+index 7d9f820..73f3293 100644
+--- a/openai/src/auth.rs
++++ b/openai/src/auth.rs
+@@ -587,6 +587,20 @@ pub struct OAuthAccount {
+     mfa: Option<String>,
+ }
+ 
++impl OAuthAccount {
++    pub fn username(&self) -> &str {
++        self.username.as_ref()
++    }
++
++    pub fn password(&self) -> &str {
++        self.password.as_ref()
++    }
++
++    pub fn mfa(&self) -> Option<&String> {
++        self.mfa.as_ref()
++    }
++}
++
+ pub struct OAuthClientBuilder {
+     builder: reqwest::ClientBuilder,
+     oauth: OAuthClient,

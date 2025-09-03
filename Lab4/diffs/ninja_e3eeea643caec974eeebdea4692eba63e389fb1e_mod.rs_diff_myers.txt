@@ -1,0 +1,24 @@
+diff --git a/openai/src/serve/router/toapi/mod.rs b/openai/src/serve/router/toapi/mod.rs
+index ee36d28..0b97b04 100644
+--- a/openai/src/serve/router/toapi/mod.rs
++++ b/openai/src/serve/router/toapi/mod.rs
+@@ -73,7 +73,9 @@ pub(crate) async fn chat_to_api(
+ 
+     let client = context::get_instance().client();
+     let new_headers = header_convert(&headers, &jar).await?;
+-    if GPTModel::from_str(model_mapper.0).is_ok() {
++
++    match GPTModel::from_str(model_mapper.0) {
++        Ok(GPTModel::Gpt4Other) | Ok(GPTModel::Gpt4model) => {
+             if !has_puid(&new_headers)? {
+                 let result = client
+                     .get(format!("{URL_CHATGPT_API}/backend-api/models"))
+@@ -87,6 +89,8 @@ pub(crate) async fn chat_to_api(
+                     .map_err(ResponseError::BadRequest)?;
+             }
+         }
++        _ => {}
++    }
+ 
+     let resp = client
+         .post(format!("{URL_CHATGPT_API}/backend-api/conversation"))

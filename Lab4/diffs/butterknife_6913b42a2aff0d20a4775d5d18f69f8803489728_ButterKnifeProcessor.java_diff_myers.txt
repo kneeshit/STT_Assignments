@@ -1,0 +1,35 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+index 83934cd..bad8984 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+@@ -1037,7 +1037,9 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+           if (methodParameterUsed.get(j)) {
+             continue;
+           }
+-          if (isSubtypeOfType(methodParameterType, parameterTypes[j])
++          if ((isSubtypeOfType(methodParameterType, parameterTypes[j])
++                  && isSubtypeOfType(methodParameterType, VIEW_TYPE))
++              || isTypeEqual(methodParameterType, parameterTypes[j])
+               || isInterface(methodParameterType)) {
+             parameters[i] = new Parameter(j, TypeName.get(methodParameterType));
+             methodParameterUsed.set(j);
+@@ -1103,7 +1105,7 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+   }
+ 
+   private boolean isSubtypeOfType(TypeMirror typeMirror, String otherType) {
+-    if (otherType.equals(typeMirror.toString())) {
++    if (isTypeEqual(typeMirror, otherType)) {
+       return true;
+     }
+     if (typeMirror.getKind() != TypeKind.DECLARED) {
+@@ -1142,6 +1144,10 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+     return false;
+   }
+ 
++  private boolean isTypeEqual(TypeMirror typeMirror, String otherType) {
++    return otherType.equals(typeMirror.toString());
++  }
++
+   private BindingSet.Builder getOrCreateBindingBuilder(
+       Map<TypeElement, BindingSet.Builder> builderMap, TypeElement enclosingElement) {
+     BindingSet.Builder builder = builderMap.get(enclosingElement);

@@ -1,0 +1,13 @@
+diff --git a/index.html b/index.html
+index 118281e2..c3df0859 100644
+--- a/index.html
++++ b/index.html
+@@ -45,7 +45,7 @@
+             <span class="" x-bind:class="['hey']"></span>
+         </div>
+ 
+-        <script src="/dist/minimal.js"></script>
++        <script src="/dist/minimal.min.js"></script>
+         <script>
+             window.minimal.start()
+         </script>

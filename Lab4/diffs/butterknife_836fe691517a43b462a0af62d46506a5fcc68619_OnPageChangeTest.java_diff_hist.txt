@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java b/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java
+index b0dc381..bab5f4b 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java
+@@ -43,8 +43,6 @@ public class OnPageChangeTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

@@ -1,0 +1,12 @@
+diff --git a/src/handle.rs b/src/handle.rs
+index 23d171b..c2e6dd5 100644
+--- a/src/handle.rs
++++ b/src/handle.rs
+@@ -4,7 +4,6 @@ use crate::{args::ServeArgs, env::fix_relative_path};
+ 
+ #[tokio::main]
+ pub(super) async fn serve(mut args: ServeArgs, relative_path: bool) -> anyhow::Result<()> {
+-    env_logger::init_from_env(env_logger::Env::default());
+  
+     if relative_path {
+         fix_relative_path(&mut args);

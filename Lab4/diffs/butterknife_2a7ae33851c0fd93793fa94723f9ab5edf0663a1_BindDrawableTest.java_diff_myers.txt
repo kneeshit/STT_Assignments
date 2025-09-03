@@ -1,0 +1,18 @@
+diff --git a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindDrawableTest.java b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindDrawableTest.java
+index cdcef7a..37f47c5 100644
+--- a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindDrawableTest.java
++++ b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindDrawableTest.java
+@@ -10,12 +10,11 @@ import butterknife.Unbinder;
+ import com.example.butterknife.test.R;
+ import org.junit.Test;
+ 
+-import static com.example.butterknife.functional.ViewTestUtils.treeWithIds;
+ import static com.google.common.truth.Truth.assertThat;
+ 
+ public final class BindDrawableTest {
+   private final Context context = InstrumentationRegistry.getContext();
+-  private final View tree = treeWithIds(1);
++  private final View tree = ViewTree.create(1);
+ 
+   static class Target {
+     @BindDrawable(R.drawable.circle) Drawable actual;

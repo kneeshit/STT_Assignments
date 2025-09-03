@@ -1,0 +1,22 @@
+diff --git a/openai/src/arkose/har.rs b/openai/src/arkose/har.rs
+index 74e8728..7c729fe 100644
+--- a/openai/src/arkose/har.rs
++++ b/openai/src/arkose/har.rs
+@@ -3,6 +3,7 @@ use crate::urldecoding;
+ use base64::Engine;
+ use serde::Deserialize;
+ use std::{path::Path, sync::Mutex};
++use time::format_description::well_known::Rfc3339;
+ 
+ static LOCK: Mutex<()> = Mutex::new(());
+ static mut CACHE_REQUEST_ENTRY: Option<RequestEntry> = None;
+@@ -29,7 +30,8 @@ fn parse(har: Har) -> anyhow::Result<RequestEntry> {
+             anyhow::bail!("Invalid HAR file");
+         }
+ 
+-        let bt = chrono::DateTime::parse_from_rfc3339(&entry.started_date_time)?.timestamp();
++        let started_date_time = time::OffsetDateTime::parse(&entry.started_date_time, &Rfc3339)?;
++        let bt = started_date_time.unix_timestamp();
+         let bw = bt - (bt % 21600);
+         let mut bv = String::new();
+ 

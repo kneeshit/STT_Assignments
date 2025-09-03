@@ -1,0 +1,15 @@
+diff --git a/gohttp/build.sh b/gohttp/build.sh
+new file mode 100755
+index 0000000..968b625
+--- /dev/null
++++ b/gohttp/build.sh
+@@ -0,0 +1,9 @@
++#!/bin/sh
++
++set -e 
++
++echo "Start building the  platform static library"
++
++cd ffi
++go build -ldflags "-s -w" -buildmode=c-archive -o libgohttp.a
++cd -

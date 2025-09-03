@@ -1,0 +1,13 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index b141234a..4a533d41 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -581,7 +581,7 @@
+ 
+ 
+     if (isNumeric(iteratorNames.items)) {
+-      return [...Array(parseInt(iteratorNames.items)).keys()];
++      return [...Array(parseInt(iteratorNames.items, 10)).keys()];
+     }
+ 
+     return component.evaluateReturnExpression(el, iteratorNames.items, extraVars);

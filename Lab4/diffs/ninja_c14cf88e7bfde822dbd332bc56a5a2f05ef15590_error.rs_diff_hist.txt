@@ -1,0 +1,13 @@
+diff --git a/openai/src/error.rs b/openai/src/error.rs
+index 448dc13..3c85631 100644
+--- a/openai/src/error.rs
++++ b/openai/src/error.rs
+@@ -50,6 +50,8 @@ pub enum AuthError {
+     MFARequired,
+     #[error("json deserialize error (error {0:?})")]
+     DeserializeError(String),
++    #[error("implementation is not supported")]
++    NotSupportedImplementation,
+ }
+ 
+ #[derive(thiserror::Error, Debug)]

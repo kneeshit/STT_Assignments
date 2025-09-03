@@ -1,0 +1,11 @@
+diff --git a/docker/Dockerfile b/docker/Dockerfile
+index 0e95d8c..c302ec9 100644
+--- a/docker/Dockerfile
++++ b/docker/Dockerfile
+@@ -30,3 +30,5 @@ LABEL url https://github.com/gngpp/opengpt
+ ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=C
+ 
+ COPY --from=builder /opengpt /bin/opengpt
++
++ENTRYPOINT ["/bin/opengpt"]
+\ No newline at end of file

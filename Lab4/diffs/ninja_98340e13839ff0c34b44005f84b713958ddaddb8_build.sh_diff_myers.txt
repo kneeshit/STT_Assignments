@@ -1,0 +1,11 @@
+diff --git a/docker/builder/build.sh b/docker/builder/build.sh
+index 04b0e1c..2fd4d13 100755
+--- a/docker/builder/build.sh
++++ b/docker/builder/build.sh
+@@ -23,5 +23,5 @@ for key in "${!map[@]}"; do
+   docker rmi gngpp/ninja-builder:"$key"
+   docker rmi ghcr.io/gngpp/ninja-builder:"$key"
+   
+-  docker rmi ${map[$key]}
++  docker rmi "${map[$key]}"
+ done

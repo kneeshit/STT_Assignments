@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/fonts/signifier/signifier-bold.woff2 b/openai/ui/static/fonts/signifier/signifier-bold.woff2
+deleted file mode 100644
+index b76fecb..0000000
+Binary files a/openai/ui/static/fonts/signifier/signifier-bold.woff2 and /dev/null differ

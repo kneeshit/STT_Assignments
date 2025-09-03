@@ -1,0 +1,17 @@
+diff --git a/butterknife-runtime/src/test/java/butterknife/BindAnimTest.java b/butterknife-runtime/src/test/java/butterknife/BindAnimTest.java
+index 3cbff42..282f660 100644
+--- a/butterknife-runtime/src/test/java/butterknife/BindAnimTest.java
++++ b/butterknife-runtime/src/test/java/butterknife/BindAnimTest.java
+@@ -26,10 +26,10 @@ public class BindAnimTest {
+         + "// Generated code from Butter Knife. Do not modify!\n"
+         + "package test;\n"
+         + "import android.content.Context;\n"
+-        + "import android.support.annotation.CallSuper;\n"
+-        + "import android.support.annotation.UiThread;\n"
+         + "import android.view.View;\n"
+         + "import android.view.animation.AnimationUtils;\n"
++        + "import androidx.annotation.CallSuper;\n"
++        + "import androidx.annotation.UiThread;\n"
+         + "import butterknife.Unbinder;\n"
+         + "import java.lang.Deprecated;\n"
+         + "import java.lang.Override;\n"

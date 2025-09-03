@@ -1,0 +1,19 @@
+diff --git a/openai/src/api/models/resp.rs b/openai/src/api/models/resp.rs
+index 1382c08..20fc179 100644
+--- a/openai/src/api/models/resp.rs
++++ b/openai/src/api/models/resp.rs
+@@ -196,12 +196,12 @@ impl PostConversationResponse {
+         self.message
+             .content
+             .parts
+-            .iter()
++            .into_iter()
+             .map(|c| {
+                 if let Some(c) = crate::unescape::unescape(&c) {
+                     return c;
+                 }
+-                c.to_string()
++                c
+             })
+             .collect()
+     }

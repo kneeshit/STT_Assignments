@@ -1,0 +1,42 @@
+diff --git a/src/utils.js b/src/utils.js
+index 6e84fda2..f10eabed 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -408,7 +408,7 @@ export function transition(el, stages) {
+             stages.end()
+ 
+             // Assign current transition to el in case we need to force it.
+-            el.__x_transition_remaining = once(() => {
++            setTimeout(() => {
+                 stages.hide()
+ 
+                 // Adding an "isConnected" check, in case the callback
+@@ -416,12 +416,7 @@ export function transition(el, stages) {
+                 if (el.isConnected) {
+                     stages.cleanup()
+                 }
+-
+-                 // Safe to remove transition from el since it is completed.
+-                 delete el.__x_transition_remaining
+-            })
+-
+-            setTimeout(el.__x_transition_remaining, duration);
++            }, duration)
+         })
+     });
+ }
+@@ -429,14 +424,3 @@ export function transition(el, stages) {
+ export function isNumeric(subject){
+     return ! isNaN(subject)
+ }
+-
+-export function once(callback) {
+-    let called = false
+-
+-    return function () {
+-        if (! called) {
+-            called = true
+-            callback.apply(this, arguments)
+-        }
+-    }
+-}

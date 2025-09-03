@@ -1,0 +1,49 @@
+diff --git a/dist/project-x.js b/dist/project-x.js
+index 81eb2034..42cc6024 100644
+--- a/dist/project-x.js
++++ b/dist/project-x.js
+@@ -958,9 +958,7 @@ function () {
+               expression = _ref2.expression;
+ 
+           switch (type) {
+-            case 'bind':
+-              var attrName = value;
+-
++            case 'model':
+               var _self$evaluateReturnE = self.evaluateReturnExpression(expression),
+                   output = _self$evaluateReturnE.output,
+                   deps = _self$evaluateReturnE.deps;
+@@ -968,16 +966,31 @@ function () {
+               if (self.concernedData.filter(function (i) {
+                 return deps.includes(i);
+               }).length > 0) {
+-                self.updateAttributeValue(el, attrName, output);
++                self.updateAttributeValue(el, 'value', output);
+               }
+ 
+               break;
+ 
+-            case 'text':
++            case 'bind':
++              var attrName = value;
++
+               var _self$evaluateReturnE2 = self.evaluateReturnExpression(expression),
+                   output = _self$evaluateReturnE2.output,
+                   deps = _self$evaluateReturnE2.deps;
+ 
++              if (self.concernedData.filter(function (i) {
++                return deps.includes(i);
++              }).length > 0) {
++                self.updateAttributeValue(el, attrName, output);
++              }
++
++              break;
++
++            case 'text':
++              var _self$evaluateReturnE3 = self.evaluateReturnExpression(expression),
++                  output = _self$evaluateReturnE3.output,
++                  deps = _self$evaluateReturnE3.deps;
++
+               if (self.concernedData.filter(function (i) {
+                 return deps.includes(i);
+               }).length > 0) {

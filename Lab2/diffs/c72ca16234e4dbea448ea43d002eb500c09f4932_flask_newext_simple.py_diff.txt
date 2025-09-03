@@ -1,0 +1,2 @@
+@@ -0,0 +1 @@
++ext_id = 'newext_simple'

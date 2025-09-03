@@ -1,0 +1,32 @@
+diff --git a/butterknife/src/it/optional/src/main/java/butterknife/MethodExample.java b/butterknife/src/it/optional/src/main/java/butterknife/MethodExample.java
+deleted file mode 100644
+index 2b00b53..0000000
+--- a/butterknife/src/it/optional/src/main/java/butterknife/MethodExample.java
++++ /dev/null
+@@ -1,26 +0,0 @@
+-package butterknife;
+-
+-import android.app.Activity;
+-import android.os.Bundle;
+-import android.view.View;
+-import butterknife.InjectView;
+-import butterknife.OnClick;
+-import butterknife.Optional;
+-import butterknife.Views;
+-
+-public class MethodExample extends Activity {
+-  static boolean HAS_ONE = true;
+-
+-  @OnClick(1)
+-  public void doStuff() {}
+-
+-  @Optional @OnClick(2)
+-  public void doOtherStuff() {}
+-
+-  @Override public View findViewById(int id) {
+-    if (HAS_ONE && id == 1) {
+-      return new View(this);
+-    }
+-    return null;
+-  }
+-}

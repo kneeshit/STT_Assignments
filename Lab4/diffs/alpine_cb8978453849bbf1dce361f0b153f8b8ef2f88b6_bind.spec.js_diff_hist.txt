@@ -1,0 +1,24 @@
+diff --git a/test/bind.spec.js b/test/bind.spec.js
+index 9385b8f3..ad7ad578 100644
+--- a/test/bind.spec.js
++++ b/test/bind.spec.js
+@@ -159,7 +159,7 @@ test('class attribute bindings are added by array syntax', async () => {
+ 
+     Alpine.start()
+ 
+-    expect(document.querySelector('span').classList.contains('foo')).toBeTruthy
++    expect(document.querySelector('span').classList.contains('foo')).toBeTruthy()
+ })
+ 
+ test('class attribute bindings are synced by string syntax', async () => {
+@@ -171,8 +171,8 @@ test('class attribute bindings are synced by string syntax', async () => {
+ 
+     Alpine.start()
+ 
+-    expect(document.querySelector('span').classList.contains('bar')).toBeTruthy
+-    expect(document.querySelector('span').classList.contains('baz')).toBeTruthy
++    expect(document.querySelector('span').classList.contains('bar')).toBeTruthy()
++    expect(document.querySelector('span').classList.contains('baz')).toBeTruthy()
+ })
+ 
+ test('boolean attributes set to false are removed from element', async () => {

@@ -1,0 +1,22 @@
+diff --git a/src/directives/on.js b/src/directives/on.js
+index bcb18504..3c6eccbc 100644
+--- a/src/directives/on.js
++++ b/src/directives/on.js
+@@ -34,7 +34,7 @@ export function registerListener(component, el, event, modifiers, expression, ex
+                 }
+             }
+ 
+-            if (isKeyEvent(event)) {
++            if (isKeyEvent(e)) {
+                 if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
+                     return
+                 }
+@@ -71,7 +71,7 @@ function runListenerHandler(component, expression, e, extraVars) {
+ }
+ 
+ function isKeyEvent(event) {
+-    return ['keydown', 'keyup'].includes(event)
++    return event instanceof KeyboardEvent && ['keydown', 'keyup'].includes(event.type)
+ }
+ 
+ function isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers) {

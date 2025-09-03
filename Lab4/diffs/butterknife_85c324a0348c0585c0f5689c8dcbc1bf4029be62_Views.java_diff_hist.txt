@@ -1,0 +1,42 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index f35f3f4..34af1a8 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -77,18 +77,6 @@ public class Views {
+     inject(target, target, Finder.VIEW);
+   }
+ 
+-  /**
+-   * Inject fields annotated with {@link InjectView} in the specified {@code source} using the
+-   * {@code target} {@link View} as the view root.
+-   *
+-   * @param target Target class for field injection.
+-   * @param source View root on which IDs will be looked up.
+-   * @throws UnableToInjectException if injection could not be performed.
+-   */
+-  public static void inject(Object target, View source) {
+-    inject(target, source, Finder.VIEW);
+-  }
+-
+   /**
+    * Inject fields annotated with {@link InjectView} in the specified {@code source} using the
+    * {@code target} {@link Activity} as the view root.
+@@ -101,6 +89,18 @@ public class Views {
+     inject(target, source, Finder.ACTIVITY);
+   }
+ 
++  /**
++   * Inject fields annotated with {@link InjectView} in the specified {@code source} using the
++   * {@code target} {@link View} as the view root.
++   *
++   * @param target Target class for field injection.
++   * @param source View root on which IDs will be looked up.
++   * @throws UnableToInjectException if injection could not be performed.
++   */
++  public static void inject(Object target, View source) {
++    inject(target, source, Finder.VIEW);
++  }
++
+   private static void inject(Object target, Object source, Finder finder) {
+     try {
+       Class<?> targetClass = target.getClass();

@@ -1,0 +1,23 @@
+diff --git a/rollup-ie11.config.js b/rollup-ie11.config.js
+index 1133fee2..4842603c 100644
+--- a/rollup-ie11.config.js
++++ b/rollup-ie11.config.js
+@@ -5,6 +5,7 @@ import commonjs from '@rollup/plugin-commonjs';
+ import multi from '@rollup/plugin-multi-entry';
+ import replace from '@rollup/plugin-replace';
+ import pkg from './package.json';
++import stripCode from 'rollup-plugin-strip-code';
+ 
+ export default {
+     input: ['src/polyfills.js', 'src/index.js'],
+@@ -24,6 +25,10 @@ export default {
+         }),
+         resolve(),
+         filesize(),
++        stripCode({
++            start_comment: 'MODERN-ONLY:START',
++            end_comment: 'MODERN-ONLY:END'
++        }),
+         babel({
+             babelrc: false,
+             exclude: 'node_modules/**',

@@ -1,0 +1,22 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 0b63d3c4..807c9dbf 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -4930,6 +4930,17 @@
+   }
+   function saferEvalNoReturn(expression, dataContext) {
+     var additionalHelperVariables = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
++
++    // For the cases when users pass only a function reference to the caller: `x-on:click="foo"`
++    // Where "foo" is a function. Also, we'll pass the function the event instance when we call it.
++    if (Object.keys(dataContext).includes(expression)) {
++      var methodReference = new Function(['dataContext'].concat(_toConsumableArray(Object.keys(additionalHelperVariables))), "with(dataContext) { return ".concat(expression, " }")).apply(void 0, [dataContext].concat(_toConsumableArray(Object.values(additionalHelperVariables))));
++
++      if (typeof methodReference === 'function') {
++        return methodReference.call(dataContext, additionalHelperVariables['$event']);
++      }
++    }
++
+     return new Function(['dataContext'].concat(_toConsumableArray(Object.keys(additionalHelperVariables))), "with(dataContext) { ".concat(expression, " }")).apply(void 0, [dataContext].concat(_toConsumableArray(Object.values(additionalHelperVariables))));
+   }
+   function isXAttr(attr) {

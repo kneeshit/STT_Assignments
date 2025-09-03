@@ -1,0 +1,14 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index d67d893..9aa31e6 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -112,7 +112,8 @@ impl Launcher {
+             ))
+             .layer(tower::timeout::TimeoutLayer::new(Duration::from_secs(
+                 self.inner.timeout as u64,
+-            )));
++            )))
++            .layer(axum::extract::DefaultBodyLimit::max(200 * 1024 * 1024));
+ 
+         let app_layer = {
+             let limit_context = TokenBucketLimitContext::from((

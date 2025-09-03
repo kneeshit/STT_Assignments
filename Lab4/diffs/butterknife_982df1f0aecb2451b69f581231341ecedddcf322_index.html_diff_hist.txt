@@ -1,0 +1,13 @@
+diff --git a/website/index.html b/website/index.html
+index 05fcc47..511c7d4 100644
+--- a/website/index.html
++++ b/website/index.html
+@@ -73,7 +73,7 @@
+     holder.name.setText("John Doe");
+     // etc...
+ 
+-    return convertView;
++    return view;
+   }
+ 
+   static class ViewHolder {

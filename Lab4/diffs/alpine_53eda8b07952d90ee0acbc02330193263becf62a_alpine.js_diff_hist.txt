@@ -1,0 +1,13 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index 6eef13f6..7108b2f3 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -90,7 +90,7 @@
+       node = node.nextElementSibling;
+     }
+   }
+-  function debounce(func, wait, context = this) {
++  function debounce(func, wait, context) {
+     return function () {
+       var args = arguments;
+ 

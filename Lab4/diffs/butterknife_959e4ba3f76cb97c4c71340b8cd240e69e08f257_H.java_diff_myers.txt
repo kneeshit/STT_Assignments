@@ -1,0 +1,21 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/unbinder/H.java b/butterknife-sample/src/main/java/com/example/butterknife/unbinder/H.java
+index 6ed35ad..e9cd413 100644
+--- a/butterknife-sample/src/main/java/com/example/butterknife/unbinder/H.java
++++ b/butterknife-sample/src/main/java/com/example/butterknife/unbinder/H.java
+@@ -3,14 +3,14 @@ package com.example.butterknife.unbinder;
+ import android.support.annotation.ColorInt;
+ import android.view.View;
+ 
+-import butterknife.Bind;
++import butterknife.BindView;
+ import butterknife.BindColor;
+ import butterknife.ButterKnife;
+ 
+ public class H extends G {
+ 
+   @BindColor(android.R.color.primary_text_dark) @ColorInt int grayColor;
+-  @Bind(android.R.id.button3) View button3;
++  @BindView(android.R.id.button3) View button3;
+ 
+   public H(View view) {
+     super(view);

@@ -1,0 +1,17 @@
+diff --git a/butterknife-runtime/src/main/java/butterknife/internal/DebouncingOnClickListener.java b/butterknife-runtime/src/main/java/butterknife/internal/DebouncingOnClickListener.java
+index f936ff6..b1de399 100644
+--- a/butterknife-runtime/src/main/java/butterknife/internal/DebouncingOnClickListener.java
++++ b/butterknife-runtime/src/main/java/butterknife/internal/DebouncingOnClickListener.java
+@@ -9,11 +9,7 @@ import android.view.View;
+ public abstract class DebouncingOnClickListener implements View.OnClickListener {
+   static boolean enabled = true;
+ 
+-  private static final Runnable ENABLE_AGAIN = new Runnable() {
+-    @Override public void run() {
+-      enabled = true;
+-    }
+-  };
++  private static final Runnable ENABLE_AGAIN = () -> enabled = true;
+ 
+   @Override public final void onClick(View v) {
+     if (enabled) {

@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index 1ea3f67..6be9d98 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -93,7 +93,7 @@ pub struct Launcher {
+     #[cfg(feature = "limit")]
+     tb_store_strategy: tokenbucket::Strategy,
+     /// Tokenbucket redis url
+-    tb_redis_url: Vec<String>,
++    tb_redis_url: String,
+     /// Tokenbucket capacity
+     #[cfg(feature = "limit")]
+     tb_capacity: u32,

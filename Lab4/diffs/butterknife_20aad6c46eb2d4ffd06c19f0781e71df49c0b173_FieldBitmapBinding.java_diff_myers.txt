@@ -1,0 +1,23 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/FieldBitmapBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/FieldBitmapBinding.java
+index 19b3784..9c102af 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/FieldBitmapBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/FieldBitmapBinding.java
+@@ -1,15 +1,15 @@
+ package butterknife.compiler;
+ 
+ final class FieldBitmapBinding {
+-  private final int id;
++  private final Id id;
+   private final String name;
+ 
+-  FieldBitmapBinding(int id, String name) {
++  FieldBitmapBinding(Id id, String name) {
+     this.id = id;
+     this.name = name;
+   }
+ 
+-  public int getId() {
++  public Id getId() {
+     return id;
+   }
+ 

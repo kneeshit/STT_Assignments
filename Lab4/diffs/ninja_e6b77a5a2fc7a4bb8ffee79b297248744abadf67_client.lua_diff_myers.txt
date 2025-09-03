@@ -1,0 +1,14 @@
+diff --git a/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua b/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua
+index 44591ac..893cbff 100644
+--- a/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua
++++ b/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/client.lua
+@@ -44,6 +44,9 @@ o.default = "60"
+ o = s:option(Value, "tcp_keepalive", translate("TCP Keep-Alive"), translate("Default 60 seconds"))
+ o.default = "60"
+ 
++o = s:option(Value, "pool_idle_timeout", translate("Pool idle timeout"), translate("Set an optional timeout for idle sockets being kept-alive"))
++o.default = "90"
++
+ o = s:option(Flag, "cookie_store", translate("Enable Cookie Store"))
+ o.rmempty = false
+ 

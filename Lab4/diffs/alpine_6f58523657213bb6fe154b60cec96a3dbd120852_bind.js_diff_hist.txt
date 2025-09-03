@@ -1,0 +1,14 @@
+diff --git a/src/directives/bind.js b/src/directives/bind.js
+index 4b63ead8..4282e870 100644
+--- a/src/directives/bind.js
++++ b/src/directives/bind.js
+@@ -27,6 +27,9 @@ export function handleAttributeBindingDirective(component, el, attrName, express
+             } else {
+                 el.checked = !! value
+             }
++            if (typeof value === 'string') {
++                el.value = value
++            }
+         } else if (el.tagName === 'SELECT') {
+             updateSelect(el, value)
+         } else {

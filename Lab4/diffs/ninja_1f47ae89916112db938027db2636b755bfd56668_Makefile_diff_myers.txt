@@ -1,0 +1,13 @@
+diff --git a/openwrt/opengpt/Makefile b/openwrt/opengpt/Makefile
+index 82355f6..ab2bcd8 100644
+--- a/openwrt/opengpt/Makefile
++++ b/openwrt/opengpt/Makefile
+@@ -4,7 +4,7 @@ include $(TOPDIR)/rules.mk
+ 
+ PKG_NAME:=opengpt
+ 
+-PKG_VERSION:=0.5.0
++PKG_VERSION:=0.5.1
+ 
+ PKG_LICENSE:=MIT
+ PKG_MAINTAINER:=gngpp <gngppz@gmail.com>

@@ -1,0 +1,20 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/internal/BindBitmapTest.java b/butterknife-compiler/src/test/java/butterknife/internal/BindBitmapTest.java
+index b18898d..eefc494 100644
+--- a/butterknife-compiler/src/test/java/butterknife/internal/BindBitmapTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/internal/BindBitmapTest.java
+@@ -25,10 +25,11 @@ public class BindBitmapTest {
+             "package test;",
+             "import android.content.res.Resources;",
+             "import android.graphics.BitmapFactory;",
+-            "import butterknife.ButterKnife.Finder;",
+-            "import butterknife.ButterKnife.ViewBinder;",
+-            "public class Test$$ViewBinder<T extends test.Test> implements ViewBinder<T> {",
+-            "  @Override public void bind(final Finder finder, final T target, Object source) {",
++            "import butterknife.ButterKnife;",
++            "import java.lang.Object;",
++            "import java.lang.Override;",
++            "public class Test$$ViewBinder<T extends Test> implements ButterKnife.ViewBinder<T> {",
++            "  @Override public void bind(final ButterKnife.Finder finder, final T target, Object source) {",
+             "    Resources res = finder.getContext(source).getResources();",
+             "    target.one = BitmapFactory.decodeResource(res, 1);",
+             "  }",

@@ -1,0 +1,14 @@
+diff --git a/openai/src/context.rs b/openai/src/context.rs
+index 798df7f..2d2af62 100644
+--- a/openai/src/context.rs
++++ b/openai/src/context.rs
+@@ -12,6 +12,9 @@ pub struct ContextArgs {
+     /// Server proxies
+     #[builder(setter(into), default)]
+     pub proxies: Vec<String>,
++    /// Disable direct connection
++    #[builder(default = "false")]
++    pub disable_direct: bool,
+     /// TCP keepalive (second)
+     #[builder(setter(into), default = "75")]
+     pub tcp_keepalive: usize,

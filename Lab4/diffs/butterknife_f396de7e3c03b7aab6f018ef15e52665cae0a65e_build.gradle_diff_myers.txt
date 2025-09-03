@@ -1,0 +1,13 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index 68a41be..4b04526 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -8,7 +8,7 @@ android {
+ 
+     consumerProguardFiles 'proguard-rules.txt'
+ 
+-    testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
++    testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+   }
+ 
+   compileOptions {

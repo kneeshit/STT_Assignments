@@ -1,0 +1,19 @@
+diff --git a/butterknife/src/main/java/butterknife/OnClick.java b/butterknife/src/main/java/butterknife/OnClick.java
+index 5fdf314..c9cfc3d 100644
+--- a/butterknife/src/main/java/butterknife/OnClick.java
++++ b/butterknife/src/main/java/butterknife/OnClick.java
+@@ -1,11 +1,14 @@
+ package butterknife;
+ 
++import butterknife.internal.InjectableListener;
++import butterknife.internal.OnClickListenerHandler;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 
+ import static java.lang.annotation.ElementType.METHOD;
+ import static java.lang.annotation.RetentionPolicy.CLASS;
+ 
++@InjectableListener(OnClickListenerHandler.class)
+ @Retention(CLASS) @Target(METHOD)
+ public @interface OnClick {
+   int[] value();

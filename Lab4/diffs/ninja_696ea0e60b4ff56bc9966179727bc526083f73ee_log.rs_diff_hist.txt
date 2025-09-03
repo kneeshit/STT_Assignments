@@ -1,0 +1,17 @@
+diff --git a/openai/src/log.rs b/openai/src/log.rs
+index 524ff2c..dc10a8c 100644
+--- a/openai/src/log.rs
++++ b/openai/src/log.rs
+@@ -2,10 +2,10 @@
+ macro_rules! info {
+     // info!(target: "my_target", key1 = 42, key2 = true; "a {} event", "log")
+     // info!(target: "my_target", "a {} event", "log")
+-    (target: $target:expr, $($arg:tt)+) => (log::info!("[{}] {}",std::panic::Location::caller(), $($arg)+));
++    (target: $target:expr, $($arg:tt)+) => (log::info!($($arg)+));
+ 
+     // info!("a {} event", "log")
+-    ($($arg:tt)+) => (log::info!("[{}] {}", std::panic::Location::caller(),  format!($($arg)+)))
++    ($($arg:tt)+) => (log::info!($($arg)+))
+ }
+ 
+ #[macro_export]

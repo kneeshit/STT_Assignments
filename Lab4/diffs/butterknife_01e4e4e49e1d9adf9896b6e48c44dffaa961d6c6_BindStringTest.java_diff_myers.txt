@@ -1,0 +1,13 @@
+diff --git a/butterknife-runtime/src/androidTest/java/butterknife/functional/BindStringTest.java b/butterknife-runtime/src/androidTest/java/butterknife/functional/BindStringTest.java
+index 4a0981a..825b2d4 100644
+--- a/butterknife-runtime/src/androidTest/java/butterknife/functional/BindStringTest.java
++++ b/butterknife-runtime/src/androidTest/java/butterknife/functional/BindStringTest.java
+@@ -1,7 +1,7 @@
+ package butterknife.functional;
+ 
+ import android.content.Context;
+-import android.support.test.InstrumentationRegistry;
++import androidx.test.InstrumentationRegistry;
+ import butterknife.BindString;
+ import butterknife.Unbinder;
+ import butterknife.runtime.test.R;

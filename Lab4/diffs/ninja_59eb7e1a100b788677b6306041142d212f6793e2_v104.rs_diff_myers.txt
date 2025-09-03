@@ -1,0 +1,14 @@
+diff --git a/reqwest/src/browser/chrome/ver/v104.rs b/reqwest/src/browser/chrome/ver/v104.rs
+index 0673e1a..849dfc6 100644
+--- a/reqwest/src/browser/chrome/ver/v104.rs
++++ b/reqwest/src/browser/chrome/ver/v104.rs
+@@ -1,7 +1,8 @@
+ use std::sync::Arc;
+ 
+ use boring::ssl::{
+-    CertCompressionAlgorithm, SslConnector, SslConnectorBuilder, SslMethod, SslVersion, SslVerifyMode,
++    CertCompressionAlgorithm, SslConnector, SslConnectorBuilder, SslMethod, SslVerifyMode,
++    SslVersion,
+ };
+ use http::{
+     header::{ACCEPT, ACCEPT_ENCODING, ACCEPT_LANGUAGE, UPGRADE_INSECURE_REQUESTS, USER_AGENT},

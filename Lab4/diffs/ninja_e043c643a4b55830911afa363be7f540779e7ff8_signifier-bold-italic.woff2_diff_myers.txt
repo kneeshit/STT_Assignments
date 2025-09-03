@@ -1,0 +1,4 @@
+diff --git a/openai/templates/static/fonts/signifier/signifier-bold-italic.woff2 b/openai/templates/static/fonts/signifier/signifier-bold-italic.woff2
+new file mode 100644
+index 0000000..cebb25d
+Binary files /dev/null and b/openai/templates/static/fonts/signifier/signifier-bold-italic.woff2 differ

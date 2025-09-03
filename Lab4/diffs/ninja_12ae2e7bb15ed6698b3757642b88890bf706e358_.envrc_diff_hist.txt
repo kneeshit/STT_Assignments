@@ -1,0 +1,8 @@
+diff --git a/reqwest-impersonate/.envrc b/reqwest-impersonate/.envrc
+new file mode 100644
+index 0000000..8392d15
+--- /dev/null
++++ b/reqwest-impersonate/.envrc
+@@ -0,0 +1 @@
++use flake
+\ No newline at end of file

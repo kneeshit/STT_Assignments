@@ -1,0 +1,13 @@
+diff --git a/butterknife-lint/src/test/java/butterknife/lint/LintRegistryTest.java b/butterknife-lint/src/test/java/butterknife/lint/LintRegistryTest.java
+index 9ad9753..53c7480 100644
+--- a/butterknife-lint/src/test/java/butterknife/lint/LintRegistryTest.java
++++ b/butterknife-lint/src/test/java/butterknife/lint/LintRegistryTest.java
+@@ -5,7 +5,7 @@ import org.junit.Test;
+ import static com.google.common.truth.Truth.assertThat;
+ 
+ public final class LintRegistryTest {
+-  @Test public void issues() throws Exception {
++  @Test public void issues() {
+     assertThat(new LintRegistry().getIssues()).contains(InvalidR2UsageDetector.ISSUE);
+   }
+ }

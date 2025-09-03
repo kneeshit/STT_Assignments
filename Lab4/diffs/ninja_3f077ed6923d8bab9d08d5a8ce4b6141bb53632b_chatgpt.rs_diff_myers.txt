@@ -1,0 +1,3 @@
+diff --git a/openai/src/api/chatgpt.rs b/openai/src/api/chatgpt.rs
+deleted file mode 100644
+index 8b13789..0000000

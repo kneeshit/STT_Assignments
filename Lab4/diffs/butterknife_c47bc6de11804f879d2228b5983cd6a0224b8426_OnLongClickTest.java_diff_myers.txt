@@ -1,0 +1,28 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+index 4d46fcd..aab5353 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+@@ -24,6 +24,7 @@ public class OnLongClickTest {
+ 
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
++        + "import android.support.annotation.UiThread;\n"
+         + "import android.view.View;\n"
+         + "import butterknife.Unbinder;\n"
+         + "import butterknife.internal.Utils;\n"
+@@ -32,6 +33,7 @@ public class OnLongClickTest {
+         + "public class Test_ViewBinding<T extends Test> implements Unbinder {\n"
+         + "  protected T target;\n"
+         + "  private View view1;\n"
++        + "  @UiThread\n"
+         + "  public Test_ViewBinding(final T target, View source) {\n"
+         + "    this.target = target;\n"
+         + "    View view;\n"
+@@ -55,6 +57,7 @@ public class OnLongClickTest {
+     );
+ 
+     assertAbout(javaSource()).that(source)
++        .withCompilerOptions("-Xlint:-processing")
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()

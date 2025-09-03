@@ -1,0 +1,40 @@
+diff --git a/test/constructor.spec.js b/test/constructor.spec.js
+index a2f3ffbc..3e4cb1ed 100644
+--- a/test/constructor.spec.js
++++ b/test/constructor.spec.js
+@@ -83,3 +82,35 @@ test('auto-initialize new elements added to a component', async () => {
+     await wait(() => { expect(document.querySelector('span').innerText).toEqual(1) })
+     await wait(() => { expect(document.querySelector('#target span').innerText).toEqual(1) })
+ })
++
++test('auto-detect x-data property changes at run-time', async () => {
++    var runObservers = []
++
++    global.MutationObserver = class {
++        constructor(callback) { runObservers.push(callback) }
++        observe() {}
++    }
++
++    document.body.innerHTML = `
++        <div x-data="{ count: 0 }">
++            <span x-text="count"></span>
++        </div>
++    `
++
++    Alpine.start()
++
++    expect(document.querySelector('span').innerText).toEqual(0)
++
++    document.querySelector('div').setAttribute('x-data', '{ count: 1 }')
++
++    runObservers[0]([
++        {
++            addedNodes: [],
++            type: 'attributes',
++            attributeName: 'x-data',
++            target: document.querySelector('div')
++        }
++    ])
++
++    await wait(() => { expect(document.querySelector('span').innerText).toEqual(1) })
++})

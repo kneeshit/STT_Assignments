@@ -1,0 +1,19 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index a44ff48..ac3837b 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -6,14 +6,10 @@ android {
+ 
+   defaultConfig {
+     minSdkVersion rootProject.ext.minSdkVersion
+-  }
+ 
+-  buildTypes {
+-    release {
+     consumerProguardFiles 'proguard-rules.txt'
+   }
+ }
+-}
+ 
+ dependencies {
+   compile project(':butterknife-annotations')

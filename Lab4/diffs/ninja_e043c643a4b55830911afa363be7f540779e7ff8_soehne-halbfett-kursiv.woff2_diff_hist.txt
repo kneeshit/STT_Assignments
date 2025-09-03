@@ -1,0 +1,4 @@
+diff --git a/openai/templates/static/fonts/soehne/soehne-halbfett-kursiv.woff2 b/openai/templates/static/fonts/soehne/soehne-halbfett-kursiv.woff2
+new file mode 100644
+index 0000000..f7fd3c6
+Binary files /dev/null and b/openai/templates/static/fonts/soehne/soehne-halbfett-kursiv.woff2 differ

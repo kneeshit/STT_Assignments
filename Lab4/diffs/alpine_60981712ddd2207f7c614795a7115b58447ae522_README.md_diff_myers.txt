@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index 261cc2d2..476e422f 100644
+--- a/README.md
++++ b/README.md
+@@ -567,6 +567,8 @@ You can "watch" a component property with the `$watch` magic method. In the abov
+ 
+ ## v3 Roadmap
+ * Move from `x-ref` to `ref` for Vue parity
++* Add `Alpine.directive()`
++* Add `Alpine.component('foo', {...})` (With magic `__init()` method)
+ 
+ ## License
+ 

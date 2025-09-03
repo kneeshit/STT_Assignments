@@ -1,0 +1,16 @@
+diff --git a/openai/src/serve/env.rs b/openai/src/serve/env.rs
+index 96169c3..8152bf9 100644
+--- a/openai/src/serve/env.rs
++++ b/openai/src/serve/env.rs
+@@ -53,9 +53,9 @@ impl Env {
+         lock.clone()
+     }
+ 
+-    pub fn set_share_puid(&self, puid: String) {
++    pub fn set_share_puid(&self, puid: Option<String>) {
+         let mut lock = self.share_puid.write().unwrap();
+-        *lock = Some(puid);
++        *lock = puid;
+     }
+ }
+ 

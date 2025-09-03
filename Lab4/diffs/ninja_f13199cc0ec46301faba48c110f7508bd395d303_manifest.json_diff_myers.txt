@@ -1,0 +1,13 @@
+diff --git a/openai/ui/static/resources/manifest.json b/openai/ui/static/resources/manifest.json
+index 8eeaa9a..45ec21f 100644
+--- a/openai/ui/static/resources/manifest.json
++++ b/openai/ui/static/resources/manifest.json
+@@ -1,7 +1,7 @@
+ {
+   "name": "ChatGPT",
+   "short_name": "ChatGPT",
+-  "description": "Ninja app powered by gngpp",
++  "description": "ChatGPT",
+   "icons": [
+     {
+       "src": "/resources/apple-touch-icon.png",

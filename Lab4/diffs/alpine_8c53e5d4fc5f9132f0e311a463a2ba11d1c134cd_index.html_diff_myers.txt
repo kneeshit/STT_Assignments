@@ -1,0 +1,13 @@
+diff --git a/index.html b/index.html
+index ea046c9e..1a870fd4 100644
+--- a/index.html
++++ b/index.html
+@@ -17,7 +17,7 @@
+         </div>
+ 
+         <div x-data="{ count: 0 }">
+-            <span x-text=""></span>
++            <span x-text="count"></span>
+         </div>
+ 
+         <div x-data="{ foo: 'bar' }">

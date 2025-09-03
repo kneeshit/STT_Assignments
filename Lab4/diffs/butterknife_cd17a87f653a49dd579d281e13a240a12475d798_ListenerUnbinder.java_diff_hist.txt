@@ -1,0 +1,24 @@
+diff --git a/butterknife-reflect/src/main/java/butterknife/ListenerUnbinder.java b/butterknife-reflect/src/main/java/butterknife/ListenerUnbinder.java
+new file mode 100644
+index 0000000..2ae07c2
+--- /dev/null
++++ b/butterknife-reflect/src/main/java/butterknife/ListenerUnbinder.java
+@@ -0,0 +1,18 @@
++package butterknife;
++
++import android.view.View;
++import java.util.List;
++
++final class ListenerUnbinder<T extends View> implements Unbinder {
++  private final List<T> targets;
++  private final Setter<T, ?> setter;
++
++  ListenerUnbinder(List<T> targets, Setter<T, ?> setter) {
++    this.targets = targets;
++    this.setter = setter;
++  }
++
++  @Override public void unbind() {
++    ViewCollections.set(targets, setter, null);
++  }
++}

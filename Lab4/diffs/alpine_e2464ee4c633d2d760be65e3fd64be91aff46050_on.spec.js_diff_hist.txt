@@ -1,0 +1,24 @@
+diff --git a/test/on.spec.js b/test/on.spec.js
+index f3a58524..4d22d934 100644
+--- a/test/on.spec.js
++++ b/test/on.spec.js
+@@ -430,8 +430,8 @@ test('event with colon', async () => {
+     await wait(() => { expect(document.querySelector('span').getAttribute('foo')).toEqual('baz') })
+ })
+ 
+-test('prevent default action when an event returns false', async () => {
+-    window.confirm = jest.fn().mockImplementation(() => false)
++test.skip('prevent default action when an event returns false', async () => {
++    window.confirm = jest.fn().mockReturnValue(false)
+ 
+     document.body.innerHTML = `
+         <div x-data="{}">
+@@ -447,7 +447,7 @@ test('prevent default action when an event returns false', async () => {
+ 
+     expect(document.querySelector('input').checked).toEqual(false)
+ 
+-    window.confirm = jest.fn().mockImplementation(() => true)
++    window.confirm = jest.fn().mockReturnValue(true)
+ 
+     document.querySelector('input').click()
+ 

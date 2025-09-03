@@ -1,0 +1,13 @@
+diff --git a/openai/src/token.rs b/openai/src/token.rs
+index 7761dc4..c994ad6 100644
+--- a/openai/src/token.rs
++++ b/openai/src/token.rs
+@@ -62,7 +62,7 @@ fn verify(token: &str, pub_key: &[u8], alg: AlgorithmID) -> anyhow::Result<()> {
+     {
+         return Ok(());
+     }
+-    anyhow::bail!(OAuthError::InvalidToken)
++    anyhow::bail!(OAuthError::InvalidAccessToken)
+ }
+ 
+ pub async fn verify_access_token(token: &str) -> anyhow::Result<()> {

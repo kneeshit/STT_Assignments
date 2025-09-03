@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/Finder.java b/butterknife/src/main/java/butterknife/internal/Finder.java
+index 8444d35..effd6de 100644
+--- a/butterknife/src/main/java/butterknife/internal/Finder.java
++++ b/butterknife/src/main/java/butterknife/internal/Finder.java
+@@ -54,7 +54,8 @@ public enum Finder {
+           + id
+           + " for "
+           + who
+-          + " was not found. If this view is optional add '@Nullable' annotation.");
++          + " was not found. If this view is optional add '@Nullable' (fields) or '@Optional'"
++          + " (methods) annotation.");
+     }
+     return view;
+   }

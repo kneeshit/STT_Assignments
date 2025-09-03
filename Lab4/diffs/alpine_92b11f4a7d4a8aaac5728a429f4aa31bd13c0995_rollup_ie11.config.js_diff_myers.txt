@@ -1,0 +1,40 @@
+diff --git a/rollup_ie11.config.js b/rollup_ie11.config.js
+index 93641054..ae3cae4f 100644
+--- a/rollup_ie11.config.js
++++ b/rollup_ie11.config.js
+@@ -1,19 +1,24 @@
+-
+ import babel from 'rollup-plugin-babel';
+ import filesize from 'rollup-plugin-filesize';
+-import { terser } from "rollup-plugin-terser";
++import {
++    terser
++} from "rollup-plugin-terser";
+ import resolve from "rollup-plugin-node-resolve"
++import commonjs from '@rollup/plugin-commonjs'
++import multi from '@rollup/plugin-multi-entry';
+ 
+ 
+ export default [{
+-        input: 'src/index.js',
++    input: ['src/polyfills.js', 'src/index.js'],
+     output: {
+         name: 'Alpine',
+-            file: 'dist/alpine-ie11.js',
++        file: 'dist/alpine_ie11.js',
+         format: 'umd',
+         sourcemap: true,
+     },
+     plugins: [
++        multi(),
++        commonjs(),
+         resolve(),
+         filesize(),
+         terser({
+@@ -45,5 +50,4 @@ export default [{
+             ]
+         })
+     ]
+-    }
+-]
++}]

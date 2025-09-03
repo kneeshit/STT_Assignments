@@ -1,0 +1,23 @@
+diff --git a/src/directives/show.js b/src/directives/show.js
+index 571944e8..b8985ba5 100644
+--- a/src/directives/show.js
++++ b/src/directives/show.js
+@@ -19,6 +19,9 @@ export function handleShowDirective(component, el, value, modifiers, initialUpda
+     }
+ 
+     if (initialUpdate === true) {
++        // Asign current value to el to check later on for preventing transition overlaps
++        el.__x_transition_last_value = value
++
+         if (value) {
+             show()
+         } else {
+@@ -45,7 +48,7 @@ export function handleShowDirective(component, el, value, modifiers, initialUpda
+             }
+         }
+ 
+-        // Asign current value to el to check later on for preventing transition overlaps
++        // Asign current value to el
+         el.__x_transition_last_value = value
+     }
+ 

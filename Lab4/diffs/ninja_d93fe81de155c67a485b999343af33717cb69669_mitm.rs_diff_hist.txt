@@ -1,0 +1,16 @@
+diff --git a/openai/src/serve/preauth/proxy/mitm.rs b/openai/src/serve/preauth/proxy/mitm.rs
+index 72e70f9..e367c92 100644
+--- a/openai/src/serve/preauth/proxy/mitm.rs
++++ b/openai/src/serve/preauth/proxy/mitm.rs
+@@ -107,7 +107,10 @@ where
+             Ok(res) => res,
+             Err(err) => {
+                 warn!("proxy request failed: {err:?}");
+-                Response::new(Body::empty())
++                Response::builder()
++                    .status(http::StatusCode::BAD_GATEWAY)
++                    .body(Body::empty())
++                    .expect("failed build response")
+             }
+         };
+ 

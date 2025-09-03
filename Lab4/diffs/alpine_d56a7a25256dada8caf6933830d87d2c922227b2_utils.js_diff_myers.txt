@@ -1,0 +1,26 @@
+diff --git a/src/utils.js b/src/utils.js
+index be48880b..da112427 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -44,16 +44,15 @@ export function walk(el, callback) {
+     }
+ }
+ 
+-export function debounce(func, wait) {
+-    var timeout
++export function debounce(func, wait, context = this) {
+     return function () {
+-        var context = this, args = arguments
++        var args = arguments
+         var later = function () {
+-            timeout = null
++            context.debounce_timeout = null
+             func.apply(context, args)
+         }
+-        clearTimeout(timeout)
+-        timeout = setTimeout(later, wait)
++        clearTimeout(context.debounce_timeout)
++        context.debounce_timeout = setTimeout(later, wait)
+     }
+ }
+ 

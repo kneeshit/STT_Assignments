@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/chat_to_api/mod.rs b/openai/src/serve/router/chat_to_api/mod.rs
+index 8937027..4443f62 100644
+--- a/openai/src/serve/router/chat_to_api/mod.rs
++++ b/openai/src/serve/router/chat_to_api/mod.rs
+@@ -31,7 +31,7 @@ use crate::URL_CHATGPT_API;
+ mod req;
+ mod resp;
+ 
+-pub(crate) async fn conv(
++pub(crate) async fn chat_to_api(
+     headers: HeaderMap,
+     jar: CookieJar,
+     body: Json<req::Req>,

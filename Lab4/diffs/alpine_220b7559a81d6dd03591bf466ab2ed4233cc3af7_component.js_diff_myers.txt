@@ -1,0 +1,16 @@
+diff --git a/src/component.js b/src/component.js
+index 7e0c8f92..f5c7cc83 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -257,9 +257,9 @@ export default class Component {
+     }
+ 
+     getDispatchFunction (el) {
+-        return (event, detailObject = null) => {
++        return (event, detail = {}) => {
+             el.dispatchEvent(new CustomEvent(event, {
+-                detail: detailObject,
++                detail,
+                 bubbles: true,
+             }))
+         }

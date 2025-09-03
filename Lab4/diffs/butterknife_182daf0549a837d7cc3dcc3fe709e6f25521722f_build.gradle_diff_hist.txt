@@ -1,0 +1,13 @@
+diff --git a/build.gradle b/build.gradle
+index e1eeecb..85106c6 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -45,7 +45,7 @@ ext {
+   minSdkVersion = 8
+   targetSdkVersion = 24
+   compileSdkVersion = 24
+-  buildToolsVersion = '24.0.1'
++  buildToolsVersion = '24.0.2'
+   sourceCompatibilityVersion = JavaVersion.VERSION_1_7
+   targetCompatibilityVersion = JavaVersion.VERSION_1_7
+ }

@@ -1,0 +1,12 @@
+diff --git a/butterknife/src/main/java/butterknife/OnClick.java b/butterknife/src/main/java/butterknife/OnClick.java
+index 7447c90..76f69fe 100644
+--- a/butterknife/src/main/java/butterknife/OnClick.java
++++ b/butterknife/src/main/java/butterknife/OnClick.java
+@@ -22,7 +22,6 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * method.
+  *
+  * @see OnClickListener
+- * @see Nullable
+  */
+ @Target(METHOD)
+ @Retention(CLASS)

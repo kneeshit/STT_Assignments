@@ -1,0 +1,15 @@
+diff --git a/src/store/account.rs b/src/store/account.rs
+index 868046b..4197ab1 100644
+--- a/src/store/account.rs
++++ b/src/store/account.rs
+@@ -9,8 +9,8 @@ pub struct AccountStore(PathBuf);
+ impl AccountStore {
+     pub fn new() -> Self {
+         let path = match home_dir() {
+-            Some(home_dir) => home_dir.join(".ninja-accounts"),
+-            None => PathBuf::from(".ninja-accounts"),
++            Some(home_dir) => home_dir.join(".ninja_accounts"),
++            None => PathBuf::from(".ninja_accounts"),
+         };
+         if let Some(parent) = path.parent() {
+             if path.exists().not() {

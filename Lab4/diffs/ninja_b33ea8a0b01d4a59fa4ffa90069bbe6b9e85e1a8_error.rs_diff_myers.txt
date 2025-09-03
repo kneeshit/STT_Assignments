@@ -1,0 +1,15 @@
+diff --git a/openai/src/serve/preauth/proxy/error.rs b/openai/src/serve/preauth/proxy/error.rs
+index fc6ae22..318d04f 100644
+--- a/openai/src/serve/preauth/proxy/error.rs
++++ b/openai/src/serve/preauth/proxy/error.rs
+@@ -8,6 +8,10 @@ pub enum Error {
+     Tls(#[from] RcgenError),
+     #[error("network error")]
+     HyperError(#[from] hyper::Error),
++    #[error("body error")]
++    BodyErrpr(#[from] http::Error),
++    #[error("request connect error")]
++    RequestConnectError(#[from] reqwest::Error),
+     #[error("IO error")]
+     IO(#[from] io::Error),
+ }

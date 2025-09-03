@@ -1,0 +1,16 @@
+diff --git a/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/log.lua b/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/log.lua
+new file mode 100644
+index 0000000..f629ff8
+--- /dev/null
++++ b/openwrt/luci-app-ninja/luasrc/model/cbi/ninja/log.lua
+@@ -0,0 +1,9 @@
++log = SimpleForm("logview")
++log.submit = false
++log.reset = false
++
++t = log:field(DummyValue, '', '')
++t.rawhtml = true
++t.template = 'ninja/ninja_log'
++
++return log
+\ No newline at end of file

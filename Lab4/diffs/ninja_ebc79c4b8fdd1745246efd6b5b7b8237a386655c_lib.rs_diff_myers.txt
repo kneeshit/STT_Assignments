@@ -1,0 +1,28 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index 842c467..1a72aec 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -20,10 +19,10 @@ pub const URL_PLATFORM_API: &str = "https://api.openai.com";
+ pub const ORIGIN_CHATGPT: &str = "https://chat.openai.com/chat";
+ pub const HOST_CHATGPT: &str = "chat.openai.com";
+ 
+-pub type OAuthResult<T, E = anyhow::Error> = anyhow::Result<T, E>;
++pub type AuthResult<T, E = anyhow::Error> = anyhow::Result<T, E>;
+ 
+ #[derive(thiserror::Error, Debug)]
+-pub enum OAuthError {
++pub enum AuthError {
+     #[error("other request (error {0:?}")]
+     Other(String),
+     #[error("token access (error {0:?}")]
+@@ -48,6 +47,10 @@ pub enum OAuthError {
+     FailedCallbackCode,
+     #[error("failed callback url")]
+     FailedCallbackURL,
++    #[error("failed to get authorized url")]
++    FailedAuthorizedUrl,
++    #[error("failed get csrf token")]
++    FailedCsrfToken,
+     #[error("invalid request login url (error {0:?}")]
+     InvalidLoginUrl(String),
+     #[error("invalid email or password")]

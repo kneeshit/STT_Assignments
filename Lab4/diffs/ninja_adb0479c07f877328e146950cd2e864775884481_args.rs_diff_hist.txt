@@ -1,0 +1,13 @@
+diff --git a/src/args.rs b/src/args.rs
+index d2def2f..47f0b32 100644
+--- a/src/args.rs
++++ b/src/args.rs
+@@ -126,7 +126,7 @@ pub(super) struct ServeArgs {
+     pub(super) arkose_har_file: Option<PathBuf>,
+ 
+     /// HAR file upload authenticate key
+-    #[clap(short = 'K', long, requires = "arkose_har_file")]
++    #[clap(short = 'K', long)]
+     pub(super) arkose_har_upload_key: Option<String>,
+ 
+     /// About ArkoseLabs solver platform

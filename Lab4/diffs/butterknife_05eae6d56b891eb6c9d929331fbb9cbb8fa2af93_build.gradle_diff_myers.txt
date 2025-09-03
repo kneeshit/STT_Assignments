@@ -1,0 +1,27 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+new file mode 100644
+index 0000000..7f27c69
+--- /dev/null
++++ b/butterknife/build.gradle
+@@ -0,0 +1,21 @@
++apply plugin: 'com.android.library'
++
++android {
++  compileSdkVersion rootProject.ext.compileSdkVersion
++  buildToolsVersion rootProject.ext.buildToolsVersion
++
++  defaultConfig {
++    minSdkVersion rootProject.ext.minSdkVersion
++  }
++}
++
++dependencies {
++  compile project(':butterknife-annotations')
++
++  testCompile deps.festandroid
++  testCompile deps.festassert
++  testCompile deps.junit
++  testCompile deps.robolectric
++}
++
++apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

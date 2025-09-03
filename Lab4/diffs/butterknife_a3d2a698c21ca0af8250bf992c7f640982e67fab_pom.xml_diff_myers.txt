@@ -1,0 +1,13 @@
+diff --git a/pom.xml b/pom.xml
+index c03b035..1e9e99a 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -11,7 +11,7 @@
+ 
+   <groupId>com.jakewharton</groupId>
+   <artifactId>butterknife-parent</artifactId>
+-  <version>6.0.1-SNAPSHOT</version>
++  <version>6.1.0-SNAPSHOT</version>
+   <packaging>pom</packaging>
+ 
+   <name>Butter Knife (Parent)</name>

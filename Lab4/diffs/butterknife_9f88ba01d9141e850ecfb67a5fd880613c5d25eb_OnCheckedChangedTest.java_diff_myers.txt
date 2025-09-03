@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/test/java/butterknife/OnCheckedChangedTest.java b/butterknife/src/test/java/butterknife/OnCheckedChangedTest.java
+index b1ac9f2..b0b5fbd 100644
+--- a/butterknife/src/test/java/butterknife/OnCheckedChangedTest.java
++++ b/butterknife/src/test/java/butterknife/OnCheckedChangedTest.java
+@@ -12,9 +12,8 @@ public class OnCheckedChangedTest {
+   @Test public void checkedChanged() {
+     JavaFileObject source = JavaFileObjects.forSourceString("test.Test", ""
+         + "package test;\n"
+-        + "import android.app.Activity;\n"
+         + "import butterknife.OnCheckedChanged;\n"
+-        + "public class Test extends Activity {\n"
++        + "public class Test {\n"
+         + "  @OnCheckedChanged(1) void doStuff() {}\n"
+         + "}"
+     );

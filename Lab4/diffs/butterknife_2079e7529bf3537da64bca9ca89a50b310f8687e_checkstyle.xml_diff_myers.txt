@@ -1,0 +1,13 @@
+diff --git a/checkstyle.xml b/checkstyle.xml
+index 67d211c..a91a281 100644
+--- a/checkstyle.xml
++++ b/checkstyle.xml
+@@ -16,7 +16,7 @@
+ 
+   <!-- Space after 'for' and 'if' -->
+   <module name="RegexpSingleline">
+-    <property name="format" value="^\s*(for|if)[^ ]"/>
++    <property name="format" value="^\s*(for|if)\b[^ ]"/>
+     <property name="message" value="Space needed before opening parenthesis."/>
+   </module>
+ 

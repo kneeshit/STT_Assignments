@@ -1,0 +1,13 @@
+diff --git a/butterknife-integration-test/src/main/res/layout/simple_activity.xml b/butterknife-integration-test/src/main/res/layout/simple_activity.xml
+index d95547a..8812944 100644
+--- a/butterknife-integration-test/src/main/res/layout/simple_activity.xml
++++ b/butterknife-integration-test/src/main/res/layout/simple_activity.xml
+@@ -7,7 +7,7 @@
+               android:padding="8dp"
+               tools:ignore="SelectableText">
+     <TextView
+-            android:id="@+id/title"
++            android:id="@+id/titleTv"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center"

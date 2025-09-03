@@ -1,0 +1,13 @@
+diff --git a/src/directives/on.js b/src/directives/on.js
+index 35837ec2..98b8d306 100644
+--- a/src/directives/on.js
++++ b/src/directives/on.js
+@@ -29,7 +29,7 @@ export function registerListener(component, el, event, modifiers, expression, ex
+ 
+         const handler = e => {
+             if (isKeyEvent(event)) {
+-                if (!useDebounce && isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
++                if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
+                     return
+                 }
+             }

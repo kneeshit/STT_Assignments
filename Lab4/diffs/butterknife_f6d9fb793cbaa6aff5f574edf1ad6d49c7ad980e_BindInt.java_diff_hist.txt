@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/BindInt.java b/butterknife/src/main/java/butterknife/BindInt.java
+index bd7a80a..ccfc20e 100644
+--- a/butterknife/src/main/java/butterknife/BindInt.java
++++ b/butterknife/src/main/java/butterknife/BindInt.java
+@@ -9,7 +9,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ /**
+  * Bind a field to the specified integer resource ID.
+  * <pre><code>
+- * {@literal @}ResourceInt(R.int.columns) int columns;
++ * {@literal @}BindInt(R.int.columns) int columns;
+  * </code></pre>
+  */
+ @Retention(CLASS) @Target(FIELD)

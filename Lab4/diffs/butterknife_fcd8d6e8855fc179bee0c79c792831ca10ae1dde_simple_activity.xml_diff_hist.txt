@@ -1,0 +1,20 @@
+diff --git a/butterknife-sample/res/layout/simple_activity.xml b/butterknife-sample/res/layout/simple_activity.xml
+index 9c06e21..f214de7 100644
+--- a/butterknife-sample/res/layout/simple_activity.xml
++++ b/butterknife-sample/res/layout/simple_activity.xml
+@@ -24,7 +24,14 @@
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+-      android:layout_margin="20dp"
++      android:layout_margin="10dp"
++      />
++  <ListView
++      android:id="@+id/list_of_things"
++      android:layout_width="match_parent"
++      android:layout_height="0dp"
++      android:layout_weight="1"
++      android:layout_margin="10dp"
+       />
+   <TextView
+       android:id="@+id/footer"

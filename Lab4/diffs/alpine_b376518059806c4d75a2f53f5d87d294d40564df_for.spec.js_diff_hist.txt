@@ -1,0 +1,13 @@
+diff --git a/test/for.spec.js b/test/for.spec.js
+index 9d7c90a0..8eacb9e5 100644
+--- a/test/for.spec.js
++++ b/test/for.spec.js
+@@ -450,7 +450,7 @@ test('nested x-for event listeners', async () => {
+ })
+ 
+ 
+-test('listener are bound correctyl on update', async () => {
++test('listeners are bound correctly on update', async () => {
+     global.data = function() {
+         return {
+             page: 0,

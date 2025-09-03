@@ -1,0 +1,18 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/ProcessorTestUtilities.java b/butterknife/src/test/java/butterknife/internal/ProcessorTestUtilities.java
+deleted file mode 100644
+index 92f7ca4..0000000
+--- a/butterknife/src/test/java/butterknife/internal/ProcessorTestUtilities.java
++++ /dev/null
+@@ -1,12 +0,0 @@
+-package butterknife.internal;
+-
+-import java.util.Arrays;
+-import javax.annotation.processing.Processor;
+-
+-final class ProcessorTestUtilities {
+-  static Iterable<? extends Processor> butterknifeProcessors() {
+-    return Arrays.asList(
+-        new ButterKnifeProcessor()
+-    );
+-  }
+-}

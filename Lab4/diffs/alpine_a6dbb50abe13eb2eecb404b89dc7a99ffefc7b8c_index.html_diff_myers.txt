@@ -1,0 +1,14 @@
+diff --git a/examples/index.html b/examples/index.html
+index db3c5918..94efcc31 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -315,9 +315,6 @@
+                             <div x-show="open">
+                                 I shouldn't leave until the transition finishes.
+                                 <div x-show="open"
+-                                    x-transition:enter-start="opacity-0 scale-90"
+-                                    x-transition:enter="ease-out transition-slow"
+-                                    x-transition:enter-end="opacity-100 scale-100"
+                                     x-transition:leave-start="opacity-100 scale-100"
+                                     x-transition:leave="ease-in transition-slow"
+                                     x-transition:leave-end="opacity-0 scale-90">

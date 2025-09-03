@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindIntTest.java b/butterknife-compiler/src/test/java/butterknife/BindIntTest.java
+index ed0de40..45e4627 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindIntTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindIntTest.java
+@@ -44,7 +44,7 @@ public class BindIntTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }

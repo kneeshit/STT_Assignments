@@ -1,0 +1,13 @@
+diff --git a/src/directives/on.js b/src/directives/on.js
+index f0e36c11..9abc1315 100644
+--- a/src/directives/on.js
++++ b/src/directives/on.js
+@@ -46,7 +46,7 @@ export function registerListener(component, el, event, modifiers, expression, ex
+ }
+ 
+ function runListenerHandler(component, expression, e, extraVars) {
+-    component.evaluateCommandExpression(expression, () => {
++    component.evaluateCommandExpression(e.target, expression, () => {
+         return {...extraVars(), '$event': e}
+     })
+ }

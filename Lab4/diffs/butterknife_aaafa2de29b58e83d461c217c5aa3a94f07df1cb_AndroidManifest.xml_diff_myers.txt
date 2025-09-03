@@ -1,0 +1,7 @@
+diff --git a/butterknife-gradle-plugin/src/test/AndroidManifest.xml b/butterknife-gradle-plugin/src/test/AndroidManifest.xml
+new file mode 100644
+index 0000000..b963792
+--- /dev/null
++++ b/butterknife-gradle-plugin/src/test/AndroidManifest.xml
+@@ -0,0 +1 @@
++<manifest package="com.example.butterknife"/>

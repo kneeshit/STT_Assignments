@@ -1,0 +1,16 @@
+diff --git a/examples/index.html b/examples/index.html
+index 0b474833..ad8cd352 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -15,9 +15,9 @@
+         </style>
+ 
+         <!-- Script for testing IE11 support: -->
+-        <!-- <script src="/dist/alpine_ie11.js" defer></script> -->
++        <script src="/dist/alpine-ie11.js" defer></script>
+ 
+-        <script src="/dist/alpine.js" defer></script>
++        <!-- <script src="/dist/alpine.js" defer></script> -->
+     </head>
+     <body>
+         <table>

@@ -1,0 +1,13 @@
+diff --git a/openai/src/context.rs b/openai/src/context.rs
+index 6864363..0dc00e1 100644
+--- a/openai/src/context.rs
++++ b/openai/src/context.rs
+@@ -39,6 +39,8 @@ pub struct ContextArgs {
+     /// Disable direct connection
+     #[builder(default = "false")]
+     pub(crate) disable_direct: bool,
++    /// Enabled Cookie Store
++    pub(crate) cookie_store: bool,
+     /// TCP keepalive (second)
+     #[builder(setter(into), default = "75")]
+     pub(crate) tcp_keepalive: usize,

@@ -1,0 +1,18 @@
+diff --git a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindIntTest.java b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindIntTest.java
+index b6806e7..4900d39 100644
+--- a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindIntTest.java
++++ b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindIntTest.java
+@@ -9,12 +9,11 @@ import butterknife.Unbinder;
+ import com.example.butterknife.test.R;
+ import org.junit.Test;
+ 
+-import static com.example.butterknife.functional.ViewTestUtils.treeWithIds;
+ import static com.google.common.truth.Truth.assertThat;
+ 
+ public final class BindIntTest {
+   private final Context context = InstrumentationRegistry.getContext();
+-  private final View tree = treeWithIds(1);
++  private final View tree = ViewTree.create(1);
+ 
+   static class Target {
+     @BindInt(R.integer.twelve) int actual;

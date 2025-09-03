@@ -1,0 +1,20 @@
+diff --git a/rollup.config.js b/rollup.config.js
+index 7d946754..02a46bdb 100644
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -1,4 +1,5 @@
+ import resolve from "rollup-plugin-node-resolve"
++import filesize from 'rollup-plugin-filesize';
+ import babel from 'rollup-plugin-babel';
+ import { terser } from "rollup-plugin-terser";
+ 
+@@ -19,6 +20,9 @@ export default {
+         }),
+         babel({
+             exclude: 'node_modules/**'
++        }),
++        filesize({
++            showBrotliSize: 'true'
+         })
+     ]
+ }

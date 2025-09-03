@@ -1,0 +1,11 @@
+diff --git a/butterknife/proguard-rules.txt b/butterknife/proguard-rules.txt
+index 371caa0..dd010a4 100644
+--- a/butterknife/proguard-rules.txt
++++ b/butterknife/proguard-rules.txt
+@@ -1,5 +1,5 @@
+ # Retain generated class which implement Unbinder.
+--keep public class * implements butterknife.Unbinder { public <init>(...); }
++-keep public class * implements butterknife.Unbinder { public <init>(**, android.view.View); }
+ 
+ # Prevent obfuscation of types which use ButterKnife annotations since the simple name
+ # is used to reflectively look up the generated ViewBinding.

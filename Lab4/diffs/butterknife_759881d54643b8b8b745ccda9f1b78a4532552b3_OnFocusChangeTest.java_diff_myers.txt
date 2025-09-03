@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java b/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java
+index 6c5f18b..dbed264 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java
+@@ -6,8 +6,8 @@ import javax.tools.JavaFileObject;
+ import org.junit.Test;
+ 
+ import static butterknife.internal.ProcessorTestUtilities.butterknifeProcessors;
++import static com.google.common.truth.Truth.ASSERT;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+-import static org.truth0.Truth.ASSERT;
+ 
+ public class OnFocusChangeTest {
+   @Test public void focusChange() {

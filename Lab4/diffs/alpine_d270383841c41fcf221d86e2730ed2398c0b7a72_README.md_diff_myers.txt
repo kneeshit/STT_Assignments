@@ -1,0 +1,16 @@
+diff --git a/README.md b/README.md
+index 2dc4a792..e414df17 100644
+--- a/README.md
++++ b/README.md
+@@ -178,6 +178,11 @@ Adding `.stop` to an event listener will call `stopPropagation` on the triggered
+ 
+ Adding `.window` to an event listener will install the listener on the global window object instead of the DOM node on which it is declared. This is useful for when you want to modify component state when something changes with the window, like the resize event. In this example, when the window grows larger than 768 pixels wide, we will close the modal/dropdown, otherwise maintain the same state.
+ 
++**`.once` modifier**
++**Example:** `<button x-on:mouseenter.once="fetchSomething()"></button>`
++
++Adding the `.once` modifer to an event listener will ensure that the listener will only be handled once. This is useful for things you only want to do once, like fetching HTML partials and such.
++
+ ---
+ 
+ ### `x-model`

@@ -1,0 +1,12 @@
+diff --git a/openwrt/ninja/files/ninja.config b/openwrt/ninja/files/ninja.config
+index 2b59aca..57b3a5b 100644
+--- a/openwrt/ninja/files/ninja.config
++++ b/openwrt/ninja/files/ninja.config
+@@ -13,6 +13,7 @@ config ninja
+     option connect_timeout '60'
+     option arkose_token_endpoint ''
+     option arkose_solver_key ''
++    option auth_key ''
+     option arkose_solver ''
+     option arkose_auth_har_file ''
+     option arkose_chat_har_file ''

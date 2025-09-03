@@ -1,0 +1,13 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 0e4c821e..af2adf28 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6123,7 +6123,7 @@
+       this.listenForNewElementsToInitialize();
+ 
+       if (typeof initReturnedCallback === 'function') {
+-        // Run the callback returned form the "x-init" hook to allow the user to do stuff after
++        // Run the callback returned from the "x-init" hook to allow the user to do stuff after
+         // Alpine's got it's grubby little paws all over everything.
+         initReturnedCallback.call(this.$data);
+       }

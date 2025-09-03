@@ -1,0 +1,18 @@
+diff --git a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindColorTest.java b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindColorTest.java
+index 7f7a252..99eaa0d 100644
+--- a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindColorTest.java
++++ b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/BindColorTest.java
+@@ -10,12 +10,11 @@ import butterknife.Unbinder;
+ import com.example.butterknife.test.R;
+ import org.junit.Test;
+ 
+-import static com.example.butterknife.functional.ViewTestUtils.treeWithIds;
+ import static com.google.common.truth.Truth.assertThat;
+ 
+ public final class BindColorTest {
+   private final Context context = InstrumentationRegistry.getContext();
+-  private final View tree = treeWithIds(1);
++  private final View tree = ViewTree.create(1);
+ 
+   static class IntTarget {
+     @BindColor(R.color.red) int actual;

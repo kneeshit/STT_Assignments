@@ -1,0 +1,14 @@
+diff --git a/settings.gradle b/settings.gradle
+index 6d22ce2..08d8840 100644
+--- a/settings.gradle
++++ b/settings.gradle
+@@ -3,7 +3,7 @@ include ':butterknife-annotations'
+ include ':butterknife-compiler'
+ include ':butterknife-gradle-plugin'
+ include ':butterknife-lint'
+-include ':butterknife-sample'
+-include ':butterknife-sample-lib'
++//include ':butterknife-sample'
++//include ':butterknife-sample-lib'
+ 
+ rootProject.name = 'butterknife-parent'

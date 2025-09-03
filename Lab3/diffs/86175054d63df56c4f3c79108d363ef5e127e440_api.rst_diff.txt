@@ -1,0 +1,24 @@
+@@ -18,10 +18,10 @@ Application Object
+    :inherited-members:
+ 
+ 
+-Module Objects
+---------------
++Blueprint Objects
++-----------------
+ 
+-.. autoclass:: Module
++.. autoclass:: Blueprint
+    :members:
+    :inherited-members:
+ 
+@@ -350,6 +350,9 @@ Useful Internals
+           if ctx is not None:
+               return ctx.session
+ 
++.. autoclass:: flask.blueprints.BlueprintSetupState
++   :members:
++
+ Signals
+ -------
+ 

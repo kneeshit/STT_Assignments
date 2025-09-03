@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/wc.db b/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/wc.db
+deleted file mode 100644
+index 5c90075..0000000
+Binary files a/openai/ui/static/_next/static/chunks/pages/aip/pluginId/oauth/.svn/wc.db and /dev/null differ

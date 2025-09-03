@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/test/java/butterknife/ButterKnifeTest.java b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+index 078af50..7901ca9 100644
+--- a/butterknife/src/test/java/butterknife/ButterKnifeTest.java
++++ b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+@@ -149,7 +149,7 @@ public class ButterKnifeTest {
+     } catch (IllegalStateException e) {
+       assertThat(e).hasMessage("Required view 'button1' with ID "
+           + android.R.id.button1
+-          + " for yo mama was not found. If this view is optional add '@Optional' annotation.");
++          + " for yo mama was not found. If this view is optional add '@Nullable' annotation.");
+     }
+   }
+ }

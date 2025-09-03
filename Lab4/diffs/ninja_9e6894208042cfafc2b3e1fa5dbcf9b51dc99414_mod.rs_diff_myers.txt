@@ -1,0 +1,10 @@
+diff --git a/openai/src/platform/mod.rs b/openai/src/platform/mod.rs
+index f482324..fc362bc 100644
+--- a/openai/src/platform/mod.rs
++++ b/openai/src/platform/mod.rs
+@@ -353,4 +353,5 @@
+ //! }
+ //! ```
+ 
++#[cfg(feature = "api")]
+ pub mod v1;

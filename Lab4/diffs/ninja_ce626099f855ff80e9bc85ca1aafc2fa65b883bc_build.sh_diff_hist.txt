@@ -1,0 +1,20 @@
+diff --git a/build.sh b/build.sh
+index 8bf4414..fd5c8b4 100755
+--- a/build.sh
++++ b/build.sh
+@@ -1,11 +1,2 @@
+-#!/bin/bash
+-
+-declare -A target_map
+-
+-target_map[x86_64-unknown-linux-musl]="x86_64-linux-gnu-gcc,GOOS=linux,GOARCH=amd64"
+-target_map[aarch64-unknown-linux-musl]="aarch64-linux-gnu-gcc,GOOS=linux,GOARCH=arm64"
+-target_map[x86_64-apple-darwin]="GOOS=darwin,GOARCH=amd64"
+-target_map[aarch64-apple-darwin]="GOOS=darwin,GOARCH=arm64"
+-target_map[aarch64-apple-darwin]="GOOS=darwin,GOARCH=arm64"
+-
+-echo "${target_map["x86_64-unknown-linux-musl"]}"
+\ No newline at end of file
++cargo update
++cargo build --release
+\ No newline at end of file

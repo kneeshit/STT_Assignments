@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/middleware.rs b/openai/src/serve/middleware.rs
+index bd753bc..4ac7d25 100644
+--- a/openai/src/serve/middleware.rs
++++ b/openai/src/serve/middleware.rs
+@@ -10,7 +10,7 @@ use actix_web::{
+     http::header,
+     Error, HttpResponse,
+ };
+-use futures_util::future::LocalBoxFuture;
++use futures_core::future::LocalBoxFuture;
+ 
+ #[derive(serde::Serialize)]
+ struct MiddlewareMessage<'a> {

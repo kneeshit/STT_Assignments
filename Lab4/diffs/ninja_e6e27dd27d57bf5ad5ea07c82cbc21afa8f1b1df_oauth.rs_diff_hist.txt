@@ -1,0 +1,12 @@
+diff --git a/openai/src/oauth.rs b/openai/src/oauth.rs
+index 8e2eb60..e37ee08 100644
+--- a/openai/src/oauth.rs
++++ b/openai/src/oauth.rs
+@@ -676,6 +676,7 @@ impl OAuthClientBuilder {
+ 
+     pub fn builder() -> OAuthClientBuilder {
+         let client_builder = Client::builder()
++            .chrome_builder(reqwest::browser::ChromeVersion::V108)
+             .user_agent(HEADER_UA)
+             .redirect(Policy::custom(|attempt| {
+                 if attempt

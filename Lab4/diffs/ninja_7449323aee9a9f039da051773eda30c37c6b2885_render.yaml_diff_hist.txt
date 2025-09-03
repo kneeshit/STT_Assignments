@@ -1,0 +1,10 @@
+diff --git a/render.yaml b/render.yaml
+deleted file mode 100644
+index 6a04816..0000000
+--- a/render.yaml
++++ /dev/null
+@@ -1,4 +0,0 @@
+-runtime: image
+-
+-image:
+-  url: gngpp/ninja:warp

@@ -1,0 +1,18 @@
+diff --git a/openai/src/api/opengpt.rs b/openai/src/api/opengpt.rs
+index c8ea5ca..068f0bc 100644
+--- a/openai/src/api/opengpt.rs
++++ b/openai/src/api/opengpt.rs
+@@ -161,10 +161,9 @@ impl OpenGPT {
+             .send()
+             .await?;
+ 
+-        Ok(PostConversationStreamResponse {
+-            response: Box::pin(resp.bytes_stream()),
+-            first_chunk: true,
+-        })
++        Ok(PostConversationStreamResponse::new(Box::pin(
++            resp.bytes_stream(),
++        )))
+     }
+ 
+     pub async fn post_conversation(

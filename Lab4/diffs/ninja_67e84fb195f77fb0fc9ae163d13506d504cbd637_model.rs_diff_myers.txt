@@ -1,0 +1,29 @@
+diff --git a/openai/src/auth/model.rs b/openai/src/auth/model.rs
+index 7c1ea6e..847c332 100644
+--- a/openai/src/auth/model.rs
++++ b/openai/src/auth/model.rs
+@@ -1,8 +1,10 @@
++use std::fmt::{Display, Formatter};
++
+ use derive_builder::Builder;
+ use serde::{Deserialize, Serialize};
+ use serde_json::Value;
+ 
+-#[derive(Clone, PartialEq, Eq, Hash, Deserialize)]
++#[derive(Clone, PartialEq, Eq, Hash, Deserialize, Debug)]
+ #[serde(rename_all = "snake_case")]
+ pub enum AuthStrategy {
+     Apple,
+@@ -15,6 +17,12 @@ impl Default for AuthStrategy {
+     }
+ }
+ 
++impl Display for AuthStrategy {
++    fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), std::fmt::Error> {
++        write!(f, "{self:?}")
++    }
++}
++
+ #[derive(Deserialize, Builder)]
+ pub struct AuthAccount {
+     pub username: String,

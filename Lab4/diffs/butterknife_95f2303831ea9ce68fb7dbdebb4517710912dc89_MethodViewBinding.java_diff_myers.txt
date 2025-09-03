@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/MethodViewBinding.java b/butterknife/src/main/java/butterknife/internal/MethodViewBinding.java
+index c6aaa2b..fede483 100644
+--- a/butterknife/src/main/java/butterknife/internal/MethodViewBinding.java
++++ b/butterknife/src/main/java/butterknife/internal/MethodViewBinding.java
+@@ -11,7 +11,7 @@ final class MethodViewBinding implements ViewBinding {
+ 
+   MethodViewBinding(String name, List<Parameter> parameters, boolean required) {
+     this.name = name;
+-    this.parameters = Collections.unmodifiableList(new ArrayList<Parameter>(parameters));
++    this.parameters = Collections.unmodifiableList(new ArrayList<>(parameters));
+     this.required = required;
+   }
+ 

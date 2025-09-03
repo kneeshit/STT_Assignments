@@ -1,0 +1,18 @@
+diff --git a/butterknife/src/it/method-with-return-type/src/main/java/test/Test.java b/butterknife/src/it/method-with-return-type/src/main/java/test/Test.java
+new file mode 100644
+index 0000000..9a57d2f
+--- /dev/null
++++ b/butterknife/src/it/method-with-return-type/src/main/java/test/Test.java
+@@ -0,0 +1,12 @@
++package test;
++
++import android.app.Activity;
++import butterknife.InjectView;
++import butterknife.OnClick;
++import java.lang.String;
++
++public class Test extends Activity {
++  @OnClick(1)
++  public String doStuff() {
++  }
++}

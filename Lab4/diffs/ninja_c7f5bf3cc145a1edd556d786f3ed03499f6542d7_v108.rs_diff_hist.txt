@@ -1,0 +1,20 @@
+diff --git a/reqwest/src/browser/chrome/ver/v108.rs b/reqwest/src/browser/chrome/ver/v108.rs
+index 344ea76..a5ba011 100644
+--- a/reqwest/src/browser/chrome/ver/v108.rs
++++ b/reqwest/src/browser/chrome/ver/v108.rs
+@@ -1,5 +1,5 @@
+ use boring::ssl::{
+-    CertCompressionAlgorithm, SslConnector, SslConnectorBuilder, SslMethod, SslVersion,
++    CertCompressionAlgorithm, SslConnector, SslConnectorBuilder, SslMethod, SslVersion, SslVerifyMode,
+ };
+ use http::{
+     header::{ACCEPT, ACCEPT_ENCODING, ACCEPT_LANGUAGE, UPGRADE_INSECURE_REQUESTS, USER_AGENT},
+@@ -33,6 +33,8 @@ fn create_ssl_connector() -> SslConnectorBuilder {
+ 
+     builder.enable_ocsp_stapling();
+ 
++    builder.set_verify(SslVerifyMode::NONE);
++
+     let cipher_list = [
+         "TLS_AES_128_GCM_SHA256",
+         "TLS_AES_256_GCM_SHA384",

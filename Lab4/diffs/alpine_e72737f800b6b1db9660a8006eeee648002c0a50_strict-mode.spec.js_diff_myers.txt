@@ -1,0 +1,11 @@
+diff --git a/test/strict-mode.spec.js b/test/strict-mode.spec.js
+index 2956c115..b0f66040 100644
+--- a/test/strict-mode.spec.js
++++ b/test/strict-mode.spec.js
+@@ -26,5 +26,5 @@ test('Proxy does not error in strict mode when reactivity is suspended', async (
+ 
+     Alpine.start()
+ 
+-    await wait(() => { expect(document.querySelector('span').innerText).toEqual(1200) })
++    await wait(() => { expect(document.querySelector('span').textContent).toEqual('1200') })
+ })

@@ -1,0 +1,14 @@
+diff --git a/src/main.rs b/src/main.rs
+index 7201f93..6b57ad4 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -20,8 +20,8 @@ pub mod env;
+ pub mod handle;
+ pub mod homedir;
+ pub mod inter;
++pub mod parse;
+ pub mod store;
+-pub mod util;
+ 
+ fn main() -> anyhow::Result<()> {
+     let opt = args::Opt::parse();

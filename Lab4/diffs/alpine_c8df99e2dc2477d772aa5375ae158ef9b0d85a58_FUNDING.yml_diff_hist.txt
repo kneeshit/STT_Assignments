@@ -1,0 +1,9 @@
+diff --git a/.github/FUNDING.yml b/.github/FUNDING.yml
+new file mode 100644
+index 00000000..5ab7ec3d
+--- /dev/null
++++ b/.github/FUNDING.yml
+@@ -0,0 +1,3 @@
++# These are supported funding model platforms
++
++github: [calebporzio, user2]

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/Builder.yml b/.github/workflows/Builder.yml
+index 0e8cab4..8c8d4c7 100644
+--- a/.github/workflows/Builder.yml
++++ b/.github/workflows/Builder.yml
+@@ -1,7 +1,6 @@
+ name: Builder
+ 
+ on:
+-  push:
+   workflow_dispatch:
+ 
+ 

@@ -1,0 +1,11 @@
+diff --git a/src/store/conf.rs b/src/store/conf.rs
+index 89e19a6..106d7f0 100644
+--- a/src/store/conf.rs
++++ b/src/store/conf.rs
+@@ -1,5 +1,5 @@
+ use super::{Store, StoreId, StoreResult};
+-use crate::homedir::home_dir;
++use openai::homedir::home_dir;
+ use serde::{Deserialize, Serialize};
+ use std::{collections::HashMap, ops::Not, path::PathBuf};
+ 

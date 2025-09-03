@@ -1,0 +1,17 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index 884ea51..5c54715 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -1,9 +1,9 @@
+ version: '3'
+ 
+ services:
+-  opengpt:
+-    image: ghcr.io/gngpp/opengpt:latest
+-    container_name: opengpt
++  ninja:
++    image: ghcr.io/gngpp/ninja:latest
++    container_name: ninja
+     restart: unless-stopped
+     environment:
+       - TZ=Asia/Shanghai

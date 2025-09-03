@@ -1,0 +1,11 @@
+diff --git a/gradle.properties b/gradle.properties
+index eb9fb09..bb39ab0 100644
+--- a/gradle.properties
++++ b/gradle.properties
+@@ -1,5 +1,5 @@
+ GROUP=com.jakewharton
+-VERSION_NAME=8.2.1
++VERSION_NAME=8.2.2-SNAPSHOT
+ 
+ POM_DESCRIPTION=Field and method binding for Android views.
+ 

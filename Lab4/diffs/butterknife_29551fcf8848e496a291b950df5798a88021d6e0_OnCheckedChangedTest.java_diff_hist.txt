@@ -1,0 +1,33 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java b/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
+index 885f0eb..a6191f3 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
+@@ -19,20 +19,6 @@ public class OnCheckedChangedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
+-        + "package test;\n"
+-        + "import android.view.View;\n"
+-        + "import butterknife.Unbinder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+-        + "import java.lang.Override;\n"
+-        + "public final class Test_ViewBinder implements ViewBinder<Test> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Test target, View source) {\n"
+-        + "    return new Test_ViewBinding<>(target, source);\n"
+-        + "  }\n"
+-        + "}"
+-    );
+-
+     JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+@@ -70,6 +56,6 @@ public class OnCheckedChangedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutWarnings()
+         .and()
+-        .generatesSources(binderSource, bindingSource);
++        .generatesSources(bindingSource);
+   }
+ }

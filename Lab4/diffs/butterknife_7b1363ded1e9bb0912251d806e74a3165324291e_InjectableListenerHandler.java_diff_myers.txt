@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/InjectableListenerHandler.java b/butterknife/src/main/java/butterknife/internal/InjectableListenerHandler.java
+index 224eb8d..a414a26 100644
+--- a/butterknife/src/main/java/butterknife/internal/InjectableListenerHandler.java
++++ b/butterknife/src/main/java/butterknife/internal/InjectableListenerHandler.java
+@@ -10,7 +10,7 @@ public interface InjectableListenerHandler {
+    *
+    * @throws InjectableListenerException if the method is not properly formed.
+    */
+-  String[] parseParamTypesAndValidateMethod(InjectViewProcessor ivp, ExecutableElement element)
++  Param[] parseParamTypesAndValidateMethod(InjectViewProcessor ivp, ExecutableElement element)
+       throws InjectableListenerException;
+ 
+   /**

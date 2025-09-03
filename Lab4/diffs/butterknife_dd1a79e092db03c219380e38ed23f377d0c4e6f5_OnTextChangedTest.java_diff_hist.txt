@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java b/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java
+index 8025910..02f5505 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnTextChangedTest.java
+@@ -82,7 +82,7 @@ public class OnTextChangedTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

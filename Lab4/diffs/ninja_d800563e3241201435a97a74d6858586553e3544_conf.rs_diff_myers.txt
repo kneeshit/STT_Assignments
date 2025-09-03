@@ -1,0 +1,13 @@
+diff --git a/src/store/conf.rs b/src/store/conf.rs
+index a1b7f7a..9040e6c 100644
+--- a/src/store/conf.rs
++++ b/src/store/conf.rs
+@@ -17,8 +17,6 @@ pub struct Conf {
+     pub preauth_api: String,
+     /// Client proxy. Format: protocol://user:pass@ip:port
+     pub proxy: Option<String>,
+-    /// Get arkose-token endpoint
+-    pub arkose_token_endpoint: Option<String>,
+     /// About the solver client by ArkoseLabs
+     pub arkose_solver: Solver,
+     /// About the solver client key by ArkoseLabs

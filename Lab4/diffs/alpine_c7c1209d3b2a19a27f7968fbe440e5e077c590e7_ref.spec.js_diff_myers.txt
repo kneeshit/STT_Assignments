@@ -1,0 +1,19 @@
+diff --git a/test/ref.spec.js b/test/ref.spec.js
+index aece874e..aa2e1550 100644
+--- a/test/ref.spec.js
++++ b/test/ref.spec.js
+@@ -1,4 +1,4 @@
+-import projectX from 'project-x'
++import Alpine from 'alpinejs'
+ import { wait } from '@testing-library/dom'
+ 
+ global.MutationObserver = class {
+@@ -14,7 +14,7 @@ test('can reference elements from event listeners', async () => {
+         </div>
+     `
+ 
+-    projectX.start()
++    Alpine.start()
+ 
+     expect(document.querySelector('span').innerText).toEqual(undefined)
+ 

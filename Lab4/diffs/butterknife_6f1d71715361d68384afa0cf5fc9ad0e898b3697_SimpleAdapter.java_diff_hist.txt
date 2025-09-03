@@ -1,0 +1,13 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/SimpleAdapter.java b/butterknife-sample/src/main/java/com/example/butterknife/SimpleAdapter.java
+index be7d18e..29db68d 100644
+--- a/butterknife-sample/src/main/java/com/example/butterknife/SimpleAdapter.java
++++ b/butterknife-sample/src/main/java/com/example/butterknife/SimpleAdapter.java
+@@ -50,7 +50,7 @@ public class SimpleAdapter extends BaseAdapter {
+     return view;
+   }
+ 
+-  static class ViewHolder {
++  static final class ViewHolder {
+     @BindView(R.id.word) TextView word;
+     @BindView(R.id.length) TextView length;
+     @BindView(R.id.position) TextView position;

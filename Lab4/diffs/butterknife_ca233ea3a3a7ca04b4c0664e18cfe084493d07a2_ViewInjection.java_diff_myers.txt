@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ViewInjection.java b/butterknife/src/main/java/butterknife/internal/ViewInjection.java
+index 21fea53..eddc864 100644
+--- a/butterknife/src/main/java/butterknife/internal/ViewInjection.java
++++ b/butterknife/src/main/java/butterknife/internal/ViewInjection.java
+@@ -32,6 +32,10 @@ final class ViewInjection {
+         new LinkedHashMap<ListenerClass, MethodBinding>(methodBindings));
+   }
+ 
++  public boolean hasMethodBinding(ListenerClass listenerClass) {
++    return methodBindings.containsKey(listenerClass);
++  }
++
+   public List<Binding> getRequiredBindings() {
+     List<Binding> requiredBindings = new ArrayList<Binding>();
+     for (FieldBinding fieldBinding : fieldBindings) {

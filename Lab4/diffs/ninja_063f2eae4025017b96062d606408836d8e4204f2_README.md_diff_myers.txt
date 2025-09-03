@@ -1,0 +1,12 @@
+diff --git a/README.md b/README.md
+index 80d4e43..62e9c76 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,5 @@
+ # opengpt
+-Not just a command-line ChatGPT (bypass Cloudflare 403 Access Denied)
+-
++Not just a unofficial ChatGPT proxy (bypass Cloudflare 403 Access Denied)
+ ### Features
+ - API-Key authentication
+ - Email/Password account authentication

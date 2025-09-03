@@ -1,0 +1,12 @@
+diff --git a/openai/ui/static/resources/manifest.json b/openai/ui/static/resources/manifest.json
+index e0096b4..74a440d 100644
+--- a/openai/ui/static/resources/manifest.json
++++ b/openai/ui/static/resources/manifest.json
+@@ -4,7 +4,6 @@
+   "icons": [
+     {
+       "src": "/resources/apple-touch-icon.png",
+-      "sizes": "180x180",
+       "type": "image/png"
+     }
+   ],

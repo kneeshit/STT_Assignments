@@ -1,0 +1,30 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/CollectionBinding.java b/butterknife/src/main/java/butterknife/internal/CollectionBinding.java
+index 9cfd886..4ae1832 100644
+--- a/butterknife/src/main/java/butterknife/internal/CollectionBinding.java
++++ b/butterknife/src/main/java/butterknife/internal/CollectionBinding.java
+@@ -9,11 +9,13 @@ final class CollectionBinding implements Binding {
+   private final String name;
+   private final String type;
+   private final Kind kind;
++  private final boolean required;
+ 
+-  CollectionBinding(String name, String type, Kind kind) {
++  CollectionBinding(String name, String type, Kind kind, boolean required) {
+     this.name = name;
+     this.type = type;
+     this.kind = kind;
++    this.required = required;
+   }
+ 
+   public String getName() {
+@@ -28,6 +30,10 @@ final class CollectionBinding implements Binding {
+     return kind;
+   }
+ 
++  public boolean isRequired() {
++    return required;
++  }
++
+   @Override public String getDescription() {
+     return "field '" + name + "'";
+   }

@@ -1,0 +1,16 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index 5d6c90e..be549c2 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -47,8 +47,10 @@ pub enum OAuthError {
+     InvalidEmail,
+     #[error("invalid Location")]
+     InvalidLocation,
+-    #[error("invalid token")]
++    #[error("invalid access-token")]
+     InvalidAccessToken,
++    #[error("invalid refresh-token")]
++    InvalidRefreshToken,
+     #[error("token expired")]
+     TokenExpired,
+     #[error("MFA failed")]

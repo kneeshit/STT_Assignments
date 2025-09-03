@@ -1,0 +1,13 @@
+diff --git a/checkstyle.xml b/checkstyle.xml
+index 6d84064..67d211c 100644
+--- a/checkstyle.xml
++++ b/checkstyle.xml
+@@ -96,7 +96,7 @@
+     <!-- Checks for blocks. You know, those {}'s         -->
+     <!-- See http://checkstyle.sf.net/config_blocks.html -->
+     <module name="AvoidNestedBlocks"/>
+-    <module name="EmptyBlock"/>
++    <!--<module name="EmptyBlock"/>-->
+     <module name="LeftCurly"/>
+     <module name="NeedBraces">
+         <property name="tokens" value="LITERAL_DO, LITERAL_ELSE, LITERAL_FOR, LITERAL_WHILE"/>

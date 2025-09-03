@@ -1,0 +1,12 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 5960f76..b6bfdf6 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -47,6 +47,7 @@ base64 = "0.21.4"
+ viuer = "0.6.2"
+ hex = "0.4.3"
+ sha2 = "0.10.8"
++env_logger = "0.10.0"
+ 
+ [features]
+ default = ["serve"]

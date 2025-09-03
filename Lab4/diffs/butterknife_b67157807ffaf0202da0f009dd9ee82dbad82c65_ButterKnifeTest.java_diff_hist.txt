@@ -1,0 +1,40 @@
+diff --git a/butterknife/src/test/java/butterknife/ButterKnifeTest.java b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+index 9fcc50c..078af50 100644
+--- a/butterknife/src/test/java/butterknife/ButterKnifeTest.java
++++ b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+@@ -13,6 +13,8 @@ import org.robolectric.Robolectric;
+ import org.robolectric.RobolectricTestRunner;
+ import org.robolectric.annotation.Config;
+ 
++import static butterknife.ButterKnife.Finder.arrayOf;
++import static butterknife.ButterKnife.Finder.listOf;
+ import static org.fest.assertions.api.ANDROID.assertThat;
+ import static org.fest.assertions.api.Assertions.assertThat;
+ import static org.fest.assertions.api.Assertions.entry;
+@@ -47,6 +49,26 @@ public class ButterKnifeTest {
+     ButterKnife.INJECTORS.clear();
+   }
+ 
++  @Test public void listOfFiltersNull() {
++    assertThat(listOf(null, null, null)).isEmpty();
++    assertThat(listOf("One", null, null)).containsExactly("One");
++    assertThat(listOf(null, "One", null)).containsExactly("One");
++    assertThat(listOf(null, null, "One")).containsExactly("One");
++    assertThat(listOf("One", "Two", null)).containsExactly("One", "Two");
++    assertThat(listOf("One", null, "Two")).containsExactly("One", "Two");
++    assertThat(listOf(null, "One", "Two")).containsExactly("One", "Two");
++  }
++
++  @Test public void arrayOfFiltersNull() {
++    assertThat(arrayOf(null, null, null)).isEmpty();
++    assertThat(arrayOf("One", null, null)).containsExactly("One");
++    assertThat(arrayOf(null, "One", null)).containsExactly("One");
++    assertThat(arrayOf(null, null, "One")).containsExactly("One");
++    assertThat(arrayOf("One", "Two", null)).containsExactly("One", "Two");
++    assertThat(arrayOf("One", null, "Two")).containsExactly("One", "Two");
++    assertThat(arrayOf(null, "One", "Two")).containsExactly("One", "Two");
++  }
++
+   @Test public void propertyAppliedToEveryView() {
+     View view1 = new View(Robolectric.application);
+     View view2 = new View(Robolectric.application);

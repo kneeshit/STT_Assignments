@@ -1,0 +1,11 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindView.java b/butterknife-annotations/src/main/java/butterknife/BindView.java
+index 5381ba6..4770bf6 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindView.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindView.java
+@@ -17,5 +17,5 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ @Retention(CLASS) @Target(FIELD)
+ public @interface BindView {
+   /** View ID to which the field will be bound. */
+-  @IdRes int[] value();
++  @IdRes int value();
+ }

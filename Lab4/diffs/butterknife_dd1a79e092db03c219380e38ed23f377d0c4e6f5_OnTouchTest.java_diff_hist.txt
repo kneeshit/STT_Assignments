@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java b/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
+index 941bbeb..081f6ee 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnTouchTest.java
+@@ -70,7 +70,7 @@ public class OnTouchTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

@@ -1,0 +1,13 @@
+diff --git a/openai/Cargo.toml b/openai/Cargo.toml
+index 6ce91f7..ddda5f3 100644
+--- a/openai/Cargo.toml
++++ b/openai/Cargo.toml
+@@ -53,7 +53,7 @@ byteorder = "1.4.3"
+ # arkose
+ aes = "0.8.2"
+ hex = "0.4.3"
+-ring = "0.16.20"
++ring = { version = "0.16.20", features = ["std"] }
+ cbc = "0.1.2"
+ 
+ [build-dependencies]

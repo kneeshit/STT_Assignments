@@ -1,0 +1,18 @@
+diff --git a/butterknife-integration-test/src/main/proguard.pro b/butterknife-integration-test/src/main/proguard.pro
+new file mode 100644
+index 0000000..2893c55
+--- /dev/null
++++ b/butterknife-integration-test/src/main/proguard.pro
+@@ -0,0 +1,12 @@
++-dontoptimize
++-dontobfuscate
++
++# STUFF USED BY TESTS:
++
++-keep class butterknife.Unbinder {
++  void unbind();
++}
++
++-keep class com.example.butterknife.unbinder.H {
++  <init>(...);
++}

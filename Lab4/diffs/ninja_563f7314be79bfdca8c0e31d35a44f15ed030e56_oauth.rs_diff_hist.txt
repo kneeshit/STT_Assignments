@@ -1,0 +1,12 @@
+diff --git a/examples/oauth.rs b/examples/oauth.rs
+index f200a6e..87d548a 100644
+--- a/examples/oauth.rs
++++ b/examples/oauth.rs
+@@ -8,7 +8,6 @@ async fn main() -> anyhow::Result<()> {
+     let password = std::env::var("PASSWORD")?;
+     let auth = openai::auth::AuthClientBuilder::builder()
+         .user_agent(openai::HEADER_UA)
+-        .chrome_builder(reqwest::browser::ChromeVersion::V110)
+         .cookie_store(true)
+         .timeout(time::Duration::from_secs(1000))
+         .connect_timeout(time::Duration::from_secs(1000))

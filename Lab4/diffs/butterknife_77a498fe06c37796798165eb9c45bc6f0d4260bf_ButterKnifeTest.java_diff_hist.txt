@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/test/java/butterknife/ButterKnifeTest.java b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+index 8c2b490..e6c0097 100644
+--- a/butterknife/src/test/java/butterknife/ButterKnifeTest.java
++++ b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+@@ -234,7 +234,7 @@ public class ButterKnifeTest {
+     }
+ 
+     Example example = new Example();
+-    ButterKnife.bind(example, null, null);
++    assertThat(ButterKnife.getViewBinder(example)).isSameAs(ButterKnife.NOP_VIEW_BINDER);
+     assertThat(ButterKnife.BINDERS).containsEntry(Example.class, ButterKnife.NOP_VIEW_BINDER);
+   }
+ 

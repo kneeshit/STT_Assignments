@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindViewTest.java b/butterknife-compiler/src/test/java/butterknife/BindViewTest.java
+index 3e03406..39fabe1 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindViewTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindViewTest.java
+@@ -529,7 +529,7 @@ public class BindViewTest {
+         + "    protected InnerUnbinder(T target, Finder finder, Object source) {\n"
+         + "      this.target = target;\n"
+         + "      View view;\n"
+-        + "      view = finder.findOptionalView(source, 1, null);\n"
++        + "      view = finder.findOptionalView(source, 1);\n"
+         + "      target.view = view;\n"
+         + "    }\n"
+         + "    @Override\n"

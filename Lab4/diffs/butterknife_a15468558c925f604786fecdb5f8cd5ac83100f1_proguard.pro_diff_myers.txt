@@ -1,0 +1,12 @@
+diff --git a/butterknife-integration-test/src/main/proguard.pro b/butterknife-integration-test/src/main/proguard.pro
+index c305430..526a581 100644
+--- a/butterknife-integration-test/src/main/proguard.pro
++++ b/butterknife-integration-test/src/main/proguard.pro
+@@ -1,5 +1,7 @@
+ -dontoptimize
+ -dontobfuscate
++-dontnote **
++-dontwarn **
+ 
+ # STUFF USED BY TESTS:
+ 

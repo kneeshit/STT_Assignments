@@ -1,0 +1,15 @@
+diff --git a/build_docker.sh b/build_docker.sh
+index dcf4f9b..ae7f7bc 100755
+--- a/build_docker.sh
++++ b/build_docker.sh
+@@ -5,8 +5,8 @@
+ cd docker
+ docker buildx build --platform linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6 \
+     --tag ghcr.io/gngpp/opengpt:$tag \
++    --tag ghcr.io/gngpp/opengpt:latest \
+     --tag gngpp/opengpt:$tag \
+     --tag gngpp/opengpt:latest \
+-    --tag ghcr.io/gngpp/opengpt:latest \
+     --build-arg VERSION=$tag --push .
+ cd -
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/examples/opengpt.rs b/examples/opengpt.rs
+index 51b75e3..42df537 100644
+--- a/examples/opengpt.rs
++++ b/examples/opengpt.rs
+@@ -19,7 +19,7 @@ async fn main() -> anyhow::Result<()> {
+         .build();
+     let token = auth
+         .do_access_token(
+-            OAuthAccountBuilder::default()
++            &OAuthAccountBuilder::default()
+                 .username(email)
+                 .password(password)
+                 .build()?,

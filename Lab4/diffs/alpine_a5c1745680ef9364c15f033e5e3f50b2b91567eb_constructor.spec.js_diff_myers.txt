@@ -1,0 +1,13 @@
+diff --git a/test/constructor.spec.js b/test/constructor.spec.js
+index 3e4cb1ed..e6172ec5 100644
+--- a/test/constructor.spec.js
++++ b/test/constructor.spec.js
+@@ -69,7 +69,7 @@ test('auto-initialize new elements added to a component', async () => {
+     `
+ 
+     runObservers[0]([
+-        { addedNodes: [
++        { target: document.querySelector('#target'), addedNodes: [
+             document.querySelector('#target span'),
+             document.querySelector('#target button'),
+         ] }

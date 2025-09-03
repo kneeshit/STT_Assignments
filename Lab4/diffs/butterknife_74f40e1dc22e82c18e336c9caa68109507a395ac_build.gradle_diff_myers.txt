@@ -1,0 +1,13 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index 18e1ac2..8577bb4 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -22,6 +22,8 @@ android {
+   lintOptions {
+     textReport true
+     textOutput 'stdout'
++    // We run a full lint analysis as build part in CI, so skip vital checks for assemble tasks.
++    checkReleaseBuilds false
+   }
+ }
+ 

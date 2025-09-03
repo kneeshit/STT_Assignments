@@ -1,0 +1,13 @@
+diff --git a/index.html b/index.html
+index 818825a0..60a98346 100644
+--- a/index.html
++++ b/index.html
+@@ -5,7 +5,7 @@
+         </style>
+ 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" integrity="sha256-iM4Yzi/zLj/IshPWMC1IluRxTtRjMqjPGd97TZ9yYpU=" crossorigin="anonymous"></script>
+-        <script src="https://cdn.jsdelivr.net/gh/calebporzio/project-x/dist/project-x.min.js"></script>
++        <script src="/dist/project-x.min.js"></script>
+     </head>
+     <body>
+         <a href="/link-target">turbo-page</a>

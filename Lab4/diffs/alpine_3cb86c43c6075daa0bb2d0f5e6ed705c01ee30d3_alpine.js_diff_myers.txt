@@ -1,0 +1,13 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index e54d2eba..2eaa65a3 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -1592,7 +1592,7 @@
+             mutations[i].addedNodes.forEach(node => {
+               if (node.nodeType !== 1 || node.__x_inserted_me) return;
+ 
+-              if (node.matches('[x-data]')) {
++              if (node.matches('[x-data]') && !node.__x) {
+                 node.__x = new Component(node);
+                 return;
+               }

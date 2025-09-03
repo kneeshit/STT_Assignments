@@ -1,0 +1,13 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 0e38dc4f..c5c385ea 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -6368,7 +6368,7 @@
+ 
+ 
+     if (isNumeric(iteratorNames.items)) {
+-      return _toConsumableArray(Array(parseInt(iteratorNames.items)).keys());
++      return _toConsumableArray(Array(parseInt(iteratorNames.items, 10)).keys());
+     }
+ 
+     return component.evaluateReturnExpression(el, iteratorNames.items, extraVars);

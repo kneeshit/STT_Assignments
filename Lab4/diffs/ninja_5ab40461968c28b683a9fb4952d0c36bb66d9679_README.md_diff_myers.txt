@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index 32c4357..f357b64 100644
+--- a/README.md
++++ b/README.md
+@@ -97,7 +97,7 @@ services:
+       # - OPENGPT_TB_EXPIRED=
+       # - OPENGPT_CF_SITE_KEY=
+       # - OPENGPT_CF_SECRET_KEY=
+-    volumes:
++    # volumes:
+       # - ${PWD}/ssl:/etc
+       # - ${PWD}/serve.toml:/serve.toml
+     command: serve run

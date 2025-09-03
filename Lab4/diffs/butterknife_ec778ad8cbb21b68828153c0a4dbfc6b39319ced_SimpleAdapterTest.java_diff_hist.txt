@@ -1,0 +1,13 @@
+diff --git a/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java b/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java
+index b19803b..092bb79 100644
+--- a/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java
++++ b/butterknife-sample/src/test/java/com/example/butterknife/SimpleAdapterTest.java
+@@ -26,7 +26,7 @@ public class SimpleAdapterTest {
+     assertThat(holder.length).hasId(R.id.length);
+     assertThat(holder.position).hasId(R.id.position);
+ 
+-    ButterKnife.reset(holder);
++    ButterKnife.unbind(holder);
+     assertThat(holder.word).isNull();
+     assertThat(holder.length).isNull();
+     assertThat(holder.position).isNull();

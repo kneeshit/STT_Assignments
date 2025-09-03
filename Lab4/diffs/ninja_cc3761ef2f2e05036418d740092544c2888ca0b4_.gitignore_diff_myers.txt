@@ -1,0 +1,13 @@
+diff --git a/.gitignore b/.gitignore
+index 4b9ab59..f82ed16 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -20,4 +20,5 @@ Cargo.lock
+ 
+ .opengpt-access_tokens
+ .vscode
+-l
+\ No newline at end of file
++thunder-tests
++.env
+\ No newline at end of file

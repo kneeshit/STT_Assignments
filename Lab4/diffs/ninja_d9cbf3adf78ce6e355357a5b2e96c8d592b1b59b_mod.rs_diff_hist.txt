@@ -1,0 +1,19 @@
+diff --git a/reqwest/src/browser/chrome/ver/mod.rs b/reqwest/src/browser/chrome/ver/mod.rs
+index bb2bef8..24630b9 100644
+--- a/reqwest/src/browser/chrome/ver/mod.rs
++++ b/reqwest/src/browser/chrome/ver/mod.rs
+@@ -6,6 +6,7 @@ mod v104;
+ mod v105;
+ mod v106;
+ mod v108;
++mod v110;
+ 
+ pub(super) fn get_config_from_ver(ver: ChromeVersion) -> BrowserSettings {
+     match ver {
+@@ -13,5 +14,6 @@ pub(super) fn get_config_from_ver(ver: ChromeVersion) -> BrowserSettings {
+         ChromeVersion::V105 => v105::get_settings(),
+         ChromeVersion::V106 => v106::get_settings(),
+         ChromeVersion::V108 => v108::get_settings(),
++        ChromeVersion::V110 => v110::get_settings(),
+     }
+ }

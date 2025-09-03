@@ -1,0 +1,22 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/OnLongClick.java b/butterknife-annotations/src/main/java/butterknife/OnLongClick.java
+index 7cc22d3..55d7fed 100644
+--- a/butterknife-annotations/src/main/java/butterknife/OnLongClick.java
++++ b/butterknife-annotations/src/main/java/butterknife/OnLongClick.java
+@@ -22,6 +22,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
+  * </code></pre>
+  * Any number of parameters from {@link OnLongClickListener#onLongClick(android.view.View)} may be
+  * used on the method.
++ * <p>
++ * If the return type of the method is {@code void}, true will be returned from the listener.
+  *
+  * @see OnLongClickListener
+  */
+@@ -37,7 +39,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
+             "android.view.View"
+         },
+         returnType = "boolean",
+-        defaultReturn = "false"
++        defaultReturn = "true"
+     )
+ )
+ public @interface OnLongClick {

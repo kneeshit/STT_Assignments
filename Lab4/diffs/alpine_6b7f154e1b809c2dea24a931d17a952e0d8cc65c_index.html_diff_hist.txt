@@ -1,0 +1,22 @@
+diff --git a/examples/index.html b/examples/index.html
+index 2ab3b045..2cb9b657 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -328,6 +328,17 @@
+                     </td>
+                 </tr>
+ 
++                <tr>
++                    <td>Dispatch</td>
++                    <td>
++                        <div x-data="{ foo: 'bar' }" x-on:custom-event="foo = $event.detail.newValue">
++                            <span x-text="foo"></span>
++
++                            <button x-on:click="$dispatch('custom-event', {newValue: 'baz'})">Turn 'bar' to 'baz'</button>
++                        </div>
++                    </td>
++                </tr>
++
+                 <tr>
+                     <td>Cloak</td>
+                     <td>

@@ -1,0 +1,15 @@
+diff --git a/butterknife-sample/build.gradle b/butterknife-sample/build.gradle
+index ff2f484..874d07c 100644
+--- a/butterknife-sample/build.gradle
++++ b/butterknife-sample/build.gradle
+@@ -6,8 +6,8 @@ android {
+   buildToolsVersion rootProject.ext.buildToolsVersion
+ 
+   compileOptions {
+-    sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+-    targetCompatibility rootProject.ext.targetCompatibilityVersion
++    sourceCompatibility = rootProject.ext.sourceCompatibilityVersion
++    targetCompatibility = rootProject.ext.targetCompatibilityVersion
+   }
+ 
+   defaultConfig {

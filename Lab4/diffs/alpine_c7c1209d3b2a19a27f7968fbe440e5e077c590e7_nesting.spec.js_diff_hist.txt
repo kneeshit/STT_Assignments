@@ -1,0 +1,28 @@
+diff --git a/test/nesting.spec.js b/test/nesting.spec.js
+index db493780..ac05ed02 100644
+--- a/test/nesting.spec.js
++++ b/test/nesting.spec.js
+@@ -1,4 +1,4 @@
+-import projectX from 'project-x'
++import Alpine from 'alpinejs'
+ import { wait } from '@testing-library/dom'
+ const timeout = ms => new Promise(resolve => setTimeout(resolve, ms))
+ 
+@@ -17,7 +17,7 @@ test('can nest components', async () => {
+         </div>
+     `
+ 
+-    projectX.start()
++    Alpine.start()
+ 
+     expect(document.querySelector('span').innerText).toEqual('bar')
+ 
+@@ -39,7 +39,7 @@ test('can access parent properties after nested components', async () => {
+         </div>
+     `
+ 
+-    projectX.start()
++    Alpine.start()
+ 
+     expect(document.querySelector('span').innerText).toEqual('bar')
+ })

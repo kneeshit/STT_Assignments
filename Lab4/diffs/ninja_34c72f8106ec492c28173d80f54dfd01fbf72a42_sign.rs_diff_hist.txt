@@ -1,0 +1,19 @@
+diff --git a/openai/src/serve/sign.rs b/openai/src/serve/sign.rs
+index 133231b..2712c8c 100644
+--- a/openai/src/serve/sign.rs
++++ b/openai/src/serve/sign.rs
+@@ -1,4 +1,4 @@
+-use actix_web::{dev::ServiceRequest, http::header::HeaderMap};
++use axum::http::header::HeaderMap;
+ 
+ enum SignHeader {
+     Authorization,
+@@ -18,7 +18,7 @@ impl ToString for SignHeader {
+ pub struct Sign;
+ 
+ impl Sign {
+-    pub fn handle_request(req: &ServiceRequest, secret_key: &str) -> Result<(), String> {
++    pub fn handle_request<B>(req: &axum::http::Request<B>, secret_key: &str) -> Result<(), String> {
+         let headers = req.headers();
+         // Extract the signature in the request
+         let signature = headers

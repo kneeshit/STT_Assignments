@@ -1,0 +1,4 @@
+runtime: image
+
+image:
+  url: gngpp/ninja:warp

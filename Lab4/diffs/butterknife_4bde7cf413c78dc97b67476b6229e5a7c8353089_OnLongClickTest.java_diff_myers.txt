@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnLongClickTest.java b/butterknife/src/test/java/butterknife/internal/OnLongClickTest.java
+index 31abaaf..324ac31 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnLongClickTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnLongClickTest.java
+@@ -51,8 +51,7 @@ public class OnLongClickTest {
+   }
+ 
+   @Test public void failsIfMissingReturnType() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
+-        Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
+         "package test;",
+         "import android.app.Activity;",
+         "import butterknife.OnLongClick;",

@@ -1,0 +1,11 @@
+diff --git a/openai/build.rs b/openai/build.rs
+index fcfc8c0..b20215c 100644
+--- a/openai/build.rs
++++ b/openai/build.rs
+@@ -1,5 +1,5 @@
+ use static_files::resource_dir;
+ 
+ fn main() -> std::io::Result<()> {
+-    resource_dir("./templates/static").build()
++    resource_dir("./ui/static").build()
+ }

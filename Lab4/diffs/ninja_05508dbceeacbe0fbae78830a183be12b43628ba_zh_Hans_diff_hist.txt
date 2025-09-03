@@ -1,0 +1,8 @@
+diff --git a/openwrt/luci-app-opengpt/po/zh_Hans b/openwrt/luci-app-opengpt/po/zh_Hans
+new file mode 100644
+index 0000000..41451e4
+--- /dev/null
++++ b/openwrt/luci-app-opengpt/po/zh_Hans
+@@ -0,0 +1 @@
++zh-cn
+\ No newline at end of file

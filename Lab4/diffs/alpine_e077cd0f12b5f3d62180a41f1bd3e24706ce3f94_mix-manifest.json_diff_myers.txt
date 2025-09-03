@@ -1,0 +1,10 @@
+diff --git a/dist/mix-manifest.json b/dist/mix-manifest.json
+index 3f7c6364..d56f04f9 100644
+--- a/dist/mix-manifest.json
++++ b/dist/mix-manifest.json
+@@ -1,4 +1,4 @@
+ {
+-    "/project-x.js": "/project-x.js?id=ab86c5db3e64294a9256",
++    "/project-x.js": "/project-x.js?id=e45ec620878b956774b7",
+     "/project-x.min.js": "/project-x.min.js?id=bed9d0d6b5b36985cfb4"
+ }

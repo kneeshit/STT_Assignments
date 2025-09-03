@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/main/java/butterknife/OnTouch.java b/butterknife/src/main/java/butterknife/OnTouch.java
+index 04a9c5c..80ac3da 100644
+--- a/butterknife/src/main/java/butterknife/OnTouch.java
++++ b/butterknife/src/main/java/butterknife/OnTouch.java
+@@ -13,8 +13,9 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ /**
+  * Bind a method to an {@link OnTouchListener OnTouchListener} on the view for each ID specified.
+  * <pre><code>
+- * {@literal @}OnTouch(R.id.example) void onTouch() {
++ * {@literal @}OnTouch(R.id.example) boolean onTouch() {
+  *   Toast.makeText(this, "Touched!", LENGTH_SHORT).show();
++ *   return false;
+  * }
+  * </code></pre>
+  * Any number of parameters from

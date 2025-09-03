@@ -1,0 +1,4 @@
+{
+    "/alpine.min.js": "/alpine.min.js?id=ed3d6a73430d8228e087",
+    "/alpine.js": "/alpine.js?id=173683fa4e0715ecbb0e"
+}

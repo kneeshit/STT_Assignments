@@ -1,0 +1,25 @@
+diff --git a/sample/library/build.gradle b/sample/library/build.gradle
+index b017f47..27111f3 100644
+--- a/sample/library/build.gradle
++++ b/sample/library/build.gradle
+@@ -2,6 +2,7 @@ buildscript {
+   repositories {
+     mavenCentral()
+     jcenter()
++    google()
+   }
+ 
+   dependencies {
+@@ -22,9 +23,9 @@ android {
+ }
+ 
+ dependencies {
+-  compile deps.release.runtime
++  implementation deps.release.runtime
+   annotationProcessor deps.release.compiler
+ 
+-  testCompile deps.junit
+-  testCompile deps.truth
++  testImplementation deps.junit
++  testImplementation deps.truth
+ }

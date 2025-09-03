@@ -1,0 +1,13 @@
+diff --git a/.gitignore b/.gitignore
+index 1361f19..136167c 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -23,6 +23,6 @@ Cargo.lock
+ thunder-tests
+ .env
+ ./arkose
+-opengpt
++./opengpt
+ uploads
+ ./vendor
+\ No newline at end of file

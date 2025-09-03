@@ -1,0 +1,17 @@
+diff --git a/butterknife-runtime/src/main/java/butterknife/Setter.java b/butterknife-runtime/src/main/java/butterknife/Setter.java
+new file mode 100644
+index 0000000..2b57a88
+--- /dev/null
++++ b/butterknife-runtime/src/main/java/butterknife/Setter.java
+@@ -0,0 +1,11 @@
++package butterknife;
++
++import android.support.annotation.NonNull;
++import android.support.annotation.UiThread;
++import android.view.View;
++
++/** A setter that can apply a value to a list of views. */
++public interface Setter<T extends View, V> {
++  /** Set the {@code value} on the {@code view} which is at {@code index} in the list. */
++  @UiThread void set(@NonNull T view, V value, int index);
++}

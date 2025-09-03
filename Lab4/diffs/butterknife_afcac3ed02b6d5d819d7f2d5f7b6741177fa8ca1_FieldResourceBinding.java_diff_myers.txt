@@ -1,0 +1,31 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/FieldResourceBinding.java b/butterknife/src/main/java/butterknife/internal/FieldResourceBinding.java
+new file mode 100644
+index 0000000..f4f0cd0
+--- /dev/null
++++ b/butterknife/src/main/java/butterknife/internal/FieldResourceBinding.java
+@@ -0,0 +1,25 @@
++package butterknife.internal;
++
++final class FieldResourceBinding {
++  private final int id;
++  private final String name;
++  private final String method;
++
++  FieldResourceBinding(int id, String name, String method) {
++    this.id = id;
++    this.name = name;
++    this.method = method;
++  }
++
++  public int getId() {
++    return id;
++  }
++
++  public String getName() {
++    return name;
++  }
++
++  public String getMethod() {
++    return method;
++  }
++}

@@ -1,0 +1,11 @@
+diff --git a/openwrt/luci-app-opengpt/luasrc/view/opengpt/opengpt_status.htm b/openwrt/luci-app-opengpt/luasrc/view/opengpt/opengpt_status.htm
+index 00e9499..bacba48 100644
+--- a/openwrt/luci-app-opengpt/luasrc/view/opengpt/opengpt_status.htm
++++ b/openwrt/luci-app-opengpt/luasrc/view/opengpt/opengpt_status.htm
+@@ -1,5 +1,5 @@
+ <script type="text/javascript">//<![CDATA[
+-	XHR.poll(5, '<%=url("admin/nas/opengpt/status")%>', null,
++	XHR.poll(5, '<%=url("admin/services/opengpt/status")%>', null,
+ 		function(x, data)
+ 		{
+ 			var tb = document.getElementById('opengpt_status');

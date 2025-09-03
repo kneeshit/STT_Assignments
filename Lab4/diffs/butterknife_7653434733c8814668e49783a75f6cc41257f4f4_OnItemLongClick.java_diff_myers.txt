@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnItemLongClick.java b/butterknife/src/main/java/butterknife/OnItemLongClick.java
+index 74d2331..1eb42f9 100644
+--- a/butterknife/src/main/java/butterknife/OnItemLongClick.java
++++ b/butterknife/src/main/java/butterknife/OnItemLongClick.java
+@@ -24,7 +24,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * @see Optional
+  */
+ @Retention(CLASS) @Target(METHOD)
+-@ListenerClass(OnItemLongClickListener.class)
++@ListenerClass("android.widget.AdapterView.OnItemLongClickListener")
+ public @interface OnItemLongClick {
+   int[] value();
+ }

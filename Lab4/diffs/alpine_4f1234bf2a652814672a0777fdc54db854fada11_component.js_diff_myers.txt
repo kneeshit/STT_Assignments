@@ -1,0 +1,14 @@
+diff --git a/src/component.js b/src/component.js
+index 76381f57..d08ba2a3 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -336,7 +336,8 @@ export default class Component {
+             for (let i=0; i < mutations.length; i++) {
+                 // Filter out mutations triggered from child components.
+                 const closestParentComponent = mutations[i].target.closest('[x-data]')
+-                if (! (closestParentComponent && closestParentComponent.isSameNode(this.$el))) return
++
++                if (! (closestParentComponent && closestParentComponent.isSameNode(this.$el))) continue
+ 
+                 if (mutations[i].type === 'attributes' && mutations[i].attributeName === 'x-data') {
+                     const rawData = saferEval(mutations[i].target.getAttribute('x-data'), {})

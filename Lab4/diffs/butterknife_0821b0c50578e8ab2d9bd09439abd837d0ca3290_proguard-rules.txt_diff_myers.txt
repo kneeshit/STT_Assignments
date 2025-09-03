@@ -1,0 +1,8 @@
+diff --git a/butterknife-reflect/proguard-rules.txt b/butterknife-reflect/proguard-rules.txt
+new file mode 100644
+index 0000000..977eba4
+--- /dev/null
++++ b/butterknife-reflect/proguard-rules.txt
+@@ -0,0 +1,2 @@
++-keepclassmembers class * { @butterknife.* <methods>; }
++-keepclassmembers class * { @butterknife.* <fields>; }

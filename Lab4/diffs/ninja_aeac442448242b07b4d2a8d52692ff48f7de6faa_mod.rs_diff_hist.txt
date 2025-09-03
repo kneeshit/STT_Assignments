@@ -1,0 +1,12 @@
+diff --git a/openai/src/auth/mod.rs b/openai/src/auth/mod.rs
+index 86d0d21..59d4c86 100644
+--- a/openai/src/auth/mod.rs
++++ b/openai/src/auth/mod.rs
+@@ -88,7 +88,6 @@ impl AuthHandle for AuthClient {
+                     match handle.do_revoke_token(refresh_token).await {
+                         Ok(_) => {
+                             last_err = None;
+-                            break;
+                         }
+                         Err(err) => last_err = Some(err),
+                     }

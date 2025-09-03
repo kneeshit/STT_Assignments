@@ -1,0 +1,13 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index 9afe04cb..a3ba2057 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -5825,7 +5825,7 @@
+ 
+     if (keyModifiers.includes('debounce')) {
+       var debounceIndex = keyModifiers.indexOf('debounce');
+-      keyModifiers.splice(debounceIndex, isNumeric(keyModifiers[debounceIndex + 1].split('ms')[0] || 'invalid-wait') ? 2 : 1);
++      keyModifiers.splice(debounceIndex, isNumeric((keyModifiers[debounceIndex + 1] || 'invalid-wait').split('ms')[0]) ? 2 : 1);
+     } // If no modifier is specified, we'll call it a press.
+ 
+ 

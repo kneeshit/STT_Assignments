@@ -1,0 +1,7 @@
+diff --git a/butterknife/src/it/class-not-private/invoker.properties b/butterknife/src/it/class-not-private/invoker.properties
+new file mode 100644
+index 0000000..fdd3d20
+--- /dev/null
++++ b/butterknife/src/it/class-not-private/invoker.properties
+@@ -0,0 +1 @@
++invoker.buildResult=failure

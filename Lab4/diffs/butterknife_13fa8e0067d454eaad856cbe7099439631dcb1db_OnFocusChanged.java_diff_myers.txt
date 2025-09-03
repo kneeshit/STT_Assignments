@@ -1,0 +1,24 @@
+diff --git a/butterknife/src/main/java/butterknife/OnFocusChanged.java b/butterknife/src/main/java/butterknife/OnFocusChanged.java
+index 9b17a36..fbc313c 100644
+--- a/butterknife/src/main/java/butterknife/OnFocusChanged.java
++++ b/butterknife/src/main/java/butterknife/OnFocusChanged.java
+@@ -22,7 +22,18 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * @see Optional
+  */
+ @Retention(CLASS) @Target(METHOD)
+-@ListenerClass("android.view.View.OnFocusChangeListener")
++@ListenerClass(
++    targetType = "android.widget.AdapterView<?>",
++    setter = "setOnItemLongClickListener",
++    type = "android.widget.AdapterView.OnItemLongClickListener",
++    name = "onItemLongClick",
++    parameters = {
++        "android.widget.AdapterView",
++        "android.view.View",
++        "int",
++        "long"
++    }
++)
+ public @interface OnFocusChanged {
+   int[] value();
+ }

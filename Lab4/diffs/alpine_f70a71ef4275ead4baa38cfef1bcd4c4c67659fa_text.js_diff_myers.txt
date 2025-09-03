@@ -1,0 +1,14 @@
+diff --git a/src/directives/text.js b/src/directives/text.js
+index 42bbb1cc..d719a77b 100644
+--- a/src/directives/text.js
++++ b/src/directives/text.js
+@@ -4,9 +4,5 @@ export function handleTextDirective(el, output, expression) {
+         output = ''
+     }
+ 
+-    if (el instanceof HTMLElement) {
+-        el.innerText = output
+-    } else {
+     el.textContent = output
+ }
+-}

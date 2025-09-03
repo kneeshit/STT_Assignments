@@ -1,0 +1,14 @@
+diff --git a/openai/src/serve/router/ui.rs b/openai/src/serve/router/ui.rs
+index be3822f..6248f99 100644
+--- a/openai/src/serve/router/ui.rs
++++ b/openai/src/serve/router/ui.rs
+@@ -26,8 +26,8 @@ use axum::http::StatusCode;
+ use serde::{Deserialize, Serialize};
+ use serde_json::{json, Value};
+ 
++use crate::context;
+ use crate::info;
+-use crate::serve::context;
+ use crate::serve::err::ResponseError;
+ use crate::serve::header_convert;
+ use crate::serve::response_convert;

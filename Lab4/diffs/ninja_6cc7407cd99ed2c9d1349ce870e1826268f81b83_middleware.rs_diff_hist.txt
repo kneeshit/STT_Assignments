@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/middleware.rs b/openai/src/serve/middleware.rs
+index 0c01006..7543be2 100644
+--- a/openai/src/serve/middleware.rs
++++ b/openai/src/serve/middleware.rs
+@@ -70,7 +70,7 @@ where
+                 let token = token.clone();
+                 let svc = Rc::clone(&self.service);
+                 Box::pin(async move {
+-                    match token::verify_access_token_for_u8(token.as_bytes()).await {
++                    match token::check_for_u8(token.as_bytes()) {
+                         Ok(_) => {
+                             // forwarded responses map to "left" body
+                             svc.call(request)

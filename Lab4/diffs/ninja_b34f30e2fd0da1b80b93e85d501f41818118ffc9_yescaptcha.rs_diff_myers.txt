@@ -1,0 +1,59 @@
+diff --git a/openai/src/arkose/funcaptcha/yescaptcha.rs b/openai/src/arkose/funcaptcha/yescaptcha.rs
+index acae42f..252d0e6 100644
+--- a/openai/src/arkose/funcaptcha/yescaptcha.rs
++++ b/openai/src/arkose/funcaptcha/yescaptcha.rs
+@@ -41,17 +41,20 @@ struct ReqTask<'a> {
+     question: &'a str,
+ }
+ 
+-pub async fn submit_task(
+-    client_key: &str,
+-    image_as_base64: &str,
+-    question: &str,
+-) -> anyhow::Result<i32> {
++#[derive(derive_builder::Builder)]
++pub struct SubmitTask {
++    client_key: String,
++    image_as_base64: String,
++    question: String,
++}
++
++pub async fn submit_task(submit_task: SubmitTask) -> anyhow::Result<i32> {
+     let body = ReqBody {
+-        client_key,
++        client_key: &submit_task.client_key,
+         task: ReqTask {
+             type_field: "FunCaptchaClassification",
+-            image: &image_as_base64,
+-            question: &question,
++            image: &submit_task.image_as_base64,
++            question: &submit_task.question,
+         },
+         soft_id: "26299",
+     };
+@@ -64,7 +67,8 @@ pub async fn submit_task(
+         .send()
+         .await?;
+ 
+-    if resp.status().is_success() {
++    match resp.error_for_status() {
++        Ok(resp) => {
+             let task = resp.json::<TaskResp>().await?;
+             debug!("yescaptcha task: {task:#?}");
+             if let Some(error_description) = task.error_description {
+@@ -73,8 +77,13 @@ pub async fn submit_task(
+             let target = task.solution.objects;
+             return match target.is_empty() {
+                 true => Ok(0),
+-            false => Ok(anyhow::Context::context(target.get(0), "funcaptcha valid error")?.clone()),
++                false => {
++                    Ok(anyhow::Context::context(target.get(0), "funcaptcha valid error")?.clone())
++                }
+             };
+         }
+-    anyhow::bail!("funcaptcha valid error")
++        Err(err) => {
++            anyhow::bail!("Error: {err}")
++        }
++    }
+ }

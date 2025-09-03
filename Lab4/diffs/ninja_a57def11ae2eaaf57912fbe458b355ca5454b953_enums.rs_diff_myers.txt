@@ -1,0 +1,15 @@
+diff --git a/src/inter/enums.rs b/src/inter/enums.rs
+index 0414c8e..5bfe906 100644
+--- a/src/inter/enums.rs
++++ b/src/inter/enums.rs
+@@ -15,9 +15,9 @@ impl Usage {
+     pub const USAGE_VARS: &'static [Usage] = &[
+         Self::API,
+         Self::ChatGPT,
++        Self::OAuth,
+         Self::Dashboard,
+         Self::Configuration,
+-        Self::OAuth,
+         Self::Quit,
+     ];
+ }

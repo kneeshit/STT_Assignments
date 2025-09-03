@@ -1,0 +1,72 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index 94aebe77..366084f9 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -1233,6 +1233,28 @@
+   }
+   /** version: 0.26.0 */
+ 
++  function wrap(data, mutationCallback) {
++    let membrane = new ReactiveMembrane({
++      valueMutated(target, key) {
++        mutationCallback(target, key);
++      }
++
++    });
++    return {
++      data: membrane.getProxy(data),
++      membrane: membrane
++    };
++  }
++  function unwrap$1(membrane, observable) {
++    let unwrappedData = membrane.unwrapProxy(observable);
++    let copy = {};
++    Object.keys(unwrappedData).forEach(key => {
++      if (['$el', '$refs', '$nextTick', '$watch'].includes(key)) return;
++      copy[key] = unwrappedData[key];
++    });
++    return copy;
++  }
++
+   class Component {
+     constructor(el, seedDataForCloning = null) {
+       this.$el = el;
+@@ -1291,13 +1313,7 @@
+     }
+ 
+     getUnobservedData() {
+-      let unwrappedData = this.membrane.unwrapProxy(this.$data);
+-      let copy = {};
+-      Object.keys(unwrappedData).forEach(key => {
+-        if (['$el', '$refs', '$nextTick', '$watch'].includes(key)) return;
+-        copy[key] = unwrappedData[key];
+-      });
+-      return copy;
++      return unwrap$1(this.membrane, this.$data);
+     }
+ 
+     wrapDataInObservable(data) {
+@@ -1305,8 +1321,7 @@
+       let updateDom = debounce(function () {
+         self.updateElements(self.$el);
+       }, 0);
+-      let membrane = new ReactiveMembrane({
+-        valueMutated(target, key) {
++      return wrap(data, (target, key) => {
+         if (self.watchers[key]) {
+           // If there's a watcher for this specific key, run it.
+           self.watchers[key].forEach(callback => callback(target[key]));
+@@ -1334,13 +1349,7 @@
+ 
+         if (self.pauseReactivity) return;
+         updateDom();
+-        }
+-
+       });
+-      return {
+-        data: membrane.getProxy(data),
+-        membrane
+-      };
+     }
+ 
+     walkAndSkipNestedComponents(el, callback, initializeComponentCallback = () => {}) {

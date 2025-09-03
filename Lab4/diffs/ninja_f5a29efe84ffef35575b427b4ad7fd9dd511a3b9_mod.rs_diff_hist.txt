@@ -1,0 +1,13 @@
+diff --git a/openai/src/opengpt/mod.rs b/openai/src/opengpt/mod.rs
+index 0fbf9ed..dcb7d32 100644
+--- a/openai/src/opengpt/mod.rs
++++ b/openai/src/opengpt/mod.rs
+@@ -378,7 +378,7 @@ impl OpenGPT {
+         req: req::MessageFeedbackRequest<'a>,
+     ) -> ApiResult<resp::MessageFeedbackResponse> {
+         self.request_payload(
+-            format!("{}/conversation/message_feedbak", self.api_prefix),
++            format!("{}/conversation/message_feedback", self.api_prefix),
+             RequestMethod::POST,
+             &req,
+         )

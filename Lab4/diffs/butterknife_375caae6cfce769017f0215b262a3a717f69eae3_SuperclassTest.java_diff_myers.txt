@@ -1,0 +1,20 @@
+diff --git a/butterknife/src/it/superclass/src/test/java/butterknife/SuperclassTest.java b/butterknife/src/it/superclass/src/test/java/butterknife/SuperclassTest.java
+index 967b192..0dbe0ec 100644
+--- a/butterknife/src/it/superclass/src/test/java/butterknife/SuperclassTest.java
++++ b/butterknife/src/it/superclass/src/test/java/butterknife/SuperclassTest.java
+@@ -7,11 +7,14 @@ import java.lang.reflect.Method;
+ import org.junit.Before;
+ import org.junit.Test;
+ import org.junit.runner.RunWith;
++import org.robolectric.RobolectricTestRunner;
++import org.robolectric.annotation.Config;
+ 
+ import static org.fest.assertions.api.Assertions.assertThat;
+ import static org.fest.assertions.data.MapEntry.entry;
+ 
+-@RunWith(ButterKnifeTestRunner.class)
++@RunWith(RobolectricTestRunner.class)
++@Config(manifest = Config.NONE)
+ public class SuperclassTest {
+   @Before public void setUp() {
+     Views.INJECTORS.clear();

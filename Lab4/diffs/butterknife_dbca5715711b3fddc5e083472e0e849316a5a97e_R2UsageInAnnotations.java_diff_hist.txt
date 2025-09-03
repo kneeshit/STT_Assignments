@@ -1,0 +1,14 @@
+diff --git a/butterknife-lint/src/test/java/sample/r2/R2UsageInAnnotations.java b/butterknife-lint/src/test/java/sample/r2/R2UsageInAnnotations.java
+deleted file mode 100644
+index 9f63a67..0000000
+--- a/butterknife-lint/src/test/java/sample/r2/R2UsageInAnnotations.java
++++ /dev/null
+@@ -1,8 +0,0 @@
+-package sample.r2;
+-
+-public class R2UsageInAnnotations {
+-
+-  @BindTest(sample.r2.R2.string.res) String test;
+-
+-  @BindTest(R2.id.res) public void foo() { }
+-}

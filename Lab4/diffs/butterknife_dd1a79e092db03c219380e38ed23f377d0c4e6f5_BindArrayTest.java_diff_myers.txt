@@ -1,0 +1,40 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindArrayTest.java b/butterknife-compiler/src/test/java/butterknife/BindArrayTest.java
+index 7056359..326bf03 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindArrayTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindArrayTest.java
+@@ -44,7 +44,7 @@ public class BindArrayTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }
+@@ -84,7 +84,7 @@ public class BindArrayTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }
+@@ -124,7 +124,7 @@ public class BindArrayTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }
+@@ -165,7 +165,7 @@ public class BindArrayTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }

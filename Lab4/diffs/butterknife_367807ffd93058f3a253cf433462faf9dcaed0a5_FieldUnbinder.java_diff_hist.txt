@@ -1,0 +1,21 @@
+diff --git a/butterknife-reflect/src/main/java/butterknife/FieldUnbinder.java b/butterknife-reflect/src/main/java/butterknife/FieldUnbinder.java
+index 67ba7d3..915c567 100644
+--- a/butterknife-reflect/src/main/java/butterknife/FieldUnbinder.java
++++ b/butterknife-reflect/src/main/java/butterknife/FieldUnbinder.java
+@@ -2,7 +2,7 @@ package butterknife;
+ 
+ import java.lang.reflect.Field;
+ 
+-import static butterknife.ButterKnife.uncheckedSet;
++import static butterknife.ButterKnife.trySet;
+ 
+ final class FieldUnbinder implements Unbinder {
+   private final Object target;
+@@ -14,6 +14,6 @@ final class FieldUnbinder implements Unbinder {
+   }
+ 
+   @Override public void unbind() {
+-    uncheckedSet(field, target, null);
++    trySet(field, target, null);
+   }
+ }

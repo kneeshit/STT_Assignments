@@ -1,0 +1,16 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java b/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java
+index 2dad113..0de0854 100644
+--- a/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java
++++ b/butterknife/src/main/java/butterknife/internal/ButterKnifeProcessor.java
+@@ -295,9 +295,10 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+ 
+     assert viewType != null; // Always false as hasError would have been true.
+     String type = viewType.toString();
++    boolean required = element.getAnnotation(Optional.class) == null;
+ 
+     ViewInjector viewInjector = getOrCreateTargetClass(targetClassMap, enclosingElement);
+-    CollectionBinding binding = new CollectionBinding(name, type, kind);
++    CollectionBinding binding = new CollectionBinding(name, type, kind, required);
+     viewInjector.addCollection(ids, binding);
+ 
+     erasedTargetNames.add(enclosingElement.toString());

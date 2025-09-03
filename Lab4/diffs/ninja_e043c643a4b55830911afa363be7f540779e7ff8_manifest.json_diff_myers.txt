@@ -1,0 +1,23 @@
+diff --git a/openai/templates/static/manifest.json b/openai/templates/static/manifest.json
+new file mode 100644
+index 0000000..05aca3b
+--- /dev/null
++++ b/openai/templates/static/manifest.json
+@@ -0,0 +1,17 @@
++{
++  "short_name": "ChatGPT",
++  "name": "ChatGPT app powered by Pandora",
++  "icons": [
++    {
++      "src": "/apple-touch-icon.png",
++      "sizes": "180x180",
++      "type": "image/png"
++    }
++  ],
++  "id": "/",
++  "start_url": "/",
++  "scope": "/",
++  "display": "standalone",
++  "background_color": "#343540",
++  "theme_color": "#343540"
++}

@@ -1,0 +1,9 @@
+diff --git a/gohttp/ffi/.gitignore b/gohttp/ffi/.gitignore
+new file mode 100644
+index 0000000..0a47f65
+--- /dev/null
++++ b/gohttp/ffi/.gitignore
+@@ -0,0 +1,2 @@
++libgohttp.a
++libgohttp.h
+\ No newline at end of file

@@ -1,0 +1,15 @@
+diff --git a/openai/src/arkose/har.rs b/openai/src/arkose/har.rs
+index 4a2bad7..7659da0 100644
+--- a/openai/src/arkose/har.rs
++++ b/openai/src/arkose/har.rs
+@@ -115,8 +115,8 @@ pub fn parse_from_file<P: AsRef<Path>>(path: P) -> anyhow::Result<Option<Request
+         return Ok(unsafe { CACHE_REQUEST_ENTRY.clone() });
+     }
+ 
+-    if path.as_ref().exists() {
+-        anyhow::bail!("File {} not found", path.as_ref().display());
++    if !path.as_ref().is_file() {
++        anyhow::bail!("{} not a file", path.as_ref().display());
+     }
+ 
+     let bytes = std::fs::read(path)?;

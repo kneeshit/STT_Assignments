@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java b/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java
+index fab0dd7..6df254d 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnFocusChangeTest.java
+@@ -28,7 +28,7 @@ public class OnFocusChangeTest {
+             "import butterknife.ButterKnife.Finder;",
+             "import butterknife.ButterKnife.Injector;",
+             "public class Test$$ViewInjector<T extends test.Test> implements Injector<T> {",
+-            "  @Override public void inject(Finder finder, final T target, Object source) {",
++            "  @Override public void inject(final Finder finder, final T target, Object source) {",
+             "    View view;",
+             "    view = finder.findRequiredView(source, 1, \"method 'doStuff'\");",
+             "    view.setOnFocusChangeListener(new android.view.View.OnFocusChangeListener() {",

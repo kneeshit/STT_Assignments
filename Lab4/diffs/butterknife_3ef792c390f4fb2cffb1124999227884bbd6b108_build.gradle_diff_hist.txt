@@ -1,0 +1,12 @@
+diff --git a/butterknife-integration-test/build.gradle b/butterknife-integration-test/build.gradle
+index 5b9e1bb..4358fda 100644
+--- a/butterknife-integration-test/build.gradle
++++ b/butterknife-integration-test/build.gradle
+@@ -63,6 +63,7 @@ dependencies {
+ 
+   codegenImplementation project(':butterknife')
+   codegenAnnotationProcessor project(':butterknife-compiler')
++  androidTestCodegenAnnotationProcessor project(':butterknife-compiler')
+ 
+   androidTestImplementation deps.junit
+   androidTestImplementation deps.truth

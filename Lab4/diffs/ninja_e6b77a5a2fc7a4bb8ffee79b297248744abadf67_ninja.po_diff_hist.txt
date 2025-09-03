@@ -1,0 +1,15 @@
+diff --git a/openwrt/luci-app-ninja/po/zh-cn/ninja.po b/openwrt/luci-app-ninja/po/zh-cn/ninja.po
+index 4428846..9cf831c 100644
+--- a/openwrt/luci-app-ninja/po/zh-cn/ninja.po
++++ b/openwrt/luci-app-ninja/po/zh-cn/ninja.po
+@@ -198,3 +198,9 @@ msgstr "Cloudflare turnstile 验证码 site key"
+ 
+ msgid "Cloudflare turnstile captcha secret key"
+ msgstr "Cloudflare turnstile 验证码 secret key"
++
++msgid "Pool idle timeout"
++msgstr "连接池空闲超时"
++
++msgid "Set an optional timeout for idle sockets being kept-alive"
++msgstr "设置保持活动的空闲套接字的可选超时"
+\ No newline at end of file

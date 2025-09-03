@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/fonts/katex/KaTeX_Script-Regular.woff2 b/openai/ui/static/fonts/katex/KaTeX_Script-Regular.woff2
+new file mode 100644
+index 0000000..b3048fc
+Binary files /dev/null and b/openai/ui/static/fonts/katex/KaTeX_Script-Regular.woff2 differ

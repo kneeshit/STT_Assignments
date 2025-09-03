@@ -1,0 +1,22 @@
+diff --git a/openai/src/api/platform/v1/resources/completion_stream.rs b/openai/src/api/platform/v1/resources/completion_stream.rs
+new file mode 100644
+index 0000000..62f7d48
+--- /dev/null
++++ b/openai/src/api/platform/v1/resources/completion_stream.rs
+@@ -0,0 +1,16 @@
++use serde::{Deserialize, Serialize};
++
++#[derive(Serialize, Deserialize, Debug, Clone)]
++pub struct CompletionStreamResponse {
++    pub id: String,
++    pub object: String,
++    pub created: u32,
++    pub model: String,
++    pub choices: Vec<CompletionStreamChoice>,
++}
++
++#[derive(Serialize, Deserialize, Debug, Clone)]
++pub struct CompletionStreamChoice {
++    pub text: String,
++    pub index: u32,
++}

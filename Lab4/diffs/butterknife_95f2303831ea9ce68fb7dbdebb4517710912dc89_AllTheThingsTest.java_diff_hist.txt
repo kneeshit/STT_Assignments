@@ -1,0 +1,17 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java b/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java
+index 8b9c1c5..dfcc78a 100644
+--- a/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java
++++ b/butterknife/src/test/java/butterknife/internal/AllTheThingsTest.java
+@@ -45,10 +45,10 @@ public class AllTheThingsTest {
+   /////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+   @Bind(10) View findView;
+-  @Nullable @Bind(20) View optinalBind;
++  @Nullable @Bind(20) View optionalBind;
+ 
+   @Bind(30) TextView findTextView;
+-  @Nullable @Bind(40) TextView optinalFIndTextView;
++  @Nullable @Bind(40) TextView optionalFIndTextView;
+ 
+   /////////////////////////////////////////////////////////////////////////////////////////////////
+ 

@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java b/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
+index 43c28cd..c048da9 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
+@@ -33,7 +33,7 @@ public class OnEditorActionTest {
+         + "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {\n"
+         + "  @Override\n"
+         + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
+-        + "    return new InnerUnbinder(target, finder, source);\n"
++        + "    return new InnerUnbinder<>(target, finder, source);\n"
+         + "  }\n"
+         + "  protected static class InnerUnbinder<T extends Test> implements Unbinder {\n"
+         + "    protected T target;\n"

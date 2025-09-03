@@ -1,0 +1,9 @@
+diff --git a/build.sh b/build.sh
+deleted file mode 100755
+index fd5c8b4..0000000
+--- a/build.sh
++++ /dev/null
+@@ -1,2 +0,0 @@
+-cargo update
+-cargo build --release
+\ No newline at end of file

@@ -1,0 +1,22 @@
+diff --git a/README.md b/README.md
+index 6d1ec3ac..326a4f05 100644
+--- a/README.md
++++ b/README.md
+@@ -282,7 +282,7 @@ It's important that `x-if` is used on a `<template></template>` tag because Alpi
+ 
+ ### `x-transition`
+ **Example:**
+-```
++```html
+ <div
+     x-show="open"
+     x-transition:enter="ease-out transition-slow"
+@@ -294,7 +294,7 @@ It's important that `x-if` is used on a `<template></template>` tag because Alpi
+ >...</div>
+ ```
+ 
+-```
++```html
+ <template x-if="open">
+     <div
+         x-transition:enter="ease-out transition-slow"

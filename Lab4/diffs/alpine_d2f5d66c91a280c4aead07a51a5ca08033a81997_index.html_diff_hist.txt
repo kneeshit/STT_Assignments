@@ -1,0 +1,18 @@
+diff --git a/index.html b/index.html
+index c5ee1e06..7b90e572 100644
+--- a/index.html
++++ b/index.html
+@@ -10,6 +10,13 @@
+     <body>
+         <a href="/link-target">turbo-page</a>
+ 
++        <div x-data="{ foo: 'bar' }">
++            <div x-on:click="foo = 'baz'">
++                <button x-on:click.stop></button>
++            </div>
++
++            <span x-text="foo"></span>
++        </div>
+ 
+         <div x-data="{ foo: 'bar' }">
+             <input x-model="foo"></input>

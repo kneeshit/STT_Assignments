@@ -1,0 +1,13 @@
+diff --git a/build_cross.sh b/build_cross.sh
+index 62e7d0d..e271d72 100755
+--- a/build_cross.sh
++++ b/build_cross.sh
+@@ -5,7 +5,7 @@ set -e
+ root=$(pwd)
+ : ${tag=latest}
+ : ${rmi=false}
+-: ${os=linux} # linux(and window) or macos
++: ${os=linux}
+ [ ! -d uploads ] && mkdir uploads
+ 
+ cargo update

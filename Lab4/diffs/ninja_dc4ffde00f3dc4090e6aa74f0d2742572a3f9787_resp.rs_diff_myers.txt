@@ -1,0 +1,20 @@
+diff --git a/openai/src/chatgpt/model/resp.rs b/openai/src/chatgpt/model/resp.rs
+index 6f94d27..48615f4 100644
+--- a/openai/src/chatgpt/model/resp.rs
++++ b/openai/src/chatgpt/model/resp.rs
+@@ -218,14 +218,8 @@ impl ConvoResponse {
+         self.message
+             .content
+             .parts
+-            .clone()
+             .iter()
+-            .map(|c| {
+-                if let Some(c) = crate::unescape::unescape(&c) {
+-                    return c;
+-                }
+-                c.to_string()
+-            })
++            .map(|c| crate::unescape::unescape(&c).unwrap_or_else(|| c.to_string()))
+             .collect()
+     }
+ 

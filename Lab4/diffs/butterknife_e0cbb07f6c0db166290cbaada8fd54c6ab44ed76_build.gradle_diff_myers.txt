@@ -1,0 +1,19 @@
+diff --git a/butterknife-sample/build.gradle b/butterknife-sample/build.gradle
+index 0f28e8e..ff2f484 100644
+--- a/butterknife-sample/build.gradle
++++ b/butterknife-sample/build.gradle
+@@ -38,3 +38,14 @@ dependencies {
+   testCompile deps.truth
+   testCompile deps.robolectric
+ }
++
++afterEvaluate {
++  tasks.withType(com.android.build.gradle.internal.tasks.AndroidTestTask) { task ->
++    task.doFirst {
++      logging.level = LogLevel.INFO
++    }
++    task.doLast {
++      logging.level = LogLevel.LIFECYCLE
++    }
++  }
++}

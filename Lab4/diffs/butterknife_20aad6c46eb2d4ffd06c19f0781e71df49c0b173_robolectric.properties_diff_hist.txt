@@ -1,0 +1,8 @@
+diff --git a/butterknife-sample-lib/src/test/resources/robolectric.properties b/butterknife-sample-lib/src/test/resources/robolectric.properties
+new file mode 100644
+index 0000000..f680201
+--- /dev/null
++++ b/butterknife-sample-lib/src/test/resources/robolectric.properties
+@@ -0,0 +1,2 @@
++constants=com.example.butterknife.library.BuildConfig
++sdk=21

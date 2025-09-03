@@ -1,0 +1,13 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index 6cd3ebf..52f716f 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -39,8 +39,6 @@ pub enum OAuthError {
+     FailedLogin,
+     #[error(transparent)]
+     FailedRequest(#[from] reqwest::Error),
+-    #[error("failed logged in")]
+-    FailedLoginIn,
+     #[error("failed get code from callback url")]
+     FailedCallbackCode,
+     #[error("failed callback url")]

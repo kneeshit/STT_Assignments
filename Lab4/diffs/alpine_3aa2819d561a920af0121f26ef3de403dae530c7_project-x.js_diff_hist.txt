@@ -1,0 +1,30 @@
+diff --git a/dist/project-x.js b/dist/project-x.js
+index 7dc10dac..0374c2d7 100644
+--- a/dist/project-x.js
++++ b/dist/project-x.js
+@@ -1222,7 +1222,7 @@ var projectX = {
+             // to MutationOberserver mutations at the document level.
+ 
+             document.addEventListener("turbolinks:load", function () {
+-              _this.discoverComponents();
++              _this.discoverUndiscoveredComponents();
+             });
+             targetNode = document.querySelector('body');
+             observerOptions = {
+@@ -1260,6 +1260,16 @@ var projectX = {
+       _this2.initializeElement(rootEl);
+     });
+   },
++  discoverUndiscoveredComponents: function discoverUndiscoveredComponents() {
++    var _this3 = this;
++
++    var rootEls = document.querySelectorAll('[x-data]');
++    Array.from(rootEls).filter(function (el) {
++      return el.__x === undefined;
++    }).forEach(function (rootEl) {
++      _this3.initializeElement(rootEl);
++    });
++  },
+   initializeElement: function initializeElement(el) {
+     el.__x = new _component__WEBPACK_IMPORTED_MODULE_1__["default"](el);
+   }

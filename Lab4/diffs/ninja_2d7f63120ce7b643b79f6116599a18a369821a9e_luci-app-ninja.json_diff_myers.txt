@@ -1,0 +1,17 @@
+diff --git a/openwrt/luci-app-ninja/root/usr/share/rpcd/acl.d/luci-app-ninja.json b/openwrt/luci-app-ninja/root/usr/share/rpcd/acl.d/luci-app-ninja.json
+new file mode 100644
+index 0000000..1869595
+--- /dev/null
++++ b/openwrt/luci-app-ninja/root/usr/share/rpcd/acl.d/luci-app-ninja.json
+@@ -0,0 +1,11 @@
++{
++	"luci-app-ninja": {
++		"description": "Grant UCI access for luci-app-ninja",
++		"read": {
++			"uci": [ "ninja" ]
++		},
++		"write": {
++			"uci": [ "ninja" ]
++		}
++	}
++}

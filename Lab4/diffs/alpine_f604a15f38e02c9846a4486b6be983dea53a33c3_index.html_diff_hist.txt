@@ -1,0 +1,35 @@
+diff --git a/index.html b/index.html
+index bf74f628..c77088d2 100644
+--- a/index.html
++++ b/index.html
+@@ -225,6 +225,30 @@
+                     </td>
+                 </tr>
+ 
++                <tr>
++                    <td>Init function callback access refs and mutate data</td>
++                    <td>
++                        <div x-data="initialData()" x-init="init()">
++                            <div :style="'width: '+width+'px; background: purple;'">hey</div>
++
++                            <button x-ref="inc">increase</button>
++                        </div>
++
++                        <script>
++                            function initialData() {
++                                return {
++                                    width: 20,
++                                    init() {
++                                        this.$refs.inc.addEventListener('click', () => {
++                                            this.width = this.width + 20
++                                        })
++                                    }
++                                }
++                            }
++                        </script>
++                    </td>
++                </tr>
++
+                 <tr>
+                     <td>Cloak</td>
+                     <td>

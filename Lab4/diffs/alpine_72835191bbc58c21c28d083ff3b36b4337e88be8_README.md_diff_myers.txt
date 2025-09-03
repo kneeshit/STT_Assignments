@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index 0d54b970..29a095e6 100644
+--- a/README.md
++++ b/README.md
+@@ -156,7 +156,7 @@ And 6 magic properties:
+ 
+ **Example:** `<div x-data="{ foo: 'bar' }">...</div>`
+ 
+-**Structure:** `<div x-data="[JSON data object]">...</div>`
++**Structure:** `<div x-data="[object literal]">...</div>`
+ 
+ `x-data` declares a new component scope. It tells the framework to initialize a new component with the following data object.
+ 

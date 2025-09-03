@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindDrawableTest.java b/butterknife-compiler/src/test/java/butterknife/BindDrawableTest.java
+index 375e7eb..e9cd0f8 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindDrawableTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindDrawableTest.java
+@@ -49,7 +49,7 @@ public class BindDrawableTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }
+@@ -94,7 +94,7 @@ public class BindDrawableTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }

@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/UnbinderBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/UnbinderBinding.java
+index 9db7e2b..76216fc 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/UnbinderBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/UnbinderBinding.java
+@@ -3,7 +3,7 @@ package butterknife.compiler;
+ import com.squareup.javapoet.ClassName;
+ 
+ final class UnbinderBinding {
+-  private static final String UNBINDER_SIMPLE_NAME = "Unbinder";
++  public static final String UNBINDER_SIMPLE_NAME = "Unbinder";
+ 
+   private final String unbinderFieldName;
+   private final ClassName unbinderClassName;

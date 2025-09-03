@@ -1,0 +1,13 @@
+diff --git a/src/index.js b/src/index.js
+index ef508a3e..6e09171e 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -60,7 +60,7 @@ const Alpine = {
+ 
+                         // Discard any changes happening within an existing component.
+                         // They will take care of themselves.
+-                        if (node.parentElement.closest('[x-data]')) return
++                        if (node.parentElement && node.parentElement.closest('[x-data]')) return
+ 
+                         this.discoverUninitializedComponents((el) => {
+                             this.initializeComponent(el)

@@ -1,0 +1,18 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+index 4eb48c3..05b9a59 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/BindingClass.java
+@@ -439,10 +439,10 @@ final class BindingClass {
+       }
+ 
+       for (FieldDrawableBinding binding : drawableBindings) {
+-        int tintAttributeId = binding.getTintAttributeId().value;
+-        if (tintAttributeId != 0) {
++        Id tintAttributeId = binding.getTintAttributeId();
++        if (tintAttributeId.value != 0) {
+           result.addStatement("target.$L = $T.getTintedDrawable(res, theme, $L, $L)",
+-              binding.getName(), UTILS, binding.getId().code, tintAttributeId);
++              binding.getName(), UTILS, binding.getId().code, tintAttributeId.code);
+         } else {
+           result.addStatement("target.$L = $T.getDrawable(res, theme, $L)", binding.getName(),
+               UTILS, binding.getId().code);

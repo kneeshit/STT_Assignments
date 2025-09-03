@@ -1,0 +1,4 @@
+diff --git a/openai/templates/static/fonts/soehne/soehne-kraftig.woff2 b/openai/templates/static/fonts/soehne/soehne-kraftig.woff2
+new file mode 100644
+index 0000000..59c98a1
+Binary files /dev/null and b/openai/templates/static/fonts/soehne/soehne-kraftig.woff2 differ

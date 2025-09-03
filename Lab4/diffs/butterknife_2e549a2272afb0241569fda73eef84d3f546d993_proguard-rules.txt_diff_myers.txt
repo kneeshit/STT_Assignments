@@ -1,0 +1,11 @@
+diff --git a/butterknife/proguard-rules.txt b/butterknife/proguard-rules.txt
+index b77c5cf..bf214ac 100644
+--- a/butterknife/proguard-rules.txt
++++ b/butterknife/proguard-rules.txt
+@@ -1 +1,6 @@
++# Retain generated class which implement ViewBinder.
+ -keep public class * implements butterknife.internal.ViewBinder { public <init>(); }
++
++# Prevent obfuscation of types which use ButterKnife annotations since the simple name
++# is used to reflectively look up the generated ViewBinder.
++-keepclasseswithmembernames class * { @butterknife.* *; }

@@ -1,0 +1,251 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+index cc2d548..8bbc386 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnItemSelectedTest.java
+@@ -20,26 +20,36 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
++    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
++        + "package test;\n"
++        + "\n"
++        + "import butterknife.Unbinder;\n"
++        + "import butterknife.internal.Finder;\n"
++        + "import butterknife.internal.ViewBinder;\n"
++        + "import java.lang.Object;\n"
++        + "import java.lang.Override;\n"
++        + "public class Test_ViewBinder<T extends Test> implements ViewBinder<T> {\n"
++        + "  @Override\n"
++        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
++        + "    return new Test_ViewBinding<>(target, finder, source);\n"
++        + "  }\n"
++        + "}"
++    );
++
++    JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "\n"
+         + "import android.view.View;\n"
+         + "import android.widget.AdapterView;\n"
+         + "import butterknife.Unbinder;\n"
+         + "import butterknife.internal.Finder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+         + "import java.lang.IllegalStateException;\n"
+         + "import java.lang.Object;\n"
+         + "import java.lang.Override;\n"
+-        + "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
+-        + "    return new InnerUnbinder<>(target, finder, source);\n"
+-        + "  }\n"
+-        + "  protected static class InnerUnbinder<T extends Test> implements Unbinder {\n"
++        + "public class Test_ViewBinding<T extends Test> implements Unbinder {\n"
+         + "  protected T target;\n"
+         + "  private View view1;\n"
+-        + "    protected InnerUnbinder(final T target, Finder finder, Object source) {\n"
++        + "  public Test_ViewBinding(final T target, Finder finder, Object source) {\n"
+         + "    this.target = target;\n"
+         + "    View view;\n"
+         + "    view = finder.findRequiredView(source, 1, \"method 'doStuff'\");\n"
+@@ -61,7 +71,6 @@ public class OnItemSelectedTest {
+         + "    view1 = null;\n"
+         + "    this.target = null;\n"
+         + "  }\n"
+-        + "  }\n"
+         + "}"
+     );
+ 
+@@ -69,7 +78,7 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutError()
+         .and()
+-        .generatesSources(expectedSource);
++        .generatesSources(binderSource, bindingSource);
+   }
+ 
+   @Test public void nonDefaultMethod() {
+@@ -84,25 +93,34 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
++    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
++        + "package test;\n"
++        + "import butterknife.Unbinder;\n"
++        + "import butterknife.internal.Finder;\n"
++        + "import butterknife.internal.ViewBinder;\n"
++        + "import java.lang.Object;\n"
++        + "import java.lang.Override;\n"
++        + "public class Test_ViewBinder<T extends Test> implements ViewBinder<T> {\n"
++        + "  @Override\n"
++        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
++        + "    return new Test_ViewBinding<>(target, finder, source);\n"
++        + "  }\n"
++        + "}"
++    );
++
++    JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import android.widget.AdapterView;\n"
+         + "import butterknife.Unbinder;\n"
+         + "import butterknife.internal.Finder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+         + "import java.lang.IllegalStateException;\n"
+         + "import java.lang.Object;\n"
+         + "import java.lang.Override;\n"
+-        + "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
+-        + "    return new InnerUnbinder<>(target, finder, source);\n"
+-        + "  }\n"
+-        + "  protected static class InnerUnbinder<T extends Test> implements Unbinder {\n"
++        + "public class Test_ViewBinding<T extends Test> implements Unbinder {\n"
+         + "  protected T target;\n"
+         + "  private View view1;\n"
+-        + "    protected InnerUnbinder(final T target, Finder finder, Object source) {\n"
++        + "  public Test_ViewBinding(final T target, Finder finder, Object source) {\n"
+         + "    this.target = target;\n"
+         + "    View view;\n"
+         + "    view = finder.findRequiredView(source, 1, \"method 'doStuff'\");\n"
+@@ -124,7 +142,6 @@ public class OnItemSelectedTest {
+         + "    view1 = null;\n"
+         + "    this.target = null;\n"
+         + "  }\n"
+-        + "  }\n"
+         + "}"
+     );
+ 
+@@ -132,7 +149,7 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutError()
+         .and()
+-        .generatesSources(expectedSource);
++        .generatesSources(binderSource, bindingSource);
+   }
+ 
+   @Test public void allMethods() {
+@@ -149,25 +166,34 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
++    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
++        + "package test;\n"
++        + "import butterknife.Unbinder;\n"
++        + "import butterknife.internal.Finder;\n"
++        + "import butterknife.internal.ViewBinder;\n"
++        + "import java.lang.Object;\n"
++        + "import java.lang.Override;\n"
++        + "public class Test_ViewBinder<T extends Test> implements ViewBinder<T> {\n"
++        + "  @Override\n"
++        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
++        + "    return new Test_ViewBinding<>(target, finder, source);\n"
++        + "  }\n"
++        + "}"
++    );
++
++    JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import android.widget.AdapterView;\n"
+         + "import butterknife.Unbinder;\n"
+         + "import butterknife.internal.Finder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+         + "import java.lang.IllegalStateException;\n"
+         + "import java.lang.Object;\n"
+         + "import java.lang.Override;\n"
+-        + "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
+-        + "    return new InnerUnbinder<>(target, finder, source);\n"
+-        + "  }\n"
+-        + "  protected static class InnerUnbinder<T extends Test> implements Unbinder {\n"
++        + "public class Test_ViewBinding<T extends Test> implements Unbinder {\n"
+         + "  protected T target;\n"
+         + "  private View view1;\n"
+-        + "    protected InnerUnbinder(final T target, Finder finder, Object source) {\n"
++        + "  public Test_ViewBinding(final T target, Finder finder, Object source) {\n"
+         + "    this.target = target;\n"
+         + "    View view;\n"
+         + "    view = finder.findRequiredView(source, 1, \"method 'onItemSelected' and method 'onNothingSelected'\");\n"
+@@ -190,7 +216,6 @@ public class OnItemSelectedTest {
+         + "    view1 = null;\n"
+         + "    this.target = null;\n"
+         + "  }\n"
+-        + "  }\n"
+         + "}"
+     );
+ 
+@@ -198,7 +223,7 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutError()
+         .and()
+-        .generatesSources(expectedSource);
++        .generatesSources(binderSource, bindingSource);
+   }
+ 
+   @Test public void multipleBindingPermutation() {
+@@ -215,27 +240,36 @@ public class OnItemSelectedTest {
+         + "}"
+     );
+ 
+-    JavaFileObject expectedSource = JavaFileObjects.forSourceString("test/Test$$ViewBinder", ""
++    JavaFileObject binderSource = JavaFileObjects.forSourceString("test/Test_ViewBinder", ""
++        + "package test;\n"
++        + "import butterknife.Unbinder;\n"
++        + "import butterknife.internal.Finder;\n"
++        + "import butterknife.internal.ViewBinder;\n"
++        + "import java.lang.Object;\n"
++        + "import java.lang.Override;\n"
++        + "public class Test_ViewBinder<T extends Test> implements ViewBinder<T> {\n"
++        + "  @Override\n"
++        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
++        + "    return new Test_ViewBinding<>(target, finder, source);\n"
++        + "  }\n"
++        + "}"
++    );
++
++    JavaFileObject bindingSource = JavaFileObjects.forSourceString("test/Test_ViewBinding", ""
+         + "package test;\n"
+         + "import android.view.View;\n"
+         + "import android.widget.AdapterView;\n"
+         + "import butterknife.Unbinder;\n"
+         + "import butterknife.internal.Finder;\n"
+-        + "import butterknife.internal.ViewBinder;\n"
+         + "import java.lang.IllegalStateException;\n"
+         + "import java.lang.Object;\n"
+         + "import java.lang.Override;\n"
+-        + "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {\n"
+-        + "  @Override\n"
+-        + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
+-        + "    return new InnerUnbinder<>(target, finder, source);\n"
+-        + "  }\n"
+-        + "  protected static class InnerUnbinder<T extends Test> implements Unbinder {\n"
++        + "public class Test_ViewBinding<T extends Test> implements Unbinder {\n"
+         + "  protected T target;\n"
+         + "  private View view1;\n"
+         + "  private View view2;\n"
+         + "  private View view3;\n"
+-        + "    protected InnerUnbinder(final T target, Finder finder, Object source) {\n"
++        + "  public Test_ViewBinding(final T target, Finder finder, Object source) {\n"
+         + "    this.target = target;\n"
+         + "    View view;\n"
+         + "    view = finder.findRequiredView(source, 1, \"method 'onItemSelected' and method 'onNothingSelected'\");\n"
+@@ -284,7 +318,6 @@ public class OnItemSelectedTest {
+         + "    view3 = null;\n"
+         + "    this.target = null;\n"
+         + "  }\n"
+-        + "  }\n"
+         + "}"
+     );
+ 
+@@ -292,6 +325,6 @@ public class OnItemSelectedTest {
+         .processedWith(new ButterKnifeProcessor())
+         .compilesWithoutError()
+         .and()
+-        .generatesSources(expectedSource);
++        .generatesSources(binderSource, bindingSource);
+   }
+ }

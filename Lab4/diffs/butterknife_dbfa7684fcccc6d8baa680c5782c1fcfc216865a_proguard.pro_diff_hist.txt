@@ -1,0 +1,12 @@
+diff --git a/butterknife-integration-test/src/main/proguard.pro b/butterknife-integration-test/src/main/proguard.pro
+index 526a581..87c3470 100644
+--- a/butterknife-integration-test/src/main/proguard.pro
++++ b/butterknife-integration-test/src/main/proguard.pro
+@@ -16,3 +16,7 @@
+ -keep class com.example.butterknife.unbinder.H {
+   <init>(...);
+ }
++
++-keep class androidx.core.** {
++  <methods>;
++}

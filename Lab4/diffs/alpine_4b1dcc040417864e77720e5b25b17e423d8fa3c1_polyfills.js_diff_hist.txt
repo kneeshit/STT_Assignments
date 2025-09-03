@@ -1,0 +1,10 @@
+diff --git a/src/polyfills.js b/src/polyfills.js
+index 24b349d0..18d385ad 100644
+--- a/src/polyfills.js
++++ b/src/polyfills.js
+@@ -6,3 +6,5 @@ import "element-remove"
+ import "classlist-polyfill"
+ import "@webcomponents/template"
+ import "custom-event-polyfill"
++
++SVGElement.prototype.contains = SVGElement.prototype.contains || HTMLElement.prototype.contains

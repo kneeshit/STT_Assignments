@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindColorTest.java b/butterknife-compiler/src/test/java/butterknife/BindColorTest.java
+index b04c2ac..0454f81 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindColorTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindColorTest.java
+@@ -48,7 +48,7 @@ public class BindColorTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }
+@@ -93,7 +93,7 @@ public class BindColorTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(expectedSource);
+   }

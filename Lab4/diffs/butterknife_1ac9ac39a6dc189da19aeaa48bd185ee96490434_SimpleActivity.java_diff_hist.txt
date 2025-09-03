@@ -1,0 +1,13 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+index 496f8f8..ead2967 100644
+--- a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
++++ b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+@@ -30,7 +30,7 @@ public class SimpleActivity extends Activity {
+     hello.setText("Say Hello");
+     hello.setOnClickListener(new OnClickListener() {
+       @Override public void onClick(View v) {
+-        Toast.makeText(SimpleActivity.this, "Hello, views.", LENGTH_SHORT).show();
++        Toast.makeText(SimpleActivity.this, "Hello, views!", LENGTH_SHORT).show();
+       }
+     });
+   }

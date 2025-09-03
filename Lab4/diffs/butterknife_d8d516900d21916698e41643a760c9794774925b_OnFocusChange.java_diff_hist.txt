@@ -1,0 +1,29 @@
+diff --git a/butterknife/src/main/java/butterknife/OnFocusChange.java b/butterknife/src/main/java/butterknife/OnFocusChange.java
+index 603fab4..0ecdf19 100644
+--- a/butterknife/src/main/java/butterknife/OnFocusChange.java
++++ b/butterknife/src/main/java/butterknife/OnFocusChange.java
+@@ -30,20 +30,14 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+     targetType = "android.view.View",
+     setter = "setOnFocusChangeListener",
+     type = "android.view.View.OnFocusChangeListener",
+-    callbacks = OnFocusChange.Callback.class
+-)
+-public @interface OnFocusChange {
+-  int[] value();
+-  Callback callback() default Callback.ITEM_LONG_CLICK;
+-
+-  enum Callback {
+-    @ListenerMethod(
++    method = @ListenerMethod(
+         name = "onFocusChange",
+         parameters = {
+             "android.view.View",
+             "boolean"
+         }
+     )
+-    ITEM_LONG_CLICK
+-  }
++)
++public @interface OnFocusChange {
++  int[] value();
+ }

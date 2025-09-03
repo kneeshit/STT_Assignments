@@ -1,0 +1,12 @@
+diff --git a/butterknife-runtime/build.gradle b/butterknife-runtime/build.gradle
+index 1a7ea5c..397f2a8 100644
+--- a/butterknife-runtime/build.gradle
++++ b/butterknife-runtime/build.gradle
+@@ -45,6 +45,7 @@ dependencies {
+   testImplementation files(getRuntimeJar())
+   testImplementation files(org.gradle.internal.jvm.Jvm.current().getToolsJar())
+   testImplementation project(':butterknife-compiler')
++  testImplementation deps.androidx.annotations
+ }
+ 
+ def getRuntimeJar() {

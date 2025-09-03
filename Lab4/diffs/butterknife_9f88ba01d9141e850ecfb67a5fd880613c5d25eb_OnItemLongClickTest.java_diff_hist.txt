@@ -1,0 +1,15 @@
+diff --git a/butterknife/src/test/java/butterknife/OnItemLongClickTest.java b/butterknife/src/test/java/butterknife/OnItemLongClickTest.java
+index 3584b0f..4f809df 100644
+--- a/butterknife/src/test/java/butterknife/OnItemLongClickTest.java
++++ b/butterknife/src/test/java/butterknife/OnItemLongClickTest.java
+@@ -12,9 +12,8 @@ public class OnItemLongClickTest {
+   @Test public void itemLongClick() {
+     JavaFileObject source = JavaFileObjects.forSourceString("test.Test", ""
+         + "package test;\n"
+-        + "import android.app.Activity;\n"
+         + "import butterknife.OnItemLongClick;\n"
+-        + "public class Test extends Activity {\n"
++        + "public class Test {\n"
+         + "  @OnItemLongClick(1) boolean doStuff() { return false; }\n"
+         + "}"
+     );

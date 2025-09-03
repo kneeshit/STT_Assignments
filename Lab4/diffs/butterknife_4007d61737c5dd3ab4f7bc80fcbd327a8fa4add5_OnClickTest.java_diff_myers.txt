@@ -1,0 +1,41 @@
+diff --git a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/OnClickTest.java b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/OnClickTest.java
+index c517c0a..2568851 100644
+--- a/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/OnClickTest.java
++++ b/butterknife-integration-test/src/androidTest/java/com/example/butterknife/functional/OnClickTest.java
+@@ -14,6 +14,7 @@ import butterknife.Unbinder;
+ import com.example.butterknife.BuildConfig;
+ import org.junit.Test;
+ 
++import static com.example.butterknife.functional.ViewTestUtils.treeWithIds;
+ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertSame;
+ import static org.junit.Assume.assumeFalse;
+@@ -243,28 +244,4 @@ public final class OnClickTest {
+     view4.performClick();
+     assertSame(view4, target.last);
+   }
+-
+-  private static View treeWithIds(int... ids) {
+-    Context context = InstrumentationRegistry.getContext();
+-    FrameLayout group = new FrameLayout(context);
+-
+-    class SuperGrossView extends View {
+-      SuperGrossView(Context context) {
+-        super(context);
+-      }
+-
+-      @Override public boolean post(Runnable action) {
+-        // Because of DebouncingOnClickListener, we run any posted Runnables synchronously.
+-        action.run();
+-        return true;
+-      }
+-    }
+-
+-    for (int id : ids) {
+-      View view = new SuperGrossView(context);
+-      view.setId(id);
+-      group.addView(view);
+-    }
+-    return group;
+-  }
+ }

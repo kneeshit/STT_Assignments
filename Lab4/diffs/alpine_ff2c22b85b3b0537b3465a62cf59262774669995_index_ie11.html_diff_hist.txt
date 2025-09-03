@@ -1,0 +1,69 @@
+diff --git a/examples/index_ie11.html b/examples/index_ie11.html
+index 70f70753..76f74eaf 100644
+--- a/examples/index_ie11.html
++++ b/examples/index_ie11.html
+@@ -29,41 +29,6 @@
+ </head>
+ 
+ <body>
+-
+-    <div x-data="{ foo: 'bar' }">
+-        <span x-text="foo"></span>
+-
+-        <button @click="foo = 'baz'">Click Here</button>
+-    </div>
+-
+-    <div x-data="{ checkbox: ['foo'] }">
+-        Checkbox:
+-        <span x-text="JSON.stringify(checkbox)"></span>
+-        <input type="checkbox" x-model="checkbox" value="foo">
+-        <input type="checkbox" x-model="checkbox" value="bar">
+-    </div>
+-
+-    <div x-data="{ text: 'foo'}">
+-        Text:
+-        <span x-text="JSON.stringify(text)"></span>
+-        <input type="text" x-model="text">
+-    </div>
+-
+-<div x-data="{ text: 'foo'}">
+-	<div x-on:custom-event="console.log($event.detail.foo)">
+-    <br>
+-		 When clicked, will console.log "bar"
+-         <br>
+-         (This does not work in IE11, adding CustomEvent polyfill breaks checkboxes)
+-         <br>
+-		<button x-on:click="$dispatch('custom-event', { foo: 'bar' })">
+-			Click
+-			<!-- When clicked, will console.log "bar" -->
+-		</button>
+-	</div>
+-</div>
+-
+-
+     <table>
+         <thead>
+             <tr>
+@@ -311,9 +275,9 @@
+                     <div x-data="initialData()" x-init="init()">
+                         <div :style="'width: '+width+'px; background: purple;'">hey</div>
+                         <button x-on:click="console.log($refs.inc)">Click for ref</button>
+-                        <button x-on:click="increaseSize()">Increase bar</button>
++                        <button x-ref="inc" x-on:click="increaseSize()">Increase bar</button>
+ 
+-                        <button x-ref="inc">increase</button>
++                        <span x-ref="status">status</span>
+                     </div>
+ 
+                     <script>
+@@ -327,8 +291,8 @@
+                                 },
+                                 increaseSize: function () {
+                                     this.width = this.width + 20
+-                                    this.$refs.inc.innerText = "expanded";
+-                                    console.log(this.$refs.inc)
++                                    this.$refs.status.innerText = "expanded";
++                                    console.log(this.$refs.status)
+                                 }
+                             }
+                         }

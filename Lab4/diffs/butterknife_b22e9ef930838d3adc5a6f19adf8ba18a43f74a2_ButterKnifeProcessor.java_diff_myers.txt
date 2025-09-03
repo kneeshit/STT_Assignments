@@ -1,0 +1,16 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+index e5069dc..a6142f6 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+@@ -1162,9 +1162,11 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+     for (Class<? extends Annotation> annotation : getSupportedAnnotations()) {
+       for (Element element : env.getElementsAnnotatedWith(annotation)) {
+         JCTree tree = (JCTree) trees.getTree(element, getMirror(element, annotation));
++        if (tree != null) { // tree can be null if the references are compiled types and not source
+           tree.accept(scanner);
+         }
+       }
++    }
+ 
+     for (String rClass : scanner.getRClasses()) {
+       parseRClass(rClass);

@@ -1,0 +1,29 @@
+diff --git a/butterknife-sample/res/layout/simple_list_item.xml b/butterknife-sample/res/layout/simple_list_item.xml
+new file mode 100644
+index 0000000..2de06d4
+--- /dev/null
++++ b/butterknife-sample/res/layout/simple_list_item.xml
+@@ -0,0 +1,22 @@
++<?xml version="1.0" encoding="utf-8"?>
++
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical">
++  <TextView
++      android:id="@+id/word"
++      android:layout_width="match_parent"
++      android:layout_height="wrap_content"
++      />
++  <TextView
++      android:id="@+id/length"
++      android:layout_width="match_parent"
++      android:layout_height="wrap_content"
++      />
++  <TextView
++      android:id="@+id/position"
++      android:layout_width="match_parent"
++      android:layout_height="wrap_content"
++      />
++</LinearLayout>
+\ No newline at end of file

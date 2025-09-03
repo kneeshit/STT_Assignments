@@ -1,0 +1,13 @@
+diff --git a/src/args.rs b/src/args.rs
+index 21306d3..d2def2f 100644
+--- a/src/args.rs
++++ b/src/args.rs
+@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
+ use std::path::PathBuf;
+ 
+ #[derive(Parser)]
+-#[clap(author, version, about)]
++#[clap(author, version, about, arg_required_else_help = true)]
+ pub(super) struct Opt {
+     #[clap(subcommand)]
+     pub(super) command: Option<SubCommands>,

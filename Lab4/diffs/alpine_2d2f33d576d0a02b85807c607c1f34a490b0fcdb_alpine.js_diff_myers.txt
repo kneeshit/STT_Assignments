@@ -1,0 +1,16 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index 46209633..b141234a 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -577,6 +577,11 @@
+ 
+     if (ifAttribute && !component.evaluateReturnExpression(el, ifAttribute.expression)) {
+       return [];
++    } // This adds support for the `i in 10` syntax.
++
++
++    if (isNumeric(iteratorNames.items)) {
++      return [...Array(parseInt(iteratorNames.items)).keys()];
+     }
+ 
+     return component.evaluateReturnExpression(el, iteratorNames.items, extraVars);

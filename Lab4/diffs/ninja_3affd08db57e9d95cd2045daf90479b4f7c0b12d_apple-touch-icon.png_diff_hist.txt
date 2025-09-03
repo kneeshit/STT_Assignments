@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/resources/apple-touch-icon.png b/openai/ui/static/resources/apple-touch-icon.png
+new file mode 100644
+index 0000000..befcee8
+Binary files /dev/null and b/openai/ui/static/resources/apple-touch-icon.png differ

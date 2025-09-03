@@ -1,0 +1,32 @@
+diff --git a/snap/snapcraft.yaml b/snap/snapcraft.yaml
+new file mode 100644
+index 0000000..a6438a5
+--- /dev/null
++++ b/snap/snapcraft.yaml
+@@ -0,0 +1,25 @@
++name: opengpt
++version: '2.2.2'
++summary: OpenGPT
++description: |
++  A reverse engineered unofficial ChatGPT proxy (bypass Cloudflare 403 Access Denied)
++
++grade: stable # must be 'stable' to release into candidate/stable channels
++confinement: strict # use 'strict' once you have the right plugs and slots
++
++base: core18
++
++architectures:
++  - build-on: amd64
++  - build-on: arm64
++  - build-on: armhf
++
++parts:
++  opengpt:
++    plugin: rust
++    source: .
++
++apps:
++  opengpt:
++    command: bin/aliyundrive-webdav
++    plugs: [network, network-bind]
+\ No newline at end of file

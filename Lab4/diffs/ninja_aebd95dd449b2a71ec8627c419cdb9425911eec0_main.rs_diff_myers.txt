@@ -1,0 +1,13 @@
+diff --git a/src/main.rs b/src/main.rs
+index 009cc7e..c113d50 100644
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -45,7 +45,7 @@ enum SubCommands {
+         #[clap(long, env = "OPENGPT_TIMEOUT", default_value = "600")]
+         timeout: usize,
+         /// Client connect timeout (secends)
+-        #[clap(long, env = "OPENGPT_CONNECT_TIMEOUT", default_value = "10")]
++        #[clap(long, env = "OPENGPT_CONNECT_TIMEOUT", default_value = "60")]
+         connect_timeout: usize,
+         /// TCP keepalive (secends)
+         #[clap(long, env = "OPENGPT_TCP_KEEPALIVE", default_value = "60")]

@@ -1,0 +1,7 @@
+diff --git a/reqwest/.github/FUNDING.yml b/reqwest/.github/FUNDING.yml
+deleted file mode 100644
+index a6b3376..0000000
+--- a/reqwest/.github/FUNDING.yml
++++ /dev/null
+@@ -1 +0,0 @@
+-github: [seanmonstar]

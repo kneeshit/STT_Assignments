@@ -1,0 +1,12 @@
+diff --git a/test/bind.spec.js b/test/bind.spec.js
+index 830a1bc4..88f83efe 100644
+--- a/test/bind.spec.js
++++ b/test/bind.spec.js
+@@ -385,6 +385,7 @@ test('cursor position is preserved on selectable text input', async () => {
+ 
+     Alpine.start()
+ 
++    document.querySelector('input').focus()
+     document.querySelector('input').setSelectionRange(0, 3, 'backward')
+ 
+     expect(document.querySelector('input').value).toEqual('bar')

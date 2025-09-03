@@ -1,0 +1,13 @@
+diff --git a/examples/chatgpt.rs b/examples/chatgpt.rs
+index 701a7c3..35c1e65 100644
+--- a/examples/chatgpt.rs
++++ b/examples/chatgpt.rs
+@@ -10,7 +10,7 @@ use tokio::io::AsyncWriteExt;
+ #[tokio::main]
+ async fn main() -> anyhow::Result<()> {
+     let access_token = std::env::var("TOKEN")?;
+-    let api = openai::chatgpt::OpenGPTBuilder::builder()
++    let api = openai::chatgpt::ChatGPTBuilder::builder()
+         .access_token(access_token)
+         .cookie_store(true)
+         .client_timeout(time::Duration::from_secs(1000))

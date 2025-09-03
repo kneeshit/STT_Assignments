@@ -1,0 +1,13 @@
+diff --git a/test/transition.spec.js b/test/transition.spec.js
+index 07a6e684..ee2a50c5 100644
+--- a/test/transition.spec.js
++++ b/test/transition.spec.js
+@@ -281,6 +281,8 @@ test('transition out not called when item is already hidden', async () => {
+ 
+     Alpine.start()
+ 
++    await new Promise(resolve => setTimeout(resolve, 1))
++
+     expect(document.querySelector('span').getAttribute('style')).toEqual('display: none;')
+ 
+     document.querySelector('button').click()

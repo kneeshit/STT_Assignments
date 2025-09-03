@@ -1,0 +1,8 @@
+diff --git a/openai/templates/static/_next/static/chunks/pages/error-433a1bbdb23dd341.js b/openai/templates/static/_next/static/chunks/pages/error-433a1bbdb23dd341.js
+deleted file mode 100644
+index ddc3b94..0000000
+--- a/openai/templates/static/_next/static/chunks/pages/error-433a1bbdb23dd341.js
++++ /dev/null
+@@ -1 +0,0 @@
+-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[820],{38361:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/_error",function(){return u(38356)}])}},function(n){n.O(0,[774,888,179],function(){return n(n.s=38361)}),_N_E=n.O()}]);
+\ No newline at end of file

@@ -1,0 +1,30 @@
+diff --git a/examples/index.html b/examples/index.html
+index 120f0064..27dee68a 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -246,6 +246,25 @@
+                     </td>
+                 </tr>
+ 
++                <tr>
++                    <td>Nested x-for</td>
++                    <td>
++                        <div x-data="{ foos: [{bars: [{bobs: ['one', 'two']}, {bobs: ['three', 'four']}]}, {bars: [{bobs: ['five', 'six']}, {bobs: ['seven', 'eight']}]}] }">
++                            <template x-for="foo in foos">
++                                <div>
++                                    <template x-for="bar in foo.bars">
++                                        <div>
++                                            <template x-for="bob in bar.bobs">
++                                                <span x-text="bob"></span>
++                                            </template>
++                                        </div>
++                                    </template>
++                                </div>
++                            </template>
++                        </div>
++                    </td>
++                </tr>
++
+                 <tr>
+                     <td>Transitions</td>
+                     <td>

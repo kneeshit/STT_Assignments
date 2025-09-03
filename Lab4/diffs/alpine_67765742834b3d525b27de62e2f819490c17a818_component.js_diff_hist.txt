@@ -1,0 +1,27 @@
+diff --git a/src/component.js b/src/component.js
+index 19f00f0b..6a8d57f6 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -1,4 +1,4 @@
+-import { walk, saferEval, saferEvalNoReturn, getXAttrs, debounce, deepProxy } from './utils'
++import { walk, saferEval, saferEvalNoReturn, getXAttrs, debounce } from './utils'
+ import { handleForDirective } from './directives/for'
+ import { handleAttributeBindingDirective } from './directives/bind'
+ import { handleShowDirective } from './directives/show'
+@@ -68,13 +68,13 @@ export default class Component {
+     }
+ 
+     getUnobservedData() {
+-        let unwrapedData = this.membrane.unwrapProxy(this.$data)
++        let unwrappedData = this.membrane.unwrapProxy(this.$data)
+         let copy = {}
+ 
+-        Object.keys(unwrapedData).forEach(key => {
++        Object.keys(unwrappedData).forEach(key => {
+             if (['$el', '$refs', '$nextTick'].includes(key)) return
+ 
+-            copy[key] = unwrapedData[key]
++            copy[key] = unwrappedData[key]
+         })
+ 
+         return copy

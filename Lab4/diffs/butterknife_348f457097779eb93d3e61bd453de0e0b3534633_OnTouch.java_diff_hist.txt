@@ -1,0 +1,18 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/OnTouch.java b/butterknife-annotations/src/main/java/butterknife/OnTouch.java
+index 144240c..dc4b69e 100644
+--- a/butterknife-annotations/src/main/java/butterknife/OnTouch.java
++++ b/butterknife-annotations/src/main/java/butterknife/OnTouch.java
+@@ -1,5 +1,6 @@
+ package butterknife;
+ 
++import android.support.annotation.IdRes;
+ import android.view.View;
+ import butterknife.internal.ListenerClass;
+ import butterknife.internal.ListenerMethod;
+@@ -42,5 +43,5 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ )
+ public @interface OnTouch {
+   /** View IDs to which the method will be bound. */
+-  int[] value() default { View.NO_ID };
++  @IdRes int[] value() default { View.NO_ID };
+ }

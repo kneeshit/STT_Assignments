@@ -1,0 +1,13 @@
+diff --git a/butterknife-gradle-plugin/src/main/java/butterknife/plugin/ButterKnifePlugin.kt b/butterknife-gradle-plugin/src/main/java/butterknife/plugin/ButterKnifePlugin.kt
+index 4e5b618..cfc5c26 100644
+--- a/butterknife-gradle-plugin/src/main/java/butterknife/plugin/ButterKnifePlugin.kt
++++ b/butterknife-gradle-plugin/src/main/java/butterknife/plugin/ButterKnifePlugin.kt
+@@ -79,7 +79,7 @@ class ButterKnifePlugin : Plugin<Project> {
+             inputs.file(rFile)
+ 
+             doLast {
+-              FinalRClassBuilder.brewJava(rFile, outputDir, rPackage, "R2", useAndroidX)
++              FinalRClassBuilder.brewJava(rFile, outputDir, rPackage, "R2", !useAndroidX)
+             }
+           }
+         }

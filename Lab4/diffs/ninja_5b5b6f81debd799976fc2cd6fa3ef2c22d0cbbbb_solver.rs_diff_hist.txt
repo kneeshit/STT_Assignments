@@ -1,0 +1,20 @@
+diff --git a/openai/src/arkose/funcaptcha/solver.rs b/openai/src/arkose/funcaptcha/solver.rs
+index a69fcf4..eeb9edd 100644
+--- a/openai/src/arkose/funcaptcha/solver.rs
++++ b/openai/src/arkose/funcaptcha/solver.rs
+@@ -94,10 +94,11 @@ pub async fn submit_task(submit_task: SubmitSolver<'_>) -> anyhow::Result<Vec<i3
+                 anyhow::bail!(format!("solver task error: {error_description}"))
+             }
+             let target = task.solution.objects;
+-            return match target.is_empty() {
+-                true => Ok(vec![0]),
+-                false => Ok(target),
+-            };
++
++            if target.is_empty() {
++                anyhow::bail!(format!("solver task error: empty answer"))
++            }
++            Ok(target)
+         }
+         Err(err) => {
+             let msg = resp.text().await?;

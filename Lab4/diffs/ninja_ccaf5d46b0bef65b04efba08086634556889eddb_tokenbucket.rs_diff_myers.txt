@@ -1,0 +1,14 @@
+diff --git a/openai/src/serve/tokenbucket.rs b/openai/src/serve/tokenbucket.rs
+index 1baa647..933e87f 100644
+--- a/openai/src/serve/tokenbucket.rs
++++ b/openai/src/serve/tokenbucket.rs
+@@ -141,9 +141,6 @@ impl RedisTokenBucket {
+         node: String,
+     ) -> RedisResult<Self> {
+         // connect to redis
+-        if node.len() == 1 {
+-        } else {
+-        }
+         let client = redis::Client::open(node)?;
+         Ok(Self {
+             enable,

@@ -1,0 +1,12 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/OnTextChanged.java b/butterknife-annotations/src/main/java/butterknife/OnTextChanged.java
+index 5669ba6..89adb82 100644
+--- a/butterknife-annotations/src/main/java/butterknife/OnTextChanged.java
++++ b/butterknife-annotations/src/main/java/butterknife/OnTextChanged.java
+@@ -36,6 +36,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+ @ListenerClass(
+     targetType = "android.widget.TextView",
+     setter = "addTextChangedListener",
++    remover = "removeTextChangedListener",
+     type = "android.text.TextWatcher",
+     callbacks = OnTextChanged.Callback.class
+ )

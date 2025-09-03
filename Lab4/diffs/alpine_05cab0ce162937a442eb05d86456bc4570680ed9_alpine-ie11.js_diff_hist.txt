@@ -1,0 +1,23 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index de9b6ba0..05709dc9 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -7175,8 +7175,18 @@
+       observer.observe(targetNode, observerOptions);
+     },
+     initializeComponent: function initializeComponent(el) {
++      var _this8 = this;
++
+       if (!el.__x) {
++        try {
+           el.__x = new Component(el);
++        } catch (err) {
++          window.setTimeout(function () {
++            _newArrowCheck(this, _this8);
++
++            throw err;
++          }.bind(this), 0);
++        }
+       }
+     },
+     clone: function clone(component, newEl) {

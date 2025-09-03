@@ -1,0 +1,13 @@
+diff --git a/openai/src/token.rs b/openai/src/token.rs
+index 79a3177..2f0fb11 100644
+--- a/openai/src/token.rs
++++ b/openai/src/token.rs
+@@ -265,7 +265,7 @@ impl AuthenticateTokenStore for FileStore {
+             return Ok(None);
+         }
+         let data: HashMap<String, AuthenticateToken> =
+-            serde_json::from_slice(&bytes).map_err(|_| TokenStoreError::DeserializeError)?;
++            serde_json::from_slice(&bytes).map_err(TokenStoreError::DeserializeError)?;
+         Ok(data.get(email).cloned())
+     }
+ 

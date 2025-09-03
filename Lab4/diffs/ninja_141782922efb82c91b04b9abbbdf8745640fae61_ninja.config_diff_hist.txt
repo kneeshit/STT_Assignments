@@ -1,0 +1,12 @@
+diff --git a/openwrt/ninja/files/ninja.config b/openwrt/ninja/files/ninja.config
+index 8f1eb39..cdc1912 100644
+--- a/openwrt/ninja/files/ninja.config
++++ b/openwrt/ninja/files/ninja.config
+@@ -19,7 +19,6 @@ config ninja
+     option tcp_keepalive '5'
+     option tls_cert ''
+     option tls_key ''
+-    option sign_secret_key ''
+     option tb_enable '0'
+     option tb_store_strategy 'mem'
+     option tb_redis_url 'redis://127.0.0.1:6379'

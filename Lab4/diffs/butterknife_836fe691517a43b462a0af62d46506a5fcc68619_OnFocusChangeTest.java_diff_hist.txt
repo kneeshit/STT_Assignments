@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java b/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
+index cfac733..4cbc04e 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
+@@ -38,8 +38,6 @@ public class OnFocusChangeTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

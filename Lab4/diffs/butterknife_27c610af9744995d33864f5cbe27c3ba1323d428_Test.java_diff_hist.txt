@@ -1,0 +1,17 @@
+diff --git a/butterknife/src/it/method-cannot-have-dupliate-ids/src/main/java/test/Test.java b/butterknife/src/it/method-cannot-have-dupliate-ids/src/main/java/test/Test.java
+new file mode 100644
+index 0000000..5545a05
+--- /dev/null
++++ b/butterknife/src/it/method-cannot-have-dupliate-ids/src/main/java/test/Test.java
+@@ -0,0 +1,11 @@
++package test;
++
++import android.app.Activity;
++import butterknife.InjectView;
++import butterknife.OnClick;
++import java.lang.String;
++
++public class Test extends Activity {
++  @OnClick({1, 2, 3, 1}) void doStuff() {
++  }
++}

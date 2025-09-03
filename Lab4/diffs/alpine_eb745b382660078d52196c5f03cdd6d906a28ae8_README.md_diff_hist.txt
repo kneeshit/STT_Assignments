@@ -1,0 +1,15 @@
+diff --git a/README.md b/README.md
+index 6bf18409..56308494 100644
+--- a/README.md
++++ b/README.md
+@@ -105,8 +105,8 @@ And 2 magic objects/functions:
+ 
+ | Magic object/function
+ | --- |
+-| `$refs`(#refs) |
+-| `$nextTick`(#next-tick) |
++| [`$refs`](#refs) |
++| [`$nextTick`](#next-tick) |
+ 
+ ### Directives
+ 

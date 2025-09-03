@@ -1,0 +1,19 @@
+diff --git a/examples/index.html b/examples/index.html
+index 27dee68a..21367e81 100644
+--- a/examples/index.html
++++ b/examples/index.html
+@@ -17,6 +17,14 @@
+         <script src="/dist/alpine.js" defer></script>
+     </head>
+     <body>
++        <div x-data="{ items: ['foo', 'bar'], count: 1 }">
++            <button @click="count++">increment</button>
++
++            <template x-for="item in items" x-if="count < 2">
++                <span x-text="item"></span>
++            </template>
++        </div>
++
+         <table>
+             <thead>
+                 <tr>

@@ -1,0 +1,12 @@
+diff --git a/butterknife-reflect/build.gradle b/butterknife-reflect/build.gradle
+index ccf464e..d4d5d94 100644
+--- a/butterknife-reflect/build.gradle
++++ b/butterknife-reflect/build.gradle
+@@ -29,6 +29,7 @@ android {
+ 
+ dependencies {
+   api project(':butterknife-runtime')
++  api deps.androidx.viewpager
+ }
+ 
+ apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

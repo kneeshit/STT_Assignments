@@ -1,0 +1,18 @@
+diff --git a/openai/src/serve/router/har.rs b/openai/src/serve/router/har.rs
+index 2bc324f..030168b 100644
+--- a/openai/src/serve/router/har.rs
++++ b/openai/src/serve/router/har.rs
+@@ -17,12 +17,7 @@ const UPLOAD_PAGE: &'static str = include_str!("../../../ui/har/upload.html");
+ const SUCCESS_PAGE: &'static str = include_str!("../../../ui/har/success.html");
+ 
+ pub(super) fn config(router: Router, _: &ContextArgs) -> Router {
+-    router.route(
+-        "/har/upload",
+-        get(upload)
+-            .post(upload_form)
+-            .layer(axum::extract::DefaultBodyLimit::max(200 * 1024 * 1024)),
+-    )
++    router.route("/har/upload", get(upload).post(upload_form))
+ }
+ 
+ async fn upload() -> Html<String> {

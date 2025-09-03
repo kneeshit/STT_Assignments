@@ -1,0 +1,28 @@
+diff --git a/openai/src/context.rs b/openai/src/context.rs
+index ed30cd4..798df7f 100644
+--- a/openai/src/context.rs
++++ b/openai/src/context.rs
+@@ -67,7 +67,13 @@ impl Context {
+     }
+ 
+     pub async fn get_instance() -> &'static Context {
+-        CTX.get_or_init(|| async { Context::new(ContextArgs::default()) })
++        CTX.get_or_init(|| async {
++            Context::new(
++                ContextArgsBuilder::default()
++                    .build()
++                    .expect("Context arguments initialization build failed"),
++            )
++        })
+         .await
+     }
+ 
+@@ -87,7 +93,7 @@ impl Context {
+ 
+         Context {
+             client_load: Some(
+-                ClientLoadBalancer::<Client>::new_api_client(&args)
++                ClientLoadBalancer::<Client>::new_client(&args)
+                     .expect("Failed to initialize the requesting client"),
+             ),
+             auth_client_load: Some(

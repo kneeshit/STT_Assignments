@@ -1,0 +1,13 @@
+diff --git a/examples/har.rs b/examples/har.rs
+index 7100369..fb08569 100644
+--- a/examples/har.rs
++++ b/examples/har.rs
+@@ -3,7 +3,7 @@ use openai::arkose::ArkoseToken;
+ #[tokio::main]
+ async fn main() {
+     for _ in 0..100 {
+-        let token = ArkoseToken::new_form_har("/Users/gngpp/chat.openai.com.har")
++        let token = ArkoseToken::new_form_har("platform.openai.com.har")
+             .await
+             .unwrap();
+         println!("{}", token.value());

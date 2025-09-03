@@ -1,0 +1,7 @@
+diff --git a/src/inter/mod.rs b/src/inter/mod.rs
+new file mode 100644
+index 0000000..8bf8478
+--- /dev/null
++++ b/src/inter/mod.rs
+@@ -0,0 +1 @@
++pub mod prompt;

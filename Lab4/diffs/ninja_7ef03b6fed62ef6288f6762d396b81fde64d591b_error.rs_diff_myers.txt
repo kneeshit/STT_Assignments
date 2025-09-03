@@ -1,0 +1,13 @@
+diff --git a/openai/src/error.rs b/openai/src/error.rs
+index c9969da..31b0098 100644
+--- a/openai/src/error.rs
++++ b/openai/src/error.rs
+@@ -16,6 +16,8 @@ pub enum AuthError {
+     FailedPubKeyRequest,
+     #[error("failed login")]
+     FailedLogin,
++    #[error("failed to get arkose token")]
++    FailedArkoseToken,
+     #[error(transparent)]
+     FailedRequest(#[from] reqwest::Error),
+     #[error("invalid client request (error {0:?})")]

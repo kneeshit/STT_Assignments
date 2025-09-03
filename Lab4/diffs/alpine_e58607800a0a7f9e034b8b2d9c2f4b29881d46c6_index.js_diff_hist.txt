@@ -1,0 +1,24 @@
+diff --git a/src/index.js b/src/index.js
+index b4d600dc..8c0ae175 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -8,6 +8,8 @@ const Alpine = {
+ 
+     magicProperties: {},
+ 
++    onComponentInitializeds: [],
++
+     start: async function () {
+         if (! isTesting()) {
+             await domReady()
+@@ -103,6 +105,10 @@ const Alpine = {
+ 
+     addMagicProperty: function (name, callback) {
+         this.magicProperties[name] = callback
++    },
++
++    onComponentInitialized: function (callback) {
++        this.onComponentInitializeds.push(callback)
+     }
+ }
+ 

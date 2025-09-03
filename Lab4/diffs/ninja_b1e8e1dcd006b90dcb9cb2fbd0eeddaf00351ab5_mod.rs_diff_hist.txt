@@ -1,0 +1,9 @@
+diff --git a/openai/src/serve/middleware/mod.rs b/openai/src/serve/middleware/mod.rs
+index 163f431..fec2f89 100644
+--- a/openai/src/serve/middleware/mod.rs
++++ b/openai/src/serve/middleware/mod.rs
+@@ -1,3 +1,4 @@
++pub mod csrf;
+ #[cfg(feature = "limit")]
+ pub mod tokenbucket;
+ 

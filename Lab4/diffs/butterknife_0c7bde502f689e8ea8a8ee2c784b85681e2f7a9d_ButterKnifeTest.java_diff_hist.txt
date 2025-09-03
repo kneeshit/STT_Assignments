@@ -1,0 +1,40 @@
+diff --git a/butterknife/src/test/java/butterknife/ButterKnifeTest.java b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+index ad4a43b..76fef63 100644
+--- a/butterknife/src/test/java/butterknife/ButterKnifeTest.java
++++ b/butterknife/src/test/java/butterknife/ButterKnifeTest.java
+@@ -30,6 +30,12 @@ public class ButterKnifeTest {
+           view.setEnabled(enabled);
+         }
+       };
++  private static final ButterKnife.Setter<View, Boolean> SETTER_ENABLED =
++      new ButterKnife.Setter<View, Boolean>() {
++        @Override public void set(View view, Boolean value, int index) {
++          view.setEnabled(value);
++        }
++      };
+   private static final ButterKnife.Action<View> ACTION_DISABLE = new ButterKnife.Action<View>() {
+     @Override public void apply(View view, int index) {
+       view.setEnabled(false);
+@@ -74,6 +80,22 @@ public class ButterKnifeTest {
+     assertThat(view3).isDisabled();
+   }
+ 
++  @Test public void setterAppliedToEveryView() {
++    View view1 = new View(Robolectric.application);
++    View view2 = new View(Robolectric.application);
++    View view3 = new View(Robolectric.application);
++    assertThat(view1).isEnabled();
++    assertThat(view2).isEnabled();
++    assertThat(view3).isEnabled();
++
++    List<View> views = Arrays.asList(view1, view2, view3);
++    ButterKnife.apply(views, SETTER_ENABLED, false);
++
++    assertThat(view1).isDisabled();
++    assertThat(view2).isDisabled();
++    assertThat(view3).isDisabled();
++  }
++
+   @Test public void zeroInjectionsInjectDoesNotThrowException() {
+     class Example {
+     }

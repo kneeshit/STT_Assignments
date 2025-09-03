@@ -1,0 +1,12 @@
+diff --git a/website/static/app.css b/website/static/app.css
+index 76fd9ed..e6fbab0 100644
+--- a/website/static/app.css
++++ b/website/static/app.css
+@@ -21,7 +21,6 @@ code, pre {
+   border: none;
+ }
+ pre {
+-  font-size: 10px;
+   padding: 0;
+   overflow: auto;
+   word-wrap: normal;

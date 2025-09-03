@@ -1,0 +1,30 @@
+=== Diff Algorithm Outcome Summary ===
+Total file-level change rows: 8705
+Identical (Myers == Histogram): 8428 (96.82%)
+Different  (Myers != Histogram): 277 (3.18%)
+
+-- Mismatch Counts by File Type -- (Discrepancy == 'No')
+Source Code: 247 mismatches (3.30% of its rows)
+Test Code: 23 mismatches (2.31% of its rows)
+README: 6 mismatches (2.68% of its rows)
+LICENSE: 1 mismatches (14.29% of its rows)
+
+-- Per Repository Outcome --
+alpine: identical=1784 (96.07%), different=73 (3.93%)
+butterknife: identical=3027 (96.68%), different=104 (3.32%)
+ninja: identical=3617 (97.31%), different=100 (2.69%)
+
+-- Mismatches by File Type per Repo --
+Repo	Source Code	Test Code	README	LICENSE
+butterknife	89	14	1	0
+alpine	62	9	2	0
+ninja	96	0	3	1
+
+-- Diff Size Stats (Characters) --
+Myers: mean=11868.7 median=1033.0 p95=44319.2 n=5000
+Hist:  mean=11812.2 median=1033.0 p95=44319.2 n=5000
+-- Diff Size Stats (Lines) --
+Myers: mean=67.8 median=23.0 p95=217.0
+Hist:  mean=66.9 median=23.0 p95=217.0
+
+Generated: 2025-09-03T08:09:38.051427Z

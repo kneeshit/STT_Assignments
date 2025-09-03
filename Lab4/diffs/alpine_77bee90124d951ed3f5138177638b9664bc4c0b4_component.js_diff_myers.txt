@@ -1,0 +1,13 @@
+diff --git a/src/component.js b/src/component.js
+index 9a9666cf..4d949388 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -149,7 +149,7 @@ export default class Component {
+         // To support class attribute merging, we have to know what the element's
+         // original class attribute looked like for reference.
+         if (el.hasAttribute('class') && getXAttrs(el).length > 0) {
+-            el.__originalClasses = el.getAttribute('class').split(' ')
++            el.__x_original_classes = el.getAttribute('class').split(' ')
+         }
+ 
+         this.registerListeners(el, extraVars)

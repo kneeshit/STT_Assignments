@@ -1,0 +1,16 @@
+diff --git a/test/on.spec.js b/test/on.spec.js
+index b2f779ae..98c9eb85 100644
+--- a/test/on.spec.js
++++ b/test/on.spec.js
+@@ -1,6 +1,10 @@
+-import projectX from 'projectX'
++import projectX from 'project-x'
+ import { wait } from 'dom-testing-library'
+ 
++global.MutationObserver = class {
++    observe() {}
++}
++
+ test('data modified in event listener updates effected attribute bindings', async () => {
+     document.body.innerHTML = `
+         <div x-data="{ foo: 'bar' }">

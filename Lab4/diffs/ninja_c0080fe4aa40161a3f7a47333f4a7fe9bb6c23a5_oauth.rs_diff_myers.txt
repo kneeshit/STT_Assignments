@@ -1,0 +1,13 @@
+diff --git a/src/inter/authorize/oauth.rs b/src/inter/authorize/oauth.rs
+index 5ac5dd9..b159e9e 100644
+--- a/src/inter/authorize/oauth.rs
++++ b/src/inter/authorize/oauth.rs
+@@ -2,7 +2,7 @@ use colored_json::prelude::*;
+ use inquire::{min_length, required, Select, Text};
+ use openai::auth::AuthHandle;
+ 
+-use crate::inter::{context::Context, enums::OAuth, new_spinner, render_config};
++use crate::inter::{context::Context, new_spinner, render_config, standard::OAuth};
+ 
+ use super::login_prompt;
+ 

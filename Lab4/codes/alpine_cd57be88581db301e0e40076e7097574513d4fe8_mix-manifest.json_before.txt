@@ -1,0 +1,4 @@
+{
+    "/project-x.js": "/project-x.js?id=8ddea585824bef19cb31",
+    "/project-x.min.js": "/project-x.min.js?id=8f205394a2ed239a17a3"
+}

@@ -1,0 +1,13 @@
+diff --git a/src/inter/mod.rs b/src/inter/mod.rs
+index dcb9831..0c7a3fc 100644
+--- a/src/inter/mod.rs
++++ b/src/inter/mod.rs
+@@ -19,7 +19,7 @@ use inquire::{
+ };
+ use openai::arkose::{funcaptcha, ArkoseToken, Type};
+ use openai::{
+-    auth::{model::AuthStrategy, AuthHandle},
++    auth::{model::AuthStrategy, provide::AuthProvider},
+     model::AuthenticateToken,
+ };
+ use serde::Serialize;

@@ -1,0 +1,13 @@
+diff --git a/openwrt/ninja/Makefile b/openwrt/ninja/Makefile
+index 2dfba30..b1d1585 100644
+--- a/openwrt/ninja/Makefile
++++ b/openwrt/ninja/Makefile
+@@ -36,7 +36,7 @@ define Package/$(PKG_NAME)
+ endef
+ 
+ define Package/$(PKG_NAME)/description
+-  Not just an unofficial ChatGPT proxy (bypass Cloudflare 403 Access Denied)
++  Reverse engineered ChatGPT proxy (bypass Cloudflare 403 Access Denied)
+ endef
+ 
+ define Download/sha256sum

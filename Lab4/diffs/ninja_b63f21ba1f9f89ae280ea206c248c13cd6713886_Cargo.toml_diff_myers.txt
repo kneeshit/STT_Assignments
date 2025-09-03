@@ -1,0 +1,13 @@
+diff --git a/reqwest/Cargo.toml b/reqwest/Cargo.toml
+index d46ae7c..140ee79 100644
+--- a/reqwest/Cargo.toml
++++ b/reqwest/Cargo.toml
+@@ -137,7 +137,7 @@ tokio-native-tls = { version = "0.3.0", optional = true }
+ 
+ # rustls-tls
+ hyper-rustls = { version = "0.23", default-features = false, optional = true }
+-rustls = { version = "0.20", features = [
++rustls = { version = "0.21.1", features = [
+     "dangerous_configuration",
+ ], optional = true }
+ tokio-rustls = { version = "0.23", optional = true }

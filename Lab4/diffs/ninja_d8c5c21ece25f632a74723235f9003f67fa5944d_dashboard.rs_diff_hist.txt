@@ -1,0 +1,13 @@
+diff --git a/src/inter/dashboard.rs b/src/inter/dashboard.rs
+index b5a0753..58fd76f 100644
+--- a/src/inter/dashboard.rs
++++ b/src/inter/dashboard.rs
+@@ -22,7 +22,7 @@ pub async fn prompt() -> anyhow::Result<()> {
+         let account_store = Context::get_account_store().await;
+ 
+         let mut account = account_store
+-            .get(Account::new(&user))?
++            .read(Account::new(&user))?
+             .ok_or(anyhow::anyhow!("No account found"))?;
+ 
+         let state = account

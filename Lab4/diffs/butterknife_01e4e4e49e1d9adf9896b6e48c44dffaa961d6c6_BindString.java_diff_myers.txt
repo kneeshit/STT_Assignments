@@ -1,0 +1,12 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindString.java b/butterknife-annotations/src/main/java/butterknife/BindString.java
+index 5dfebd5..a31b550 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindString.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindString.java
+@@ -1,6 +1,6 @@
+ package butterknife;
+ 
+-import android.support.annotation.StringRes;
++import androidx.annotation.StringRes;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 

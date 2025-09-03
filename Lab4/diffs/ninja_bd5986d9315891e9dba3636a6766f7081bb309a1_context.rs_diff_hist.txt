@@ -1,0 +1,12 @@
+diff --git a/openai/src/context.rs b/openai/src/context.rs
+index 19200bd..08fd297 100644
+--- a/openai/src/context.rs
++++ b/openai/src/context.rs
+@@ -23,6 +23,7 @@ pub fn init(args: ContextArgs) {
+     };
+ }
+ 
++/// Get the program context
+ pub fn get_instance() -> &'static Context {
+     CTX.get_or_init(|| {
+         Context::new(

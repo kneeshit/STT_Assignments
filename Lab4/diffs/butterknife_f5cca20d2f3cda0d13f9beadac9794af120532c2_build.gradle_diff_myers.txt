@@ -1,0 +1,12 @@
+diff --git a/butterknife/build.gradle b/butterknife/build.gradle
+index d5de4d0..5b365ef 100644
+--- a/butterknife/build.gradle
++++ b/butterknife/build.gradle
+@@ -27,6 +27,7 @@ dependencies {
+   testCompile deps.junit
+   testCompile deps.truth
+   testCompile deps.robolectric
++  testCompile deps.openglApi
+ }
+ 
+ apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

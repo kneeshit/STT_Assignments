@@ -1,0 +1,22 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java b/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java
+index 38d46dc..8514905 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindDimenTest.java
+@@ -36,7 +36,7 @@ public class BindDimenTest {
+         + "    return Unbinder.EMPTY;\n"
+         + "  }\n"
+         + "  @SuppressWarnings(\"ResourceType\")\n"
+-        + "  protected static void bindToTarget(final Test target, Resources res) {\n"
++        + "  protected static void bindToTarget(Test target, Resources res) {\n"
+         + "    target.one = res.getDimension(1);\n"
+         + "  }\n"
+         + "}"
+@@ -76,7 +76,7 @@ public class BindDimenTest {
+         + "    return Unbinder.EMPTY;\n"
+         + "  }\n"
+         + "  @SuppressWarnings(\"ResourceType\")\n"
+-        + "  protected static void bindToTarget(final Test target, Resources res) {\n"
++        + "  protected static void bindToTarget(Test target, Resources res) {\n"
+         + "    target.one = res.getDimensionPixelSize(1);\n"
+         + "  }\n"
+         + "}"

@@ -1,0 +1,10 @@
+diff --git a/fficall/ffi/go.mod b/fficall/ffi/go.mod
+index b8390b4..9a7e0a4 100644
+--- a/fficall/ffi/go.mod
++++ b/fficall/ffi/go.mod
+@@ -1,4 +1,4 @@
+-module tlscall
++module fficall
+ 
+ go 1.20
+ 

@@ -1,0 +1,3 @@
+diff --git a/website/static/logo.png b/website/static/logo.png
+index ff9aa71..8d1e700 100644
+Binary files a/website/static/logo.png and b/website/static/logo.png differ

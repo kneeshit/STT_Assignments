@@ -1,0 +1,21 @@
+diff --git a/dist/alpine-ie11.js b/dist/alpine-ie11.js
+index d21a9818..b7dc7f18 100644
+--- a/dist/alpine-ie11.js
++++ b/dist/alpine-ie11.js
+@@ -5768,6 +5768,8 @@
+ 
+         if (modifiers.includes('prevent')) e.preventDefault();
+         if (modifiers.includes('stop')) e.stopPropagation();
++
++        if (!modifiers.includes('self') || e.target === el) {
+           var returnValue = runListenerHandler(component, expression, e, extraVars);
+ 
+           if (returnValue === false) {
+@@ -5777,6 +5779,7 @@
+               listenerTarget.removeEventListener(event, _handler2);
+             }
+           }
++        }
+       }.bind(this);
+ 
+       if (modifiers.includes('debounce')) {

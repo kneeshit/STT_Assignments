@@ -1,0 +1,29 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java b/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java
+index e4d1c4b..179d7e5 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/MethodViewBinding.java
+@@ -8,11 +8,14 @@ final class MethodViewBinding implements MemberViewBinding {
+   private final String name;
+   private final List<Parameter> parameters;
+   private final boolean required;
++  private final boolean hasReturnValue;
+ 
+-  MethodViewBinding(String name, List<Parameter> parameters, boolean required) {
++  MethodViewBinding(String name, List<Parameter> parameters, boolean required,
++      boolean hasReturnValue) {
+     this.name = name;
+     this.parameters = Collections.unmodifiableList(new ArrayList<>(parameters));
+     this.required = required;
++    this.hasReturnValue = hasReturnValue;
+   }
+ 
+   public String getName() {
+@@ -30,4 +33,8 @@ final class MethodViewBinding implements MemberViewBinding {
+   public boolean isRequired() {
+     return required;
+   }
++
++  public boolean hasReturnValue() {
++    return hasReturnValue;
++  }
+ }

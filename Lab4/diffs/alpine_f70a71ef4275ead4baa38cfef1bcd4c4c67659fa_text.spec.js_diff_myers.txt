@@ -1,0 +1,27 @@
+diff --git a/test/text.spec.js b/test/text.spec.js
+index 986f25a0..7ae0393c 100644
+--- a/test/text.spec.js
++++ b/test/text.spec.js
+@@ -14,7 +14,7 @@ test('x-text on init', async () => {
+ 
+     Alpine.start()
+ 
+-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
++    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
+ })
+ 
+ test('x-text on triggered update', async () => {
+@@ -28,11 +28,11 @@ test('x-text on triggered update', async () => {
+ 
+     Alpine.start()
+ 
+-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('') })
++    await wait(() => { expect(document.querySelector('span').textContent).toEqual('') })
+ 
+     document.querySelector('button').click()
+ 
+-    await wait(() => { expect(document.querySelector('span').innerText).toEqual('bar') })
++    await wait(() => { expect(document.querySelector('span').textContent).toEqual('bar') })
+ })
+ 
+ test('x-text on SVG elements', async () => {

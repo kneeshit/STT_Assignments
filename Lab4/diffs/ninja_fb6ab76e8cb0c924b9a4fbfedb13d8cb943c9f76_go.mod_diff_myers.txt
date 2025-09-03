@@ -1,0 +1,10 @@
+diff --git a/gohttp/ffi/go.mod b/gohttp/ffi/go.mod
+index 7f9b23d..f9dd286 100644
+--- a/gohttp/ffi/go.mod
++++ b/gohttp/ffi/go.mod
+@@ -1,4 +1,4 @@
+-module github.com/linweiyuan/go-chatgpt-api
++module gohttp
+ 
+ go 1.18
+ 

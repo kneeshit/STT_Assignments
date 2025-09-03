@@ -1,0 +1,22 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/internal/ListenerClass.java b/butterknife-annotations/src/main/java/butterknife/internal/ListenerClass.java
+index e6d3ed5..52d89e5 100644
+--- a/butterknife-annotations/src/main/java/butterknife/internal/ListenerClass.java
++++ b/butterknife-annotations/src/main/java/butterknife/internal/ListenerClass.java
+@@ -10,6 +10,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
+ public @interface ListenerClass {
+   String targetType();
+ 
++  String targetTypeAndroidX() default "";
++
+   /** Name of the setter method on the {@linkplain #targetType() target type} for the listener. */
+   String setter();
+ 
+@@ -22,6 +24,8 @@ public @interface ListenerClass {
+   /** Fully-qualified class name of the listener type. */
+   String type();
+ 
++  String typeAndroidX() default "";
++
+   /** Enum which declares the listener callback methods. Mutually exclusive to {@link #method()}. */
+   Class<? extends Enum<?>> callbacks() default NONE.class;
+ 

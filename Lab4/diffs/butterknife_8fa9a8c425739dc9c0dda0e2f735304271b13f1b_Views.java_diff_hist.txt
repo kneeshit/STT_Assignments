@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index fafa12a..8453b45 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -158,7 +158,8 @@ public class Views {
+ 
+         String targetType = type.getQualifiedName().toString();
+         String sourceType = resolveSourceType(type);
+-        String packageName = processingEnv.getElementUtils().getPackageOf(type).toString();
++        String packageName =
++            processingEnv.getElementUtils().getPackageOf(type).getQualifiedName().toString();
+         String className =
+             type.getQualifiedName().toString().substring(packageName.length() + 1).replace('.', '$')
+                 + SUFFIX;

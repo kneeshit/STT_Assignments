@@ -1,0 +1,12 @@
+diff --git a/.gitignore b/.gitignore
+index d468ffd..c1522ef 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -22,4 +22,4 @@ Cargo.lock
+ .vscode
+ thunder-tests
+ .env
+-arkose
+\ No newline at end of file
++./arkose
+\ No newline at end of file

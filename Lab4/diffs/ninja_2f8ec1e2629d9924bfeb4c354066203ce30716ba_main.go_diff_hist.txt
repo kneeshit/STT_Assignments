@@ -1,0 +1,16 @@
+diff --git a/gohttp/ffi/main.go b/gohttp/ffi/main.go
+index 432d374..0eb661d 100644
+--- a/gohttp/ffi/main.go
++++ b/gohttp/ffi/main.go
+@@ -324,11 +324,6 @@ func buildCookies(cookies []tls_client_cffi_src.CookieInput) []*http.Cookie {
+ 	return ret
+ }
+ 
+-//export Add
+-func Add(a, b C.int) C.int {
+-    return a + b
+-}
+-
+ func main() {
+ 
+ }

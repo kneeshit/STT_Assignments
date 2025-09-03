@@ -1,0 +1,13 @@
+diff --git a/src/utils.js b/src/utils.js
+index f10eabed..fc89350b 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -59,7 +59,7 @@ export function debounce(func, wait) {
+ 
+ export function saferEval(expression, dataContext, additionalHelperVariables = {}) {
+     if (typeof expression === 'function') {
+-        return expression.call(dataContext)
++        return expression.call(dataContext, additionalHelperVariables['$event'])
+     }
+ 
+     return (new Function(['$data', ...Object.keys(additionalHelperVariables)], `var __alpine_result; with($data) { __alpine_result = ${expression} }; return __alpine_result`))(

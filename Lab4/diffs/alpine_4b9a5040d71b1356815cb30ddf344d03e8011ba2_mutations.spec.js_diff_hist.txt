@@ -1,0 +1,12 @@
+diff --git a/test/mutations.spec.js b/test/mutations.spec.js
+index ef7e2b91..842898e5 100644
+--- a/test/mutations.spec.js
++++ b/test/mutations.spec.js
+@@ -1,6 +1,6 @@
+ import Alpine from 'alpinejs'
+ 
+-test('catch disconnected nodes that were used as targets in for any mutations', async () => {
++test('catch disconnected nodes that were used as targets for any mutations', async () => {
+     const runObservers = []
+ 
+     global.MutationObserver = class {

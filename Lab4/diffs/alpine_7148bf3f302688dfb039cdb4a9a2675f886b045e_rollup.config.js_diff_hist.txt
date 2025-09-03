@@ -1,0 +1,13 @@
+diff --git a/rollup.config.js b/rollup.config.js
+index 949e0412..bca153ef 100644
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -26,7 +26,7 @@ export default [{
+                 exclude: 'node_modules/**'
+             }),
+             stripCode({
+-                start_comment: 'IE11-ONLY:END',
++                start_comment: 'IE11-ONLY:START',
+                 end_comment: 'IE11-ONLY:END'
+             })
+         ]

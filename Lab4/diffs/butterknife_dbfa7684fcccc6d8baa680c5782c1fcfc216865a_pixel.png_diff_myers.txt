@@ -1,0 +1,4 @@
+diff --git a/butterknife-integration-test/src/androidTest/res/drawable/pixel.png b/butterknife-integration-test/src/androidTest/res/drawable/pixel.png
+new file mode 100644
+index 0000000..9644db3
+Binary files /dev/null and b/butterknife-integration-test/src/androidTest/res/drawable/pixel.png differ

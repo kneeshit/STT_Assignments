@@ -1,0 +1,13 @@
+diff --git a/openai/src/error.rs b/openai/src/error.rs
+index 3c85631..2955f99 100644
+--- a/openai/src/error.rs
++++ b/openai/src/error.rs
+@@ -28,6 +28,8 @@ pub enum AuthError {
+     FailedState,
+     #[error("failed get csrf token")]
+     FailedCsrfToken,
++    #[error("failed to get auth session cookie")]
++    FailedAuthSessionCookie,
+     #[error("invalid request login url (error {0:?})")]
+     InvalidLoginUrl(String),
+     #[error("invalid email or password")]

@@ -1,0 +1,18 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/InjectableListenerException.java b/butterknife/src/main/java/butterknife/internal/InjectableListenerException.java
+deleted file mode 100644
+index ddec5a8..0000000
+--- a/butterknife/src/main/java/butterknife/internal/InjectableListenerException.java
++++ /dev/null
+@@ -1,12 +0,0 @@
+-package butterknife.internal;
+-
+-import javax.lang.model.element.Element;
+-
+-class InjectableListenerException extends Exception {
+-  final Element element;
+-
+-  InjectableListenerException(Element element, String format, Object... args) {
+-    super(String.format(format, args));
+-    this.element = element;
+-  }
+-}

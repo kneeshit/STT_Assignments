@@ -1,0 +1,24 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+index 9f11f53..bf30e4c 100644
+--- a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
++++ b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+@@ -10,6 +10,7 @@ import butterknife.InjectView;
+ import butterknife.OnClick;
+ import butterknife.ButterKnife;
+ import butterknife.OnItemClick;
++import butterknife.OnLongClick;
+ 
+ import static android.widget.Toast.LENGTH_SHORT;
+ 
+@@ -26,6 +27,11 @@ public class SimpleActivity extends Activity {
+     Toast.makeText(this, "Hello, views!", LENGTH_SHORT).show();
+   }
+ 
++  @OnLongClick(R.id.hello) boolean sayGetOffMe() {
++    Toast.makeText(this, "Let go of me!", LENGTH_SHORT).show();
++    return true;
++  }
++
+   @OnItemClick(R.id.list_of_things) void onItemClick(int position) {
+     Toast.makeText(this, "You clicked: " + adapter.getItem(position), LENGTH_SHORT).show();
+   }

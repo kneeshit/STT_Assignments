@@ -1,0 +1,32 @@
+diff --git a/reqwest-impersonate/examples/wasm_github_fetch/webpack.config.js b/reqwest-impersonate/examples/wasm_github_fetch/webpack.config.js
+new file mode 100644
+index 0000000..a6c7ba7
+--- /dev/null
++++ b/reqwest-impersonate/examples/wasm_github_fetch/webpack.config.js
+@@ -0,0 +1,25 @@
++const path = require('path');
++const HtmlWebpackPlugin = require('html-webpack-plugin');
++const webpack = require('webpack');
++const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
++
++module.exports = {
++    entry: './index.js',
++    output: {
++        path: path.resolve(__dirname, 'dist'),
++        filename: 'index.js',
++    },
++    plugins: [
++        new HtmlWebpackPlugin(),
++        new WasmPackPlugin({
++            crateDirectory: path.resolve(__dirname, ".")
++        }),
++        // Have this example work in Edge which doesn't ship `TextEncoder` or
++        // `TextDecoder` at this time.
++        new webpack.ProvidePlugin({
++            TextDecoder: ['text-encoding', 'TextDecoder'],
++            TextEncoder: ['text-encoding', 'TextEncoder']
++        })
++    ],
++    mode: 'development'
++};
+\ No newline at end of file

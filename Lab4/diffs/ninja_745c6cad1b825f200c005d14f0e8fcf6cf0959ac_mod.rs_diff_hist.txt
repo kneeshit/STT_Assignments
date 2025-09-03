@@ -1,0 +1,19 @@
+diff --git a/openai/src/serve/mod.rs b/openai/src/serve/mod.rs
+index 577a725..8a2dec1 100644
+--- a/openai/src/serve/mod.rs
++++ b/openai/src/serve/mod.rs
+@@ -132,6 +132,14 @@ impl Launcher {
+         // serve
+         let serve = HttpServer::new(move || {
+             let app = App::new()
++                .wrap(
++                    actix_cors::Cors::default()
++                        .supports_credentials()
++                        .allow_any_origin()
++                        .allow_any_header()
++                        .allow_any_method()
++                        .max_age(3600),
++                )
+                 .wrap(Logger::default())
+                 // official dashboard api endpoint
+                 .service(

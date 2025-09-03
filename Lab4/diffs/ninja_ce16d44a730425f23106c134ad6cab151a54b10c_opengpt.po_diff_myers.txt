@@ -1,0 +1,14 @@
+diff --git a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+index 6300df2..8fa39ec 100644
+--- a/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
++++ b/openwrt/luci-app-opengpt/po/zh-cn/opengpt.po
+@@ -124,6 +124,9 @@ msgstr "关于 ArkoseLabs 的解析器客户端密钥"
+ msgid "Get arkose token endpoint"
+ msgstr "获取arkose token的端点"
+ 
++msgid "About the browser HAR file path requested by ArkoseLabs"
++msgstr "关于ArkoseLabs请求的浏览器HAR文件路径"
++
+ msgid "HAR file path"
+ msgstr "HAR 文件路径"
+ 

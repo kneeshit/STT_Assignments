@@ -1,0 +1,19 @@
+diff --git a/docker/render/Dockerfile b/docker/render/Dockerfile
+new file mode 100644
+index 0000000..c978d23
+--- /dev/null
++++ b/docker/render/Dockerfile
+@@ -0,0 +1,12 @@
++FROM gngpp/ninja:latest as builder
++
++FROM gngpp/warp:latest
++
++LABEL org.opencontainers.image.authors "gngpp <gngppz@gmail.com>"
++LABEL org.opencontainers.image.source https://github.com/gngpp/ninja
++LABEL name ninja
++LABEL url https://github.com/gngpp/ninja
++
++ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive LANG=zh_CN.UTF-8 LANGUAGE=zh_CN.UTF-8 LC_ALL=C
++
++COPY --from=builder /bin/ninja /bin/ninja
+\ No newline at end of file

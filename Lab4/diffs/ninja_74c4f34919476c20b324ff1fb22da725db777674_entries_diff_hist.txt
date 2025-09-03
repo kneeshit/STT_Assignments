@@ -1,0 +1,7 @@
+diff --git a/openai/ui/static/_next/static/chunks/pages/payments/.svn/entries b/openai/ui/static/_next/static/chunks/pages/payments/.svn/entries
+deleted file mode 100644
+index 48082f7..0000000
+--- a/openai/ui/static/_next/static/chunks/pages/payments/.svn/entries
++++ /dev/null
+@@ -1 +0,0 @@
+-12

@@ -1,0 +1,12 @@
+diff --git a/src/index.js b/src/index.js
+index 17597728..1c2c5f4e 100644
+--- a/src/index.js
++++ b/src/index.js
+@@ -2,6 +2,7 @@ import Component from './component'
+ import { domReady, isTesting } from './utils'
+ 
+ const Alpine = {
++    version: process.env.PKG_VERSION,
+     start: async function () {
+         if (! isTesting()) {
+             await domReady()

@@ -1,0 +1,27 @@
+diff --git a/src/env.rs b/src/env.rs
+index a2de2cc..0f83e67 100644
+--- a/src/env.rs
++++ b/src/env.rs
+@@ -1,3 +1,5 @@
++use crate::args::ServeArgs;
++
+ pub(crate) const PID_PATH: &str = "/var/run/opengpt.pid";
+ pub(crate) const DEFAULT_STDOUT_PATH: &str = "/var/run/opengpt.out";
+ pub(crate) const DEFAULT_STDERR_PATH: &str = "/var/run/opengpt.err";
+@@ -21,3 +23,16 @@ pub(crate) fn get_pid() -> Option<String> {
+     }
+     None
+ }
++
++pub(crate) fn fix_relative_path(args: &mut ServeArgs) {
++    if let Some(c) = args.config.as_mut() {
++        // fix relative path
++        if c.is_relative() {
++            args.config = Some(
++                std::env::current_dir()
++                    .expect("cannot get current exe")
++                    .join(c),
++            )
++        }
++    }
++}

@@ -1,0 +1,12 @@
+diff --git a/.gitignore b/.gitignore
+index 909101b..b63ac31 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -28,6 +28,7 @@ thunder-tests
+ uploads
+ ./vendor
+ upgrade
++ca
+ chat3.openai.com.har
+ chat4.openai.com.har
+ platform.openai.com.har

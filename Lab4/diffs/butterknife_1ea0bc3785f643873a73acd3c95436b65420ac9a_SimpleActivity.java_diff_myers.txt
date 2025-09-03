@@ -1,0 +1,21 @@
+diff --git a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+index 10b77d8..5a0841f 100644
+--- a/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
++++ b/butterknife-sample/src/main/java/com/example/butterknife/SimpleActivity.java
+@@ -8,12 +8,14 @@ import android.widget.Button;
+ import android.widget.ListView;
+ import android.widget.TextView;
+ import android.widget.Toast;
+-import butterknife.ButterKnife;
++
++import java.util.List;
++
+ import butterknife.Bind;
++import butterknife.ButterKnife;
+ import butterknife.OnClick;
+ import butterknife.OnItemClick;
+ import butterknife.OnLongClick;
+-import java.util.List;
+ 
+ import static android.widget.Toast.LENGTH_SHORT;
+ 

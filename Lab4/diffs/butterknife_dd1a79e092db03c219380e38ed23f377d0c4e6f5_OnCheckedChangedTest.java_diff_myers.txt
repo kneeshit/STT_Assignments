@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java b/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
+index 30da11f..cc5dab5 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
+@@ -70,7 +70,7 @@ public class OnCheckedChangedTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

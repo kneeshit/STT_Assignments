@@ -1,0 +1,15 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/Unbinder.java b/butterknife-annotations/src/main/java/butterknife/Unbinder.java
+index 2744412..1bb9a61 100644
+--- a/butterknife-annotations/src/main/java/butterknife/Unbinder.java
++++ b/butterknife-annotations/src/main/java/butterknife/Unbinder.java
+@@ -7,8 +7,8 @@ import static java.lang.annotation.ElementType.FIELD;
+ import static java.lang.annotation.RetentionPolicy.CLASS;
+ 
+ /**
+- * Bind a target field to an un-binder instance. Use when binding in a {@linkplain
+- * android.app.Fragment fragment}.
++ * Bind a target field to an un-binder instance. Use when binding in a fragment to clear view
++ * references in the {@code onDestroyView} callback.
+  * <pre><code>
+  * {@literal @}Unbinder ButterKnife.Unbinder unbinder;
+  * </code></pre>

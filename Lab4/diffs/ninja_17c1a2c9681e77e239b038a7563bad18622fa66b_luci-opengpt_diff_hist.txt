@@ -1,0 +1,17 @@
+diff --git a/openwrt/luci-app-opengpt/root/etc/uci-defaults/luci-opengpt b/openwrt/luci-app-opengpt/root/etc/uci-defaults/luci-opengpt
+deleted file mode 100755
+index 2c2fa19..0000000
+--- a/openwrt/luci-app-opengpt/root/etc/uci-defaults/luci-opengpt
++++ /dev/null
+@@ -1,11 +0,0 @@
+-#!/bin/sh
+-
+-uci -q batch <<-EOF >/dev/null
+-	delete ucitrack.@opengpt[-1]
+-	add ucitrack opengpt
+-	set ucitrack.@opengpt[-1].init=opengpt
+-	commit ucitrack
+-EOF
+-
+-rm -rf /tmp/luci-*
+-exit 0

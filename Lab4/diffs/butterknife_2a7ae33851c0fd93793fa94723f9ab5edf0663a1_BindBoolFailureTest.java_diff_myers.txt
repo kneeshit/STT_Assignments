@@ -1,0 +1,18 @@
+diff --git a/butterknife-integration-test/src/androidTestReflect/java/com/example/butterknife/functional/BindBoolFailureTest.java b/butterknife-integration-test/src/androidTestReflect/java/com/example/butterknife/functional/BindBoolFailureTest.java
+index 8233dba..d0b2350 100644
+--- a/butterknife-integration-test/src/androidTestReflect/java/com/example/butterknife/functional/BindBoolFailureTest.java
++++ b/butterknife-integration-test/src/androidTestReflect/java/com/example/butterknife/functional/BindBoolFailureTest.java
+@@ -5,12 +5,11 @@ import butterknife.BindBool;
+ import butterknife.ButterKnife;
+ import org.junit.Test;
+ 
+-import static com.example.butterknife.functional.ViewTestUtils.treeWithIds;
+ import static com.google.common.truth.Truth.assertThat;
+ import static org.junit.Assert.fail;
+ 
+ public final class BindBoolFailureTest {
+-  private final View tree = treeWithIds(1);
++  private final View tree = ViewTree.create(1);
+ 
+   static class Target {
+     @BindBool(1) String actual;

@@ -1,0 +1,8 @@
+diff --git a/reqwest/.envrc b/reqwest/.envrc
+new file mode 100644
+index 0000000..8392d15
+--- /dev/null
++++ b/reqwest/.envrc
+@@ -0,0 +1 @@
++use flake
+\ No newline at end of file

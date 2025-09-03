@@ -1,0 +1,13 @@
+diff --git a/examples/opengpt.rs b/examples/opengpt.rs
+index b5df76d..d43d7ae 100644
+--- a/examples/opengpt.rs
++++ b/examples/opengpt.rs
+@@ -15,7 +15,7 @@ async fn main() -> anyhow::Result<()> {
+         .user_agent(openai::HEADER_UA)
+         .chrome_builder(reqwest::browser::ChromeVersion::V108)
+         .cookie_store(true)
+-        .client_timeout(std::time::Duration::from_secs(20))
++        .timeout(std::time::Duration::from_secs(20))
+         .build();
+     let token = auth
+         .do_access_token(

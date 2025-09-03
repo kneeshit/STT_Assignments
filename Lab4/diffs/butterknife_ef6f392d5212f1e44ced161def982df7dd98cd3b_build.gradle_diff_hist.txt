@@ -1,0 +1,14 @@
+diff --git a/sample/library/build.gradle b/sample/library/build.gradle
+index 089222b..b017f47 100644
+--- a/sample/library/build.gradle
++++ b/sample/library/build.gradle
+@@ -1,4 +1,9 @@
+ buildscript {
++  repositories {
++    mavenCentral()
++    jcenter()
++  }
++
+   dependencies {
+     classpath "com.jakewharton:butterknife-gradle-plugin:${versions.release}"
+   }

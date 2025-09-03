@@ -1,0 +1,4 @@
+diff --git a/butterknife-integration-test/src/androidTest/res/font/inconsolata_regular.ttf b/butterknife-integration-test/src/androidTest/res/font/inconsolata_regular.ttf
+new file mode 100644
+index 0000000..fc981ce
+Binary files /dev/null and b/butterknife-integration-test/src/androidTest/res/font/inconsolata_regular.ttf differ

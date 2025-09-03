@@ -1,0 +1,17 @@
+diff --git a/butterknife-lint/src/test/java/sample/r2/BindTest.java b/butterknife-lint/src/test/java/sample/r2/BindTest.java
+deleted file mode 100644
+index b31753c..0000000
+--- a/butterknife-lint/src/test/java/sample/r2/BindTest.java
++++ /dev/null
+@@ -1,11 +0,0 @@
+-package sample.r2;
+-
+-import java.lang.annotation.ElementType;
+-import java.lang.annotation.Retention;
+-import java.lang.annotation.RetentionPolicy;
+-import java.lang.annotation.Target;
+-
+-@Retention(RetentionPolicy.SOURCE) @Target({ ElementType.FIELD, ElementType.METHOD })
+-public @interface BindTest {
+-  int value();
+-}

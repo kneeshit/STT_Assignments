@@ -1,0 +1,15 @@
+diff --git a/src/utils.js b/src/utils.js
+index 00f69e43..0ccb72c7 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -16,6 +16,10 @@ export function isTesting() {
+         || navigator.userAgent.includes("jsdom")
+ }
+ 
++export function kebabCase(subject) {
++    return subject.replace(/([a-z])([A-Z])/g, '$1-$2').replace(/[_\s]/, '-').toLowerCase()
++}
++
+ export function walkSkippingNestedComponents(el, callback, isRoot = true) {
+     if (el.hasAttribute('x-data') && ! isRoot) return
+ 

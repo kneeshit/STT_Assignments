@@ -1,0 +1,16 @@
+diff --git a/openwrt/luci-app-opengpt/luasrc/model/cbi/opengpt/log.lua b/openwrt/luci-app-opengpt/luasrc/model/cbi/opengpt/log.lua
+new file mode 100644
+index 0000000..9539c01
+--- /dev/null
++++ b/openwrt/luci-app-opengpt/luasrc/model/cbi/opengpt/log.lua
+@@ -0,0 +1,9 @@
++log = SimpleForm("logview")
++log.submit = false
++log.reset = false
++
++t = log:field(DummyValue, '', '')
++t.rawhtml = true
++t.template = 'opengpt/opengpt_log'
++
++return log
+\ No newline at end of file

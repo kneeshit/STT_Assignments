@@ -1,0 +1,13 @@
+diff --git a/fficall/build.rs b/fficall/build.rs
+index 7cb8af6..16f4d52 100644
+--- a/fficall/build.rs
++++ b/fficall/build.rs
+@@ -26,7 +26,7 @@ fn main() {
+     println!("cargo:rustc-link-lib=static=fficall");
+ 
+     let bindings = bindgen::Builder::default()
+-        .header("ffi/fficall.h")
++        .header("ffi/libfficall.h")
+         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+         .generate()
+         .expect("unable to generate hello bindings");

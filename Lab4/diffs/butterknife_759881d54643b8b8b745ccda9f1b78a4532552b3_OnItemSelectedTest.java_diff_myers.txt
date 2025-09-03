@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/OnItemSelectedTest.java b/butterknife/src/test/java/butterknife/internal/OnItemSelectedTest.java
+index 0ca9aef..e09651f 100644
+--- a/butterknife/src/test/java/butterknife/internal/OnItemSelectedTest.java
++++ b/butterknife/src/test/java/butterknife/internal/OnItemSelectedTest.java
+@@ -6,8 +6,8 @@ import javax.tools.JavaFileObject;
+ import org.junit.Test;
+ 
+ import static butterknife.internal.ProcessorTestUtilities.butterknifeProcessors;
++import static com.google.common.truth.Truth.ASSERT;
+ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+-import static org.truth0.Truth.ASSERT;
+ 
+ /** This augments {@link OnClickTest} with tests that exercise callbacks with multiple methods. */
+ public class OnItemSelectedTest {

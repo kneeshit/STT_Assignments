@@ -1,0 +1,23 @@
+diff --git a/openai/src/api/models/resp.rs b/openai/src/api/models/resp.rs
+index a074d55..1382c08 100644
+--- a/openai/src/api/models/resp.rs
++++ b/openai/src/api/models/resp.rs
+@@ -193,7 +193,17 @@ impl PostConversationResponse {
+     }
+ 
+     pub fn message(self) -> Vec<String> {
+-        self.message.content.parts
++        self.message
++            .content
++            .parts
++            .iter()
++            .map(|c| {
++                if let Some(c) = crate::unescape::unescape(&c) {
++                    return c;
++                }
++                c.to_string()
++            })
++            .collect()
+     }
+ 
+     pub fn message_id(&self) -> &str {

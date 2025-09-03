@@ -1,0 +1,17 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 331b171..590b474 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,6 +1,12 @@
+ Change Log
+ ==========
+ 
++Version 8.5.1 *(2017-01-24)*
++----------------------------
++
++ * Fix: Tweak bundled ProGuard rules to only retain the two-argument constructor accessed via reflection.
++
++
+ Version 8.5.0 *(2017-01-23)*
+ ----------------------------
+ 

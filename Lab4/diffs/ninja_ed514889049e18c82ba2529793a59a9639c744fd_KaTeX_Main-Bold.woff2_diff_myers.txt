@@ -1,0 +1,4 @@
+diff --git a/openai/ui/static/fonts/katex/KaTeX_Main-Bold.woff2 b/openai/ui/static/fonts/katex/KaTeX_Main-Bold.woff2
+deleted file mode 100644
+index ab2ad21..0000000
+Binary files a/openai/ui/static/fonts/katex/KaTeX_Main-Bold.woff2 and /dev/null differ

@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/main/java/butterknife/OnLongClick.java b/butterknife/src/main/java/butterknife/OnLongClick.java
+index db88076..b4efda8 100644
+--- a/butterknife/src/main/java/butterknife/OnLongClick.java
++++ b/butterknife/src/main/java/butterknife/OnLongClick.java
+@@ -23,7 +23,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+  * used on the method.
+  *
+  * @see OnLongClickListener
+- * @see Optional
++ * @see Nullable
+  */
+ @Retention(CLASS) @Target(METHOD)
+ @ListenerClass(

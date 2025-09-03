@@ -1,0 +1,12 @@
+diff --git a/butterknife-annotations/src/main/java/butterknife/BindBool.java b/butterknife-annotations/src/main/java/butterknife/BindBool.java
+index 5c0abd3..eb6347d 100644
+--- a/butterknife-annotations/src/main/java/butterknife/BindBool.java
++++ b/butterknife-annotations/src/main/java/butterknife/BindBool.java
+@@ -1,6 +1,6 @@
+ package butterknife;
+ 
+-import android.support.annotation.BoolRes;
++import androidx.annotation.BoolRes;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.Target;
+ 

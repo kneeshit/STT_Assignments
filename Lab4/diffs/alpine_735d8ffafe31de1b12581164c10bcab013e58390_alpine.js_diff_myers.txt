@@ -1,0 +1,13 @@
+diff --git a/dist/alpine.js b/dist/alpine.js
+index c8ff5b24..8762a145 100644
+--- a/dist/alpine.js
++++ b/dist/alpine.js
+@@ -1432,7 +1432,7 @@ var Alpine = {
+   }
+ };
+ 
+-if (!window.Alpine && !Object(_utils__WEBPACK_IMPORTED_MODULE_2__["isTesting"])()) {
++if (window !== undefined && !window.Alpine && !Object(_utils__WEBPACK_IMPORTED_MODULE_2__["isTesting"])()) {
+   window.Alpine = Alpine;
+   window.Alpine.start();
+ }

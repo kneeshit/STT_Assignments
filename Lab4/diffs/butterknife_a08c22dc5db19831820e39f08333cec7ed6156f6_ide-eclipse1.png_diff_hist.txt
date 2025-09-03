@@ -1,0 +1,4 @@
+diff --git a/website/static/ide-eclipse1.png b/website/static/ide-eclipse1.png
+new file mode 100644
+index 0000000..46e5250
+Binary files /dev/null and b/website/static/ide-eclipse1.png differ

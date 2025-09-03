@@ -1,0 +1,14 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java b/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
+index 9b7ade8..4d8c3e3 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnFocusChangeTest.java
+@@ -54,8 +54,7 @@ public class OnFocusChangeTest {
+         + "    }\n"
+         + "    @Override\n"
+         + "    public void unbind() {\n"
+-        + "      T target = this.target;\n"
+-        + "      if (target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
++        + "      if (this.target == null) throw new IllegalStateException(\"Bindings already cleared.\");\n"
+         + "      view1.setOnFocusChangeListener(null);\n"
+         + "      view1 = null;\n"
+         + "      this.target = null;\n"

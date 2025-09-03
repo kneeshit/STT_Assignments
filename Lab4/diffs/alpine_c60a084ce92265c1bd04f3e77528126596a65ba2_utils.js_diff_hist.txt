@@ -1,0 +1,15 @@
+diff --git a/src/utils.js b/src/utils.js
+index 797dce1c..571ab8cf 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -360,6 +360,10 @@ export function transition(el, stages) {
+         // for every single transition property. Let's grab the first one and call it a day.
+         let duration = Number(getComputedStyle(el).transitionDuration.replace(/,.*/, '').replace('s', '')) * 1000
+ 
++        if (duration === 0) {
++            duration = Number(getComputedStyle(el).animationDuration.replace('s', '')) * 1000
++        }
++
+         stages.show()
+ 
+         requestAnimationFrame(() => {

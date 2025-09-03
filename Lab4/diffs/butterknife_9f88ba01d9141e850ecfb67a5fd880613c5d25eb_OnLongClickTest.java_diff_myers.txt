@@ -1,0 +1,34 @@
+diff --git a/butterknife/src/test/java/butterknife/OnLongClickTest.java b/butterknife/src/test/java/butterknife/OnLongClickTest.java
+index fc324b4..0926b2f 100644
+--- a/butterknife/src/test/java/butterknife/OnLongClickTest.java
++++ b/butterknife/src/test/java/butterknife/OnLongClickTest.java
+@@ -13,9 +13,8 @@ public class OnLongClickTest {
+   @Test public void onLongClickBinding() {
+     JavaFileObject source = JavaFileObjects.forSourceString("test.Test", ""
+         + "package test;\n"
+-        + "import android.app.Activity;\n"
+         + "import butterknife.OnLongClick;\n"
+-        + "public class Test extends Activity {\n"
++        + "public class Test {\n"
+         + "  @OnLongClick(1) boolean doStuff() {\n"
+         + "    return true;\n"
+         + "  }\n"
+@@ -69,9 +68,8 @@ public class OnLongClickTest {
+   @Test public void failsIfMissingReturnType() {
+     JavaFileObject source = JavaFileObjects.forSourceString("test.Test", ""
+         + "package test;\n"
+-        + "import android.app.Activity;\n"
+         + "import butterknife.OnLongClick;\n"
+-        + "public class Test extends Activity {\n"
++        + "public class Test {\n"
+         + "  @OnLongClick(1)\n"
+         + "  public void doStuff() {\n"
+         + "  }\n"
+@@ -83,6 +81,6 @@ public class OnLongClickTest {
+         .failsToCompile()
+         .withErrorContaining(
+             "@OnLongClick methods must have a 'boolean' return type. (test.Test.doStuff)")
+-        .in(source).onLine(6);
++        .in(source).onLine(5);
+   }
+ }

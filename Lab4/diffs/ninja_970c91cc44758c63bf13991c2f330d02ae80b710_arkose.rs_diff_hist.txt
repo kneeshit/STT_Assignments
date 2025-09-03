@@ -1,0 +1,40 @@
+diff --git a/openai/src/serve/router/arkose.rs b/openai/src/serve/router/arkose.rs
+index 9eb30d5..a399294 100644
+--- a/openai/src/serve/router/arkose.rs
++++ b/openai/src/serve/router/arkose.rs
+@@ -98,12 +98,13 @@ async fn proxy(
+                     match funcaptcha::start_challenge(token).await {
+                         Ok(session) => {
+                             if let Some(funcaptcha) = session.funcaptcha() {
+-                                let index = funcaptcha::yescaptcha::valid(
++                                let valid_res = funcaptcha::yescaptcha::valid(
+                                     key,
+                                     &funcaptcha.image,
+                                     &funcaptcha.instructions,
+                                 )
+-                                .await?;
++                                .await;
++                                if let Ok(index) = valid_res {
+                                     debug!("answer index:{index}");
+                                     if session.submit_answer(index).await.is_ok() {
+                                         if let Some(kv) = target_json.as_object_mut() {
+@@ -114,7 +115,10 @@ async fn proxy(
+                                         }
+                                         return Ok(Response::builder()
+                                             .status(StatusCode::OK)
+-                                        .header(header::CONTENT_TYPE, "text/plain; charset=utf-8")
++                                            .header(
++                                                header::CONTENT_TYPE,
++                                                "text/plain; charset=utf-8",
++                                            )
+                                             .body(Body::from(target_json.to_string()))
+                                             .map_err(|err| {
+                                                 err::ResponseError::InternalServerError(err)
+@@ -122,6 +126,7 @@ async fn proxy(
+                                     }
+                                 }
+                             }
++                        }
+                         Err(error) => {
+                             eprintln!("Error creating session: {}", error);
+                         }

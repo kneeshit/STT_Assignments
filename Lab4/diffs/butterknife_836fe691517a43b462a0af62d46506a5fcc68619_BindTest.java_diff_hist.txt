@@ -1,0 +1,176 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/BindTest.java b/butterknife-compiler/src/test/java/butterknife/BindTest.java
+index cc900ae..7bb008f 100644
+--- a/butterknife-compiler/src/test/java/butterknife/BindTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/BindTest.java
+@@ -11,7 +11,8 @@ import static com.google.testing.compile.JavaSourceSubjectFactory.javaSource;
+ 
+ public class BindTest {
+   @Test public void bindingView() {
+-    JavaFileObject source = JavaFileObjects.forSourceString("test.Test", Joiner.on('\n').join(
++    JavaFileObject source = JavaFileObjects.forSourceString("test.Test",
++        Joiner.on('\n').join(
+             "package test;",
+             "import android.app.Activity;",
+             "import android.view.View;",
+@@ -35,9 +36,6 @@ public class BindTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'thing'\");",
+             "    target.thing = view;",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -91,9 +89,6 @@ public class BindTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'thing'\");",
+             "    target.thing = finder.castView(view, 1, \"field 'thing'\");",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -130,9 +125,6 @@ public class BindTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'thing'\");",
+             "    target.thing = finder.castView(view, 1, \"field 'thing'\");",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -176,9 +168,6 @@ public class BindTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing1 = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -233,9 +222,6 @@ public class BindTest {
+             "    view = finder.findOptionalView(source, 1, null);",
+             "    target.view = view;",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.view = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -276,9 +262,6 @@ public class BindTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'view'\");",
+             "    target.view = view;",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.view = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -297,10 +280,6 @@ public class BindTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'thing'\");",
+             "    target.thing = view;",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    super.unbind(target);",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -341,9 +320,6 @@ public class BindTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'view'\");",
+             "    target.view = view;",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.view = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -362,10 +338,6 @@ public class BindTest {
+             "    view = finder.findRequiredView(source, 1, \"field 'thing'\");",
+             "    target.thing = view;",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    super.unbind(target);",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -602,9 +574,6 @@ public class BindTest {
+             "        finder.<View>findRequiredView(source, 3, \"field 'thing'\")",
+             "    );",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -644,9 +613,6 @@ public class BindTest {
+             "        finder.<View>findRequiredView(source, 3, \"field 'thing'\")",
+             "    );",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -687,9 +653,6 @@ public class BindTest {
+             "        finder.<TextView>findRequiredView(source, 3, \"field 'thing'\")",
+             "    );",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -730,9 +693,6 @@ public class BindTest {
+             "        finder.<View>findRequiredView(source, 3, \"field 'thing'\")",
+             "    );",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -773,9 +733,6 @@ public class BindTest {
+             "        finder.<Test.TestInterface>findRequiredView(source, 3, \"field 'thing'\")",
+             "    );",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -816,9 +773,6 @@ public class BindTest {
+             "        finder.<View>findRequiredView(source, 3, \"field 'thing'\")",
+             "    );",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -860,9 +814,6 @@ public class BindTest {
+             "        finder.<View>findOptionalView(source, 3, \"field 'thing'\")",
+             "    );",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "    target.thing = null;",
+-            "  }",
+             "}"
+         ));
+ 

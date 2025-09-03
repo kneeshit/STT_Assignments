@@ -1,0 +1,13 @@
+diff --git a/test/constructor.spec.js b/test/constructor.spec.js
+index 17f89b1a..083f5019 100644
+--- a/test/constructor.spec.js
++++ b/test/constructor.spec.js
+@@ -5,7 +5,7 @@ global.MutationObserver = class {
+     observe() {}
+ }
+ 
+-test('auto-detect new components and dont loose state of existing ones', async () => {
++test('auto-detect new components and dont lose state of existing ones', async () => {
+     var runObserver
+ 
+     global.MutationObserver = class {

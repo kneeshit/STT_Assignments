@@ -1,0 +1,9 @@
+diff --git a/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor b/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor
+index 0cb1da5..a415ef6 100644
+--- a/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor
++++ b/butterknife/src/main/resources/META-INF/services/javax.annotation.processing.Processor
+@@ -1 +1 @@
+-butterknife.Views$AnnotationProcessor
+\ No newline at end of file
++butterknife.Views$InjectViewProcessor
+\ No newline at end of file

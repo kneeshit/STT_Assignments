@@ -1,0 +1,12 @@
+diff --git a/butterknife/src/test/java/butterknife/ViewsTest.java b/butterknife/src/test/java/butterknife/ViewsTest.java
+index 3ad4921..6967859 100644
+--- a/butterknife/src/test/java/butterknife/ViewsTest.java
++++ b/butterknife/src/test/java/butterknife/ViewsTest.java
+@@ -31,5 +31,7 @@ public class ViewsTest {
+     assertThat(Views.INJECTORS).isEmpty();
+     Views.inject(new Object(), new Activity());
+     assertThat(Views.INJECTORS).isEmpty();
++    Views.reset(new Object());
++    assertThat(Views.RESETTERS).isEmpty();
+   }
+ }

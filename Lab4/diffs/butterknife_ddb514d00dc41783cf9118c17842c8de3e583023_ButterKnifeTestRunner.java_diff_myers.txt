@@ -1,0 +1,23 @@
+diff --git a/butterknife/src/it/one-find-per-id/src/test/java/test/ButterKnifeTestRunner.java b/butterknife/src/it/one-find-per-id/src/test/java/test/ButterKnifeTestRunner.java
+new file mode 100644
+index 0000000..224f75d
+--- /dev/null
++++ b/butterknife/src/it/one-find-per-id/src/test/java/test/ButterKnifeTestRunner.java
+@@ -0,0 +1,17 @@
++package test;
++
++import java.lang.reflect.Method;
++import org.junit.runners.model.InitializationError;
++import org.robolectric.Robolectric;
++import org.robolectric.RobolectricTestRunner;
++import org.robolectric.shadows.ShadowApplication;
++
++public class ButterKnifeTestRunner extends RobolectricTestRunner {
++  public ButterKnifeTestRunner(Class<?> testClass) throws InitializationError {
++    super(testClass);
++  }
++
++  @Override public void setupApplicationState(Method testMethod) {
++    Robolectric.application = ShadowApplication.bind(createApplication(), null, null);
++  }
++}

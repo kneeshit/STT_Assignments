@@ -1,0 +1,13 @@
+diff --git a/openai/src/serve/router/ui.rs b/openai/src/serve/router/ui.rs
+index 2f5b0a0..41af811 100644
+--- a/openai/src/serve/router/ui.rs
++++ b/openai/src/serve/router/ui.rs
+@@ -701,7 +701,7 @@ async fn get_share_chat_continue_info(
+                 .bearer_auth(session.access_token)
+                 .send()
+                 .await
+-                .map_err(|err| ResponseError::InternalServerError (err))?;
++                .map_err(ResponseError::InternalServerError)?;
+             match resp.json::<Value>().await {
+                 Ok(mut share_data) => {
+                     if let Some(replace) = share_data

@@ -1,0 +1,13 @@
+diff --git a/src/args.rs b/src/args.rs
+index 47f0b32..7efd32d 100644
+--- a/src/args.rs
++++ b/src/args.rs
+@@ -121,7 +121,7 @@ pub(super) struct ServeArgs {
+     #[clap(short = 'A', long, value_parser = parse::parse_url)]
+     pub(super) arkose_token_endpoint: Option<String>,
+ 
+-    /// About the browser HAR file path requested by ArkoseLabs
++    /// About the browser HAR file path requested by ChatGPT ArkoseLabs
+     #[clap(short, long, value_parser = parse::parse_file_path)]
+     pub(super) arkose_har_file: Option<PathBuf>,
+ 

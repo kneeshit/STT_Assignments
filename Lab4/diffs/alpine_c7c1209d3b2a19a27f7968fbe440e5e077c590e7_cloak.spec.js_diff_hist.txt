@@ -1,0 +1,19 @@
+diff --git a/test/cloak.spec.js b/test/cloak.spec.js
+index fc371620..e592159f 100644
+--- a/test/cloak.spec.js
++++ b/test/cloak.spec.js
+@@ -1,4 +1,4 @@
+-import projectX from 'project-x'
++import Alpine from 'alpinejs'
+ import { wait } from '@testing-library/dom'
+ 
+ global.MutationObserver = class {
+@@ -14,7 +14,7 @@ test('x-cloak is removed', async () => {
+ 
+     expect(document.querySelector('span').getAttribute('x-cloak')).not.toBeNull()
+ 
+-    projectX.start()
++    Alpine.start()
+ 
+     await wait(() => { expect(document.querySelector('span').getAttribute('x-cloak')).toBeNull() })
+ })

@@ -1,0 +1,49 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java
+index 012566a..94b37d7 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnItemClickTest.java
+@@ -39,8 +39,6 @@ public class OnItemClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -86,8 +84,6 @@ public class OnItemClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -132,8 +128,6 @@ public class OnItemClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -178,8 +172,6 @@ public class OnItemClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 
+@@ -222,8 +214,6 @@ public class OnItemClickTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

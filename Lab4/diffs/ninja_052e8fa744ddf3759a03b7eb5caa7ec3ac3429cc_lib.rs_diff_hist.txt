@@ -1,0 +1,12 @@
+diff --git a/openai/src/lib.rs b/openai/src/lib.rs
+index e0bde02..eddfb14 100644
+--- a/openai/src/lib.rs
++++ b/openai/src/lib.rs
+@@ -1,5 +1,6 @@
+ #![recursion_limit = "256"]
+-pub mod api;
++pub mod opengpt;
++pub mod platform;
+ pub mod arkose;
+ pub mod auth;
+ #[cfg(feature = "stream")]

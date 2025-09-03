@@ -1,0 +1,13 @@
+diff --git a/gohttp/src/lib.rs b/gohttp/src/lib.rs
+new file mode 100644
+index 0000000..601c06f
+--- /dev/null
++++ b/gohttp/src/lib.rs
+@@ -0,0 +1,6 @@
++pub mod bindings;
++use crate::bindings::Add;
++
++pub fn call_add_from_c(a: i32, b: i32) -> i32 {
++    unsafe { Add(a, b) }
++}
+\ No newline at end of file

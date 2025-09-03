@@ -1,0 +1,31 @@
+diff --git a/test/mutations.spec.js b/test/mutations.spec.js
+new file mode 100644
+index 00000000..ef7e2b91
+--- /dev/null
++++ b/test/mutations.spec.js
+@@ -0,0 +1,25 @@
++import Alpine from 'alpinejs'
++
++test('catch disconnected nodes that were used as targets in for any mutations', async () => {
++    const runObservers = []
++
++    global.MutationObserver = class {
++        constructor(callback) { runObservers.push(callback) }
++        observe() {}
++    }
++
++    document.body.innerHTML = `
++        <div x-data="{}">
++        </div>
++    `
++
++    Alpine.start()
++
++    runObservers[0]([
++        {
++            target: document.createElement('div'),
++            type: 'childList',
++            addedNodes: [ document.createElement('div') ],
++        }
++    ])
++})

@@ -1,0 +1,13 @@
+diff --git a/butterknife/src/test/java/butterknife/internal/ProcessorTestUtilities.java b/butterknife/src/test/java/butterknife/internal/ProcessorTestUtilities.java
+index 4ebf5c8..d954c30 100644
+--- a/butterknife/src/test/java/butterknife/internal/ProcessorTestUtilities.java
++++ b/butterknife/src/test/java/butterknife/internal/ProcessorTestUtilities.java
+@@ -7,7 +7,7 @@ import javax.annotation.processing.Processor;
+ final class ProcessorTestUtilities {
+   static Iterable<? extends Processor> butterknifeProcessors() {
+     return Arrays.asList(
+-        new InjectViewProcessor()
++        new ButterKnifeProcessor()
+     );
+   }
+ }

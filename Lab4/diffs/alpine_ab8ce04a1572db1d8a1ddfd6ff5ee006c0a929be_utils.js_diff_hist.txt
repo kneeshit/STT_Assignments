@@ -1,0 +1,12 @@
+diff --git a/src/utils.js b/src/utils.js
+index e00f8ed8..066f8847 100644
+--- a/src/utils.js
++++ b/src/utils.js
+@@ -377,7 +377,3 @@ export function deepProxy(target, proxyHandler) {
+ function isNumeric(subject){
+     return ! isNaN(subject)
+ }
+-
+-export default {
+-    arrayUnique,
+-}

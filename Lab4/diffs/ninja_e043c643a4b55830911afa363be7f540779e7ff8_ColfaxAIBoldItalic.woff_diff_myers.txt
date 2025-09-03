@@ -1,0 +1,4 @@
+diff --git a/openai/templates/static/fonts/colfax/ColfaxAIBoldItalic.woff b/openai/templates/static/fonts/colfax/ColfaxAIBoldItalic.woff
+new file mode 100644
+index 0000000..b9d59fb
+Binary files /dev/null and b/openai/templates/static/fonts/colfax/ColfaxAIBoldItalic.woff differ

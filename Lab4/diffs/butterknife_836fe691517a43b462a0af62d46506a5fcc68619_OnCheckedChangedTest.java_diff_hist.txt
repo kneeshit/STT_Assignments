@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java b/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
+index aafa473..de9d0f9 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnCheckedChangedTest.java
+@@ -39,8 +39,6 @@ public class OnCheckedChangedTest {
+             "      }",
+             "    });",
+             "  }",
+-            "  @Override public void unbind(T target) {",
+-            "  }",
+             "}"
+         ));
+ 

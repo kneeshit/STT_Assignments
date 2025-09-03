@@ -1,0 +1,25 @@
+diff --git a/butterknife/src/main/java/butterknife/Views.java b/butterknife/src/main/java/butterknife/Views.java
+index c234ce2..55ea239 100644
+--- a/butterknife/src/main/java/butterknife/Views.java
++++ b/butterknife/src/main/java/butterknife/Views.java
+@@ -113,6 +113,7 @@ public class Views {
+       inject.invoke(null, finder, target, source);
+     } catch (ClassNotFoundException e) {
+       // Allows inject to be called on targets without injected Views
++      INJECTORS.put(targetClass, NO_OP); 
+     } catch (RuntimeException e) {
+       throw e;
+     } catch (Exception e) {
+@@ -120,6 +121,12 @@ public class Views {
+     }
+   }
+   
++  /** No-op method for use for Classes that don't have any {@link View}s to inject. */
++  public static void noOp(Object finder, Object target, Object source) { }
++  
++  /** No-op method reference */
++  private static final Method NO_OP = Views.class.getMethod("noOp", Object.class, Object.class, Object.class);
++
+   /** Simpler version of {@link View#findViewById(int)} which infers the target type. */
+   @SuppressWarnings({ "unchecked", "UnusedDeclaration" }) // Checked by runtime cast, helper method.
+   public static <T extends View> T findById(View view, int id) {

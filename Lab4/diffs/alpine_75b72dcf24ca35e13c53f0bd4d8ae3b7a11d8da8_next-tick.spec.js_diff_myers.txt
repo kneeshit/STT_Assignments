@@ -1,0 +1,11 @@
+diff --git a/test/next-tick.spec.js b/test/next-tick.spec.js
+index aaed79c2..674a2c37 100644
+--- a/test/next-tick.spec.js
++++ b/test/next-tick.spec.js
+@@ -42,5 +42,5 @@ test('nextTick wait for x-for to finish rendering', async () => {
+ 
+     document.querySelector('button').click()
+ 
+-    await wait(() => expect(document.querySelector('p').innerText).toEqual(3))
++    await wait(() => { expect(document.querySelector('p').innerText).toEqual(3) })
+ })

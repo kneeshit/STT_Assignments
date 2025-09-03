@@ -1,0 +1,54 @@
+diff --git a/src/component.js b/src/component.js
+index 7bb1c8b5..cc83ebfa 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -157,7 +157,13 @@ export default class Component {
+ 
+         this.executeAndClearRemainingShowDirectiveStack()
+ 
+-        this.executeAndClearNextTickStack()
++        // Skip spawns from alpine directives
++        if (rootEl === this.$el) {
++            // Walk through the $nextTick stack and clear it as we go.
++            while (this.nextTickStack.length > 0) {
++                this.nextTickStack.shift()()
++            }
++        }
+     }
+ 
+     initializeElement(el, extraVars) {
+@@ -183,7 +189,13 @@ export default class Component {
+ 
+         this.executeAndClearRemainingShowDirectiveStack()
+ 
+-        this.executeAndClearNextTickStack()
++        // Skip spawns from alpine directives
++        if (rootEl === this.$el) {
++            // Walk through the $nextTick stack and clear it as we go.
++            while (this.nextTickStack.length > 0) {
++                this.nextTickStack.shift()()
++            }
++        }
+     }
+ 
+     executeAndClearRemainingShowDirectiveStack() {
+@@ -398,19 +410,4 @@ export default class Component {
+             }
+         })
+     }
+-
+-    executeAndClearNextTickStack() {
+-        const self = this
+-
+-        const later = function () {
+-            this.nextTickTimeout = null
+-            while (self.nextTickStack.length > 0) {
+-                self.nextTickStack.shift()()
+-            }
+-        }
+-
+-        clearTimeout(this.nextTickTimeout)
+-
+-        this.nextTickTimeout = setTimeout(later, 10)
+-    }
+ }

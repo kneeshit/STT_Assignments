@@ -1,0 +1,30 @@
+diff --git a/butterknife/src/main/java/butterknife/OnItemClick.java b/butterknife/src/main/java/butterknife/OnItemClick.java
+index 24ac6bb..7501f8c 100644
+--- a/butterknife/src/main/java/butterknife/OnItemClick.java
++++ b/butterknife/src/main/java/butterknife/OnItemClick.java
+@@ -29,14 +29,7 @@ import static java.lang.annotation.RetentionPolicy.CLASS;
+     targetType = "android.widget.AdapterView<?>",
+     setter = "setOnItemClickListener",
+     type = "android.widget.AdapterView.OnItemClickListener",
+-    callbacks = OnItemClick.Callback.class
+-)
+-public @interface OnItemClick {
+-  int[] value();
+-  Callback callback() default Callback.ITEM_CLICK;
+-
+-  enum Callback {
+-    @ListenerMethod(
++    method = @ListenerMethod(
+         name = "onItemClick",
+         parameters = {
+             "android.widget.AdapterView<?>",
+@@ -45,6 +38,7 @@ public @interface OnItemClick {
+             "long"
+         }
+     )
+-    ITEM_CLICK
+-  }
++)
++public @interface OnItemClick {
++  int[] value();
+ }

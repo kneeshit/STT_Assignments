@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java b/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java
+index 693a021..6534ded 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnPageChangeTest.java
+@@ -79,7 +79,7 @@ public class OnPageChangeTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

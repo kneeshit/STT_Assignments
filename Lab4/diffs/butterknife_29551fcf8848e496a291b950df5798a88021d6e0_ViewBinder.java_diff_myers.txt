@@ -1,0 +1,14 @@
+diff --git a/butterknife/src/main/java/butterknife/internal/ViewBinder.java b/butterknife/src/main/java/butterknife/internal/ViewBinder.java
+deleted file mode 100644
+index ea0f7d0..0000000
+--- a/butterknife/src/main/java/butterknife/internal/ViewBinder.java
++++ /dev/null
+@@ -1,8 +0,0 @@
+-package butterknife.internal;
+-
+-import android.view.View;
+-import butterknife.Unbinder;
+-
+-public interface ViewBinder<T> {
+-  Unbinder bind(T target, View source);
+-}

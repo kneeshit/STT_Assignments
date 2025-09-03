@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java b/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
+index 3f7e8bb..b7a5874 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnEditorActionTest.java
+@@ -71,7 +71,7 @@ public class OnEditorActionTest {
+ 
+     assertAbout(javaSource()).that(source)
+         .processedWith(new ButterKnifeProcessor())
+-        .compilesWithoutError()
++        .compilesWithoutWarnings()
+         .and()
+         .generatesSources(binderSource, bindingSource);
+   }

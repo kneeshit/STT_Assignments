@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+index 27a498c..a71fd96 100644
+--- a/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
++++ b/butterknife-compiler/src/test/java/butterknife/OnLongClickTest.java
+@@ -34,7 +34,7 @@ public class OnLongClickTest {
+         + "public class Test$$ViewBinder<T extends Test> implements ViewBinder<T> {\n"
+         + "  @Override\n"
+         + "  public Unbinder bind(Finder finder, T target, Object source) {\n"
+-        + "    return new InnerUnbinder(target, finder, source);\n"
++        + "    return new InnerUnbinder<>(target, finder, source);\n"
+         + "  }\n"
+         + "  protected static class InnerUnbinder<T extends Test> implements Unbinder {\n"
+         + "    protected T target;\n"

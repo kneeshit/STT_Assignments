@@ -1,0 +1,15 @@
+diff --git a/src/component.js b/src/component.js
+index dab69b61..85417c66 100644
+--- a/src/component.js
++++ b/src/component.js
+@@ -86,6 +86,10 @@ export default class Component {
+             // Alpine's got it's grubby little paws all over everything.
+             initReturnedCallback.call(this.$data)
+         }
++
++        componentForClone || setTimeout(() => {
++            Alpine.onComponentInitializeds.forEach(callback => callback(this))
++        }, 0)
+     }
+ 
+     getUnobservedData() {

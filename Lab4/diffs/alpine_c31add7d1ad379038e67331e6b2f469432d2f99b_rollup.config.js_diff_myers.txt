@@ -1,0 +1,12 @@
+diff --git a/rollup.config.js b/rollup.config.js
+index 8015a389..cb4a027b 100644
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -15,6 +15,7 @@ export default {
+         resolve(),
+         filesize(),
+         terser({
++            mangle: false,
+             compress: {
+                 drop_debugger: false,
+             },

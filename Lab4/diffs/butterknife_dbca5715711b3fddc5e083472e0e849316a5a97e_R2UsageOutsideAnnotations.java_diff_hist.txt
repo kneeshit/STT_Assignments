@@ -1,0 +1,18 @@
+diff --git a/butterknife-lint/src/test/java/sample/r2/R2UsageOutsideAnnotations.java b/butterknife-lint/src/test/java/sample/r2/R2UsageOutsideAnnotations.java
+deleted file mode 100644
+index 32564b1..0000000
+--- a/butterknife-lint/src/test/java/sample/r2/R2UsageOutsideAnnotations.java
++++ /dev/null
+@@ -1,12 +0,0 @@
+-package sample.r2;
+-
+-public class R2UsageOutsideAnnotations {
+-
+-  int array = sample.r2.R2.array.res;
+-
+-  public void foo(int color) {}
+-
+-  public void bar() {
+-    foo(R2.color.res);
+-  }
+-}

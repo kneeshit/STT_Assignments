@@ -1,0 +1,13 @@
+diff --git a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+index d8b7f46..2f468d8 100644
+--- a/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
++++ b/butterknife-compiler/src/main/java/butterknife/compiler/ButterKnifeProcessor.java
+@@ -189,7 +189,7 @@ public final class ButterKnifeProcessor extends AbstractProcessor {
+       }
+     }
+ 
+-    return true;
++    return false;
+   }
+ 
+   private Map<TypeElement, BindingSet> findAndParseTargets(RoundEnvironment env) {

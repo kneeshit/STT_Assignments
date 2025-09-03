@@ -1,0 +1,10 @@
+diff --git a/butterknife-integration-test/build.gradle b/butterknife-integration-test/build.gradle
+index 74ebc2e..7bf1d4a 100644
+--- a/butterknife-integration-test/build.gradle
++++ b/butterknife-integration-test/build.gradle
+@@ -41,5 +41,4 @@ dependencies {
+   testCompile deps.junit
+   testCompile deps.truth
+   testCompile deps.robolectric
+-  testCompile deps.openglApi
+ }

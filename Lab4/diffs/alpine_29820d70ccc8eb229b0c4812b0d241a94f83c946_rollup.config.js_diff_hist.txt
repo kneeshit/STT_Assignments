@@ -1,0 +1,12 @@
+diff --git a/rollup.config.js b/rollup.config.js
+index a24addd5..7d946754 100644
+--- a/rollup.config.js
++++ b/rollup.config.js
+@@ -8,6 +8,7 @@ export default {
+         name: 'Alpine',
+         file: 'dist/alpine.js',
+         format: 'umd',
++        sourcemap: true,
+     },
+     plugins: [
+         resolve(),

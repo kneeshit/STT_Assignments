@@ -1,0 +1,12 @@
+diff --git a/babel.config.js b/babel.config.js
+index d7c97f55..cbf1b4cb 100644
+--- a/babel.config.js
++++ b/babel.config.js
+@@ -5,6 +5,7 @@ module.exports = {
+             {
+                 targets: {
+                     node: 'current',
++                    edge: '18'
+                 },
+             },
+         ],

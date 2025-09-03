@@ -1,0 +1,12 @@
+diff --git a/test/bind.spec.js b/test/bind.spec.js
+index 4b9e240d..9a032f8f 100644
+--- a/test/bind.spec.js
++++ b/test/bind.spec.js
+@@ -332,7 +332,6 @@ test('checkbox values are set correctly', async () => {
+     expect(document.querySelector('input[name="stringCheckbox"]').value).toEqual('foo')
+ });
+ 
+-<<<<<<< HEAD
+ test('radio values are set correctly', async () => {
+     document.body.innerHTML = `
+         <div x-data="{lists: [{id: 1}, {id: 8}], selectedListID: '8'}">

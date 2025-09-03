@@ -1,0 +1,11 @@
+diff --git a/openai/src/chatgpt/mod.rs b/openai/src/chatgpt/mod.rs
+index f63b28b..ee5e32f 100644
+--- a/openai/src/chatgpt/mod.rs
++++ b/openai/src/chatgpt/mod.rs
+@@ -1,5 +1,4 @@
+-pub mod chat;
+-pub mod ios;
++pub mod api;
+ pub mod models;
+ pub mod service;
+ 

@@ -1,0 +1,11 @@
+diff --git a/gradle.properties b/gradle.properties
+index a4db5d3..a7b1e07 100644
+--- a/gradle.properties
++++ b/gradle.properties
+@@ -16,3 +16,6 @@ POM_DEVELOPER_ID=jakewharton
+ POM_DEVELOPER_NAME=Jake Wharton
+ 
+ org.gradle.jvmargs=-Xmx1536M
++
++# TODO https://issuetracker.google.com/issues/73450622
++android.enableAapt2=false
