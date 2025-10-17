@@ -1,14 +1,29 @@
 # Ignore embedded/cloned repositories in Labs
+Lab1/__pycache__/
+
+Lab2/__pycache__/
+Lab2/lab2_env/
+Lab2/flask/
+
+Lab3/__pycache__/
+Lab3/venv/
+
+
+
+Lab4/__pycache__/
+Lab4/lab4_venv/
 Lab4/alpine/
 Lab4/butterknife/
 Lab4/ninja/
-Lab4/lab4_venv/
-Lab2/flask/
-Lab2/lab2_env/
-Lab3/venv/
-Lab1/__pycache__/
-Lab3/__pycache__/
-Lab4/__pycache__/
+
+Lab6/venv/
+Lab6/chalice
+Lab6/gpt-researcher
+Lab6/pythonrobotics
+Lab6/results/chalice/codeql-db
+Lab6/results/gpt-researcher/codeql-db
+Lab6/results/pythonrobotics/codeql-db
+
 # Ignore Python cache and environment folders
 env/
 *.pyc
@@ -16,3 +31,4 @@ __pycache__/
 *.pyo
 *.pyd
 SampleReport.pdf
+.vscode
